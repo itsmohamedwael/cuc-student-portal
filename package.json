@@ -1,0 +1,9 @@
+{
+  "name": "cuc-student-portal",
+  "version": "2.0.0",
+  "private": true,
+  "description": "CUC Student Portal",
+  "scripts": {
+    "start": "python -m http.server 8000"
+  }
+}

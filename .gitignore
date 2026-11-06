@@ -1,0 +1,6 @@
+scratch/
+*.py
+*.png
+__pycache__/
+.vercel
+.vscode/

@@ -1,0 +1,11294 @@
+// City University of Cairo (CUC) - Faculty of Engineering
+// First Term (Fall 2026-2027) - Groups 1 to 9 ONLY
+window.ACADEMIC_DATA = {
+  "metadata": {
+    "institution": "City University of Cairo (CUC)",
+    "faculty": "Faculty of Engineering",
+    "academic_year": "2026–2027",
+    "semester": "First Term (Fall)",
+    "scope": "Preparatory Year (Groups 1 to 9 only)",
+    "total_subjects": 7,
+    "subjects_list": [
+      "CUC112",
+      "BAS111",
+      "BAS121",
+      "CUC111",
+      "BAS141",
+      "BAS131",
+      "MEC111"
+    ],
+    "total_students": 507
+  },
+  "periods": [
+    {
+      "index": 1,
+      "name": "Period 1",
+      "start": "09:00",
+      "end": "09:50",
+      "x0": 137.0,
+      "x1": 246.9
+    },
+    {
+      "index": 2,
+      "name": "Period 2",
+      "start": "09:50",
+      "end": "10:40",
+      "x0": 246.9,
+      "x1": 356.8
+    },
+    {
+      "index": 3,
+      "name": "Period 3",
+      "start": "10:40",
+      "end": "11:30",
+      "x0": 356.8,
+      "x1": 466.8
+    },
+    {
+      "index": 4,
+      "name": "Period 4",
+      "start": "11:30",
+      "end": "12:20",
+      "x0": 466.8,
+      "x1": 576.7
+    },
+    {
+      "index": "break",
+      "name": "Break",
+      "start": "12:20",
+      "end": "12:45",
+      "x0": 576.7,
+      "x1": 668.8
+    },
+    {
+      "index": 5,
+      "name": "Period 5",
+      "start": "12:45",
+      "end": "13:35",
+      "x0": 668.8,
+      "x1": 778.7
+    },
+    {
+      "index": 6,
+      "name": "Period 6",
+      "start": "13:35",
+      "end": "14:25",
+      "x0": 778.7,
+      "x1": 888.7
+    },
+    {
+      "index": 7,
+      "name": "Period 7",
+      "start": "14:25",
+      "end": "15:15",
+      "x0": 888.7,
+      "x1": 1010.5
+    },
+    {
+      "index": 8,
+      "name": "Period 8",
+      "start": "15:15",
+      "end": "16:05",
+      "x0": 1010.5,
+      "x1": 1133.5
+    }
+  ],
+  "groups": [
+    {
+      "group_id": 1,
+      "name": "Group 1",
+      "code": "Gr.1",
+      "program": "Faculty of Engineering — Preparatory Year",
+      "academic_year": "2026–2027",
+      "semester": "First Term (Fall)",
+      "total_weekly_sessions": 22,
+      "total_exams": 7,
+      "active_days": [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday"
+      ],
+      "online_day": "Tuesday",
+      "primary_halls": [
+        "B2-112",
+        "B2-311"
+      ]
+    },
+    {
+      "group_id": 2,
+      "name": "Group 2",
+      "code": "Gr.2",
+      "program": "Faculty of Engineering — Preparatory Year",
+      "academic_year": "2026–2027",
+      "semester": "First Term (Fall)",
+      "total_weekly_sessions": 22,
+      "total_exams": 7,
+      "active_days": [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday"
+      ],
+      "online_day": "Tuesday",
+      "primary_halls": [
+        "B2-201",
+        "B2-313"
+      ]
+    },
+    {
+      "group_id": 3,
+      "name": "Group 3",
+      "code": "Gr.3",
+      "program": "Faculty of Engineering — Preparatory Year",
+      "academic_year": "2026–2027",
+      "semester": "First Term (Fall)",
+      "total_weekly_sessions": 22,
+      "total_exams": 7,
+      "active_days": [
+        "Sunday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday"
+      ],
+      "online_day": "Sunday",
+      "primary_halls": [
+        "B2-214",
+        "B2-311"
+      ]
+    },
+    {
+      "group_id": 4,
+      "name": "Group 4",
+      "code": "Gr.4",
+      "program": "Faculty of Engineering — Preparatory Year",
+      "academic_year": "2026–2027",
+      "semester": "First Term (Fall)",
+      "total_weekly_sessions": 22,
+      "total_exams": 7,
+      "active_days": [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Thursday"
+      ],
+      "online_day": "Monday",
+      "primary_halls": [
+        "B2-215",
+        "B2-313"
+      ]
+    },
+    {
+      "group_id": 5,
+      "name": "Group 5",
+      "code": "Gr.5",
+      "program": "Faculty of Engineering — Preparatory Year",
+      "academic_year": "2026–2027",
+      "semester": "First Term (Fall)",
+      "total_weekly_sessions": 22,
+      "total_exams": 7,
+      "active_days": [
+        "Sunday",
+        "Monday",
+        "Wednesday",
+        "Thursday"
+      ],
+      "online_day": "Wednesday",
+      "primary_halls": [
+        "B2-210",
+        "B2-215",
+        "B2-311"
+      ]
+    },
+    {
+      "group_id": 6,
+      "name": "Group 6",
+      "code": "Gr.6",
+      "program": "Faculty of Engineering — Preparatory Year",
+      "academic_year": "2026–2027",
+      "semester": "First Term (Fall)",
+      "total_weekly_sessions": 22,
+      "total_exams": 7,
+      "active_days": [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Thursday"
+      ],
+      "online_day": "Tuesday",
+      "primary_halls": [
+        "B2-211",
+        "B2-313"
+      ]
+    },
+    {
+      "group_id": 7,
+      "name": "Group 7",
+      "code": "Gr.7",
+      "program": "Faculty of Engineering — Preparatory Year",
+      "academic_year": "2026–2027",
+      "semester": "First Term (Fall)",
+      "total_weekly_sessions": 22,
+      "total_exams": 7,
+      "active_days": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday"
+      ],
+      "online_day": "None",
+      "primary_halls": [
+        "B2-311",
+        "B2-413"
+      ]
+    },
+    {
+      "group_id": 8,
+      "name": "Group 8",
+      "code": "Gr.8",
+      "program": "Faculty of Engineering — Preparatory Year",
+      "academic_year": "2026–2027",
+      "semester": "First Term (Fall)",
+      "total_weekly_sessions": 22,
+      "total_exams": 7,
+      "active_days": [
+        "Sunday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday"
+      ],
+      "online_day": "Thursday",
+      "primary_halls": [
+        "B1-213",
+        "B2-414"
+      ]
+    },
+    {
+      "group_id": 9,
+      "name": "Group 9",
+      "code": "Gr.9",
+      "program": "Faculty of Engineering — Preparatory Year",
+      "academic_year": "2026–2027",
+      "semester": "First Term (Fall)",
+      "total_weekly_sessions": 22,
+      "total_exams": 7,
+      "active_days": [
+        "Sunday",
+        "Monday",
+        "Wednesday",
+        "Thursday"
+      ],
+      "online_day": "Sunday",
+      "primary_halls": [
+        "B2-108",
+        "B2-201",
+        "B2-311"
+      ]
+    }
+  ],
+  "subjects": [
+    {
+      "code": "CUC112",
+      "name": "Report Writing & Communication Skills",
+      "arabic_name": "مهارات كتابة التقارير والتواصل",
+      "department": "University Requirement",
+      "level": "Preparatory Year (Term 1)",
+      "credits": 2,
+      "exam_date": "07/11/2026",
+      "exam_day": "Saturday",
+      "exam_time": "10:00 am - 11:00 am",
+      "description": "Essential professional and engineering communication skills, technical report writing, presentation techniques, and collaborative team communication."
+    },
+    {
+      "code": "BAS111",
+      "name": "Mathematics I",
+      "arabic_name": "رياضيات 1 (تفاضل وتكامل)",
+      "department": "Basic Science",
+      "level": "Preparatory Year (Term 1)",
+      "credits": 3,
+      "exam_date": "08/11/2026",
+      "exam_day": "Sunday",
+      "exam_time": "10:00 am - 11:00 am",
+      "description": "Differential calculus, limits, derivatives, applications of derivatives, curves, series expansions, and analytical geometry."
+    },
+    {
+      "code": "BAS121",
+      "name": "Vibration & Waves",
+      "arabic_name": "اهتزازات وأمواج (فيزياء)",
+      "department": "Basic Science",
+      "level": "Preparatory Year (Term 1)",
+      "credits": 3,
+      "exam_date": "09/11/2026",
+      "exam_day": "Monday",
+      "exam_time": "10:00 am - 11:00 am",
+      "description": "Simple harmonic motion, mechanical oscillations, damped and forced vibrations, acoustic and electromagnetic waves, sound interference."
+    },
+    {
+      "code": "CUC111",
+      "name": "Introduction to Computer Systems",
+      "arabic_name": "مقدمة في نظم الحاسب",
+      "department": "University Requirement",
+      "level": "Preparatory Year (Term 1)",
+      "credits": 3,
+      "exam_date": "10/11/2026",
+      "exam_day": "Tuesday",
+      "exam_time": "10:00 am - 11:00 am",
+      "description": "Fundamentals of hardware and computer architectures, operating systems, algorithm logic, problem-solving, and online software tools."
+    },
+    {
+      "code": "BAS141",
+      "name": "Engineering Chemistry",
+      "arabic_name": "كيمياء هندسية",
+      "department": "Basic Science",
+      "level": "Preparatory Year (Term 1)",
+      "credits": 3,
+      "exam_date": "11/11/2026",
+      "exam_day": "Wednesday",
+      "exam_time": "10:00 am - 11:00 am",
+      "description": "Electrochemistry and corrosion, industrial water treatment, fuels, combustion, engineering polymers, and chemical laboratory experiments."
+    },
+    {
+      "code": "BAS131",
+      "name": "Statics",
+      "arabic_name": "استاتيكا (ميكانيكا)",
+      "department": "Basic Science",
+      "level": "Preparatory Year (Term 1)",
+      "credits": 3,
+      "exam_date": "12/11/2026",
+      "exam_day": "Thursday",
+      "exam_time": "10:00 am - 11:00 am",
+      "description": "Equilibrium of 2D and 3D force systems, moments, centroids, analysis of simple trusses, frames, machines, and friction."
+    },
+    {
+      "code": "MEC111",
+      "name": "Engineering Drawing",
+      "arabic_name": "رسم هندسي وتطبيقات سوليدوركس",
+      "department": "Mechanical Engineering",
+      "level": "Preparatory Year (Term 1)",
+      "credits": 3,
+      "exam_date": "14/11/2026",
+      "exam_day": "Saturday",
+      "exam_time": "10:00 am - 11:00 am",
+      "description": "Technical geometric drafting, orthographic projections, isometric drawing, sectional views, dimensioning standards, and SolidWorks 3D CAD modeling."
+    }
+  ],
+  "weekly_sessions": [
+    {
+      "id": "sess_g1_sunday_p1_cuc112",
+      "group": 1,
+      "group_name": "Group 1",
+      "day": "Sunday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        1,
+        2
+      ],
+      "period_label": "Periods 1–2",
+      "start_time": "09:00",
+      "end_time": "10:40",
+      "duration_minutes": 100,
+      "course_code": "CUC112",
+      "course_title": "Report Writing & Communication Skills",
+      "course_arabic": "مهارات كتابة التقارير والتواصل",
+      "department": "University Requirement",
+      "room": "B2-311",
+      "building": "Building 2",
+      "session_type": "Lecture",
+      "instructor": "Prof. Gamal Abdulmohsen",
+      "assistants": [],
+      "raw_text": "CUC11201 - Report Writing and Communication Skills B2-311 Lecture Instructor: Prof. Gamal Abdulmohsen"
+    },
+    {
+      "id": "sess_g1_sunday_p3_mec111",
+      "group": 1,
+      "group_name": "Group 1",
+      "day": "Sunday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        3
+      ],
+      "period_label": "Period 3",
+      "start_time": "10:40",
+      "end_time": "11:30",
+      "duration_minutes": 50,
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "department": "Mechanical Engineering",
+      "room": "B2-311",
+      "building": "Building 2",
+      "session_type": "Lecture",
+      "instructor": "Prof. Gamal Abdulmohsen",
+      "assistants": [
+        "Eng. Menna Kamal Mohamed",
+        "Eng. Nada Naser"
+      ],
+      "raw_text": "MEC11101 - Engineering Drawing B2-311 Lecture Instructor: Prof. Gamal Abdulmohsen Assistant: Eng. Menna Kamal Mohamed Assistant: Eng. Nada Naser"
+    },
+    {
+      "id": "sess_g1_sunday_p4_mec111",
+      "group": 1,
+      "group_name": "Group 1",
+      "day": "Sunday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        4
+      ],
+      "period_label": "Period 4",
+      "start_time": "11:30",
+      "end_time": "12:20",
+      "duration_minutes": 50,
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "department": "Mechanical Engineering",
+      "room": "B2-311",
+      "building": "Building 2",
+      "session_type": "Section / Tutorial",
+      "instructor": "Prof. Gamal Abdulmohsen",
+      "assistants": [
+        "Eng. Menna Kamal Mohamed",
+        "Eng. Nada Naser"
+      ],
+      "raw_text": "MEC11101 - Engineering Drawing B2-311 Tutorial Instructor: Prof. Gamal Abdulmohsen Assistant: Eng. Menna Kamal Mohamed Assistant: Eng. Nada Naser"
+    },
+    {
+      "id": "sess_g1_sunday_p5_mec111",
+      "group": 1,
+      "group_name": "Group 1",
+      "day": "Sunday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        5
+      ],
+      "period_label": "Period 5",
+      "start_time": "12:45",
+      "end_time": "13:35",
+      "duration_minutes": 50,
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "department": "Mechanical Engineering",
+      "room": "B2-311",
+      "building": "Building 2",
+      "session_type": "Section / Tutorial",
+      "instructor": "Prof. Gamal Abdulmohsen",
+      "assistants": [
+        "Eng. Leqa Abd Al- Hamed",
+        "Eng. Menna Kamal Mohamed",
+        "Eng. Nada Naser"
+      ],
+      "raw_text": "MEC11101 - Engineering Drawing B2-311 Tutorial Instructor: Prof. Gamal Abdulmohsen Assistant: Eng. Leqa Abd Al- Hamed Assistant: Eng. Menna Kamal Mohamed Assistant: Eng. Nada Naser"
+    },
+    {
+      "id": "sess_g1_sunday_p6_mec111",
+      "group": 1,
+      "group_name": "Group 1",
+      "day": "Sunday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        6
+      ],
+      "period_label": "Period 6",
+      "start_time": "13:35",
+      "end_time": "14:25",
+      "duration_minutes": 50,
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "department": "Mechanical Engineering",
+      "room": "B2-311",
+      "building": "Building 2",
+      "session_type": "Section / Tutorial",
+      "instructor": "Prof. Gamal Abdulmohsen",
+      "assistants": [
+        "Eng. Leqa Abd Al- Hamed",
+        "Eng. Menna Kamal Mohamed",
+        "Eng. Nada Naser"
+      ],
+      "raw_text": "MEC11101 - Engineering Drawing B2-311 Tutorial Instructor: Prof. Gamal Abdulmohsen Assistant: Eng. Leqa Abd Al- Hamed Assistant: Eng. Menna Kamal Mohamed Assistant: Eng. Nada Naser"
+    },
+    {
+      "id": "sess_g1_sunday_p7_mec111",
+      "group": 1,
+      "group_name": "Group 1",
+      "day": "Sunday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        7
+      ],
+      "period_label": "Period 7",
+      "start_time": "14:25",
+      "end_time": "15:15",
+      "duration_minutes": 50,
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "department": "Mechanical Engineering",
+      "room": "B2-311",
+      "building": "Building 2",
+      "session_type": "SolidWorks CAD",
+      "instructor": "Prof. Gamal Abdulmohsen",
+      "assistants": [
+        "Eng. Leqa Abd Al- Hamed",
+        "Eng. Abdullah Mahmoud",
+        "Eng. Menna Kamal Mohamed",
+        "Eng. Nada Naser"
+      ],
+      "raw_text": "MEC11101 - Engineering Drawing B2-311 Tutorial (Solidworks) Instructor: Prof. Gamal Abdulmohsen Assistant: Eng. Leqa Abd Al- Hamed Assistant: Eng. Abdullah Mahmoud Assistant: Eng. Menna Kamal Mohamed Assistant: Eng. Nada Naser"
+    },
+    {
+      "id": "sess_g1_sunday_p8_mec111",
+      "group": 1,
+      "group_name": "Group 1",
+      "day": "Sunday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        8
+      ],
+      "period_label": "Period 8",
+      "start_time": "15:15",
+      "end_time": "16:05",
+      "duration_minutes": 50,
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "department": "Mechanical Engineering",
+      "room": "B2-311",
+      "building": "Building 2",
+      "session_type": "SolidWorks CAD",
+      "instructor": "Prof. Gamal Abdulmohsen",
+      "assistants": [
+        "Eng. Leqa Abd Al- Hamed",
+        "Eng. Abdullah Mahmoud",
+        "Eng. Menna Kamal Mohamed",
+        "Eng. Nada Naser"
+      ],
+      "raw_text": "MEC11101 - Engineering Drawing B2-311 Tutorial (Solidworks) Instructor: Prof. Gamal Abdulmohsen Assistant: Eng. Leqa Abd Al- Hamed Assistant: Eng. Abdullah Mahmoud Assistant: Eng. Menna Kamal Mohamed Assistant: Eng. Nada Naser"
+    },
+    {
+      "id": "sess_g1_monday_p1_bas141",
+      "group": 1,
+      "group_name": "Group 1",
+      "day": "Monday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        1,
+        2
+      ],
+      "period_label": "Periods 1–2",
+      "start_time": "09:00",
+      "end_time": "10:40",
+      "duration_minutes": 100,
+      "course_code": "BAS141",
+      "course_title": "Engineering Chemistry",
+      "course_arabic": "كيمياء هندسية",
+      "department": "Basic Science",
+      "room": "B2-112",
+      "building": "Building 2",
+      "session_type": "Practical / Lab",
+      "instructor": "",
+      "assistants": [
+        "Eng. Yasmin Samir"
+      ],
+      "raw_text": "BAS14101 - Engineering Chemistry B2-112 Lab Assistant: Eng. Yasmin Samir"
+    },
+    {
+      "id": "sess_g1_monday_p3_bas121",
+      "group": 1,
+      "group_name": "Group 1",
+      "day": "Monday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        3,
+        4
+      ],
+      "period_label": "Periods 3–4",
+      "start_time": "10:40",
+      "end_time": "12:20",
+      "duration_minutes": 100,
+      "course_code": "BAS121",
+      "course_title": "Vibration & Waves",
+      "course_arabic": "اهتزازات وأمواج (فيزياء)",
+      "department": "Basic Science",
+      "room": "B2-112",
+      "building": "Building 2",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "T.A. Doaa Mohamed"
+      ],
+      "raw_text": "BAS12101 - Vibration and Waves B2-112 Tutorial Assistant: T.A. Doaa Mohamed"
+    },
+    {
+      "id": "sess_g1_monday_p5_bas131",
+      "group": 1,
+      "group_name": "Group 1",
+      "day": "Monday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        5,
+        6
+      ],
+      "period_label": "Periods 5–6",
+      "start_time": "12:45",
+      "end_time": "14:25",
+      "duration_minutes": 100,
+      "course_code": "BAS131",
+      "course_title": "Statics",
+      "course_arabic": "استاتيكا (ميكانيكا)",
+      "department": "Basic Science",
+      "room": "B2-112",
+      "building": "Building 2",
+      "session_type": "Lecture",
+      "instructor": "Assoc. Prof. Mohamed Ashraf",
+      "assistants": [],
+      "raw_text": "BAS13101 - Statics B2-112 Lecture Instructor: Assoc. Prof. Mohamed Ashraf"
+    },
+    {
+      "id": "sess_g1_monday_p7_bas111",
+      "group": 1,
+      "group_name": "Group 1",
+      "day": "Monday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        7,
+        8
+      ],
+      "period_label": "Periods 7–8",
+      "start_time": "14:25",
+      "end_time": "16:05",
+      "duration_minutes": 100,
+      "course_code": "BAS111",
+      "course_title": "Mathematics I",
+      "course_arabic": "رياضيات 1 (تفاضل وتكامل)",
+      "department": "Basic Science",
+      "room": "B2-112",
+      "building": "Building 2",
+      "session_type": "Lecture",
+      "instructor": "Dr. Zaher Hasanin",
+      "assistants": [],
+      "raw_text": "BAS11101 - Mathematics (1) B2-112 Lecture Instructor: Dr. Zaher Hasanin"
+    },
+    {
+      "id": "sess_g1_tuesday_p1_cuc111",
+      "group": 1,
+      "group_name": "Group 1",
+      "day": "Tuesday",
+      "is_online_day": true,
+      "is_online": true,
+      "periods": [
+        1
+      ],
+      "period_label": "Period 1",
+      "start_time": "09:00",
+      "end_time": "09:50",
+      "duration_minutes": 50,
+      "course_code": "CUC111",
+      "course_title": "Introduction to Computer Systems",
+      "course_arabic": "مقدمة في نظم الحاسب",
+      "department": "University Requirement",
+      "room": "ONLINE",
+      "building": "Online Platform",
+      "session_type": "Lecture",
+      "instructor": "",
+      "assistants": [
+        "Eng. Esraa Adel"
+      ],
+      "raw_text": "CUC11101 - Introduction to Computer System ONLINE Lecture Assistant: Eng. Esraa Adel"
+    },
+    {
+      "id": "sess_g1_tuesday_p2_cuc111",
+      "group": 1,
+      "group_name": "Group 1",
+      "day": "Tuesday",
+      "is_online_day": true,
+      "is_online": true,
+      "periods": [
+        2
+      ],
+      "period_label": "Period 2",
+      "start_time": "09:50",
+      "end_time": "10:40",
+      "duration_minutes": 50,
+      "course_code": "CUC111",
+      "course_title": "Introduction to Computer Systems",
+      "course_arabic": "مقدمة في نظم الحاسب",
+      "department": "University Requirement",
+      "room": "ONLINE",
+      "building": "Online Platform",
+      "session_type": "Lecture",
+      "instructor": "",
+      "assistants": [
+        "Eng. Esraa Adel"
+      ],
+      "raw_text": "CUC11101 - Introduction to Computer System ONLINE Lecture Assistant: Eng. Esraa Adel"
+    },
+    {
+      "id": "sess_g1_tuesday_p3_cuc111",
+      "group": 1,
+      "group_name": "Group 1",
+      "day": "Tuesday",
+      "is_online_day": true,
+      "is_online": true,
+      "periods": [
+        3
+      ],
+      "period_label": "Period 3",
+      "start_time": "10:40",
+      "end_time": "11:30",
+      "duration_minutes": 50,
+      "course_code": "CUC111",
+      "course_title": "Introduction to Computer Systems",
+      "course_arabic": "مقدمة في نظم الحاسب",
+      "department": "University Requirement",
+      "room": "ONLINE",
+      "building": "Online Platform",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "Eng. Esraa Adel"
+      ],
+      "raw_text": "CUC11101 - Introduction to Computer System ONLINE Tutorial Assistant: Eng. Esraa Adel"
+    },
+    {
+      "id": "sess_g1_tuesday_p5_bas121",
+      "group": 1,
+      "group_name": "Group 1",
+      "day": "Tuesday",
+      "is_online_day": true,
+      "is_online": true,
+      "periods": [
+        5
+      ],
+      "period_label": "Period 5",
+      "start_time": "12:45",
+      "end_time": "13:35",
+      "duration_minutes": 50,
+      "course_code": "BAS121",
+      "course_title": "Vibration & Waves",
+      "course_arabic": "اهتزازات وأمواج (فيزياء)",
+      "department": "Basic Science",
+      "room": "ONLINE",
+      "building": "Online Platform",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "T.A. Doaa Mohamed"
+      ],
+      "raw_text": "BAS12101 - Vibration and Waves ONLINE Tutorial Assistant: T.A. Doaa Mohamed"
+    },
+    {
+      "id": "sess_g1_tuesday_p6_bas141",
+      "group": 1,
+      "group_name": "Group 1",
+      "day": "Tuesday",
+      "is_online_day": true,
+      "is_online": true,
+      "periods": [
+        6
+      ],
+      "period_label": "Period 6",
+      "start_time": "13:35",
+      "end_time": "14:25",
+      "duration_minutes": 50,
+      "course_code": "BAS141",
+      "course_title": "Engineering Chemistry",
+      "course_arabic": "كيمياء هندسية",
+      "department": "Basic Science",
+      "room": "ONLINE",
+      "building": "Online Platform",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "Eng. Khaled Saad"
+      ],
+      "raw_text": "BAS14101 - Engineering Chemistry ONLINE Tutorial Assistant: Eng. Khaled Saad"
+    },
+    {
+      "id": "sess_g1_tuesday_p7_cuc112",
+      "group": 1,
+      "group_name": "Group 1",
+      "day": "Tuesday",
+      "is_online_day": true,
+      "is_online": true,
+      "periods": [
+        7,
+        8
+      ],
+      "period_label": "Periods 7–8",
+      "start_time": "14:25",
+      "end_time": "16:05",
+      "duration_minutes": 100,
+      "course_code": "CUC112",
+      "course_title": "Report Writing & Communication Skills",
+      "course_arabic": "مهارات كتابة التقارير والتواصل",
+      "department": "University Requirement",
+      "room": "ONLINE",
+      "building": "Online Platform",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "Eng. Manar Mohamed",
+        "Eng. Menna Mahmoud"
+      ],
+      "raw_text": "CUC11201 - Report Writing and Communication Skills ONLINE Tutorial Assistant: Eng. Manar Mohamed Assistant: Eng. Menna Mahmoud"
+    },
+    {
+      "id": "sess_g1_wednesday_p1_bas141",
+      "group": 1,
+      "group_name": "Group 1",
+      "day": "Wednesday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        1,
+        2
+      ],
+      "period_label": "Periods 1–2",
+      "start_time": "09:00",
+      "end_time": "10:40",
+      "duration_minutes": 100,
+      "course_code": "BAS141",
+      "course_title": "Engineering Chemistry",
+      "course_arabic": "كيمياء هندسية",
+      "department": "Basic Science",
+      "room": "B2-112",
+      "building": "Building 2",
+      "session_type": "Lecture",
+      "instructor": "Dr. Rasha Ahmed Abd El-Khaleq",
+      "assistants": [],
+      "raw_text": "BAS14101 - Engineering Chemistry B2-112 Lecture Instructor: Dr. Rasha Ahmed Abd El-Khaleq"
+    },
+    {
+      "id": "sess_g1_wednesday_p3_bas121",
+      "group": 1,
+      "group_name": "Group 1",
+      "day": "Wednesday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        3,
+        4
+      ],
+      "period_label": "Periods 3–4",
+      "start_time": "10:40",
+      "end_time": "12:20",
+      "duration_minutes": 100,
+      "course_code": "BAS121",
+      "course_title": "Vibration & Waves",
+      "course_arabic": "اهتزازات وأمواج (فيزياء)",
+      "department": "Basic Science",
+      "room": "B2-112",
+      "building": "Building 2",
+      "session_type": "Lecture",
+      "instructor": "Assoc. Prof. Mohamed Abd El-Aziz",
+      "assistants": [],
+      "raw_text": "BAS12101 - Vibration and Waves B2-112 Lecture Instructor: Assoc. Prof. Mohamed Abd El-Aziz"
+    },
+    {
+      "id": "sess_g1_wednesday_p5_bas131",
+      "group": 1,
+      "group_name": "Group 1",
+      "day": "Wednesday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        5
+      ],
+      "period_label": "Period 5",
+      "start_time": "12:45",
+      "end_time": "13:35",
+      "duration_minutes": 50,
+      "course_code": "BAS131",
+      "course_title": "Statics",
+      "course_arabic": "استاتيكا (ميكانيكا)",
+      "department": "Basic Science",
+      "room": "B2-112",
+      "building": "Building 2",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "Eng. Tasnem Saied",
+        "Eng. Nada Naser"
+      ],
+      "raw_text": "BAS13101 - Statics B2-112 Tutorial Assistant: Eng. Tasnem Saied Assistant: Eng. Nada Naser"
+    },
+    {
+      "id": "sess_g1_wednesday_p6_bas131",
+      "group": 1,
+      "group_name": "Group 1",
+      "day": "Wednesday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        6
+      ],
+      "period_label": "Period 6",
+      "start_time": "13:35",
+      "end_time": "14:25",
+      "duration_minutes": 50,
+      "course_code": "BAS131",
+      "course_title": "Statics",
+      "course_arabic": "استاتيكا (ميكانيكا)",
+      "department": "Basic Science",
+      "room": "B2-112",
+      "building": "Building 2",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "Eng. Tasnem Saied",
+        "Eng. Nada Naser"
+      ],
+      "raw_text": "BAS13101 - Statics B2-112 Tutorial Assistant: Eng. Tasnem Saied Assistant: Eng. Nada Naser"
+    },
+    {
+      "id": "sess_g1_wednesday_p7_bas111",
+      "group": 1,
+      "group_name": "Group 1",
+      "day": "Wednesday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        7,
+        8
+      ],
+      "period_label": "Periods 7–8",
+      "start_time": "14:25",
+      "end_time": "16:05",
+      "duration_minutes": 100,
+      "course_code": "BAS111",
+      "course_title": "Mathematics I",
+      "course_arabic": "رياضيات 1 (تفاضل وتكامل)",
+      "department": "Basic Science",
+      "room": "B2-112",
+      "building": "Building 2",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "T.A. Ahmed Said"
+      ],
+      "raw_text": "BAS11101 - Mathematics (1) B2-112 Tutorial Assistant: T.A. Ahmed Said"
+    },
+    {
+      "id": "sess_g2_sunday_p1_cuc112",
+      "group": 2,
+      "group_name": "Group 2",
+      "day": "Sunday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        1,
+        2
+      ],
+      "period_label": "Periods 1–2",
+      "start_time": "09:00",
+      "end_time": "10:40",
+      "duration_minutes": 100,
+      "course_code": "CUC112",
+      "course_title": "Report Writing & Communication Skills",
+      "course_arabic": "مهارات كتابة التقارير والتواصل",
+      "department": "University Requirement",
+      "room": "B2-313",
+      "building": "Building 2",
+      "session_type": "Lecture",
+      "instructor": "Dr. Ahmed Hussain Al-Feqy",
+      "assistants": [],
+      "raw_text": "CUC11202 - Report Writing and Communication Skills B2-313 Lecture Instructor: Dr. Ahmed Hussain Al-Feqy"
+    },
+    {
+      "id": "sess_g2_sunday_p3_mec111",
+      "group": 2,
+      "group_name": "Group 2",
+      "day": "Sunday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        3
+      ],
+      "period_label": "Period 3",
+      "start_time": "10:40",
+      "end_time": "11:30",
+      "duration_minutes": 50,
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "department": "Mechanical Engineering",
+      "room": "B2-313",
+      "building": "Building 2",
+      "session_type": "SolidWorks CAD",
+      "instructor": "Dr. Ahmed Hussain Al-Feqy",
+      "assistants": [
+        "Eng. Ahmed Zaghlol",
+        "Eng. Saif Osama"
+      ],
+      "raw_text": "MEC11102 - Engineering Drawing B2-313 Lecture (Solidworks) Instructor: Dr. Ahmed Hussain Al-Feqy Assistant: Eng. Ahmed Zaghlol Assistant: Eng. Saif Osama"
+    },
+    {
+      "id": "sess_g2_sunday_p4_mec111",
+      "group": 2,
+      "group_name": "Group 2",
+      "day": "Sunday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        4
+      ],
+      "period_label": "Period 4",
+      "start_time": "11:30",
+      "end_time": "12:20",
+      "duration_minutes": 50,
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "department": "Mechanical Engineering",
+      "room": "B2-313",
+      "building": "Building 2",
+      "session_type": "SolidWorks CAD",
+      "instructor": "Dr. Ahmed Hussain Al-Feqy",
+      "assistants": [
+        "Eng. Ahmed Zaghlol",
+        "Eng. Saif Osama"
+      ],
+      "raw_text": "MEC11102 - Engineering Drawing B2-313 Lecture (Solidworks) Instructor: Dr. Ahmed Hussain Al-Feqy Assistant: Eng. Ahmed Zaghlol Assistant: Eng. Saif Osama"
+    },
+    {
+      "id": "sess_g2_sunday_p5_mec111",
+      "group": 2,
+      "group_name": "Group 2",
+      "day": "Sunday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        5
+      ],
+      "period_label": "Period 5",
+      "start_time": "12:45",
+      "end_time": "13:35",
+      "duration_minutes": 50,
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "department": "Mechanical Engineering",
+      "room": "B2-313",
+      "building": "Building 2",
+      "session_type": "Section / Tutorial",
+      "instructor": "Dr. Ahmed Hussain Al-Feqy",
+      "assistants": [
+        "Eng. Rania Ayman",
+        "Eng. Abdullah Mahmoud",
+        "Eng. Saif Osama"
+      ],
+      "raw_text": "MEC11102 - Engineering Drawing B2-313 Tutorial Instructor: Dr. Ahmed Hussain Al-Feqy Assistant: Eng. Rania Ayman Assistant: Eng. Abdullah Mahmoud Assistant: Eng. Saif Osama"
+    },
+    {
+      "id": "sess_g2_sunday_p6_mec111",
+      "group": 2,
+      "group_name": "Group 2",
+      "day": "Sunday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        6
+      ],
+      "period_label": "Period 6",
+      "start_time": "13:35",
+      "end_time": "14:25",
+      "duration_minutes": 50,
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "department": "Mechanical Engineering",
+      "room": "B2-313",
+      "building": "Building 2",
+      "session_type": "Section / Tutorial",
+      "instructor": "Dr. Ahmed Hussain Al-Feqy",
+      "assistants": [
+        "Eng. Rania Ayman",
+        "Eng. Abdullah Mahmoud",
+        "Eng. Saif Osama"
+      ],
+      "raw_text": "MEC11102 - Engineering Drawing B2-313 Tutorial Instructor: Dr. Ahmed Hussain Al-Feqy Assistant: Eng. Rania Ayman Assistant: Eng. Abdullah Mahmoud Assistant: Eng. Saif Osama"
+    },
+    {
+      "id": "sess_g2_sunday_p7_mec111",
+      "group": 2,
+      "group_name": "Group 2",
+      "day": "Sunday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        7
+      ],
+      "period_label": "Period 7",
+      "start_time": "14:25",
+      "end_time": "15:15",
+      "duration_minutes": 50,
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "department": "Mechanical Engineering",
+      "room": "B2-313",
+      "building": "Building 2",
+      "session_type": "Section / Tutorial",
+      "instructor": "Dr. Ahmed Hussain Al-Feqy",
+      "assistants": [
+        "Eng. Rania Ayman",
+        "Eng. Saif Osama"
+      ],
+      "raw_text": "MEC11102 - Engineering Drawing B2-313 Tutorial Instructor: Dr. Ahmed Hussain Al-Feqy Assistant: Eng. Rania Ayman Assistant: Eng. Saif Osama"
+    },
+    {
+      "id": "sess_g2_sunday_p8_mec111",
+      "group": 2,
+      "group_name": "Group 2",
+      "day": "Sunday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        8
+      ],
+      "period_label": "Period 8",
+      "start_time": "15:15",
+      "end_time": "16:05",
+      "duration_minutes": 50,
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "department": "Mechanical Engineering",
+      "room": "B2-313",
+      "building": "Building 2",
+      "session_type": "Section / Tutorial",
+      "instructor": "Dr. Ahmed Hussain Al-Feqy",
+      "assistants": [
+        "Eng. Rania Ayman",
+        "Eng. Saif Osama"
+      ],
+      "raw_text": "MEC11102 - Engineering Drawing B2-313 Tutorial Instructor: Dr. Ahmed Hussain Al-Feqy Assistant: Eng. Rania Ayman Assistant: Eng. Saif Osama"
+    },
+    {
+      "id": "sess_g2_monday_p1_bas121",
+      "group": 2,
+      "group_name": "Group 2",
+      "day": "Monday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        1,
+        2
+      ],
+      "period_label": "Periods 1–2",
+      "start_time": "09:00",
+      "end_time": "10:40",
+      "duration_minutes": 100,
+      "course_code": "BAS121",
+      "course_title": "Vibration & Waves",
+      "course_arabic": "اهتزازات وأمواج (فيزياء)",
+      "department": "Basic Science",
+      "room": "B2-201",
+      "building": "Building 2",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "T.A. Doaa Mohamed"
+      ],
+      "raw_text": "BAS12102 - Vibration and Waves B2-201 Tutorial Assistant: T.A. Doaa Mohamed"
+    },
+    {
+      "id": "sess_g2_monday_p3_bas141",
+      "group": 2,
+      "group_name": "Group 2",
+      "day": "Monday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        3,
+        4
+      ],
+      "period_label": "Periods 3–4",
+      "start_time": "10:40",
+      "end_time": "12:20",
+      "duration_minutes": 100,
+      "course_code": "BAS141",
+      "course_title": "Engineering Chemistry",
+      "course_arabic": "كيمياء هندسية",
+      "department": "Basic Science",
+      "room": "B2-201",
+      "building": "Building 2",
+      "session_type": "Practical / Lab",
+      "instructor": "",
+      "assistants": [
+        "Eng. Khaled Saad"
+      ],
+      "raw_text": "BAS14102 - Engineering Chemistry B2-201 Lab Assistant: Eng. Khaled Saad"
+    },
+    {
+      "id": "sess_g2_monday_p5_bas111",
+      "group": 2,
+      "group_name": "Group 2",
+      "day": "Monday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        5,
+        6
+      ],
+      "period_label": "Periods 5–6",
+      "start_time": "12:45",
+      "end_time": "14:25",
+      "duration_minutes": 100,
+      "course_code": "BAS111",
+      "course_title": "Mathematics I",
+      "course_arabic": "رياضيات 1 (تفاضل وتكامل)",
+      "department": "Basic Science",
+      "room": "B2-201",
+      "building": "Building 2",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "T.A. Ahmed Said"
+      ],
+      "raw_text": "BAS11102 - Mathematics (1) B2-201 Tutorial Assistant: T.A. Ahmed Said"
+    },
+    {
+      "id": "sess_g2_monday_p7_bas131",
+      "group": 2,
+      "group_name": "Group 2",
+      "day": "Monday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        7,
+        8
+      ],
+      "period_label": "Periods 7–8",
+      "start_time": "14:25",
+      "end_time": "16:05",
+      "duration_minutes": 100,
+      "course_code": "BAS131",
+      "course_title": "Statics",
+      "course_arabic": "استاتيكا (ميكانيكا)",
+      "department": "Basic Science",
+      "room": "B2-201",
+      "building": "Building 2",
+      "session_type": "Lecture",
+      "instructor": "Assoc. Prof. Mohamed Ashraf",
+      "assistants": [],
+      "raw_text": "BAS13102 - Statics B2-201 Lecture Instructor: Assoc. Prof. Mohamed Ashraf"
+    },
+    {
+      "id": "sess_g2_tuesday_p1_bas121",
+      "group": 2,
+      "group_name": "Group 2",
+      "day": "Tuesday",
+      "is_online_day": true,
+      "is_online": true,
+      "periods": [
+        1
+      ],
+      "period_label": "Period 1",
+      "start_time": "09:00",
+      "end_time": "09:50",
+      "duration_minutes": 50,
+      "course_code": "BAS121",
+      "course_title": "Vibration & Waves",
+      "course_arabic": "اهتزازات وأمواج (فيزياء)",
+      "department": "Basic Science",
+      "room": "ONLINE",
+      "building": "Online Platform",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "Eng. Yasmin Samir"
+      ],
+      "raw_text": "BAS12102 - Vibration and Waves ONLINE Tutorial Assistant: Eng. Yasmin Samir"
+    },
+    {
+      "id": "sess_g2_tuesday_p2_bas141",
+      "group": 2,
+      "group_name": "Group 2",
+      "day": "Tuesday",
+      "is_online_day": true,
+      "is_online": true,
+      "periods": [
+        2
+      ],
+      "period_label": "Period 2",
+      "start_time": "09:50",
+      "end_time": "10:40",
+      "duration_minutes": 50,
+      "course_code": "BAS141",
+      "course_title": "Engineering Chemistry",
+      "course_arabic": "كيمياء هندسية",
+      "department": "Basic Science",
+      "room": "ONLINE",
+      "building": "Online Platform",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "Eng. Yasmin Samir"
+      ],
+      "raw_text": "BAS14102 - Engineering Chemistry ONLINE Tutorial Assistant: Eng. Yasmin Samir"
+    },
+    {
+      "id": "sess_g2_tuesday_p4_cuc111",
+      "group": 2,
+      "group_name": "Group 2",
+      "day": "Tuesday",
+      "is_online_day": true,
+      "is_online": true,
+      "periods": [
+        4
+      ],
+      "period_label": "Period 4",
+      "start_time": "11:30",
+      "end_time": "12:20",
+      "duration_minutes": 50,
+      "course_code": "CUC111",
+      "course_title": "Introduction to Computer Systems",
+      "course_arabic": "مقدمة في نظم الحاسب",
+      "department": "University Requirement",
+      "room": "ONLINE",
+      "building": "Online Platform",
+      "session_type": "Lecture",
+      "instructor": "",
+      "assistants": [
+        "Eng. Amal Marouf"
+      ],
+      "raw_text": "CUC11102 - Introduction to Computer System ONLINE Lecture Assistant: Eng. Amal Marouf"
+    },
+    {
+      "id": "sess_g2_tuesday_p5_cuc111",
+      "group": 2,
+      "group_name": "Group 2",
+      "day": "Tuesday",
+      "is_online_day": true,
+      "is_online": true,
+      "periods": [
+        5
+      ],
+      "period_label": "Period 5",
+      "start_time": "12:45",
+      "end_time": "13:35",
+      "duration_minutes": 50,
+      "course_code": "CUC111",
+      "course_title": "Introduction to Computer Systems",
+      "course_arabic": "مقدمة في نظم الحاسب",
+      "department": "University Requirement",
+      "room": "ONLINE",
+      "building": "Online Platform",
+      "session_type": "Lecture",
+      "instructor": "",
+      "assistants": [
+        "Eng. Amal Marouf"
+      ],
+      "raw_text": "CUC11102 - Introduction to Computer System ONLINE Lecture Assistant: Eng. Amal Marouf"
+    },
+    {
+      "id": "sess_g2_tuesday_p6_cuc111",
+      "group": 2,
+      "group_name": "Group 2",
+      "day": "Tuesday",
+      "is_online_day": true,
+      "is_online": true,
+      "periods": [
+        6
+      ],
+      "period_label": "Period 6",
+      "start_time": "13:35",
+      "end_time": "14:25",
+      "duration_minutes": 50,
+      "course_code": "CUC111",
+      "course_title": "Introduction to Computer Systems",
+      "course_arabic": "مقدمة في نظم الحاسب",
+      "department": "University Requirement",
+      "room": "ONLINE",
+      "building": "Online Platform",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "Eng. Amal Marouf"
+      ],
+      "raw_text": "CUC11102 - Introduction to Computer System ONLINE Tutorial Assistant: Eng. Amal Marouf"
+    },
+    {
+      "id": "sess_g2_tuesday_p7_cuc112",
+      "group": 2,
+      "group_name": "Group 2",
+      "day": "Tuesday",
+      "is_online_day": true,
+      "is_online": true,
+      "periods": [
+        7,
+        8
+      ],
+      "period_label": "Periods 7–8",
+      "start_time": "14:25",
+      "end_time": "16:05",
+      "duration_minutes": 100,
+      "course_code": "CUC112",
+      "course_title": "Report Writing & Communication Skills",
+      "course_arabic": "مهارات كتابة التقارير والتواصل",
+      "department": "University Requirement",
+      "room": "ONLINE",
+      "building": "Online Platform",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "Eng. Amal Marouf",
+        "ENG. Ziad Khaled"
+      ],
+      "raw_text": "CUC11202 - Report Writing and Communication Skills ONLINE Tutorial Assistant: Eng. Amal Marouf Assistant: ENG. Ziad Khaled"
+    },
+    {
+      "id": "sess_g2_wednesday_p1_bas121",
+      "group": 2,
+      "group_name": "Group 2",
+      "day": "Wednesday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        1,
+        2
+      ],
+      "period_label": "Periods 1–2",
+      "start_time": "09:00",
+      "end_time": "10:40",
+      "duration_minutes": 100,
+      "course_code": "BAS121",
+      "course_title": "Vibration & Waves",
+      "course_arabic": "اهتزازات وأمواج (فيزياء)",
+      "department": "Basic Science",
+      "room": "B2-201",
+      "building": "Building 2",
+      "session_type": "Lecture",
+      "instructor": "Assoc. Prof. Mohamed Abd El-Aziz",
+      "assistants": [],
+      "raw_text": "BAS12102 - Vibration and Waves B2-201 Lecture Instructor: Assoc. Prof. Mohamed Abd El-Aziz"
+    },
+    {
+      "id": "sess_g2_wednesday_p3_bas141",
+      "group": 2,
+      "group_name": "Group 2",
+      "day": "Wednesday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        3,
+        4
+      ],
+      "period_label": "Periods 3–4",
+      "start_time": "10:40",
+      "end_time": "12:20",
+      "duration_minutes": 100,
+      "course_code": "BAS141",
+      "course_title": "Engineering Chemistry",
+      "course_arabic": "كيمياء هندسية",
+      "department": "Basic Science",
+      "room": "B2-201",
+      "building": "Building 2",
+      "session_type": "Lecture",
+      "instructor": "Assoc. Prof. Noura Yahiya",
+      "assistants": [],
+      "raw_text": "BAS14102 - Engineering Chemistry B2-201 Lecture Instructor: Assoc. Prof. Noura Yahiya"
+    },
+    {
+      "id": "sess_g2_wednesday_p5_bas111",
+      "group": 2,
+      "group_name": "Group 2",
+      "day": "Wednesday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        5,
+        6
+      ],
+      "period_label": "Periods 5–6",
+      "start_time": "12:45",
+      "end_time": "14:25",
+      "duration_minutes": 100,
+      "course_code": "BAS111",
+      "course_title": "Mathematics I",
+      "course_arabic": "رياضيات 1 (تفاضل وتكامل)",
+      "department": "Basic Science",
+      "room": "B2-201",
+      "building": "Building 2",
+      "session_type": "Lecture",
+      "instructor": "Dr. Zaher Hasanin",
+      "assistants": [],
+      "raw_text": "BAS11102 - Mathematics (1) B2-201 Lecture Instructor: Dr. Zaher Hasanin"
+    },
+    {
+      "id": "sess_g2_wednesday_p7_bas131",
+      "group": 2,
+      "group_name": "Group 2",
+      "day": "Wednesday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        7
+      ],
+      "period_label": "Period 7",
+      "start_time": "14:25",
+      "end_time": "15:15",
+      "duration_minutes": 50,
+      "course_code": "BAS131",
+      "course_title": "Statics",
+      "course_arabic": "استاتيكا (ميكانيكا)",
+      "department": "Basic Science",
+      "room": "B2-201",
+      "building": "Building 2",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "Eng. Tasnem Saied"
+      ],
+      "raw_text": "BAS13102 - Statics B2-201 Tutorial Assistant: Eng. Tasnem Saied"
+    },
+    {
+      "id": "sess_g2_wednesday_p8_bas131",
+      "group": 2,
+      "group_name": "Group 2",
+      "day": "Wednesday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        8
+      ],
+      "period_label": "Period 8",
+      "start_time": "15:15",
+      "end_time": "16:05",
+      "duration_minutes": 50,
+      "course_code": "BAS131",
+      "course_title": "Statics",
+      "course_arabic": "استاتيكا (ميكانيكا)",
+      "department": "Basic Science",
+      "room": "B2-201",
+      "building": "Building 2",
+      "session_type": "Practical / Lab",
+      "instructor": "",
+      "assistants": [
+        "Eng. Tasnem Saied"
+      ],
+      "raw_text": "BAS13102 - Statics B2-201 Lab. Assistant: Eng. Tasnem Saied"
+    },
+    {
+      "id": "sess_g3_sunday_p1_cuc111",
+      "group": 3,
+      "group_name": "Group 3",
+      "day": "Sunday",
+      "is_online_day": true,
+      "is_online": true,
+      "periods": [
+        1
+      ],
+      "period_label": "Period 1",
+      "start_time": "09:00",
+      "end_time": "09:50",
+      "duration_minutes": 50,
+      "course_code": "CUC111",
+      "course_title": "Introduction to Computer Systems",
+      "course_arabic": "مقدمة في نظم الحاسب",
+      "department": "University Requirement",
+      "room": "ONLINE",
+      "building": "Online Platform",
+      "session_type": "Lecture",
+      "instructor": "",
+      "assistants": [
+        "Eng. Esraa Adel"
+      ],
+      "raw_text": "CUC11103 - Introduction to Computer System ONLINE Lecture Assistant: Eng. Esraa Adel"
+    },
+    {
+      "id": "sess_g3_sunday_p2_cuc111",
+      "group": 3,
+      "group_name": "Group 3",
+      "day": "Sunday",
+      "is_online_day": true,
+      "is_online": true,
+      "periods": [
+        2
+      ],
+      "period_label": "Period 2",
+      "start_time": "09:50",
+      "end_time": "10:40",
+      "duration_minutes": 50,
+      "course_code": "CUC111",
+      "course_title": "Introduction to Computer Systems",
+      "course_arabic": "مقدمة في نظم الحاسب",
+      "department": "University Requirement",
+      "room": "ONLINE",
+      "building": "Online Platform",
+      "session_type": "Lecture",
+      "instructor": "",
+      "assistants": [
+        "Eng. Esraa Adel"
+      ],
+      "raw_text": "CUC11103 - Introduction to Computer System ONLINE Lecture Assistant: Eng. Esraa Adel"
+    },
+    {
+      "id": "sess_g3_sunday_p3_cuc111",
+      "group": 3,
+      "group_name": "Group 3",
+      "day": "Sunday",
+      "is_online_day": true,
+      "is_online": true,
+      "periods": [
+        3
+      ],
+      "period_label": "Period 3",
+      "start_time": "10:40",
+      "end_time": "11:30",
+      "duration_minutes": 50,
+      "course_code": "CUC111",
+      "course_title": "Introduction to Computer Systems",
+      "course_arabic": "مقدمة في نظم الحاسب",
+      "department": "University Requirement",
+      "room": "ONLINE",
+      "building": "Online Platform",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "Eng. Esraa Adel"
+      ],
+      "raw_text": "CUC11103 - Introduction to Computer System ONLINE Tutorial Assistant: Eng. Esraa Adel"
+    },
+    {
+      "id": "sess_g3_sunday_p4_bas121",
+      "group": 3,
+      "group_name": "Group 3",
+      "day": "Sunday",
+      "is_online_day": true,
+      "is_online": true,
+      "periods": [
+        4
+      ],
+      "period_label": "Period 4",
+      "start_time": "11:30",
+      "end_time": "12:20",
+      "duration_minutes": 50,
+      "course_code": "BAS121",
+      "course_title": "Vibration & Waves",
+      "course_arabic": "اهتزازات وأمواج (فيزياء)",
+      "department": "Basic Science",
+      "room": "ONLINE",
+      "building": "Online Platform",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "T.A. Doaa Mohamed"
+      ],
+      "raw_text": "BAS12103 - Vibration and Waves ONLINE Tutorial Assistant: T.A. Doaa Mohamed"
+    },
+    {
+      "id": "sess_g3_sunday_p5_bas141",
+      "group": 3,
+      "group_name": "Group 3",
+      "day": "Sunday",
+      "is_online_day": true,
+      "is_online": true,
+      "periods": [
+        5
+      ],
+      "period_label": "Period 5",
+      "start_time": "12:45",
+      "end_time": "13:35",
+      "duration_minutes": 50,
+      "course_code": "BAS141",
+      "course_title": "Engineering Chemistry",
+      "course_arabic": "كيمياء هندسية",
+      "department": "Basic Science",
+      "room": "ONLINE",
+      "building": "Online Platform",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "Eng. Khaled Saad"
+      ],
+      "raw_text": "BAS14103 - Engineering Chemistry ONLINE Tutorial Assistant: Eng. Khaled Saad"
+    },
+    {
+      "id": "sess_g3_sunday_p7_cuc112",
+      "group": 3,
+      "group_name": "Group 3",
+      "day": "Sunday",
+      "is_online_day": true,
+      "is_online": true,
+      "periods": [
+        7,
+        8
+      ],
+      "period_label": "Periods 7–8",
+      "start_time": "14:25",
+      "end_time": "16:05",
+      "duration_minutes": 100,
+      "course_code": "CUC112",
+      "course_title": "Report Writing & Communication Skills",
+      "course_arabic": "مهارات كتابة التقارير والتواصل",
+      "department": "University Requirement",
+      "room": "ONLINE",
+      "building": "Online Platform",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "Eng. Reem Ayman"
+      ],
+      "raw_text": "CUC11203 - Report Writing and Communication Skills ONLINE Tutorial Assistant: Eng. Reem Ayman"
+    },
+    {
+      "id": "sess_g3_tuesday_p1_cuc112",
+      "group": 3,
+      "group_name": "Group 3",
+      "day": "Tuesday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        1,
+        2
+      ],
+      "period_label": "Periods 1–2",
+      "start_time": "09:00",
+      "end_time": "10:40",
+      "duration_minutes": 100,
+      "course_code": "CUC112",
+      "course_title": "Report Writing & Communication Skills",
+      "course_arabic": "مهارات كتابة التقارير والتواصل",
+      "department": "University Requirement",
+      "room": "B2-311",
+      "building": "Building 2",
+      "session_type": "Lecture",
+      "instructor": "Dr. Hany Yahia",
+      "assistants": [],
+      "raw_text": "CUC11203 - Report Writing and Communication Skills B2-311 Lecture Instructor: Dr. Hany Yahia"
+    },
+    {
+      "id": "sess_g3_tuesday_p3_mec111",
+      "group": 3,
+      "group_name": "Group 3",
+      "day": "Tuesday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        3
+      ],
+      "period_label": "Period 3",
+      "start_time": "10:40",
+      "end_time": "11:30",
+      "duration_minutes": 50,
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "department": "Mechanical Engineering",
+      "room": "B2-311",
+      "building": "Building 2",
+      "session_type": "Lecture",
+      "instructor": "Dr. Hany Yahia",
+      "assistants": [
+        "Eng. Rania Ayman",
+        "Eng. Saif Osama",
+        "Eng. Nada Naser"
+      ],
+      "raw_text": "MEC11103 - Engineering Drawing B2-311 Lecture Instructor: Dr. Hany Yahia Assistant: Eng. Rania Ayman Assistant: Eng. Saif Osama Assistant: Eng. Nada Naser"
+    },
+    {
+      "id": "sess_g3_tuesday_p4_mec111",
+      "group": 3,
+      "group_name": "Group 3",
+      "day": "Tuesday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        4
+      ],
+      "period_label": "Period 4",
+      "start_time": "11:30",
+      "end_time": "12:20",
+      "duration_minutes": 50,
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "department": "Mechanical Engineering",
+      "room": "B2-311",
+      "building": "Building 2",
+      "session_type": "Section / Tutorial",
+      "instructor": "Dr. Hany Yahia",
+      "assistants": [
+        "Eng. Rania Ayman",
+        "Eng. Saif Osama",
+        "Eng. Nada Naser"
+      ],
+      "raw_text": "MEC11103 - Engineering Drawing B2-311 Tutorial Instructor: Dr. Hany Yahia Assistant: Eng. Rania Ayman Assistant: Eng. Saif Osama Assistant: Eng. Nada Naser"
+    },
+    {
+      "id": "sess_g3_tuesday_p5_mec111",
+      "group": 3,
+      "group_name": "Group 3",
+      "day": "Tuesday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        5
+      ],
+      "period_label": "Period 5",
+      "start_time": "12:45",
+      "end_time": "13:35",
+      "duration_minutes": 50,
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "department": "Mechanical Engineering",
+      "room": "B2-311",
+      "building": "Building 2",
+      "session_type": "Section / Tutorial",
+      "instructor": "Dr. Hany Yahia",
+      "assistants": [
+        "Eng. Rania Ayman",
+        "Eng. Saif Osama",
+        "Eng. Nada Naser"
+      ],
+      "raw_text": "MEC11103 - Engineering Drawing B2-311 Tutorial Instructor: Dr. Hany Yahia Assistant: Eng. Rania Ayman Assistant: Eng. Saif Osama Assistant: Eng. Nada Naser"
+    },
+    {
+      "id": "sess_g3_tuesday_p6_mec111",
+      "group": 3,
+      "group_name": "Group 3",
+      "day": "Tuesday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        6
+      ],
+      "period_label": "Period 6",
+      "start_time": "13:35",
+      "end_time": "14:25",
+      "duration_minutes": 50,
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "department": "Mechanical Engineering",
+      "room": "B2-311",
+      "building": "Building 2",
+      "session_type": "Section / Tutorial",
+      "instructor": "Dr. Hany Yahia",
+      "assistants": [
+        "Eng. Rania Ayman",
+        "Eng. Saif Osama",
+        "Eng. Nada Naser"
+      ],
+      "raw_text": "MEC11103 - Engineering Drawing B2-311 Tutorial Instructor: Dr. Hany Yahia Assistant: Eng. Rania Ayman Assistant: Eng. Saif Osama Assistant: Eng. Nada Naser"
+    },
+    {
+      "id": "sess_g3_tuesday_p7_mec111",
+      "group": 3,
+      "group_name": "Group 3",
+      "day": "Tuesday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        7
+      ],
+      "period_label": "Period 7",
+      "start_time": "14:25",
+      "end_time": "15:15",
+      "duration_minutes": 50,
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "department": "Mechanical Engineering",
+      "room": "B2-311",
+      "building": "Building 2",
+      "session_type": "SolidWorks CAD",
+      "instructor": "Dr. Hany Yahia",
+      "assistants": [
+        "Eng. Rania Ayman",
+        "Eng. Saif Osama",
+        "Eng. Nada Naser"
+      ],
+      "raw_text": "MEC11103 - Engineering Drawing B2-311 Tutorial (Solidworks) Instructor: Dr. Hany Yahia Assistant: Eng. Rania Ayman Assistant: Eng. Saif Osama Assistant: Eng. Nada Naser"
+    },
+    {
+      "id": "sess_g3_tuesday_p8_mec111",
+      "group": 3,
+      "group_name": "Group 3",
+      "day": "Tuesday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        8
+      ],
+      "period_label": "Period 8",
+      "start_time": "15:15",
+      "end_time": "16:05",
+      "duration_minutes": 50,
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "department": "Mechanical Engineering",
+      "room": "B2-311",
+      "building": "Building 2",
+      "session_type": "SolidWorks CAD",
+      "instructor": "Dr. Hany Yahia",
+      "assistants": [
+        "Eng. Rania Ayman",
+        "Eng. Saif Osama",
+        "Eng. Nada Naser"
+      ],
+      "raw_text": "MEC11103 - Engineering Drawing B2-311 Tutorial (Solidworks) Instructor: Dr. Hany Yahia Assistant: Eng. Rania Ayman Assistant: Eng. Saif Osama Assistant: Eng. Nada Naser"
+    },
+    {
+      "id": "sess_g3_wednesday_p1_bas141",
+      "group": 3,
+      "group_name": "Group 3",
+      "day": "Wednesday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        1,
+        2
+      ],
+      "period_label": "Periods 1–2",
+      "start_time": "09:00",
+      "end_time": "10:40",
+      "duration_minutes": 100,
+      "course_code": "BAS141",
+      "course_title": "Engineering Chemistry",
+      "course_arabic": "كيمياء هندسية",
+      "department": "Basic Science",
+      "room": "B2-214",
+      "building": "Building 2",
+      "session_type": "Lecture",
+      "instructor": "Assoc. Prof. Noura Yahiya",
+      "assistants": [],
+      "raw_text": "BAS14103 - Engineering Chemistry B2-214 Lecture Instructor: Assoc. Prof. Noura Yahiya"
+    },
+    {
+      "id": "sess_g3_wednesday_p3_bas111",
+      "group": 3,
+      "group_name": "Group 3",
+      "day": "Wednesday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        3,
+        4
+      ],
+      "period_label": "Periods 3–4",
+      "start_time": "10:40",
+      "end_time": "12:20",
+      "duration_minutes": 100,
+      "course_code": "BAS111",
+      "course_title": "Mathematics I",
+      "course_arabic": "رياضيات 1 (تفاضل وتكامل)",
+      "department": "Basic Science",
+      "room": "B2-214",
+      "building": "Building 2",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "T.A. Ahmed Said"
+      ],
+      "raw_text": "BAS11103 - Mathematics (1) B2-214 Tutorial Assistant: T.A. Ahmed Said"
+    },
+    {
+      "id": "sess_g3_wednesday_p5_bas121",
+      "group": 3,
+      "group_name": "Group 3",
+      "day": "Wednesday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        5,
+        6
+      ],
+      "period_label": "Periods 5–6",
+      "start_time": "12:45",
+      "end_time": "14:25",
+      "duration_minutes": 100,
+      "course_code": "BAS121",
+      "course_title": "Vibration & Waves",
+      "course_arabic": "اهتزازات وأمواج (فيزياء)",
+      "department": "Basic Science",
+      "room": "B2-214",
+      "building": "Building 2",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "T.A. Doaa Mohamed"
+      ],
+      "raw_text": "BAS12103 - Vibration and Waves B2-214 Tutorial Assistant: T.A. Doaa Mohamed"
+    },
+    {
+      "id": "sess_g3_wednesday_p7_bas111",
+      "group": 3,
+      "group_name": "Group 3",
+      "day": "Wednesday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        7,
+        8
+      ],
+      "period_label": "Periods 7–8",
+      "start_time": "14:25",
+      "end_time": "16:05",
+      "duration_minutes": 100,
+      "course_code": "BAS111",
+      "course_title": "Mathematics I",
+      "course_arabic": "رياضيات 1 (تفاضل وتكامل)",
+      "department": "Basic Science",
+      "room": "B2-214",
+      "building": "Building 2",
+      "session_type": "Lecture",
+      "instructor": "Dr. Zaher Hasanin",
+      "assistants": [],
+      "raw_text": "BAS11103 - Mathematics (1) B2-214 Lecture Instructor: Dr. Zaher Hasanin"
+    },
+    {
+      "id": "sess_g3_thursday_p1_bas121",
+      "group": 3,
+      "group_name": "Group 3",
+      "day": "Thursday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        1,
+        2
+      ],
+      "period_label": "Periods 1–2",
+      "start_time": "09:00",
+      "end_time": "10:40",
+      "duration_minutes": 100,
+      "course_code": "BAS121",
+      "course_title": "Vibration & Waves",
+      "course_arabic": "اهتزازات وأمواج (فيزياء)",
+      "department": "Basic Science",
+      "room": "B2-214",
+      "building": "Building 2",
+      "session_type": "Lecture",
+      "instructor": "Assoc. Prof. Mohamed Abd El-Aziz",
+      "assistants": [],
+      "raw_text": "BAS12103 - Vibration and Waves B2-214 Lecture Instructor: Assoc. Prof. Mohamed Abd El-Aziz"
+    },
+    {
+      "id": "sess_g3_thursday_p3_bas141",
+      "group": 3,
+      "group_name": "Group 3",
+      "day": "Thursday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        3,
+        4
+      ],
+      "period_label": "Periods 3–4",
+      "start_time": "10:40",
+      "end_time": "12:20",
+      "duration_minutes": 100,
+      "course_code": "BAS141",
+      "course_title": "Engineering Chemistry",
+      "course_arabic": "كيمياء هندسية",
+      "department": "Basic Science",
+      "room": "B2-214",
+      "building": "Building 2",
+      "session_type": "Practical / Lab",
+      "instructor": "",
+      "assistants": [
+        "Eng. Yasmin Samir"
+      ],
+      "raw_text": "BAS14103 - Engineering Chemistry B2-214 Lab. Assistant: Eng. Yasmin Samir"
+    },
+    {
+      "id": "sess_g3_thursday_p5_bas131",
+      "group": 3,
+      "group_name": "Group 3",
+      "day": "Thursday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        5,
+        6
+      ],
+      "period_label": "Periods 5–6",
+      "start_time": "12:45",
+      "end_time": "14:25",
+      "duration_minutes": 100,
+      "course_code": "BAS131",
+      "course_title": "Statics",
+      "course_arabic": "استاتيكا (ميكانيكا)",
+      "department": "Basic Science",
+      "room": "B2-214",
+      "building": "Building 2",
+      "session_type": "Lecture",
+      "instructor": "Dr. Mohamed Saad",
+      "assistants": [],
+      "raw_text": "BAS13103 - Statics B2-214 Lecture Instructor: Dr. Mohamed Saad"
+    },
+    {
+      "id": "sess_g3_thursday_p7_bas131",
+      "group": 3,
+      "group_name": "Group 3",
+      "day": "Thursday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        7
+      ],
+      "period_label": "Period 7",
+      "start_time": "14:25",
+      "end_time": "15:15",
+      "duration_minutes": 50,
+      "course_code": "BAS131",
+      "course_title": "Statics",
+      "course_arabic": "استاتيكا (ميكانيكا)",
+      "department": "Basic Science",
+      "room": "B2-214",
+      "building": "Building 2",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "Eng. Tasnem Saied"
+      ],
+      "raw_text": "BAS13103 - Statics B2-214 Tutorial Assistant: Eng. Tasnem Saied"
+    },
+    {
+      "id": "sess_g3_thursday_p8_bas131",
+      "group": 3,
+      "group_name": "Group 3",
+      "day": "Thursday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        8
+      ],
+      "period_label": "Period 8",
+      "start_time": "15:15",
+      "end_time": "16:05",
+      "duration_minutes": 50,
+      "course_code": "BAS131",
+      "course_title": "Statics",
+      "course_arabic": "استاتيكا (ميكانيكا)",
+      "department": "Basic Science",
+      "room": "B2-214",
+      "building": "Building 2",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "Eng. Tasnem Saied"
+      ],
+      "raw_text": "BAS13103 - Statics B2-214 Tutorial Assistant: Eng. Tasnem Saied"
+    },
+    {
+      "id": "sess_g4_sunday_p1_bas131",
+      "group": 4,
+      "group_name": "Group 4",
+      "day": "Sunday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        1
+      ],
+      "period_label": "Period 1",
+      "start_time": "09:00",
+      "end_time": "09:50",
+      "duration_minutes": 50,
+      "course_code": "BAS131",
+      "course_title": "Statics",
+      "course_arabic": "استاتيكا (ميكانيكا)",
+      "department": "Basic Science",
+      "room": "B2-215",
+      "building": "Building 2",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "Eng. Tasnem Saied",
+        "Eng. Omar Mahmoud"
+      ],
+      "raw_text": "BAS13104 - Statics B2-215 Tutorial Assistant: Eng. Tasnem Saied Assistant: Eng. Omar Mahmoud"
+    },
+    {
+      "id": "sess_g4_sunday_p2_bas131",
+      "group": 4,
+      "group_name": "Group 4",
+      "day": "Sunday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        2
+      ],
+      "period_label": "Period 2",
+      "start_time": "09:50",
+      "end_time": "10:40",
+      "duration_minutes": 50,
+      "course_code": "BAS131",
+      "course_title": "Statics",
+      "course_arabic": "استاتيكا (ميكانيكا)",
+      "department": "Basic Science",
+      "room": "B2-215",
+      "building": "Building 2",
+      "session_type": "Practical / Lab",
+      "instructor": "",
+      "assistants": [
+        "Eng. Tasnem Saied",
+        "Eng. Omar Mahmoud"
+      ],
+      "raw_text": "BAS13104 - Statics B2-215 Lab Assistant: Eng. Tasnem Saied Assistant: Eng. Omar Mahmoud"
+    },
+    {
+      "id": "sess_g4_sunday_p3_bas111",
+      "group": 4,
+      "group_name": "Group 4",
+      "day": "Sunday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        3,
+        4
+      ],
+      "period_label": "Periods 3–4",
+      "start_time": "10:40",
+      "end_time": "12:20",
+      "duration_minutes": 100,
+      "course_code": "BAS111",
+      "course_title": "Mathematics I",
+      "course_arabic": "رياضيات 1 (تفاضل وتكامل)",
+      "department": "Basic Science",
+      "room": "B2-215",
+      "building": "Building 2",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "T.A. Basant Ali"
+      ],
+      "raw_text": "BAS11104 - Mathematics (1) B2-215 Tutorial Assistant: T.A. Basant Ali"
+    },
+    {
+      "id": "sess_g4_sunday_p5_bas111",
+      "group": 4,
+      "group_name": "Group 4",
+      "day": "Sunday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        5,
+        6
+      ],
+      "period_label": "Periods 5–6",
+      "start_time": "12:45",
+      "end_time": "14:25",
+      "duration_minutes": 100,
+      "course_code": "BAS111",
+      "course_title": "Mathematics I",
+      "course_arabic": "رياضيات 1 (تفاضل وتكامل)",
+      "department": "Basic Science",
+      "room": "B2-215",
+      "building": "Building 2",
+      "session_type": "Lecture",
+      "instructor": "Dr. Zaher Hasanin",
+      "assistants": [],
+      "raw_text": "BAS11104 - Mathematics (1) B2-215 Lecture Instructor: Dr. Zaher Hasanin"
+    },
+    {
+      "id": "sess_g4_sunday_p7_bas141",
+      "group": 4,
+      "group_name": "Group 4",
+      "day": "Sunday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        7,
+        8
+      ],
+      "period_label": "Periods 7–8",
+      "start_time": "14:25",
+      "end_time": "16:05",
+      "duration_minutes": 100,
+      "course_code": "BAS141",
+      "course_title": "Engineering Chemistry",
+      "course_arabic": "كيمياء هندسية",
+      "department": "Basic Science",
+      "room": "B2-215",
+      "building": "Building 2",
+      "session_type": "Lecture",
+      "instructor": "Dr. Rasha Ahmed Abd El-Khaleq",
+      "assistants": [],
+      "raw_text": "BAS14104 - Engineering Chemistry B2-215 Lecture Instructor: Dr. Rasha Ahmed Abd El-Khaleq"
+    },
+    {
+      "id": "sess_g4_monday_p1_cuc112",
+      "group": 4,
+      "group_name": "Group 4",
+      "day": "Monday",
+      "is_online_day": true,
+      "is_online": true,
+      "periods": [
+        1,
+        2
+      ],
+      "period_label": "Periods 1–2",
+      "start_time": "09:00",
+      "end_time": "10:40",
+      "duration_minutes": 100,
+      "course_code": "CUC112",
+      "course_title": "Report Writing & Communication Skills",
+      "course_arabic": "مهارات كتابة التقارير والتواصل",
+      "department": "University Requirement",
+      "room": "ONLINE",
+      "building": "Online Platform",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "Eng. Rania Ayman"
+      ],
+      "raw_text": "CUC11204 - Report Writing and Communication Skills ONLINE Tutorial Assistant: Eng. Rania Ayman"
+    },
+    {
+      "id": "sess_g4_monday_p4_cuc111",
+      "group": 4,
+      "group_name": "Group 4",
+      "day": "Monday",
+      "is_online_day": true,
+      "is_online": true,
+      "periods": [
+        4
+      ],
+      "period_label": "Period 4",
+      "start_time": "11:30",
+      "end_time": "12:20",
+      "duration_minutes": 50,
+      "course_code": "CUC111",
+      "course_title": "Introduction to Computer Systems",
+      "course_arabic": "مقدمة في نظم الحاسب",
+      "department": "University Requirement",
+      "room": "ONLINE",
+      "building": "Online Platform",
+      "session_type": "Lecture",
+      "instructor": "",
+      "assistants": [
+        "Eng. Amal Marouf"
+      ],
+      "raw_text": "CUC11104 - Introduction to Computer System ONLINE Lecture Assistant: Eng. Amal Marouf"
+    },
+    {
+      "id": "sess_g4_monday_p5_cuc111",
+      "group": 4,
+      "group_name": "Group 4",
+      "day": "Monday",
+      "is_online_day": true,
+      "is_online": true,
+      "periods": [
+        5
+      ],
+      "period_label": "Period 5",
+      "start_time": "12:45",
+      "end_time": "13:35",
+      "duration_minutes": 50,
+      "course_code": "CUC111",
+      "course_title": "Introduction to Computer Systems",
+      "course_arabic": "مقدمة في نظم الحاسب",
+      "department": "University Requirement",
+      "room": "ONLINE",
+      "building": "Online Platform",
+      "session_type": "Lecture",
+      "instructor": "",
+      "assistants": [
+        "Eng. Amal Marouf"
+      ],
+      "raw_text": "CUC11104 - Introduction to Computer System ONLINE Lecture Assistant: Eng. Amal Marouf"
+    },
+    {
+      "id": "sess_g4_monday_p6_cuc111",
+      "group": 4,
+      "group_name": "Group 4",
+      "day": "Monday",
+      "is_online_day": true,
+      "is_online": true,
+      "periods": [
+        6
+      ],
+      "period_label": "Period 6",
+      "start_time": "13:35",
+      "end_time": "14:25",
+      "duration_minutes": 50,
+      "course_code": "CUC111",
+      "course_title": "Introduction to Computer Systems",
+      "course_arabic": "مقدمة في نظم الحاسب",
+      "department": "University Requirement",
+      "room": "ONLINE",
+      "building": "Online Platform",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "Eng. Amal Marouf"
+      ],
+      "raw_text": "CUC11104 - Introduction to Computer System ONLINE Tutorial Assistant: Eng. Amal Marouf"
+    },
+    {
+      "id": "sess_g4_monday_p7_bas141",
+      "group": 4,
+      "group_name": "Group 4",
+      "day": "Monday",
+      "is_online_day": true,
+      "is_online": true,
+      "periods": [
+        7
+      ],
+      "period_label": "Period 7",
+      "start_time": "14:25",
+      "end_time": "15:15",
+      "duration_minutes": 50,
+      "course_code": "BAS141",
+      "course_title": "Engineering Chemistry",
+      "course_arabic": "كيمياء هندسية",
+      "department": "Basic Science",
+      "room": "ONLINE",
+      "building": "Online Platform",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "Eng. Khaled Saad"
+      ],
+      "raw_text": "BAS14104 - Engineering Chemistry ONLINE Tutorial Assistant: Eng. Khaled Saad"
+    },
+    {
+      "id": "sess_g4_monday_p8_bas121",
+      "group": 4,
+      "group_name": "Group 4",
+      "day": "Monday",
+      "is_online_day": true,
+      "is_online": true,
+      "periods": [
+        8
+      ],
+      "period_label": "Period 8",
+      "start_time": "15:15",
+      "end_time": "16:05",
+      "duration_minutes": 50,
+      "course_code": "BAS121",
+      "course_title": "Vibration & Waves",
+      "course_arabic": "اهتزازات وأمواج (فيزياء)",
+      "department": "Basic Science",
+      "room": "ONLINE",
+      "building": "Online Platform",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "Eng. Yasmin Samir"
+      ],
+      "raw_text": "BAS12104 - Vibration and Waves ONLINE Tutorial Assistant: Eng. Yasmin Samir"
+    },
+    {
+      "id": "sess_g4_tuesday_p1_cuc112",
+      "group": 4,
+      "group_name": "Group 4",
+      "day": "Tuesday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        1,
+        2
+      ],
+      "period_label": "Periods 1–2",
+      "start_time": "09:00",
+      "end_time": "10:40",
+      "duration_minutes": 100,
+      "course_code": "CUC112",
+      "course_title": "Report Writing & Communication Skills",
+      "course_arabic": "مهارات كتابة التقارير والتواصل",
+      "department": "University Requirement",
+      "room": "B2-313",
+      "building": "Building 2",
+      "session_type": "Lecture",
+      "instructor": "Dr. Mohamed Saad",
+      "assistants": [],
+      "raw_text": "CUC11204 - Report Writing and Communication Skills B2-313 Lecture Instructor: Dr. Mohamed Saad"
+    },
+    {
+      "id": "sess_g4_tuesday_p3_mec111",
+      "group": 4,
+      "group_name": "Group 4",
+      "day": "Tuesday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        3
+      ],
+      "period_label": "Period 3",
+      "start_time": "10:40",
+      "end_time": "11:30",
+      "duration_minutes": 50,
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "department": "Mechanical Engineering",
+      "room": "B2-313",
+      "building": "Building 2",
+      "session_type": "Lecture",
+      "instructor": "Dr. Mohamed Saad",
+      "assistants": [
+        "Eng. Leqa Abd Al- Hamed",
+        "Eng. Reem Ayman",
+        "Eng. Menna Kamal Mohamed"
+      ],
+      "raw_text": "MEC11104 - Engineering Drawing B2-313 Lecture Instructor: Dr. Mohamed Saad Assistant: Eng. Leqa Abd Al- Hamed Assistant: Eng. Reem Ayman Assistant: Eng. Menna Kamal Mohamed"
+    },
+    {
+      "id": "sess_g4_tuesday_p4_mec111",
+      "group": 4,
+      "group_name": "Group 4",
+      "day": "Tuesday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        4
+      ],
+      "period_label": "Period 4",
+      "start_time": "11:30",
+      "end_time": "12:20",
+      "duration_minutes": 50,
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "department": "Mechanical Engineering",
+      "room": "B2-313",
+      "building": "Building 2",
+      "session_type": "Section / Tutorial",
+      "instructor": "Dr. Mohamed Saad",
+      "assistants": [
+        "Eng. Leqa Abd Al- Hamed",
+        "Eng. Reem Ayman",
+        "Eng. Menna Kamal Mohamed"
+      ],
+      "raw_text": "MEC11104 - Engineering Drawing B2-313 Tutorial Instructor: Dr. Mohamed Saad Assistant: Eng. Leqa Abd Al- Hamed Assistant: Eng. Reem Ayman Assistant: Eng. Menna Kamal Mohamed"
+    },
+    {
+      "id": "sess_g4_tuesday_p5_mec111",
+      "group": 4,
+      "group_name": "Group 4",
+      "day": "Tuesday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        5
+      ],
+      "period_label": "Period 5",
+      "start_time": "12:45",
+      "end_time": "13:35",
+      "duration_minutes": 50,
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "department": "Mechanical Engineering",
+      "room": "B2-313",
+      "building": "Building 2",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "Eng. Leqa Abd Al- Hamed",
+        "Eng. Reem Ayman",
+        "Eng. Menna Kamal Mohamed"
+      ],
+      "raw_text": "MEC11104 - Engineering Drawing B2-313 Tutorial Assistant: Eng. Leqa Abd Al- Hamed Assistant: Eng. Reem Ayman Assistant: Eng. Menna Kamal Mohamed"
+    },
+    {
+      "id": "sess_g4_tuesday_p6_mec111",
+      "group": 4,
+      "group_name": "Group 4",
+      "day": "Tuesday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        6
+      ],
+      "period_label": "Period 6",
+      "start_time": "13:35",
+      "end_time": "14:25",
+      "duration_minutes": 50,
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "department": "Mechanical Engineering",
+      "room": "B2-313",
+      "building": "Building 2",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "Eng. Leqa Abd Al- Hamed",
+        "Eng. Reem Ayman",
+        "Eng. Menna Kamal Mohamed"
+      ],
+      "raw_text": "MEC11104 - Engineering Drawing B2-313 Tutorial Assistant: Eng. Leqa Abd Al- Hamed Assistant: Eng. Reem Ayman Assistant: Eng. Menna Kamal Mohamed"
+    },
+    {
+      "id": "sess_g4_tuesday_p7_mec111",
+      "group": 4,
+      "group_name": "Group 4",
+      "day": "Tuesday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        7
+      ],
+      "period_label": "Period 7",
+      "start_time": "14:25",
+      "end_time": "15:15",
+      "duration_minutes": 50,
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "department": "Mechanical Engineering",
+      "room": "B2-313",
+      "building": "Building 2",
+      "session_type": "SolidWorks CAD",
+      "instructor": "",
+      "assistants": [
+        "Eng. Leqa Abd Al- Hamed",
+        "Eng. Reem Ayman",
+        "Eng. Omar Mahmoud",
+        "Eng. Menna Kamal Mohamed"
+      ],
+      "raw_text": "MEC11104 - Engineering Drawing B2-313 Tutorial (Solidworks) Assistant: Eng. Leqa Abd Al- Hamed Assistant: Eng. Reem Ayman Assistant: Eng. Omar Mahmoud Assistant: Eng. Menna Kamal Mohamed"
+    },
+    {
+      "id": "sess_g4_tuesday_p8_mec111",
+      "group": 4,
+      "group_name": "Group 4",
+      "day": "Tuesday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        8
+      ],
+      "period_label": "Period 8",
+      "start_time": "15:15",
+      "end_time": "16:05",
+      "duration_minutes": 50,
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "department": "Mechanical Engineering",
+      "room": "B2-313",
+      "building": "Building 2",
+      "session_type": "SolidWorks CAD",
+      "instructor": "",
+      "assistants": [
+        "Eng. Leqa Abd Al- Hamed",
+        "Eng. Reem Ayman",
+        "Eng. Omar Mahmoud",
+        "Eng. Menna Kamal Mohamed"
+      ],
+      "raw_text": "MEC11104 - Engineering Drawing B2-313 Tutorial (Solidworks) Assistant: Eng. Leqa Abd Al- Hamed Assistant: Eng. Reem Ayman Assistant: Eng. Omar Mahmoud Assistant: Eng. Menna Kamal Mohamed"
+    },
+    {
+      "id": "sess_g4_thursday_p1_bas141",
+      "group": 4,
+      "group_name": "Group 4",
+      "day": "Thursday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        1,
+        2
+      ],
+      "period_label": "Periods 1–2",
+      "start_time": "09:00",
+      "end_time": "10:40",
+      "duration_minutes": 100,
+      "course_code": "BAS141",
+      "course_title": "Engineering Chemistry",
+      "course_arabic": "كيمياء هندسية",
+      "department": "Basic Science",
+      "room": "B2-215",
+      "building": "Building 2",
+      "session_type": "Practical / Lab",
+      "instructor": "",
+      "assistants": [
+        "Eng. Khaled Saad"
+      ],
+      "raw_text": "BAS14104 - Engineering Chemistry B2-215 Lab. Assistant: Eng. Khaled Saad"
+    },
+    {
+      "id": "sess_g4_thursday_p3_bas121",
+      "group": 4,
+      "group_name": "Group 4",
+      "day": "Thursday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        3,
+        4
+      ],
+      "period_label": "Periods 3–4",
+      "start_time": "10:40",
+      "end_time": "12:20",
+      "duration_minutes": 100,
+      "course_code": "BAS121",
+      "course_title": "Vibration & Waves",
+      "course_arabic": "اهتزازات وأمواج (فيزياء)",
+      "department": "Basic Science",
+      "room": "B2-215",
+      "building": "Building 2",
+      "session_type": "Lecture",
+      "instructor": "Assoc. Prof. Mohamed Abd El-Aziz",
+      "assistants": [],
+      "raw_text": "BAS12104 - Vibration and Waves B2-215 Lecture Instructor: Assoc. Prof. Mohamed Abd El-Aziz"
+    },
+    {
+      "id": "sess_g4_thursday_p5_bas121",
+      "group": 4,
+      "group_name": "Group 4",
+      "day": "Thursday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        5,
+        6
+      ],
+      "period_label": "Periods 5–6",
+      "start_time": "12:45",
+      "end_time": "14:25",
+      "duration_minutes": 100,
+      "course_code": "BAS121",
+      "course_title": "Vibration & Waves",
+      "course_arabic": "اهتزازات وأمواج (فيزياء)",
+      "department": "Basic Science",
+      "room": "B2-215",
+      "building": "Building 2",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "T.A. Doaa Mohamed"
+      ],
+      "raw_text": "BAS12104 - Vibration and Waves B2-215 Tutorial Assistant: T.A. Doaa Mohamed"
+    },
+    {
+      "id": "sess_g4_thursday_p7_bas131",
+      "group": 4,
+      "group_name": "Group 4",
+      "day": "Thursday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        7,
+        8
+      ],
+      "period_label": "Periods 7–8",
+      "start_time": "14:25",
+      "end_time": "16:05",
+      "duration_minutes": 100,
+      "course_code": "BAS131",
+      "course_title": "Statics",
+      "course_arabic": "استاتيكا (ميكانيكا)",
+      "department": "Basic Science",
+      "room": "B2-215",
+      "building": "Building 2",
+      "session_type": "Lecture",
+      "instructor": "Dr. Mohamed Saad",
+      "assistants": [],
+      "raw_text": "BAS13104 - Statics B2-215 Lecture Instructor: Dr. Mohamed Saad"
+    },
+    {
+      "id": "sess_g5_sunday_p1_bas121",
+      "group": 5,
+      "group_name": "Group 5",
+      "day": "Sunday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        1,
+        2
+      ],
+      "period_label": "Periods 1–2",
+      "start_time": "09:00",
+      "end_time": "10:40",
+      "duration_minutes": 100,
+      "course_code": "BAS121",
+      "course_title": "Vibration & Waves",
+      "course_arabic": "اهتزازات وأمواج (فيزياء)",
+      "department": "Basic Science",
+      "room": "B2-210",
+      "building": "Building 2",
+      "session_type": "Lecture",
+      "instructor": "Dr. Rasha Ahmed Abd El-Khaleq",
+      "assistants": [],
+      "raw_text": "BAS12105 - Vibration and Waves B2-210 Lecture Instructor: Dr. Rasha Ahmed Abd El-Khaleq"
+    },
+    {
+      "id": "sess_g5_sunday_p3_bas141",
+      "group": 5,
+      "group_name": "Group 5",
+      "day": "Sunday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        3,
+        4
+      ],
+      "period_label": "Periods 3–4",
+      "start_time": "10:40",
+      "end_time": "12:20",
+      "duration_minutes": 100,
+      "course_code": "BAS141",
+      "course_title": "Engineering Chemistry",
+      "course_arabic": "كيمياء هندسية",
+      "department": "Basic Science",
+      "room": "B2-210",
+      "building": "Building 2",
+      "session_type": "Lecture",
+      "instructor": "Dr. Rasha Ahmed Abd El-Khaleq",
+      "assistants": [],
+      "raw_text": "BAS14105 - Engineering Chemistry B2-210 Lecture Instructor: Dr. Rasha Ahmed Abd El-Khaleq"
+    },
+    {
+      "id": "sess_g5_sunday_p5_bas131",
+      "group": 5,
+      "group_name": "Group 5",
+      "day": "Sunday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        5
+      ],
+      "period_label": "Period 5",
+      "start_time": "12:45",
+      "end_time": "13:35",
+      "duration_minutes": 50,
+      "course_code": "BAS131",
+      "course_title": "Statics",
+      "course_arabic": "استاتيكا (ميكانيكا)",
+      "department": "Basic Science",
+      "room": "B2-210",
+      "building": "Building 2",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "Eng. Tasnem Saied"
+      ],
+      "raw_text": "BAS13105 - Statics B2-210 Tutorial Assistant: Eng. Tasnem Saied"
+    },
+    {
+      "id": "sess_g5_sunday_p6_bas131",
+      "group": 5,
+      "group_name": "Group 5",
+      "day": "Sunday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        6
+      ],
+      "period_label": "Period 6",
+      "start_time": "13:35",
+      "end_time": "14:25",
+      "duration_minutes": 50,
+      "course_code": "BAS131",
+      "course_title": "Statics",
+      "course_arabic": "استاتيكا (ميكانيكا)",
+      "department": "Basic Science",
+      "room": "B2-210",
+      "building": "Building 2",
+      "session_type": "Practical / Lab",
+      "instructor": "",
+      "assistants": [
+        "Eng. Tasnem Saied"
+      ],
+      "raw_text": "BAS13105 - Statics B2-210 Lab. Assistant: Eng. Tasnem Saied"
+    },
+    {
+      "id": "sess_g5_sunday_p7_bas111",
+      "group": 5,
+      "group_name": "Group 5",
+      "day": "Sunday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        7,
+        8
+      ],
+      "period_label": "Periods 7–8",
+      "start_time": "14:25",
+      "end_time": "16:05",
+      "duration_minutes": 100,
+      "course_code": "BAS111",
+      "course_title": "Mathematics I",
+      "course_arabic": "رياضيات 1 (تفاضل وتكامل)",
+      "department": "Basic Science",
+      "room": "B2-210",
+      "building": "Building 2",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "T.A. Ahmed Said"
+      ],
+      "raw_text": "BAS11105 - Mathematics (1) B2-210 Tutorial Assistant: T.A. Ahmed Said"
+    },
+    {
+      "id": "sess_g5_monday_p1_bas131",
+      "group": 5,
+      "group_name": "Group 5",
+      "day": "Monday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        1,
+        2
+      ],
+      "period_label": "Periods 1–2",
+      "start_time": "09:00",
+      "end_time": "10:40",
+      "duration_minutes": 100,
+      "course_code": "BAS131",
+      "course_title": "Statics",
+      "course_arabic": "استاتيكا (ميكانيكا)",
+      "department": "Basic Science",
+      "room": "B2-215",
+      "building": "Building 2",
+      "session_type": "Lecture",
+      "instructor": "Assoc. Prof. Mohamed Ashraf",
+      "assistants": [],
+      "raw_text": "BAS13105 - Statics B2-215 Lecture Instructor: Assoc. Prof. Mohamed Ashraf"
+    },
+    {
+      "id": "sess_g5_monday_p3_bas111",
+      "group": 5,
+      "group_name": "Group 5",
+      "day": "Monday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        3,
+        4
+      ],
+      "period_label": "Periods 3–4",
+      "start_time": "10:40",
+      "end_time": "12:20",
+      "duration_minutes": 100,
+      "course_code": "BAS111",
+      "course_title": "Mathematics I",
+      "course_arabic": "رياضيات 1 (تفاضل وتكامل)",
+      "department": "Basic Science",
+      "room": "B2-215",
+      "building": "Building 2",
+      "session_type": "Lecture",
+      "instructor": "Dr. Zaher Hasanin",
+      "assistants": [],
+      "raw_text": "BAS11105 - Mathematics (1) B2-215 Lecture Instructor: Dr. Zaher Hasanin"
+    },
+    {
+      "id": "sess_g5_monday_p5_bas141",
+      "group": 5,
+      "group_name": "Group 5",
+      "day": "Monday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        5,
+        6
+      ],
+      "period_label": "Periods 5–6",
+      "start_time": "12:45",
+      "end_time": "14:25",
+      "duration_minutes": 100,
+      "course_code": "BAS141",
+      "course_title": "Engineering Chemistry",
+      "course_arabic": "كيمياء هندسية",
+      "department": "Basic Science",
+      "room": "B2-215",
+      "building": "Building 2",
+      "session_type": "Practical / Lab",
+      "instructor": "",
+      "assistants": [
+        "Eng. Yasmin Samir"
+      ],
+      "raw_text": "BAS14105 - Engineering Chemistry B2-215 Lab. Assistant: Eng. Yasmin Samir"
+    },
+    {
+      "id": "sess_g5_monday_p7_bas121",
+      "group": 5,
+      "group_name": "Group 5",
+      "day": "Monday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        7,
+        8
+      ],
+      "period_label": "Periods 7–8",
+      "start_time": "14:25",
+      "end_time": "16:05",
+      "duration_minutes": 100,
+      "course_code": "BAS121",
+      "course_title": "Vibration & Waves",
+      "course_arabic": "اهتزازات وأمواج (فيزياء)",
+      "department": "Basic Science",
+      "room": "B2-215",
+      "building": "Building 2",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "T.A. Doaa Mohamed"
+      ],
+      "raw_text": "BAS12105 - Vibration and Waves B2-215 Tutorial Assistant: T.A. Doaa Mohamed"
+    },
+    {
+      "id": "sess_g5_wednesday_p1_cuc112",
+      "group": 5,
+      "group_name": "Group 5",
+      "day": "Wednesday",
+      "is_online_day": true,
+      "is_online": true,
+      "periods": [
+        1,
+        2
+      ],
+      "period_label": "Periods 1–2",
+      "start_time": "09:00",
+      "end_time": "10:40",
+      "duration_minutes": 100,
+      "course_code": "CUC112",
+      "course_title": "Report Writing & Communication Skills",
+      "course_arabic": "مهارات كتابة التقارير والتواصل",
+      "department": "University Requirement",
+      "room": "ONLINE",
+      "building": "Online Platform",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "Eng. Heba Ahmed"
+      ],
+      "raw_text": "CUC11205 - Report Writing and Communication Skills ONLINE Tutorial Assistant: Eng. Heba Ahmed"
+    },
+    {
+      "id": "sess_g5_wednesday_p4_cuc111",
+      "group": 5,
+      "group_name": "Group 5",
+      "day": "Wednesday",
+      "is_online_day": true,
+      "is_online": true,
+      "periods": [
+        4
+      ],
+      "period_label": "Period 4",
+      "start_time": "11:30",
+      "end_time": "12:20",
+      "duration_minutes": 50,
+      "course_code": "CUC111",
+      "course_title": "Introduction to Computer Systems",
+      "course_arabic": "مقدمة في نظم الحاسب",
+      "department": "University Requirement",
+      "room": "ONLINE",
+      "building": "Online Platform",
+      "session_type": "Lecture",
+      "instructor": "",
+      "assistants": [
+        "Eng. Menna Kamal Mohamed"
+      ],
+      "raw_text": "CUC11105 - Introduction to Computer System ONLINE Lecture Assistant: Eng. Menna Kamal Mohamed"
+    },
+    {
+      "id": "sess_g5_wednesday_p5_cuc111",
+      "group": 5,
+      "group_name": "Group 5",
+      "day": "Wednesday",
+      "is_online_day": true,
+      "is_online": true,
+      "periods": [
+        5
+      ],
+      "period_label": "Period 5",
+      "start_time": "12:45",
+      "end_time": "13:35",
+      "duration_minutes": 50,
+      "course_code": "CUC111",
+      "course_title": "Introduction to Computer Systems",
+      "course_arabic": "مقدمة في نظم الحاسب",
+      "department": "University Requirement",
+      "room": "ONLINE",
+      "building": "Online Platform",
+      "session_type": "Lecture",
+      "instructor": "",
+      "assistants": [
+        "Eng. Menna Kamal Mohamed"
+      ],
+      "raw_text": "CUC11105 - Introduction to Computer System ONLINE Lecture Assistant: Eng. Menna Kamal Mohamed"
+    },
+    {
+      "id": "sess_g5_wednesday_p6_cuc111",
+      "group": 5,
+      "group_name": "Group 5",
+      "day": "Wednesday",
+      "is_online_day": true,
+      "is_online": true,
+      "periods": [
+        6
+      ],
+      "period_label": "Period 6",
+      "start_time": "13:35",
+      "end_time": "14:25",
+      "duration_minutes": 50,
+      "course_code": "CUC111",
+      "course_title": "Introduction to Computer Systems",
+      "course_arabic": "مقدمة في نظم الحاسب",
+      "department": "University Requirement",
+      "room": "ONLINE",
+      "building": "Online Platform",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "Eng. Menna Kamal Mohamed"
+      ],
+      "raw_text": "CUC11105 - Introduction to Computer System ONLINE Tutorial Assistant: Eng. Menna Kamal Mohamed"
+    },
+    {
+      "id": "sess_g5_wednesday_p7_bas121",
+      "group": 5,
+      "group_name": "Group 5",
+      "day": "Wednesday",
+      "is_online_day": true,
+      "is_online": true,
+      "periods": [
+        7
+      ],
+      "period_label": "Period 7",
+      "start_time": "14:25",
+      "end_time": "15:15",
+      "duration_minutes": 50,
+      "course_code": "BAS121",
+      "course_title": "Vibration & Waves",
+      "course_arabic": "اهتزازات وأمواج (فيزياء)",
+      "department": "Basic Science",
+      "room": "ONLINE",
+      "building": "Online Platform",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "T.A. Doaa Mohamed"
+      ],
+      "raw_text": "BAS12105 - Vibration and Waves ONLINE Tutorial Assistant: T.A. Doaa Mohamed"
+    },
+    {
+      "id": "sess_g5_wednesday_p8_bas141",
+      "group": 5,
+      "group_name": "Group 5",
+      "day": "Wednesday",
+      "is_online_day": true,
+      "is_online": true,
+      "periods": [
+        8
+      ],
+      "period_label": "Period 8",
+      "start_time": "15:15",
+      "end_time": "16:05",
+      "duration_minutes": 50,
+      "course_code": "BAS141",
+      "course_title": "Engineering Chemistry",
+      "course_arabic": "كيمياء هندسية",
+      "department": "Basic Science",
+      "room": "ONLINE",
+      "building": "Online Platform",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "Eng. Yasmin Samir"
+      ],
+      "raw_text": "BAS14105 - Engineering Chemistry ONLINE Tutorial Assistant: Eng. Yasmin Samir"
+    },
+    {
+      "id": "sess_g5_thursday_p1_cuc112",
+      "group": 5,
+      "group_name": "Group 5",
+      "day": "Thursday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        1,
+        2
+      ],
+      "period_label": "Periods 1–2",
+      "start_time": "09:00",
+      "end_time": "10:40",
+      "duration_minutes": 100,
+      "course_code": "CUC112",
+      "course_title": "Report Writing & Communication Skills",
+      "course_arabic": "مهارات كتابة التقارير والتواصل",
+      "department": "University Requirement",
+      "room": "B2-311",
+      "building": "Building 2",
+      "session_type": "Lecture",
+      "instructor": "Dr. Ahmed Hussain Al-Feqy",
+      "assistants": [],
+      "raw_text": "CUC11205 - Report Writing and Communication Skills B2-311 Lecture Instructor: Dr. Ahmed Hussain Al-Feqy"
+    },
+    {
+      "id": "sess_g5_thursday_p3_mec111",
+      "group": 5,
+      "group_name": "Group 5",
+      "day": "Thursday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        3
+      ],
+      "period_label": "Period 3",
+      "start_time": "10:40",
+      "end_time": "11:30",
+      "duration_minutes": 50,
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "department": "Mechanical Engineering",
+      "room": "B2-311",
+      "building": "Building 2",
+      "session_type": "SolidWorks CAD",
+      "instructor": "Dr. Ahmed Hussain Al-Feqy",
+      "assistants": [
+        "Eng. Omar Mahmoud"
+      ],
+      "raw_text": "MEC11105 - Engineering Drawing B2-311 Tutorial (Solidworks) Instructor: Dr. Ahmed Hussain Al-Feqy Assistant: Eng. Omar Mahmoud"
+    },
+    {
+      "id": "sess_g5_thursday_p4_mec111",
+      "group": 5,
+      "group_name": "Group 5",
+      "day": "Thursday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        4
+      ],
+      "period_label": "Period 4",
+      "start_time": "11:30",
+      "end_time": "12:20",
+      "duration_minutes": 50,
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "department": "Mechanical Engineering",
+      "room": "B2-311",
+      "building": "Building 2",
+      "session_type": "SolidWorks CAD",
+      "instructor": "Dr. Ahmed Hussain Al-Feqy",
+      "assistants": [
+        "Eng. Omar Mahmoud"
+      ],
+      "raw_text": "MEC11105 - Engineering Drawing B2-311 Tutorial (Solidworks) Instructor: Dr. Ahmed Hussain Al-Feqy Assistant: Eng. Omar Mahmoud"
+    },
+    {
+      "id": "sess_g5_thursday_p5_mec111",
+      "group": 5,
+      "group_name": "Group 5",
+      "day": "Thursday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        5
+      ],
+      "period_label": "Period 5",
+      "start_time": "12:45",
+      "end_time": "13:35",
+      "duration_minutes": 50,
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "department": "Mechanical Engineering",
+      "room": "B2-311",
+      "building": "Building 2",
+      "session_type": "Lecture",
+      "instructor": "Dr. Ahmed Hussain Al-Feqy",
+      "assistants": [
+        "Eng. Heba Ahmed",
+        "Eng. Saif Osama"
+      ],
+      "raw_text": "MEC11105 - Engineering Drawing B2-311 Lecture Instructor: Dr. Ahmed Hussain Al-Feqy Assistant: Eng. Heba Ahmed Assistant: Eng. Saif Osama"
+    },
+    {
+      "id": "sess_g5_thursday_p6_mec111",
+      "group": 5,
+      "group_name": "Group 5",
+      "day": "Thursday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        6
+      ],
+      "period_label": "Period 6",
+      "start_time": "13:35",
+      "end_time": "14:25",
+      "duration_minutes": 50,
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "department": "Mechanical Engineering",
+      "room": "B2-311",
+      "building": "Building 2",
+      "session_type": "Section / Tutorial",
+      "instructor": "Dr. Ahmed Hussain Al-Feqy",
+      "assistants": [
+        "Eng. Heba Ahmed",
+        "Eng. Saif Osama"
+      ],
+      "raw_text": "MEC11105 - Engineering Drawing B2-311 Tutorial Instructor: Dr. Ahmed Hussain Al-Feqy Assistant: Eng. Heba Ahmed Assistant: Eng. Saif Osama"
+    },
+    {
+      "id": "sess_g5_thursday_p7_mec111",
+      "group": 5,
+      "group_name": "Group 5",
+      "day": "Thursday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        7
+      ],
+      "period_label": "Period 7",
+      "start_time": "14:25",
+      "end_time": "15:15",
+      "duration_minutes": 50,
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "department": "Mechanical Engineering",
+      "room": "B2-311",
+      "building": "Building 2",
+      "session_type": "Section / Tutorial",
+      "instructor": "Dr. Ahmed Hussain Al-Feqy",
+      "assistants": [
+        "Eng. Heba Ahmed",
+        "Eng. Saif Osama"
+      ],
+      "raw_text": "MEC11105 - Engineering Drawing B2-311 Tutorial Instructor: Dr. Ahmed Hussain Al-Feqy Assistant: Eng. Heba Ahmed Assistant: Eng. Saif Osama"
+    },
+    {
+      "id": "sess_g5_thursday_p8_mec111",
+      "group": 5,
+      "group_name": "Group 5",
+      "day": "Thursday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        8
+      ],
+      "period_label": "Period 8",
+      "start_time": "15:15",
+      "end_time": "16:05",
+      "duration_minutes": 50,
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "department": "Mechanical Engineering",
+      "room": "B2-311",
+      "building": "Building 2",
+      "session_type": "Section / Tutorial",
+      "instructor": "Dr. Ahmed Hussain Al-Feqy",
+      "assistants": [
+        "Eng. Heba Ahmed",
+        "Eng. Saif Osama"
+      ],
+      "raw_text": "MEC11105 - Engineering Drawing B2-311 Tutorial Instructor: Dr. Ahmed Hussain Al-Feqy Assistant: Eng. Heba Ahmed Assistant: Eng. Saif Osama"
+    },
+    {
+      "id": "sess_g6_sunday_p1_bas111",
+      "group": 6,
+      "group_name": "Group 6",
+      "day": "Sunday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        1,
+        2
+      ],
+      "period_label": "Periods 1–2",
+      "start_time": "09:00",
+      "end_time": "10:40",
+      "duration_minutes": 100,
+      "course_code": "BAS111",
+      "course_title": "Mathematics I",
+      "course_arabic": "رياضيات 1 (تفاضل وتكامل)",
+      "department": "Basic Science",
+      "room": "B2-211",
+      "building": "Building 2",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "T.A. Basant Ali"
+      ],
+      "raw_text": "BAS11106 - Mathematics (1) B2-211 Tutorial Assistant: T.A. Basant Ali"
+    },
+    {
+      "id": "sess_g6_sunday_p3_bas131",
+      "group": 6,
+      "group_name": "Group 6",
+      "day": "Sunday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        3
+      ],
+      "period_label": "Period 3",
+      "start_time": "10:40",
+      "end_time": "11:30",
+      "duration_minutes": 50,
+      "course_code": "BAS131",
+      "course_title": "Statics",
+      "course_arabic": "استاتيكا (ميكانيكا)",
+      "department": "Basic Science",
+      "room": "B2-211",
+      "building": "Building 2",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "Eng. Tasnem Saied",
+        "Eng. Omar Mahmoud"
+      ],
+      "raw_text": "BAS13106 - Statics B2-211 Tutorial Assistant: Eng. Tasnem Saied Assistant: Eng. Omar Mahmoud"
+    },
+    {
+      "id": "sess_g6_sunday_p4_bas131",
+      "group": 6,
+      "group_name": "Group 6",
+      "day": "Sunday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        4
+      ],
+      "period_label": "Period 4",
+      "start_time": "11:30",
+      "end_time": "12:20",
+      "duration_minutes": 50,
+      "course_code": "BAS131",
+      "course_title": "Statics",
+      "course_arabic": "استاتيكا (ميكانيكا)",
+      "department": "Basic Science",
+      "room": "B2-211",
+      "building": "Building 2",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "Eng. Tasnem Saied",
+        "Eng. Omar Mahmoud"
+      ],
+      "raw_text": "BAS13106 - Statics B2-211 Tutorial Assistant: Eng. Tasnem Saied Assistant: Eng. Omar Mahmoud"
+    },
+    {
+      "id": "sess_g6_sunday_p5_bas121",
+      "group": 6,
+      "group_name": "Group 6",
+      "day": "Sunday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        5,
+        6
+      ],
+      "period_label": "Periods 5–6",
+      "start_time": "12:45",
+      "end_time": "14:25",
+      "duration_minutes": 100,
+      "course_code": "BAS121",
+      "course_title": "Vibration & Waves",
+      "course_arabic": "اهتزازات وأمواج (فيزياء)",
+      "department": "Basic Science",
+      "room": "B2-211",
+      "building": "Building 2",
+      "session_type": "Lecture",
+      "instructor": "Dr. Rasha Ahmed Abd El-Khaleq",
+      "assistants": [],
+      "raw_text": "BAS12106 - Vibration and Waves B2-211 Lecture Instructor: Dr. Rasha Ahmed Abd El-Khaleq"
+    },
+    {
+      "id": "sess_g6_sunday_p7_bas141",
+      "group": 6,
+      "group_name": "Group 6",
+      "day": "Sunday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        7,
+        8
+      ],
+      "period_label": "Periods 7–8",
+      "start_time": "14:25",
+      "end_time": "16:05",
+      "duration_minutes": 100,
+      "course_code": "BAS141",
+      "course_title": "Engineering Chemistry",
+      "course_arabic": "كيمياء هندسية",
+      "department": "Basic Science",
+      "room": "B2-211",
+      "building": "Building 2",
+      "session_type": "Practical / Lab",
+      "instructor": "",
+      "assistants": [
+        "Eng. Khaled Saad"
+      ],
+      "raw_text": "BAS14106 - Engineering Chemistry B2-211 Lab. Assistant: Eng. Khaled Saad"
+    },
+    {
+      "id": "sess_g6_monday_p1_bas111",
+      "group": 6,
+      "group_name": "Group 6",
+      "day": "Monday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        1,
+        2
+      ],
+      "period_label": "Periods 1–2",
+      "start_time": "09:00",
+      "end_time": "10:40",
+      "duration_minutes": 100,
+      "course_code": "BAS111",
+      "course_title": "Mathematics I",
+      "course_arabic": "رياضيات 1 (تفاضل وتكامل)",
+      "department": "Basic Science",
+      "room": "B2-211",
+      "building": "Building 2",
+      "session_type": "Lecture",
+      "instructor": "Dr. Zaher Hasanin",
+      "assistants": [],
+      "raw_text": "BAS11106 - Mathematics (1) B2-211 Lecture Instructor: Dr. Zaher Hasanin"
+    },
+    {
+      "id": "sess_g6_monday_p3_bas131",
+      "group": 6,
+      "group_name": "Group 6",
+      "day": "Monday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        3,
+        4
+      ],
+      "period_label": "Periods 3–4",
+      "start_time": "10:40",
+      "end_time": "12:20",
+      "duration_minutes": 100,
+      "course_code": "BAS131",
+      "course_title": "Statics",
+      "course_arabic": "استاتيكا (ميكانيكا)",
+      "department": "Basic Science",
+      "room": "B2-211",
+      "building": "Building 2",
+      "session_type": "Lecture",
+      "instructor": "Assoc. Prof. Mohamed Ashraf",
+      "assistants": [],
+      "raw_text": "BAS13106 - Statics B2-211 Lecture Instructor: Assoc. Prof. Mohamed Ashraf"
+    },
+    {
+      "id": "sess_g6_monday_p5_bas121",
+      "group": 6,
+      "group_name": "Group 6",
+      "day": "Monday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        5,
+        6
+      ],
+      "period_label": "Periods 5–6",
+      "start_time": "12:45",
+      "end_time": "14:25",
+      "duration_minutes": 100,
+      "course_code": "BAS121",
+      "course_title": "Vibration & Waves",
+      "course_arabic": "اهتزازات وأمواج (فيزياء)",
+      "department": "Basic Science",
+      "room": "B2-211",
+      "building": "Building 2",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "Eng. Khaled Saad"
+      ],
+      "raw_text": "BAS12106 - Vibration and Waves B2-211 Tutorial Assistant: Eng. Khaled Saad"
+    },
+    {
+      "id": "sess_g6_monday_p7_bas141",
+      "group": 6,
+      "group_name": "Group 6",
+      "day": "Monday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        7,
+        8
+      ],
+      "period_label": "Periods 7–8",
+      "start_time": "14:25",
+      "end_time": "16:05",
+      "duration_minutes": 100,
+      "course_code": "BAS141",
+      "course_title": "Engineering Chemistry",
+      "course_arabic": "كيمياء هندسية",
+      "department": "Basic Science",
+      "room": "B2-211",
+      "building": "Building 2",
+      "session_type": "Lecture",
+      "instructor": "Dr. Rasha Ahmed Abd El-Khaleq",
+      "assistants": [],
+      "raw_text": "BAS14106 - Engineering Chemistry B2-211 Lecture Instructor: Dr. Rasha Ahmed Abd El-Khaleq"
+    },
+    {
+      "id": "sess_g6_tuesday_p1_cuc112",
+      "group": 6,
+      "group_name": "Group 6",
+      "day": "Tuesday",
+      "is_online_day": true,
+      "is_online": true,
+      "periods": [
+        1,
+        2
+      ],
+      "period_label": "Periods 1–2",
+      "start_time": "09:00",
+      "end_time": "10:40",
+      "duration_minutes": 100,
+      "course_code": "CUC112",
+      "course_title": "Report Writing & Communication Skills",
+      "course_arabic": "مهارات كتابة التقارير والتواصل",
+      "department": "University Requirement",
+      "room": "ONLINE",
+      "building": "Online Platform",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "Eng. Saif Osama"
+      ],
+      "raw_text": "CUC11206 - Report Writing and Communication Skills ONLINE Tutorial Assistant: Eng. Saif Osama"
+    },
+    {
+      "id": "sess_g6_tuesday_p3_bas121",
+      "group": 6,
+      "group_name": "Group 6",
+      "day": "Tuesday",
+      "is_online_day": true,
+      "is_online": true,
+      "periods": [
+        3
+      ],
+      "period_label": "Period 3",
+      "start_time": "10:40",
+      "end_time": "11:30",
+      "duration_minutes": 50,
+      "course_code": "BAS121",
+      "course_title": "Vibration & Waves",
+      "course_arabic": "اهتزازات وأمواج (فيزياء)",
+      "department": "Basic Science",
+      "room": "ONLINE",
+      "building": "Online Platform",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "T.A. Doaa Mohamed"
+      ],
+      "raw_text": "BAS12106 - Vibration and Waves ONLINE Tutorial Assistant: T.A. Doaa Mohamed"
+    },
+    {
+      "id": "sess_g6_tuesday_p4_cuc111",
+      "group": 6,
+      "group_name": "Group 6",
+      "day": "Tuesday",
+      "is_online_day": true,
+      "is_online": true,
+      "periods": [
+        4
+      ],
+      "period_label": "Period 4",
+      "start_time": "11:30",
+      "end_time": "12:20",
+      "duration_minutes": 50,
+      "course_code": "CUC111",
+      "course_title": "Introduction to Computer Systems",
+      "course_arabic": "مقدمة في نظم الحاسب",
+      "department": "University Requirement",
+      "room": "ONLINE",
+      "building": "Online Platform",
+      "session_type": "Lecture",
+      "instructor": "",
+      "assistants": [
+        "Eng. Mahmoud Saqr"
+      ],
+      "raw_text": "CUC11102 - Introduction to Computer System ONLINE Lecture Assistant: Eng. Mahmoud Saqr"
+    },
+    {
+      "id": "sess_g6_tuesday_p5_cuc111",
+      "group": 6,
+      "group_name": "Group 6",
+      "day": "Tuesday",
+      "is_online_day": true,
+      "is_online": true,
+      "periods": [
+        5
+      ],
+      "period_label": "Period 5",
+      "start_time": "12:45",
+      "end_time": "13:35",
+      "duration_minutes": 50,
+      "course_code": "CUC111",
+      "course_title": "Introduction to Computer Systems",
+      "course_arabic": "مقدمة في نظم الحاسب",
+      "department": "University Requirement",
+      "room": "ONLINE",
+      "building": "Online Platform",
+      "session_type": "Lecture",
+      "instructor": "",
+      "assistants": [
+        "Eng. Mahmoud Saqr"
+      ],
+      "raw_text": "CUC11102 - Introduction to Computer System ONLINE Lecture Assistant: Eng. Mahmoud Saqr"
+    },
+    {
+      "id": "sess_g6_tuesday_p6_cuc111",
+      "group": 6,
+      "group_name": "Group 6",
+      "day": "Tuesday",
+      "is_online_day": true,
+      "is_online": true,
+      "periods": [
+        6
+      ],
+      "period_label": "Period 6",
+      "start_time": "13:35",
+      "end_time": "14:25",
+      "duration_minutes": 50,
+      "course_code": "CUC111",
+      "course_title": "Introduction to Computer Systems",
+      "course_arabic": "مقدمة في نظم الحاسب",
+      "department": "University Requirement",
+      "room": "ONLINE",
+      "building": "Online Platform",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "Eng. Mahmoud Saqr"
+      ],
+      "raw_text": "CUC11102 - Introduction to Computer System ONLINE Tutorial Assistant: Eng. Mahmoud Saqr"
+    },
+    {
+      "id": "sess_g6_tuesday_p8_bas141",
+      "group": 6,
+      "group_name": "Group 6",
+      "day": "Tuesday",
+      "is_online_day": true,
+      "is_online": true,
+      "periods": [
+        8
+      ],
+      "period_label": "Period 8",
+      "start_time": "15:15",
+      "end_time": "16:05",
+      "duration_minutes": 50,
+      "course_code": "BAS141",
+      "course_title": "Engineering Chemistry",
+      "course_arabic": "كيمياء هندسية",
+      "department": "Basic Science",
+      "room": "ONLINE",
+      "building": "Online Platform",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "Eng. Khaled Saad"
+      ],
+      "raw_text": "BAS14106 - Engineering Chemistry ONLINE Tutorial Assistant: Eng. Khaled Saad"
+    },
+    {
+      "id": "sess_g6_thursday_p1_cuc112",
+      "group": 6,
+      "group_name": "Group 6",
+      "day": "Thursday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        1,
+        2
+      ],
+      "period_label": "Periods 1–2",
+      "start_time": "09:00",
+      "end_time": "10:40",
+      "duration_minutes": 100,
+      "course_code": "CUC112",
+      "course_title": "Report Writing & Communication Skills",
+      "course_arabic": "مهارات كتابة التقارير والتواصل",
+      "department": "University Requirement",
+      "room": "B2-313",
+      "building": "Building 2",
+      "session_type": "Lecture",
+      "instructor": "Dr. Hany Yahia",
+      "assistants": [],
+      "raw_text": "CUC11206 - Report Writing and Communication Skills B2-313 Lecture Instructor: Dr. Hany Yahia"
+    },
+    {
+      "id": "sess_g6_thursday_p3_mec111",
+      "group": 6,
+      "group_name": "Group 6",
+      "day": "Thursday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        3
+      ],
+      "period_label": "Period 3",
+      "start_time": "10:40",
+      "end_time": "11:30",
+      "duration_minutes": 50,
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "department": "Mechanical Engineering",
+      "room": "B2-313",
+      "building": "Building 2",
+      "session_type": "Lecture",
+      "instructor": "Dr. Hany Yahia",
+      "assistants": [
+        "Eng. Aohoud Adel",
+        "Eng. Menna Kamal Mohamed"
+      ],
+      "raw_text": "MEC11106 - Engineering Drawing B2-313 Lecture Instructor: Dr. Hany Yahia Assistant: Eng. Aohoud Adel Assistant: Eng. Menna Kamal Mohamed"
+    },
+    {
+      "id": "sess_g6_thursday_p4_mec111",
+      "group": 6,
+      "group_name": "Group 6",
+      "day": "Thursday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        4
+      ],
+      "period_label": "Period 4",
+      "start_time": "11:30",
+      "end_time": "12:20",
+      "duration_minutes": 50,
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "department": "Mechanical Engineering",
+      "room": "B2-313",
+      "building": "Building 2",
+      "session_type": "Lecture",
+      "instructor": "Dr. Hany Yahia",
+      "assistants": [
+        "Eng. Aohoud Adel",
+        "Eng. Menna Kamal Mohamed"
+      ],
+      "raw_text": "MEC11106 - Engineering Drawing B2-313 Lecture Instructor: Dr. Hany Yahia Assistant: Eng. Aohoud Adel Assistant: Eng. Menna Kamal Mohamed"
+    },
+    {
+      "id": "sess_g6_thursday_p5_mec111",
+      "group": 6,
+      "group_name": "Group 6",
+      "day": "Thursday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        5
+      ],
+      "period_label": "Period 5",
+      "start_time": "12:45",
+      "end_time": "13:35",
+      "duration_minutes": 50,
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "department": "Mechanical Engineering",
+      "room": "B2-313",
+      "building": "Building 2",
+      "session_type": "Section / Tutorial",
+      "instructor": "Dr. Hany Yahia",
+      "assistants": [
+        "Eng. Aohoud Adel",
+        "Eng. Omar Mahmoud",
+        "Eng. Menna Kamal Mohamed"
+      ],
+      "raw_text": "MEC11106 - Engineering Drawing B2-313 Tutorial Instructor: Dr. Hany Yahia Assistant: Eng. Aohoud Adel Assistant: Eng. Omar Mahmoud Assistant: Eng. Menna Kamal Mohamed"
+    },
+    {
+      "id": "sess_g6_thursday_p6_mec111",
+      "group": 6,
+      "group_name": "Group 6",
+      "day": "Thursday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        6
+      ],
+      "period_label": "Period 6",
+      "start_time": "13:35",
+      "end_time": "14:25",
+      "duration_minutes": 50,
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "department": "Mechanical Engineering",
+      "room": "B2-313",
+      "building": "Building 2",
+      "session_type": "Section / Tutorial",
+      "instructor": "Dr. Hany Yahia",
+      "assistants": [
+        "Eng. Aohoud Adel",
+        "Eng. Omar Mahmoud",
+        "Eng. Menna Kamal Mohamed"
+      ],
+      "raw_text": "MEC11106 - Engineering Drawing B2-313 Tutorial Instructor: Dr. Hany Yahia Assistant: Eng. Aohoud Adel Assistant: Eng. Omar Mahmoud Assistant: Eng. Menna Kamal Mohamed"
+    },
+    {
+      "id": "sess_g6_thursday_p7_mec111",
+      "group": 6,
+      "group_name": "Group 6",
+      "day": "Thursday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        7
+      ],
+      "period_label": "Period 7",
+      "start_time": "14:25",
+      "end_time": "15:15",
+      "duration_minutes": 50,
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "department": "Mechanical Engineering",
+      "room": "B2-313",
+      "building": "Building 2",
+      "session_type": "Section / Tutorial",
+      "instructor": "Dr. Hany Yahia",
+      "assistants": [
+        "Eng. Aohoud Adel",
+        "Eng. Omar Mahmoud",
+        "Eng. Menna Kamal Mohamed"
+      ],
+      "raw_text": "MEC11106 - Engineering Drawing B2-313 Tutorial Instructor: Dr. Hany Yahia Assistant: Eng. Aohoud Adel Assistant: Eng. Omar Mahmoud Assistant: Eng. Menna Kamal Mohamed"
+    },
+    {
+      "id": "sess_g6_thursday_p8_mec111",
+      "group": 6,
+      "group_name": "Group 6",
+      "day": "Thursday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        8
+      ],
+      "period_label": "Period 8",
+      "start_time": "15:15",
+      "end_time": "16:05",
+      "duration_minutes": 50,
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "department": "Mechanical Engineering",
+      "room": "B2-313",
+      "building": "Building 2",
+      "session_type": "Section / Tutorial",
+      "instructor": "Dr. Hany Yahia",
+      "assistants": [
+        "Eng. Aohoud Adel",
+        "Eng. Omar Mahmoud",
+        "Eng. Menna Kamal Mohamed"
+      ],
+      "raw_text": "MEC11106 - Engineering Drawing B2-313 Tutorial Instructor: Dr. Hany Yahia Assistant: Eng. Aohoud Adel Assistant: Eng. Omar Mahmoud Assistant: Eng. Menna Kamal Mohamed"
+    },
+    {
+      "id": "sess_g7_monday_p1_cuc112",
+      "group": 7,
+      "group_name": "Group 7",
+      "day": "Monday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        1,
+        2
+      ],
+      "period_label": "Periods 1–2",
+      "start_time": "09:00",
+      "end_time": "10:40",
+      "duration_minutes": 100,
+      "course_code": "CUC112",
+      "course_title": "Report Writing & Communication Skills",
+      "course_arabic": "مهارات كتابة التقارير والتواصل",
+      "department": "University Requirement",
+      "room": "B2-311",
+      "building": "Building 2",
+      "session_type": "Lecture",
+      "instructor": "Assof. Prof. Mohamed Salah",
+      "assistants": [
+        "Eng. Leqa Abd Al-Hamed"
+      ],
+      "raw_text": "CUC11207 - Report Writing and Communication Skills B2-311 Lecture Instructor: Assof. Prof. Mohamed Salah Assistant: Eng. Leqa Abd Al-Hamed"
+    },
+    {
+      "id": "sess_g7_monday_p3_mec111",
+      "group": 7,
+      "group_name": "Group 7",
+      "day": "Monday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        3
+      ],
+      "period_label": "Period 3",
+      "start_time": "10:40",
+      "end_time": "11:30",
+      "duration_minutes": 50,
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "department": "Mechanical Engineering",
+      "room": "B2-311",
+      "building": "Building 2",
+      "session_type": "SolidWorks CAD",
+      "instructor": "",
+      "assistants": [
+        "Eng. Leqa Abd Al- Hamed",
+        "Eng. Ahmed Zaghlol",
+        "Eng. AlShaimaa Salah",
+        "Eng. Nada Naser"
+      ],
+      "raw_text": "MEC11107 - Engineering Drawing B2-311 Tutorial (Solidworks) Assistant: Eng. Leqa Abd Al- Hamed Assistant: Eng. Ahmed Zaghlol Assistant: Eng. AlShaimaa Salah Assistant: Eng. Nada Naser"
+    },
+    {
+      "id": "sess_g7_monday_p4_mec111",
+      "group": 7,
+      "group_name": "Group 7",
+      "day": "Monday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        4
+      ],
+      "period_label": "Period 4",
+      "start_time": "11:30",
+      "end_time": "12:20",
+      "duration_minutes": 50,
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "department": "Mechanical Engineering",
+      "room": "B2-311",
+      "building": "Building 2",
+      "session_type": "SolidWorks CAD",
+      "instructor": "",
+      "assistants": [
+        "Eng. Leqa Abd Al- Hamed",
+        "Eng. Ahmed Zaghlol",
+        "Eng. AlShaimaa Salah",
+        "Eng. Nada Naser"
+      ],
+      "raw_text": "MEC11107 - Engineering Drawing B2-311 Tutorial (Solidworks) Assistant: Eng. Leqa Abd Al- Hamed Assistant: Eng. Ahmed Zaghlol Assistant: Eng. AlShaimaa Salah Assistant: Eng. Nada Naser"
+    },
+    {
+      "id": "sess_g7_monday_p5_mec111",
+      "group": 7,
+      "group_name": "Group 7",
+      "day": "Monday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        5
+      ],
+      "period_label": "Period 5",
+      "start_time": "12:45",
+      "end_time": "13:35",
+      "duration_minutes": 50,
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "department": "Mechanical Engineering",
+      "room": "B2-311",
+      "building": "Building 2",
+      "session_type": "Lecture",
+      "instructor": "Assof. Prof. Mohamed Salah",
+      "assistants": [
+        "Eng. Leqa Abd Al- Hamed",
+        "Eng. Ahmed Zaghlol",
+        "Eng. AlShaimaa Salah",
+        "Eng. Nada Naser"
+      ],
+      "raw_text": "MEC11107 - Engineering Drawing B2-311 Lecture Instructor: Assof. Prof. Mohamed Salah Assistant: Eng. Leqa Abd Al- Hamed Assistant: Eng. Ahmed Zaghlol Assistant: Eng. AlShaimaa Salah Assistant: Eng. Nada Naser"
+    },
+    {
+      "id": "sess_g7_monday_p6_mec111",
+      "group": 7,
+      "group_name": "Group 7",
+      "day": "Monday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        6
+      ],
+      "period_label": "Period 6",
+      "start_time": "13:35",
+      "end_time": "14:25",
+      "duration_minutes": 50,
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "department": "Mechanical Engineering",
+      "room": "B2-311",
+      "building": "Building 2",
+      "session_type": "Section / Tutorial",
+      "instructor": "Assof. Prof. Mohamed Salah",
+      "assistants": [
+        "Eng. Leqa Abd Al- Hamed",
+        "Eng. Ahmed Zaghlol",
+        "Eng. AlShaimaa Salah",
+        "Eng. Nada Naser"
+      ],
+      "raw_text": "MEC11107 - Engineering Drawing B2-311 Tutorial Instructor: Assof. Prof. Mohamed Salah Assistant: Eng. Leqa Abd Al- Hamed Assistant: Eng. Ahmed Zaghlol Assistant: Eng. AlShaimaa Salah Assistant: Eng. Nada Naser"
+    },
+    {
+      "id": "sess_g7_monday_p7_mec111",
+      "group": 7,
+      "group_name": "Group 7",
+      "day": "Monday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        7
+      ],
+      "period_label": "Period 7",
+      "start_time": "14:25",
+      "end_time": "15:15",
+      "duration_minutes": 50,
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "department": "Mechanical Engineering",
+      "room": "B2-311",
+      "building": "Building 2",
+      "session_type": "Section / Tutorial",
+      "instructor": "Assof. Prof. Mohamed Salah",
+      "assistants": [
+        "Eng. Leqa Abd Al- Hamed",
+        "Eng. Ahmed Zaghlol",
+        "Eng. AlShaimaa Salah",
+        "Eng. Nada Naser"
+      ],
+      "raw_text": "MEC11107 - Engineering Drawing B2-311 Tutorial Instructor: Assof. Prof. Mohamed Salah Assistant: Eng. Leqa Abd Al- Hamed Assistant: Eng. Ahmed Zaghlol Assistant: Eng. AlShaimaa Salah Assistant: Eng. Nada Naser"
+    },
+    {
+      "id": "sess_g7_monday_p8_mec111",
+      "group": 7,
+      "group_name": "Group 7",
+      "day": "Monday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        8
+      ],
+      "period_label": "Period 8",
+      "start_time": "15:15",
+      "end_time": "16:05",
+      "duration_minutes": 50,
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "department": "Mechanical Engineering",
+      "room": "B2-311",
+      "building": "Building 2",
+      "session_type": "Section / Tutorial",
+      "instructor": "Assof. Prof. Mohamed Salah",
+      "assistants": [
+        "Eng. Leqa Abd Al- Hamed",
+        "Eng. Ahmed Zaghlol",
+        "Eng. AlShaimaa Salah",
+        "Eng. Nada Naser"
+      ],
+      "raw_text": "MEC11107 - Engineering Drawing B2-311 Tutorial Instructor: Assof. Prof. Mohamed Salah Assistant: Eng. Leqa Abd Al- Hamed Assistant: Eng. Ahmed Zaghlol Assistant: Eng. AlShaimaa Salah Assistant: Eng. Nada Naser"
+    },
+    {
+      "id": "sess_g7_tuesday_p1_bas111",
+      "group": 7,
+      "group_name": "Group 7",
+      "day": "Tuesday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        1,
+        2
+      ],
+      "period_label": "Periods 1–2",
+      "start_time": "09:00",
+      "end_time": "10:40",
+      "duration_minutes": 100,
+      "course_code": "BAS111",
+      "course_title": "Mathematics I",
+      "course_arabic": "رياضيات 1 (تفاضل وتكامل)",
+      "department": "Basic Science",
+      "room": "B2-413",
+      "building": "Building 2",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "T.A. Ahmed Said"
+      ],
+      "raw_text": "BAS11107 - Mathematics (1) B2-413 Tutorial Assistant: T.A. Ahmed Said"
+    },
+    {
+      "id": "sess_g7_tuesday_p3_bas121",
+      "group": 7,
+      "group_name": "Group 7",
+      "day": "Tuesday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        3,
+        4
+      ],
+      "period_label": "Periods 3–4",
+      "start_time": "10:40",
+      "end_time": "12:20",
+      "duration_minutes": 100,
+      "course_code": "BAS121",
+      "course_title": "Vibration & Waves",
+      "course_arabic": "اهتزازات وأمواج (فيزياء)",
+      "department": "Basic Science",
+      "room": "B2-413",
+      "building": "Building 2",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "Eng. Khaled Saad"
+      ],
+      "raw_text": "BAS12107 - Vibration and Waves B2-413 Tutorial Assistant: Eng. Khaled Saad"
+    },
+    {
+      "id": "sess_g7_tuesday_p5_bas141",
+      "group": 7,
+      "group_name": "Group 7",
+      "day": "Tuesday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        5,
+        6
+      ],
+      "period_label": "Periods 5–6",
+      "start_time": "12:45",
+      "end_time": "14:25",
+      "duration_minutes": 100,
+      "course_code": "BAS141",
+      "course_title": "Engineering Chemistry",
+      "course_arabic": "كيمياء هندسية",
+      "department": "Basic Science",
+      "room": "B2-413",
+      "building": "Building 2",
+      "session_type": "Practical / Lab",
+      "instructor": "",
+      "assistants": [
+        "Eng. Yasmin Samir"
+      ],
+      "raw_text": "BAS14107 - Engineering Chemistry B2-413 Lab. Assistant: Eng. Yasmin Samir"
+    },
+    {
+      "id": "sess_g7_tuesday_p7_bas131",
+      "group": 7,
+      "group_name": "Group 7",
+      "day": "Tuesday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        7,
+        8
+      ],
+      "period_label": "Periods 7–8",
+      "start_time": "14:25",
+      "end_time": "16:05",
+      "duration_minutes": 100,
+      "course_code": "BAS131",
+      "course_title": "Statics",
+      "course_arabic": "استاتيكا (ميكانيكا)",
+      "department": "Basic Science",
+      "room": "B2-413",
+      "building": "Building 2",
+      "session_type": "Lecture",
+      "instructor": "Dr. Mohamed Saad",
+      "assistants": [],
+      "raw_text": "BAS13107 - Statics B2-413 Lecture Instructor: Dr. Mohamed Saad"
+    },
+    {
+      "id": "sess_g7_wednesday_p1_bas111",
+      "group": 7,
+      "group_name": "Group 7",
+      "day": "Wednesday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        1,
+        2
+      ],
+      "period_label": "Periods 1–2",
+      "start_time": "09:00",
+      "end_time": "10:40",
+      "duration_minutes": 100,
+      "course_code": "BAS111",
+      "course_title": "Mathematics I",
+      "course_arabic": "رياضيات 1 (تفاضل وتكامل)",
+      "department": "Basic Science",
+      "room": "B2-413",
+      "building": "Building 2",
+      "session_type": "Lecture",
+      "instructor": "Dr. Zaher Hasanin",
+      "assistants": [],
+      "raw_text": "BAS11107 - Mathematics (1) B2-413 Lecture Instructor: Dr. Zaher Hasanin"
+    },
+    {
+      "id": "sess_g7_wednesday_p3_bas131",
+      "group": 7,
+      "group_name": "Group 7",
+      "day": "Wednesday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        3
+      ],
+      "period_label": "Period 3",
+      "start_time": "10:40",
+      "end_time": "11:30",
+      "duration_minutes": 50,
+      "course_code": "BAS131",
+      "course_title": "Statics",
+      "course_arabic": "استاتيكا (ميكانيكا)",
+      "department": "Basic Science",
+      "room": "B2-413",
+      "building": "Building 2",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "Eng. Tasnem Saied"
+      ],
+      "raw_text": "BAS13107 - Statics B2-413 Tutorial Assistant: Eng. Tasnem Saied"
+    },
+    {
+      "id": "sess_g7_wednesday_p4_bas131",
+      "group": 7,
+      "group_name": "Group 7",
+      "day": "Wednesday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        4
+      ],
+      "period_label": "Period 4",
+      "start_time": "11:30",
+      "end_time": "12:20",
+      "duration_minutes": 50,
+      "course_code": "BAS131",
+      "course_title": "Statics",
+      "course_arabic": "استاتيكا (ميكانيكا)",
+      "department": "Basic Science",
+      "room": "B2-413",
+      "building": "Building 2",
+      "session_type": "Practical / Lab",
+      "instructor": "",
+      "assistants": [
+        "Eng. Tasnem Saied"
+      ],
+      "raw_text": "BAS13107 - Statics B2-413 Lab. Assistant: Eng. Tasnem Saied"
+    },
+    {
+      "id": "sess_g7_wednesday_p5_bas121",
+      "group": 7,
+      "group_name": "Group 7",
+      "day": "Wednesday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        5,
+        6
+      ],
+      "period_label": "Periods 5–6",
+      "start_time": "12:45",
+      "end_time": "14:25",
+      "duration_minutes": 100,
+      "course_code": "BAS121",
+      "course_title": "Vibration & Waves",
+      "course_arabic": "اهتزازات وأمواج (فيزياء)",
+      "department": "Basic Science",
+      "room": "B2-413",
+      "building": "Building 2",
+      "session_type": "Lecture",
+      "instructor": "Assoc. Prof. Mohamed Abd El-Aziz",
+      "assistants": [],
+      "raw_text": "BAS12107 - Vibration and Waves B2-413 Lecture Instructor: Assoc. Prof. Mohamed Abd El-Aziz"
+    },
+    {
+      "id": "sess_g7_wednesday_p7_bas141",
+      "group": 7,
+      "group_name": "Group 7",
+      "day": "Wednesday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        7,
+        8
+      ],
+      "period_label": "Periods 7–8",
+      "start_time": "14:25",
+      "end_time": "16:05",
+      "duration_minutes": 100,
+      "course_code": "BAS141",
+      "course_title": "Engineering Chemistry",
+      "course_arabic": "كيمياء هندسية",
+      "department": "Basic Science",
+      "room": "B2-413",
+      "building": "Building 2",
+      "session_type": "Lecture",
+      "instructor": "Assoc. Prof. Noura Yahiya",
+      "assistants": [],
+      "raw_text": "BAS14107 - Engineering Chemistry B2-413 Lecture Instructor: Assoc. Prof. Noura Yahiya"
+    },
+    {
+      "id": "sess_g7_thursday_p1_bas141",
+      "group": 7,
+      "group_name": "Group 7",
+      "day": "Thursday",
+      "is_online_day": false,
+      "is_online": true,
+      "periods": [
+        1
+      ],
+      "period_label": "Period 1",
+      "start_time": "09:00",
+      "end_time": "09:50",
+      "duration_minutes": 50,
+      "course_code": "BAS141",
+      "course_title": "Engineering Chemistry",
+      "course_arabic": "كيمياء هندسية",
+      "department": "Basic Science",
+      "room": "ONLINE",
+      "building": "Online Platform",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "Eng. Yasmin Samir"
+      ],
+      "raw_text": "BAS14107 - Engineering Chemistry ONLINE Tutorial Assistant: Eng. Yasmin Samir"
+    },
+    {
+      "id": "sess_g7_thursday_p3_bas121",
+      "group": 7,
+      "group_name": "Group 7",
+      "day": "Thursday",
+      "is_online_day": false,
+      "is_online": true,
+      "periods": [
+        3
+      ],
+      "period_label": "Period 3",
+      "start_time": "10:40",
+      "end_time": "11:30",
+      "duration_minutes": 50,
+      "course_code": "BAS121",
+      "course_title": "Vibration & Waves",
+      "course_arabic": "اهتزازات وأمواج (فيزياء)",
+      "department": "Basic Science",
+      "room": "ONLINE",
+      "building": "Online Platform",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "Eng. Khaled Saad"
+      ],
+      "raw_text": "BAS12107 - Vibration and Waves ONLINE Tutorial Assistant: Eng. Khaled Saad"
+    },
+    {
+      "id": "sess_g7_thursday_p4_cuc111",
+      "group": 7,
+      "group_name": "Group 7",
+      "day": "Thursday",
+      "is_online_day": false,
+      "is_online": true,
+      "periods": [
+        4
+      ],
+      "period_label": "Period 4",
+      "start_time": "11:30",
+      "end_time": "12:20",
+      "duration_minutes": 50,
+      "course_code": "CUC111",
+      "course_title": "Introduction to Computer Systems",
+      "course_arabic": "مقدمة في نظم الحاسب",
+      "department": "University Requirement",
+      "room": "ONLINE",
+      "building": "Online Platform",
+      "session_type": "Lecture",
+      "instructor": "",
+      "assistants": [
+        "Eng. Mahmoud Saqr"
+      ],
+      "raw_text": "CUC11107 - Introduction to Computer System ONLINE Lecture Assistant: Eng. Mahmoud Saqr"
+    },
+    {
+      "id": "sess_g7_thursday_p5_cuc111",
+      "group": 7,
+      "group_name": "Group 7",
+      "day": "Thursday",
+      "is_online_day": false,
+      "is_online": true,
+      "periods": [
+        5
+      ],
+      "period_label": "Period 5",
+      "start_time": "12:45",
+      "end_time": "13:35",
+      "duration_minutes": 50,
+      "course_code": "CUC111",
+      "course_title": "Introduction to Computer Systems",
+      "course_arabic": "مقدمة في نظم الحاسب",
+      "department": "University Requirement",
+      "room": "ONLINE",
+      "building": "Online Platform",
+      "session_type": "Lecture",
+      "instructor": "",
+      "assistants": [
+        "Eng. Mahmoud Saqr"
+      ],
+      "raw_text": "CUC11107 - Introduction to Computer System ONLINE Lecture Assistant: Eng. Mahmoud Saqr"
+    },
+    {
+      "id": "sess_g7_thursday_p6_cuc111",
+      "group": 7,
+      "group_name": "Group 7",
+      "day": "Thursday",
+      "is_online_day": false,
+      "is_online": true,
+      "periods": [
+        6
+      ],
+      "period_label": "Period 6",
+      "start_time": "13:35",
+      "end_time": "14:25",
+      "duration_minutes": 50,
+      "course_code": "CUC111",
+      "course_title": "Introduction to Computer Systems",
+      "course_arabic": "مقدمة في نظم الحاسب",
+      "department": "University Requirement",
+      "room": "ONLINE",
+      "building": "Online Platform",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "Eng. Mahmoud Saqr"
+      ],
+      "raw_text": "CUC11107 - Introduction to Computer System ONLINE Tutorial Assistant: Eng. Mahmoud Saqr"
+    },
+    {
+      "id": "sess_g7_thursday_p7_cuc112",
+      "group": 7,
+      "group_name": "Group 7",
+      "day": "Thursday",
+      "is_online_day": false,
+      "is_online": true,
+      "periods": [
+        7,
+        8
+      ],
+      "period_label": "Periods 7–8",
+      "start_time": "14:25",
+      "end_time": "16:05",
+      "duration_minutes": 100,
+      "course_code": "CUC112",
+      "course_title": "Report Writing & Communication Skills",
+      "course_arabic": "مهارات كتابة التقارير والتواصل",
+      "department": "University Requirement",
+      "room": "ONLINE",
+      "building": "Online Platform",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "Eng. Ahmed Refat",
+        "Eng. Mahmoud Abulwafa"
+      ],
+      "raw_text": "CUC11207 - Report Writing and Communication Skills ONLINE Tutorial Assistant: Eng. Ahmed Refat Assistant: Eng. Mahmoud Abulwafa"
+    },
+    {
+      "id": "sess_g8_sunday_p1_cuc112",
+      "group": 8,
+      "group_name": "Group 8",
+      "day": "Sunday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        1,
+        2
+      ],
+      "period_label": "Periods 1–2",
+      "start_time": "09:00",
+      "end_time": "10:40",
+      "duration_minutes": 100,
+      "course_code": "CUC112",
+      "course_title": "Report Writing & Communication Skills",
+      "course_arabic": "مهارات كتابة التقارير والتواصل",
+      "department": "University Requirement",
+      "room": "B1-213",
+      "building": "Building 1",
+      "session_type": "Lecture",
+      "instructor": "Prof. Nabil Shafiq",
+      "assistants": [],
+      "raw_text": "CUC11208 - Report Writing and Communication Skills B1-213 Lecture Instructor: Prof. Nabil Shafiq"
+    },
+    {
+      "id": "sess_g8_sunday_p3_mec111",
+      "group": 8,
+      "group_name": "Group 8",
+      "day": "Sunday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        3
+      ],
+      "period_label": "Period 3",
+      "start_time": "10:40",
+      "end_time": "11:30",
+      "duration_minutes": 50,
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "department": "Mechanical Engineering",
+      "room": "B1-213",
+      "building": "Building 1",
+      "session_type": "Lecture",
+      "instructor": "Prof. Nabil Shafiq",
+      "assistants": [
+        "Eng. Reem Ayman",
+        "ENG. Ziad Khaled"
+      ],
+      "raw_text": "MEC11108 - Engineering Drawing B1-213 Lecture Instructor: Prof. Nabil Shafiq Assistant: Eng. Reem Ayman Assistant: ENG. Ziad Khaled"
+    },
+    {
+      "id": "sess_g8_sunday_p4_mec111",
+      "group": 8,
+      "group_name": "Group 8",
+      "day": "Sunday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        4
+      ],
+      "period_label": "Period 4",
+      "start_time": "11:30",
+      "end_time": "12:20",
+      "duration_minutes": 50,
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "department": "Mechanical Engineering",
+      "room": "B1-213",
+      "building": "Building 1",
+      "session_type": "Section / Tutorial",
+      "instructor": "Prof. Nabil Shafiq",
+      "assistants": [
+        "Eng. Reem Ayman",
+        "ENG. Ziad Khaled"
+      ],
+      "raw_text": "MEC11108 - Engineering Drawing B1-213 Tutorial Instructor: Prof. Nabil Shafiq Assistant: Eng. Reem Ayman Assistant: ENG. Ziad Khaled"
+    },
+    {
+      "id": "sess_g8_sunday_p5_mec111",
+      "group": 8,
+      "group_name": "Group 8",
+      "day": "Sunday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        5
+      ],
+      "period_label": "Period 5",
+      "start_time": "12:45",
+      "end_time": "13:35",
+      "duration_minutes": 50,
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "department": "Mechanical Engineering",
+      "room": "B1-213",
+      "building": "Building 1",
+      "session_type": "Section / Tutorial",
+      "instructor": "Prof. Nabil Shafiq",
+      "assistants": [
+        "Eng. Reem Ayman",
+        "ENG. Ziad Khaled",
+        "Eng. Heba Ahmed"
+      ],
+      "raw_text": "MEC11108 - Engineering Drawing B1-213 Tutorial Instructor: Prof. Nabil Shafiq Assistant: Eng. Reem Ayman Assistant: ENG. Ziad Khaled Assistant: Eng. Heba Ahmed"
+    },
+    {
+      "id": "sess_g8_sunday_p6_mec111",
+      "group": 8,
+      "group_name": "Group 8",
+      "day": "Sunday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        6
+      ],
+      "period_label": "Period 6",
+      "start_time": "13:35",
+      "end_time": "14:25",
+      "duration_minutes": 50,
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "department": "Mechanical Engineering",
+      "room": "B1-213",
+      "building": "Building 1",
+      "session_type": "Section / Tutorial",
+      "instructor": "Prof. Nabil Shafiq",
+      "assistants": [
+        "Eng. Reem Ayman",
+        "ENG. Ziad Khaled",
+        "Eng. Heba Ahmed"
+      ],
+      "raw_text": "MEC11108 - Engineering Drawing B1-213 Tutorial Instructor: Prof. Nabil Shafiq Assistant: Eng. Reem Ayman Assistant: ENG. Ziad Khaled Assistant: Eng. Heba Ahmed"
+    },
+    {
+      "id": "sess_g8_sunday_p7_mec111",
+      "group": 8,
+      "group_name": "Group 8",
+      "day": "Sunday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        7
+      ],
+      "period_label": "Period 7",
+      "start_time": "14:25",
+      "end_time": "15:15",
+      "duration_minutes": 50,
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "department": "Mechanical Engineering",
+      "room": "B1-213",
+      "building": "Building 1",
+      "session_type": "SolidWorks CAD",
+      "instructor": "Prof. Nabil Shafiq",
+      "assistants": [
+        "Eng. Ahmed Zaghlol",
+        "ENG. Ziad Khaled",
+        "Eng. Heba Ahmed"
+      ],
+      "raw_text": "MEC11108 - Engineering Drawing B1-213 Tutorial (Solidworks) Instructor: Prof. Nabil Shafiq Assistant: Eng. Ahmed Zaghlol Assistant: ENG. Ziad Khaled Assistant: Eng. Heba Ahmed"
+    },
+    {
+      "id": "sess_g8_sunday_p8_mec111",
+      "group": 8,
+      "group_name": "Group 8",
+      "day": "Sunday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        8
+      ],
+      "period_label": "Period 8",
+      "start_time": "15:15",
+      "end_time": "16:05",
+      "duration_minutes": 50,
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "department": "Mechanical Engineering",
+      "room": "B1-213",
+      "building": "Building 1",
+      "session_type": "SolidWorks CAD",
+      "instructor": "Prof. Nabil Shafiq",
+      "assistants": [
+        "Eng. Ahmed Zaghlol",
+        "ENG. Ziad Khaled",
+        "Eng. Heba Ahmed"
+      ],
+      "raw_text": "MEC11108 - Engineering Drawing B1-213 Tutorial (Solidworks) Instructor: Prof. Nabil Shafiq Assistant: Eng. Ahmed Zaghlol Assistant: ENG. Ziad Khaled Assistant: Eng. Heba Ahmed"
+    },
+    {
+      "id": "sess_g8_tuesday_p1_bas121",
+      "group": 8,
+      "group_name": "Group 8",
+      "day": "Tuesday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        1,
+        2
+      ],
+      "period_label": "Periods 1–2",
+      "start_time": "09:00",
+      "end_time": "10:40",
+      "duration_minutes": 100,
+      "course_code": "BAS121",
+      "course_title": "Vibration & Waves",
+      "course_arabic": "اهتزازات وأمواج (فيزياء)",
+      "department": "Basic Science",
+      "room": "B2-414",
+      "building": "Building 2",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "Eng. Khaled Saad"
+      ],
+      "raw_text": "BAS12108 - Vibration and Waves B2-414 Tutorial Assistant: Eng. Khaled Saad"
+    },
+    {
+      "id": "sess_g8_tuesday_p3_bas111",
+      "group": 8,
+      "group_name": "Group 8",
+      "day": "Tuesday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        3,
+        4
+      ],
+      "period_label": "Periods 3–4",
+      "start_time": "10:40",
+      "end_time": "12:20",
+      "duration_minutes": 100,
+      "course_code": "BAS111",
+      "course_title": "Mathematics I",
+      "course_arabic": "رياضيات 1 (تفاضل وتكامل)",
+      "department": "Basic Science",
+      "room": "B2-414",
+      "building": "Building 2",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "T.A. Ahmed Said"
+      ],
+      "raw_text": "BAS11108 - Mathematics (1) B2-414 Tutorial Assistant: T.A. Ahmed Said"
+    },
+    {
+      "id": "sess_g8_tuesday_p5_bas131",
+      "group": 8,
+      "group_name": "Group 8",
+      "day": "Tuesday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        5,
+        6
+      ],
+      "period_label": "Periods 5–6",
+      "start_time": "12:45",
+      "end_time": "14:25",
+      "duration_minutes": 100,
+      "course_code": "BAS131",
+      "course_title": "Statics",
+      "course_arabic": "استاتيكا (ميكانيكا)",
+      "department": "Basic Science",
+      "room": "B2-414",
+      "building": "Building 2",
+      "session_type": "Lecture",
+      "instructor": "Dr. Mohamed Saad",
+      "assistants": [],
+      "raw_text": "BAS13108 - Statics B2-414 Lecture Instructor: Dr. Mohamed Saad"
+    },
+    {
+      "id": "sess_g8_tuesday_p7_bas141",
+      "group": 8,
+      "group_name": "Group 8",
+      "day": "Tuesday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        7,
+        8
+      ],
+      "period_label": "Periods 7–8",
+      "start_time": "14:25",
+      "end_time": "16:05",
+      "duration_minutes": 100,
+      "course_code": "BAS141",
+      "course_title": "Engineering Chemistry",
+      "course_arabic": "كيمياء هندسية",
+      "department": "Basic Science",
+      "room": "B2-414",
+      "building": "Building 2",
+      "session_type": "Practical / Lab",
+      "instructor": "",
+      "assistants": [
+        "Eng. Yasmin Samir"
+      ],
+      "raw_text": "BAS14108 - Engineering Chemistry B2-414 Lab. Assistant: Eng. Yasmin Samir"
+    },
+    {
+      "id": "sess_g8_wednesday_p1_bas131",
+      "group": 8,
+      "group_name": "Group 8",
+      "day": "Wednesday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        1
+      ],
+      "period_label": "Period 1",
+      "start_time": "09:00",
+      "end_time": "09:50",
+      "duration_minutes": 50,
+      "course_code": "BAS131",
+      "course_title": "Statics",
+      "course_arabic": "استاتيكا (ميكانيكا)",
+      "department": "Basic Science",
+      "room": "B2-414",
+      "building": "Building 2",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "Eng. Tasnem Saied"
+      ],
+      "raw_text": "BAS13108 - Statics B2-414 Tutorial Assistant: Eng. Tasnem Saied"
+    },
+    {
+      "id": "sess_g8_wednesday_p2_bas131",
+      "group": 8,
+      "group_name": "Group 8",
+      "day": "Wednesday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        2
+      ],
+      "period_label": "Period 2",
+      "start_time": "09:50",
+      "end_time": "10:40",
+      "duration_minutes": 50,
+      "course_code": "BAS131",
+      "course_title": "Statics",
+      "course_arabic": "استاتيكا (ميكانيكا)",
+      "department": "Basic Science",
+      "room": "B2-414",
+      "building": "Building 2",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "Eng. Tasnem Saied"
+      ],
+      "raw_text": "BAS13108 - Statics B2-414 Tutorial Assistant: Eng. Tasnem Saied"
+    },
+    {
+      "id": "sess_g8_wednesday_p3_bas111",
+      "group": 8,
+      "group_name": "Group 8",
+      "day": "Wednesday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        3,
+        4
+      ],
+      "period_label": "Periods 3–4",
+      "start_time": "10:40",
+      "end_time": "12:20",
+      "duration_minutes": 100,
+      "course_code": "BAS111",
+      "course_title": "Mathematics I",
+      "course_arabic": "رياضيات 1 (تفاضل وتكامل)",
+      "department": "Basic Science",
+      "room": "B2-414",
+      "building": "Building 2",
+      "session_type": "Lecture",
+      "instructor": "Dr. Zaher Hasanin",
+      "assistants": [],
+      "raw_text": "BAS11108 - Mathematics (1) B2-414 Lecture Instructor: Dr. Zaher Hasanin"
+    },
+    {
+      "id": "sess_g8_wednesday_p5_bas141",
+      "group": 8,
+      "group_name": "Group 8",
+      "day": "Wednesday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        5,
+        6
+      ],
+      "period_label": "Periods 5–6",
+      "start_time": "12:45",
+      "end_time": "14:25",
+      "duration_minutes": 100,
+      "course_code": "BAS141",
+      "course_title": "Engineering Chemistry",
+      "course_arabic": "كيمياء هندسية",
+      "department": "Basic Science",
+      "room": "B2-414",
+      "building": "Building 2",
+      "session_type": "Lecture",
+      "instructor": "Assoc. Prof. Noura Yahiya",
+      "assistants": [],
+      "raw_text": "BAS14108 - Engineering Chemistry B2-414 Lecture Instructor: Assoc. Prof. Noura Yahiya"
+    },
+    {
+      "id": "sess_g8_wednesday_p7_bas121",
+      "group": 8,
+      "group_name": "Group 8",
+      "day": "Wednesday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        7,
+        8
+      ],
+      "period_label": "Periods 7–8",
+      "start_time": "14:25",
+      "end_time": "16:05",
+      "duration_minutes": 100,
+      "course_code": "BAS121",
+      "course_title": "Vibration & Waves",
+      "course_arabic": "اهتزازات وأمواج (فيزياء)",
+      "department": "Basic Science",
+      "room": "B2-414",
+      "building": "Building 2",
+      "session_type": "Lecture",
+      "instructor": "Assoc. Prof. Mohamed Abd El-Aziz",
+      "assistants": [],
+      "raw_text": "BAS12108 - Vibration and Waves B2-414 Lecture Instructor: Assoc. Prof. Mohamed Abd El-Aziz"
+    },
+    {
+      "id": "sess_g8_thursday_p1_cuc111",
+      "group": 8,
+      "group_name": "Group 8",
+      "day": "Thursday",
+      "is_online_day": true,
+      "is_online": true,
+      "periods": [
+        1
+      ],
+      "period_label": "Period 1",
+      "start_time": "09:00",
+      "end_time": "09:50",
+      "duration_minutes": 50,
+      "course_code": "CUC111",
+      "course_title": "Introduction to Computer Systems",
+      "course_arabic": "مقدمة في نظم الحاسب",
+      "department": "University Requirement",
+      "room": "ONLINE",
+      "building": "Online Platform",
+      "session_type": "Lecture",
+      "instructor": "",
+      "assistants": [
+        "Eng. Esraa Adel"
+      ],
+      "raw_text": "CUC11108 - Introduction to Computer System ONLINE Lecture Assistant: Eng. Esraa Adel"
+    },
+    {
+      "id": "sess_g8_thursday_p2_cuc111",
+      "group": 8,
+      "group_name": "Group 8",
+      "day": "Thursday",
+      "is_online_day": true,
+      "is_online": true,
+      "periods": [
+        2
+      ],
+      "period_label": "Period 2",
+      "start_time": "09:50",
+      "end_time": "10:40",
+      "duration_minutes": 50,
+      "course_code": "CUC111",
+      "course_title": "Introduction to Computer Systems",
+      "course_arabic": "مقدمة في نظم الحاسب",
+      "department": "University Requirement",
+      "room": "ONLINE",
+      "building": "Online Platform",
+      "session_type": "Lecture",
+      "instructor": "",
+      "assistants": [
+        "Eng. Esraa Adel"
+      ],
+      "raw_text": "CUC11108 - Introduction to Computer System ONLINE Lecture Assistant: Eng. Esraa Adel"
+    },
+    {
+      "id": "sess_g8_thursday_p3_cuc111",
+      "group": 8,
+      "group_name": "Group 8",
+      "day": "Thursday",
+      "is_online_day": true,
+      "is_online": true,
+      "periods": [
+        3
+      ],
+      "period_label": "Period 3",
+      "start_time": "10:40",
+      "end_time": "11:30",
+      "duration_minutes": 50,
+      "course_code": "CUC111",
+      "course_title": "Introduction to Computer Systems",
+      "course_arabic": "مقدمة في نظم الحاسب",
+      "department": "University Requirement",
+      "room": "ONLINE",
+      "building": "Online Platform",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "Eng. Esraa Adel"
+      ],
+      "raw_text": "CUC11108 - Introduction to Computer System ONLINE Tutorial Assistant: Eng. Esraa Adel"
+    },
+    {
+      "id": "sess_g8_thursday_p4_bas141",
+      "group": 8,
+      "group_name": "Group 8",
+      "day": "Thursday",
+      "is_online_day": true,
+      "is_online": true,
+      "periods": [
+        4
+      ],
+      "period_label": "Period 4",
+      "start_time": "11:30",
+      "end_time": "12:20",
+      "duration_minutes": 50,
+      "course_code": "BAS141",
+      "course_title": "Engineering Chemistry",
+      "course_arabic": "كيمياء هندسية",
+      "department": "Basic Science",
+      "room": "ONLINE",
+      "building": "Online Platform",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "Eng. Khaled Saad"
+      ],
+      "raw_text": "BAS14108 - Engineering Chemistry ONLINE Tutorial Assistant: Eng. Khaled Saad"
+    },
+    {
+      "id": "sess_g8_thursday_p5_bas121",
+      "group": 8,
+      "group_name": "Group 8",
+      "day": "Thursday",
+      "is_online_day": true,
+      "is_online": true,
+      "periods": [
+        5
+      ],
+      "period_label": "Period 5",
+      "start_time": "12:45",
+      "end_time": "13:35",
+      "duration_minutes": 50,
+      "course_code": "BAS121",
+      "course_title": "Vibration & Waves",
+      "course_arabic": "اهتزازات وأمواج (فيزياء)",
+      "department": "Basic Science",
+      "room": "ONLINE",
+      "building": "Online Platform",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "Eng. Khaled Saad"
+      ],
+      "raw_text": "BAS12108 - Vibration and Waves ONLINE Tutorial Assistant: Eng. Khaled Saad"
+    },
+    {
+      "id": "sess_g8_thursday_p7_cuc112",
+      "group": 8,
+      "group_name": "Group 8",
+      "day": "Thursday",
+      "is_online_day": true,
+      "is_online": true,
+      "periods": [
+        7,
+        8
+      ],
+      "period_label": "Periods 7–8",
+      "start_time": "14:25",
+      "end_time": "16:05",
+      "duration_minutes": 100,
+      "course_code": "CUC112",
+      "course_title": "Report Writing & Communication Skills",
+      "course_arabic": "مهارات كتابة التقارير والتواصل",
+      "department": "University Requirement",
+      "room": "ONLINE",
+      "building": "Online Platform",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "Eng. Menna Mahmoud"
+      ],
+      "raw_text": "CUC11208 - Report Writing and Communication Skills ONLINE Tutorial Assistant: Eng. Menna Mahmoud"
+    },
+    {
+      "id": "sess_g9_sunday_p1_cuc112",
+      "group": 9,
+      "group_name": "Group 9",
+      "day": "Sunday",
+      "is_online_day": true,
+      "is_online": true,
+      "periods": [
+        1,
+        2
+      ],
+      "period_label": "Periods 1–2",
+      "start_time": "09:00",
+      "end_time": "10:40",
+      "duration_minutes": 100,
+      "course_code": "CUC112",
+      "course_title": "Report Writing & Communication Skills",
+      "course_arabic": "مهارات كتابة التقارير والتواصل",
+      "department": "University Requirement",
+      "room": "ONLINE",
+      "building": "Online Platform",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "Eng. Manar Mohamed"
+      ],
+      "raw_text": "CUC11209 - Report Writing and Communication Skills ONLINE Tutorial Assistant: Eng. Manar Mohamed"
+    },
+    {
+      "id": "sess_g9_sunday_p3_bas121",
+      "group": 9,
+      "group_name": "Group 9",
+      "day": "Sunday",
+      "is_online_day": true,
+      "is_online": true,
+      "periods": [
+        3
+      ],
+      "period_label": "Period 3",
+      "start_time": "10:40",
+      "end_time": "11:30",
+      "duration_minutes": 50,
+      "course_code": "BAS121",
+      "course_title": "Vibration & Waves",
+      "course_arabic": "اهتزازات وأمواج (فيزياء)",
+      "department": "Basic Science",
+      "room": "ONLINE",
+      "building": "Online Platform",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "Eng. Khaled Saad"
+      ],
+      "raw_text": "BAS12109 - Vibration and Waves ONLINE Tutorial Assistant: Eng. Khaled Saad"
+    },
+    {
+      "id": "sess_g9_sunday_p4_bas141",
+      "group": 9,
+      "group_name": "Group 9",
+      "day": "Sunday",
+      "is_online_day": true,
+      "is_online": true,
+      "periods": [
+        4
+      ],
+      "period_label": "Period 4",
+      "start_time": "11:30",
+      "end_time": "12:20",
+      "duration_minutes": 50,
+      "course_code": "BAS141",
+      "course_title": "Engineering Chemistry",
+      "course_arabic": "كيمياء هندسية",
+      "department": "Basic Science",
+      "room": "ONLINE",
+      "building": "Online Platform",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "Eng. Khaled Saad"
+      ],
+      "raw_text": "BAS14109 - Engineering Chemistry ONLINE Tutorial Assistant: Eng. Khaled Saad"
+    },
+    {
+      "id": "sess_g9_sunday_p5_cuc111",
+      "group": 9,
+      "group_name": "Group 9",
+      "day": "Sunday",
+      "is_online_day": true,
+      "is_online": true,
+      "periods": [
+        5
+      ],
+      "period_label": "Period 5",
+      "start_time": "12:45",
+      "end_time": "13:35",
+      "duration_minutes": 50,
+      "course_code": "CUC111",
+      "course_title": "Introduction to Computer Systems",
+      "course_arabic": "مقدمة في نظم الحاسب",
+      "department": "University Requirement",
+      "room": "ONLINE",
+      "building": "Online Platform",
+      "session_type": "Lecture",
+      "instructor": "",
+      "assistants": [
+        "Eng. Esraa Adel"
+      ],
+      "raw_text": "CUC11109 - Introduction to Computer System ONLINE Lecture Assistant: Eng. Esraa Adel"
+    },
+    {
+      "id": "sess_g9_sunday_p6_cuc111",
+      "group": 9,
+      "group_name": "Group 9",
+      "day": "Sunday",
+      "is_online_day": true,
+      "is_online": true,
+      "periods": [
+        6
+      ],
+      "period_label": "Period 6",
+      "start_time": "13:35",
+      "end_time": "14:25",
+      "duration_minutes": 50,
+      "course_code": "CUC111",
+      "course_title": "Introduction to Computer Systems",
+      "course_arabic": "مقدمة في نظم الحاسب",
+      "department": "University Requirement",
+      "room": "ONLINE",
+      "building": "Online Platform",
+      "session_type": "Lecture",
+      "instructor": "",
+      "assistants": [
+        "Eng. Esraa Adel"
+      ],
+      "raw_text": "CUC11109 - Introduction to Computer System ONLINE Lecture Assistant: Eng. Esraa Adel"
+    },
+    {
+      "id": "sess_g9_sunday_p7_cuc111",
+      "group": 9,
+      "group_name": "Group 9",
+      "day": "Sunday",
+      "is_online_day": true,
+      "is_online": true,
+      "periods": [
+        7
+      ],
+      "period_label": "Period 7",
+      "start_time": "14:25",
+      "end_time": "15:15",
+      "duration_minutes": 50,
+      "course_code": "CUC111",
+      "course_title": "Introduction to Computer Systems",
+      "course_arabic": "مقدمة في نظم الحاسب",
+      "department": "University Requirement",
+      "room": "ONLINE",
+      "building": "Online Platform",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "Eng. Esraa Adel"
+      ],
+      "raw_text": "CUC11109 - Introduction to Computer System ONLINE Tutorial Assistant: Eng. Esraa Adel"
+    },
+    {
+      "id": "sess_g9_monday_p1_bas111",
+      "group": 9,
+      "group_name": "Group 9",
+      "day": "Monday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        1,
+        2
+      ],
+      "period_label": "Periods 1–2",
+      "start_time": "09:00",
+      "end_time": "10:40",
+      "duration_minutes": 100,
+      "course_code": "BAS111",
+      "course_title": "Mathematics I",
+      "course_arabic": "رياضيات 1 (تفاضل وتكامل)",
+      "department": "Basic Science",
+      "room": "B2-108",
+      "building": "Building 2",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "T.A. Ahmed Said"
+      ],
+      "raw_text": "BAS11109 - Mathematics (1) B2-108 Tutorial Assistant: T.A. Ahmed Said"
+    },
+    {
+      "id": "sess_g9_monday_p3_bas141",
+      "group": 9,
+      "group_name": "Group 9",
+      "day": "Monday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        3,
+        4
+      ],
+      "period_label": "Periods 3–4",
+      "start_time": "10:40",
+      "end_time": "12:20",
+      "duration_minutes": 100,
+      "course_code": "BAS141",
+      "course_title": "Engineering Chemistry",
+      "course_arabic": "كيمياء هندسية",
+      "department": "Basic Science",
+      "room": "B2-108",
+      "building": "Building 2",
+      "session_type": "Lecture",
+      "instructor": "Dr. Rasha Ahmed Abd El-Khaleq",
+      "assistants": [],
+      "raw_text": "BAS14109 - Engineering Chemistry B2-108 Lecture Instructor: Dr. Rasha Ahmed Abd El-Khaleq"
+    },
+    {
+      "id": "sess_g9_monday_p5_bas111",
+      "group": 9,
+      "group_name": "Group 9",
+      "day": "Monday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        5,
+        6
+      ],
+      "period_label": "Periods 5–6",
+      "start_time": "12:45",
+      "end_time": "14:25",
+      "duration_minutes": 100,
+      "course_code": "BAS111",
+      "course_title": "Mathematics I",
+      "course_arabic": "رياضيات 1 (تفاضل وتكامل)",
+      "department": "Basic Science",
+      "room": "B2-108",
+      "building": "Building 2",
+      "session_type": "Lecture",
+      "instructor": "Dr. Zaher Hasanin",
+      "assistants": [],
+      "raw_text": "BAS11109 - Mathematics (1) B2-108 Lecture Instructor: Dr. Zaher Hasanin"
+    },
+    {
+      "id": "sess_g9_monday_p7_bas141",
+      "group": 9,
+      "group_name": "Group 9",
+      "day": "Monday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        7,
+        8
+      ],
+      "period_label": "Periods 7–8",
+      "start_time": "14:25",
+      "end_time": "16:05",
+      "duration_minutes": 100,
+      "course_code": "BAS141",
+      "course_title": "Engineering Chemistry",
+      "course_arabic": "كيمياء هندسية",
+      "department": "Basic Science",
+      "room": "B2-108",
+      "building": "Building 2",
+      "session_type": "Practical / Lab",
+      "instructor": "",
+      "assistants": [
+        "T.A. Doaa Mohamed"
+      ],
+      "raw_text": "BAS14109 - Engineering Chemistry B2-108 Lab Assistant: T.A. Doaa Mohamed"
+    },
+    {
+      "id": "sess_g9_wednesday_p1_cuc112",
+      "group": 9,
+      "group_name": "Group 9",
+      "day": "Wednesday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        1,
+        2
+      ],
+      "period_label": "Periods 1–2",
+      "start_time": "09:00",
+      "end_time": "10:40",
+      "duration_minutes": 100,
+      "course_code": "CUC112",
+      "course_title": "Report Writing & Communication Skills",
+      "course_arabic": "مهارات كتابة التقارير والتواصل",
+      "department": "University Requirement",
+      "room": "B2-311",
+      "building": "Building 2",
+      "session_type": "Lecture",
+      "instructor": "Eng. Manar Mohamed",
+      "assistants": [],
+      "raw_text": "CUC11209 - Report Writing and Communication Skills B2-311 Lecture Instructor: Eng. Manar Mohamed"
+    },
+    {
+      "id": "sess_g9_wednesday_p3_mec111",
+      "group": 9,
+      "group_name": "Group 9",
+      "day": "Wednesday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        3
+      ],
+      "period_label": "Period 3",
+      "start_time": "10:40",
+      "end_time": "11:30",
+      "duration_minutes": 50,
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "department": "Mechanical Engineering",
+      "room": "B2-311",
+      "building": "Building 2",
+      "session_type": "Lecture",
+      "instructor": "T.A. Ahmed Said",
+      "assistants": [],
+      "raw_text": "MEC11109 - Engineering Drawing B2-311 Lecture Instructor: T.A. Ahmed Said"
+    },
+    {
+      "id": "sess_g9_wednesday_p4_mec111",
+      "group": 9,
+      "group_name": "Group 9",
+      "day": "Wednesday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        4
+      ],
+      "period_label": "Period 4",
+      "start_time": "11:30",
+      "end_time": "12:20",
+      "duration_minutes": 50,
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "department": "Mechanical Engineering",
+      "room": "B2-311",
+      "building": "Building 2",
+      "session_type": "Section / Tutorial",
+      "instructor": "T.A. Ahmed Said",
+      "assistants": [],
+      "raw_text": "MEC11109 - Engineering Drawing B2-311 Tutorial Instructor: T.A. Ahmed Said"
+    },
+    {
+      "id": "sess_g9_wednesday_p5_mec111",
+      "group": 9,
+      "group_name": "Group 9",
+      "day": "Wednesday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        5
+      ],
+      "period_label": "Period 5",
+      "start_time": "12:45",
+      "end_time": "13:35",
+      "duration_minutes": 50,
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "department": "Mechanical Engineering",
+      "room": "B2-311",
+      "building": "Building 2",
+      "session_type": "Section / Tutorial",
+      "instructor": "T.A. Ahmed Said",
+      "assistants": [],
+      "raw_text": "MEC11109 - Engineering Drawing B2-311 Tutorial Instructor: T.A. Ahmed Said"
+    },
+    {
+      "id": "sess_g9_wednesday_p6_mec111",
+      "group": 9,
+      "group_name": "Group 9",
+      "day": "Wednesday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        6
+      ],
+      "period_label": "Period 6",
+      "start_time": "13:35",
+      "end_time": "14:25",
+      "duration_minutes": 50,
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "department": "Mechanical Engineering",
+      "room": "B2-311",
+      "building": "Building 2",
+      "session_type": "Section / Tutorial",
+      "instructor": "T.A. Ahmed Said",
+      "assistants": [],
+      "raw_text": "MEC11109 - Engineering Drawing B2-311 Tutorial Instructor: T.A. Ahmed Said"
+    },
+    {
+      "id": "sess_g9_wednesday_p7_mec111",
+      "group": 9,
+      "group_name": "Group 9",
+      "day": "Wednesday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        7
+      ],
+      "period_label": "Period 7",
+      "start_time": "14:25",
+      "end_time": "15:15",
+      "duration_minutes": 50,
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "department": "Mechanical Engineering",
+      "room": "B2-311",
+      "building": "Building 2",
+      "session_type": "SolidWorks CAD",
+      "instructor": "T.A. Ahmed Said",
+      "assistants": [],
+      "raw_text": "MEC11109 - Engineering Drawing B2-311 (Solidworks) Tutorial Instructor: T.A. Ahmed Said"
+    },
+    {
+      "id": "sess_g9_wednesday_p8_mec111",
+      "group": 9,
+      "group_name": "Group 9",
+      "day": "Wednesday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        8
+      ],
+      "period_label": "Period 8",
+      "start_time": "15:15",
+      "end_time": "16:05",
+      "duration_minutes": 50,
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "department": "Mechanical Engineering",
+      "room": "B2-311",
+      "building": "Building 2",
+      "session_type": "SolidWorks CAD",
+      "instructor": "T.A. Ahmed Said",
+      "assistants": [],
+      "raw_text": "MEC11109 - Engineering Drawing B2-311 (Solidworks) Tutorial Instructor: T.A. Ahmed Said"
+    },
+    {
+      "id": "sess_g9_thursday_p1_bas121",
+      "group": 9,
+      "group_name": "Group 9",
+      "day": "Thursday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        1,
+        2
+      ],
+      "period_label": "Periods 1–2",
+      "start_time": "09:00",
+      "end_time": "10:40",
+      "duration_minutes": 100,
+      "course_code": "BAS121",
+      "course_title": "Vibration & Waves",
+      "course_arabic": "اهتزازات وأمواج (فيزياء)",
+      "department": "Basic Science",
+      "room": "B2-201",
+      "building": "Building 2",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "T.A. Doaa Mohamed"
+      ],
+      "raw_text": "BAS12109 - Vibration and Waves B2-201 Tutorial Assistant: T.A. Doaa Mohamed"
+    },
+    {
+      "id": "sess_g9_thursday_p3_bas131",
+      "group": 9,
+      "group_name": "Group 9",
+      "day": "Thursday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        3
+      ],
+      "period_label": "Period 3",
+      "start_time": "10:40",
+      "end_time": "11:30",
+      "duration_minutes": 50,
+      "course_code": "BAS131",
+      "course_title": "Statics",
+      "course_arabic": "استاتيكا (ميكانيكا)",
+      "department": "Basic Science",
+      "room": "B2-201",
+      "building": "Building 2",
+      "session_type": "Section / Tutorial",
+      "instructor": "",
+      "assistants": [
+        "Eng. Tasnem Saied"
+      ],
+      "raw_text": "BAS13109 - Statics B2-201 Tutorial Assistant: Eng. Tasnem Saied"
+    },
+    {
+      "id": "sess_g9_thursday_p4_bas131",
+      "group": 9,
+      "group_name": "Group 9",
+      "day": "Thursday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        4
+      ],
+      "period_label": "Period 4",
+      "start_time": "11:30",
+      "end_time": "12:20",
+      "duration_minutes": 50,
+      "course_code": "BAS131",
+      "course_title": "Statics",
+      "course_arabic": "استاتيكا (ميكانيكا)",
+      "department": "Basic Science",
+      "room": "B2-201",
+      "building": "Building 2",
+      "session_type": "Practical / Lab",
+      "instructor": "",
+      "assistants": [
+        "Eng. Tasnem Saied"
+      ],
+      "raw_text": "BAS13109 - Statics B2-201 Lab Assistant: Eng. Tasnem Saied"
+    },
+    {
+      "id": "sess_g9_thursday_p5_bas131",
+      "group": 9,
+      "group_name": "Group 9",
+      "day": "Thursday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        5,
+        6
+      ],
+      "period_label": "Periods 5–6",
+      "start_time": "12:45",
+      "end_time": "14:25",
+      "duration_minutes": 100,
+      "course_code": "BAS131",
+      "course_title": "Statics",
+      "course_arabic": "استاتيكا (ميكانيكا)",
+      "department": "Basic Science",
+      "room": "B2-201",
+      "building": "Building 2",
+      "session_type": "Lecture",
+      "instructor": "Assoc. Prof. Mohamed Ashraf",
+      "assistants": [],
+      "raw_text": "BAS13109 - Statics B2-201 Lecture Instructor: Assoc. Prof. Mohamed Ashraf"
+    },
+    {
+      "id": "sess_g9_thursday_p7_bas121",
+      "group": 9,
+      "group_name": "Group 9",
+      "day": "Thursday",
+      "is_online_day": false,
+      "is_online": false,
+      "periods": [
+        7,
+        8
+      ],
+      "period_label": "Periods 7–8",
+      "start_time": "14:25",
+      "end_time": "16:05",
+      "duration_minutes": 100,
+      "course_code": "BAS121",
+      "course_title": "Vibration & Waves",
+      "course_arabic": "اهتزازات وأمواج (فيزياء)",
+      "department": "Basic Science",
+      "room": "B2-201",
+      "building": "Building 2",
+      "session_type": "Lecture",
+      "instructor": "Assoc. Prof. Mohamed Abd El-Aziz",
+      "assistants": [],
+      "raw_text": "BAS12109 - Vibration and Waves B2-201 Lecture Instructor: Assoc. Prof. Mohamed Abd El-Aziz"
+    }
+  ],
+  "exam_seating": [
+    {
+      "id": "seat_1",
+      "group_number": 1,
+      "group": "Group 1",
+      "date": "Saturday 07/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "CUC112",
+      "course_title": "Report Writing & Communication Skills",
+      "course_arabic": "مهارات كتابة التقارير والتواصل",
+      "hall": "B2-108",
+      "building": "Building 2",
+      "from_student": "2503010020",
+      "to_student": "26030100057",
+      "num_students": 11
+    },
+    {
+      "id": "seat_2",
+      "group_number": 1,
+      "group": "Group 1",
+      "date": "Saturday 07/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "CUC112",
+      "course_title": "Report Writing & Communication Skills",
+      "course_arabic": "مهارات كتابة التقارير والتواصل",
+      "hall": "B2-417",
+      "building": "Building 2",
+      "from_student": "26030100060",
+      "to_student": "26030110042",
+      "num_students": 20
+    },
+    {
+      "id": "seat_3",
+      "group_number": 2,
+      "group": "Group 2",
+      "date": "Saturday 07/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "CUC112",
+      "course_title": "Report Writing & Communication Skills",
+      "course_arabic": "مهارات كتابة التقارير والتواصل",
+      "hall": "B2-301",
+      "building": "Building 2",
+      "from_student": "26030100050",
+      "to_student": "26030100100",
+      "num_students": 20
+    },
+    {
+      "id": "seat_4",
+      "group_number": 2,
+      "group": "Group 2",
+      "date": "Saturday 07/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "CUC112",
+      "course_title": "Report Writing & Communication Skills",
+      "course_arabic": "مهارات كتابة التقارير والتواصل",
+      "hall": "B2-412",
+      "building": "Building 2",
+      "from_student": "26030100101",
+      "to_student": "26030110032",
+      "num_students": 36
+    },
+    {
+      "id": "seat_5",
+      "group_number": 3,
+      "group": "Group 3",
+      "date": "Saturday 07/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "CUC112",
+      "course_title": "Report Writing & Communication Skills",
+      "course_arabic": "مهارات كتابة التقارير والتواصل",
+      "hall": "B2-307",
+      "building": "Building 2",
+      "from_student": "2503010245",
+      "to_student": "26030100177",
+      "num_students": 27
+    },
+    {
+      "id": "seat_6",
+      "group_number": 3,
+      "group": "Group 3",
+      "date": "Saturday 07/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "CUC112",
+      "course_title": "Report Writing & Communication Skills",
+      "course_arabic": "مهارات كتابة التقارير والتواصل",
+      "hall": "B2-201",
+      "building": "Building 2",
+      "from_student": "26030100178",
+      "to_student": "26030110039",
+      "num_students": 42
+    },
+    {
+      "id": "seat_7",
+      "group_number": 4,
+      "group": "Group 4",
+      "date": "Saturday 07/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "CUC112",
+      "course_title": "Report Writing & Communication Skills",
+      "course_arabic": "مهارات كتابة التقارير والتواصل",
+      "hall": "B2-214",
+      "building": "Building 2",
+      "from_student": "2603010089",
+      "to_student": "26030100525",
+      "num_students": 40
+    },
+    {
+      "id": "seat_8",
+      "group_number": 4,
+      "group": "Group 4",
+      "date": "Saturday 07/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "CUC112",
+      "course_title": "Report Writing & Communication Skills",
+      "course_arabic": "مهارات كتابة التقارير والتواصل",
+      "hall": "B2-414",
+      "building": "Building 2",
+      "from_student": "26030100526",
+      "to_student": "26030110047",
+      "num_students": 25
+    },
+    {
+      "id": "seat_9",
+      "group_number": 5,
+      "group": "Group 5",
+      "date": "Saturday 07/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "CUC112",
+      "course_title": "Report Writing & Communication Skills",
+      "course_arabic": "مهارات كتابة التقارير والتواصل",
+      "hall": "B2-215",
+      "building": "Building 2",
+      "from_student": "26030100006",
+      "to_student": "26030100345",
+      "num_students": 43
+    },
+    {
+      "id": "seat_10",
+      "group_number": 5,
+      "group": "Group 5",
+      "date": "Saturday 07/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "CUC112",
+      "course_title": "Report Writing & Communication Skills",
+      "course_arabic": "مهارات كتابة التقارير والتواصل",
+      "hall": "B2-302",
+      "building": "Building 2",
+      "from_student": "26030100365",
+      "to_student": "26030110040",
+      "num_students": 16
+    },
+    {
+      "id": "seat_11",
+      "group_number": 6,
+      "group": "Group 6",
+      "date": "Saturday 07/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "CUC112",
+      "course_title": "Report Writing & Communication Skills",
+      "course_arabic": "مهارات كتابة التقارير والتواصل",
+      "hall": "B2-308",
+      "building": "Building 2",
+      "from_student": "2503020032",
+      "to_student": "26030100389",
+      "num_students": 32
+    },
+    {
+      "id": "seat_12",
+      "group_number": 6,
+      "group": "Group 6",
+      "date": "Saturday 07/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "CUC112",
+      "course_title": "Report Writing & Communication Skills",
+      "course_arabic": "مهارات كتابة التقارير والتواصل",
+      "hall": "B2-211",
+      "building": "Building 2",
+      "from_student": "26030100391",
+      "to_student": "26030110041",
+      "num_students": 23
+    },
+    {
+      "id": "seat_13",
+      "group_number": 6,
+      "group": "Group 6",
+      "date": "Saturday 07/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "CUC112",
+      "course_title": "Report Writing & Communication Skills",
+      "course_arabic": "مهارات كتابة التقارير والتواصل",
+      "hall": "B2-310",
+      "building": "Building 2",
+      "from_student": "2503010030",
+      "to_student": "26030100421",
+      "num_students": 36
+    },
+    {
+      "id": "seat_14",
+      "group_number": 7,
+      "group": "Group 7",
+      "date": "Saturday 07/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "CUC112",
+      "course_title": "Report Writing & Communication Skills",
+      "course_arabic": "مهارات كتابة التقارير والتواصل",
+      "hall": "B2-112",
+      "building": "Building 2",
+      "from_student": "26030100423",
+      "to_student": "26030110043",
+      "num_students": 30
+    },
+    {
+      "id": "seat_15",
+      "group_number": 8,
+      "group": "Group 8",
+      "date": "Saturday 07/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "CUC112",
+      "course_title": "Report Writing & Communication Skills",
+      "course_arabic": "مهارات كتابة التقارير والتواصل",
+      "hall": "B2-409",
+      "building": "Building 2",
+      "from_student": "2503010020",
+      "to_student": "26030100446",
+      "num_students": 31
+    },
+    {
+      "id": "seat_16",
+      "group_number": 8,
+      "group": "Group 8",
+      "date": "Saturday 07/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "CUC112",
+      "course_title": "Report Writing & Communication Skills",
+      "course_arabic": "مهارات كتابة التقارير والتواصل",
+      "hall": "B2-410",
+      "building": "Building 2",
+      "from_student": "26030100447",
+      "to_student": "26030110046",
+      "num_students": 39
+    },
+    {
+      "id": "seat_17",
+      "group_number": 8,
+      "group": "Group 8",
+      "date": "Saturday 07/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "CUC112",
+      "course_title": "Report Writing & Communication Skills",
+      "course_arabic": "مهارات كتابة التقارير والتواصل",
+      "hall": "B2-210",
+      "building": "Building 2",
+      "from_student": "26030100027",
+      "to_student": "26030100210",
+      "num_students": 20
+    },
+    {
+      "id": "seat_18",
+      "group_number": 9,
+      "group": "Group 9",
+      "date": "Saturday 07/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "CUC112",
+      "course_title": "Report Writing & Communication Skills",
+      "course_arabic": "مهارات كتابة التقارير والتواصل",
+      "hall": "B2-413",
+      "building": "Building 2",
+      "from_student": "26030100219",
+      "to_student": "26030100588",
+      "num_students": 39
+    },
+    {
+      "id": "seat_19",
+      "group_number": 1,
+      "group": "Group 1",
+      "date": "Sunday 08/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS111",
+      "course_title": "Mathematics I",
+      "course_arabic": "رياضيات 1 (تفاضل وتكامل)",
+      "hall": "B2-317",
+      "building": "Building 2",
+      "from_student": "2503010278",
+      "to_student": "26030100043",
+      "num_students": 11
+    },
+    {
+      "id": "seat_20",
+      "group_number": 1,
+      "group": "Group 1",
+      "date": "Sunday 08/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS111",
+      "course_title": "Mathematics I",
+      "course_arabic": "رياضيات 1 (تفاضل وتكامل)",
+      "hall": "B2-409",
+      "building": "Building 2",
+      "from_student": "26030100044",
+      "to_student": "26030100559",
+      "num_students": 30
+    },
+    {
+      "id": "seat_21",
+      "group_number": 2,
+      "group": "Group 2",
+      "date": "Sunday 08/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS111",
+      "course_title": "Mathematics I",
+      "course_arabic": "رياضيات 1 (تفاضل وتكامل)",
+      "hall": "B2-108",
+      "building": "Building 2",
+      "from_student": "26030100050",
+      "to_student": "26030100126",
+      "num_students": 36
+    },
+    {
+      "id": "seat_22",
+      "group_number": 2,
+      "group": "Group 2",
+      "date": "Sunday 08/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS111",
+      "course_title": "Mathematics I",
+      "course_arabic": "رياضيات 1 (تفاضل وتكامل)",
+      "hall": "B2-301",
+      "building": "Building 2",
+      "from_student": "26030100127",
+      "to_student": "26030110032",
+      "num_students": 19
+    },
+    {
+      "id": "seat_23",
+      "group_number": 3,
+      "group": "Group 3",
+      "date": "Sunday 08/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS111",
+      "course_title": "Mathematics I",
+      "course_arabic": "رياضيات 1 (تفاضل وتكامل)",
+      "hall": "B2-211",
+      "building": "Building 2",
+      "from_student": "2503010120",
+      "to_student": "26030100195",
+      "num_students": 42
+    },
+    {
+      "id": "seat_24",
+      "group_number": 3,
+      "group": "Group 3",
+      "date": "Sunday 08/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS111",
+      "course_title": "Mathematics I",
+      "course_arabic": "رياضيات 1 (تفاضل وتكامل)",
+      "hall": "B2-316",
+      "building": "Building 2",
+      "from_student": "26030100197",
+      "to_student": "26030110017",
+      "num_students": 20
+    },
+    {
+      "id": "seat_25",
+      "group_number": 4,
+      "group": "Group 4",
+      "date": "Sunday 08/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS111",
+      "course_title": "Mathematics I",
+      "course_arabic": "رياضيات 1 (تفاضل وتكامل)",
+      "hall": "B2-210",
+      "building": "Building 2",
+      "from_student": "2503020020",
+      "to_student": "26030100516",
+      "num_students": 40
+    },
+    {
+      "id": "seat_26",
+      "group_number": 4,
+      "group": "Group 4",
+      "date": "Sunday 08/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS111",
+      "course_title": "Mathematics I",
+      "course_arabic": "رياضيات 1 (تفاضل وتكامل)",
+      "hall": "B2-307",
+      "building": "Building 2",
+      "from_student": "26030100521",
+      "to_student": "26030110047",
+      "num_students": 26
+    },
+    {
+      "id": "seat_27",
+      "group_number": 5,
+      "group": "Group 5",
+      "date": "Sunday 08/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS111",
+      "course_title": "Mathematics I",
+      "course_arabic": "رياضيات 1 (تفاضل وتكامل)",
+      "hall": "B2-215",
+      "building": "Building 2",
+      "from_student": "2503010090",
+      "to_student": "26030100337",
+      "num_students": 43
+    },
+    {
+      "id": "seat_28",
+      "group_number": 5,
+      "group": "Group 5",
+      "date": "Sunday 08/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS111",
+      "course_title": "Mathematics I",
+      "course_arabic": "رياضيات 1 (تفاضل وتكامل)",
+      "hall": "B2-302",
+      "building": "Building 2",
+      "from_student": "26030100345",
+      "to_student": "26030110004",
+      "num_students": 16
+    },
+    {
+      "id": "seat_29",
+      "group_number": 6,
+      "group": "Group 6",
+      "date": "Sunday 08/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS111",
+      "course_title": "Mathematics I",
+      "course_arabic": "رياضيات 1 (تفاضل وتكامل)",
+      "hall": "B2-308",
+      "building": "Building 2",
+      "from_student": "2503010168",
+      "to_student": "26030100383",
+      "num_students": 32
+    },
+    {
+      "id": "seat_30",
+      "group_number": 6,
+      "group": "Group 6",
+      "date": "Sunday 08/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS111",
+      "course_title": "Mathematics I",
+      "course_arabic": "رياضيات 1 (تفاضل وتكامل)",
+      "hall": "B2-418",
+      "building": "Building 2",
+      "from_student": "26030100385",
+      "to_student": "26030110012",
+      "num_students": 24
+    },
+    {
+      "id": "seat_31",
+      "group_number": 7,
+      "group": "Group 7",
+      "date": "Sunday 08/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS111",
+      "course_title": "Mathematics I",
+      "course_arabic": "رياضيات 1 (تفاضل وتكامل)",
+      "hall": "B2-201",
+      "building": "Building 2",
+      "from_student": "2503010232",
+      "to_student": "26030100436",
+      "num_students": 44
+    },
+    {
+      "id": "seat_32",
+      "group_number": 7,
+      "group": "Group 7",
+      "date": "Sunday 08/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS111",
+      "course_title": "Mathematics I",
+      "course_arabic": "رياضيات 1 (تفاضل وتكامل)",
+      "hall": "B2-411",
+      "building": "Building 2",
+      "from_student": "26030100437",
+      "to_student": "26030110043",
+      "num_students": 22
+    },
+    {
+      "id": "seat_33",
+      "group_number": 8,
+      "group": "Group 8",
+      "date": "Sunday 08/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS111",
+      "course_title": "Mathematics I",
+      "course_arabic": "رياضيات 1 (تفاضل وتكامل)",
+      "hall": "B2-310",
+      "building": "Building 2",
+      "from_student": "2503010063",
+      "to_student": "26030100453",
+      "num_students": 36
+    },
+    {
+      "id": "seat_34",
+      "group_number": 8,
+      "group": "Group 8",
+      "date": "Sunday 08/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS111",
+      "course_title": "Mathematics I",
+      "course_arabic": "رياضيات 1 (تفاضل وتكامل)",
+      "hall": "B2-412",
+      "building": "Building 2",
+      "from_student": "26030100454",
+      "to_student": "26030110046",
+      "num_students": 34
+    },
+    {
+      "id": "seat_35",
+      "group_number": 9,
+      "group": "Group 9",
+      "date": "Sunday 08/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS111",
+      "course_title": "Mathematics I",
+      "course_arabic": "رياضيات 1 (تفاضل وتكامل)",
+      "hall": "B2-112",
+      "building": "Building 2",
+      "from_student": "26030100027",
+      "to_student": "26030100452",
+      "num_students": 41
+    },
+    {
+      "id": "seat_36",
+      "group_number": 9,
+      "group": "Group 9",
+      "date": "Sunday 08/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS111",
+      "course_title": "Mathematics I",
+      "course_arabic": "رياضيات 1 (تفاضل وتكامل)",
+      "hall": "B2-417",
+      "building": "Building 2",
+      "from_student": "26030100461",
+      "to_student": "26030110011",
+      "num_students": 20
+    },
+    {
+      "id": "seat_37",
+      "group_number": 1,
+      "group": "Group 1",
+      "date": "Monday 09/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS121",
+      "course_title": "Vibration & Waves",
+      "course_arabic": "اهتزازات وأمواج (فيزياء)",
+      "hall": "B2-211",
+      "building": "Building 2",
+      "from_student": "2403010013",
+      "to_student": "26030100068",
+      "num_students": 11
+    },
+    {
+      "id": "seat_38",
+      "group_number": 1,
+      "group": "Group 1",
+      "date": "Monday 09/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS121",
+      "course_title": "Vibration & Waves",
+      "course_arabic": "اهتزازات وأمواج (فيزياء)",
+      "hall": "B2-316",
+      "building": "Building 2",
+      "from_student": "26030100161",
+      "to_student": "26030110042",
+      "num_students": 20
+    },
+    {
+      "id": "seat_39",
+      "group_number": 2,
+      "group": "Group 2",
+      "date": "Monday 09/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS121",
+      "course_title": "Vibration & Waves",
+      "course_arabic": "اهتزازات وأمواج (فيزياء)",
+      "hall": "B2-201",
+      "building": "Building 2",
+      "from_student": "2503010137",
+      "to_student": "26030100134",
+      "num_students": 44
+    },
+    {
+      "id": "seat_40",
+      "group_number": 2,
+      "group": "Group 2",
+      "date": "Monday 09/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS121",
+      "course_title": "Vibration & Waves",
+      "course_arabic": "اهتزازات وأمواج (فيزياء)",
+      "hall": "B2-301",
+      "building": "Building 2",
+      "from_student": "26030100135",
+      "to_student": "26030110045",
+      "num_students": 20
+    },
+    {
+      "id": "seat_41",
+      "group_number": 3,
+      "group": "Group 3",
+      "date": "Monday 09/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS121",
+      "course_title": "Vibration & Waves",
+      "course_arabic": "اهتزازات وأمواج (فيزياء)",
+      "hall": "B2-214",
+      "building": "Building 2",
+      "from_student": "2503010124",
+      "to_student": "26030100201",
+      "num_students": 43
+    },
+    {
+      "id": "seat_42",
+      "group_number": 3,
+      "group": "Group 3",
+      "date": "Monday 09/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS121",
+      "course_title": "Vibration & Waves",
+      "course_arabic": "اهتزازات وأمواج (فيزياء)",
+      "hall": "B2-409",
+      "building": "Building 2",
+      "from_student": "26030100203",
+      "to_student": "26030110039",
+      "num_students": 29
+    },
+    {
+      "id": "seat_43",
+      "group_number": 4,
+      "group": "Group 4",
+      "date": "Monday 09/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS121",
+      "course_title": "Vibration & Waves",
+      "course_arabic": "اهتزازات وأمواج (فيزياء)",
+      "hall": "B2-210",
+      "building": "Building 2",
+      "from_student": "26030100089",
+      "to_student": "26030100521",
+      "num_students": 40
+    },
+    {
+      "id": "seat_44",
+      "group_number": 4,
+      "group": "Group 4",
+      "date": "Monday 09/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS121",
+      "course_title": "Vibration & Waves",
+      "course_arabic": "اهتزازات وأمواج (فيزياء)",
+      "hall": "B2-307",
+      "building": "Building 2",
+      "from_student": "26030100524",
+      "to_student": "26030110047",
+      "num_students": 28
+    },
+    {
+      "id": "seat_45",
+      "group_number": 5,
+      "group": "Group 5",
+      "date": "Monday 09/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS121",
+      "course_title": "Vibration & Waves",
+      "course_arabic": "اهتزازات وأمواج (فيزياء)",
+      "hall": "B2-413",
+      "building": "Building 2",
+      "from_student": "2503010023",
+      "to_student": "26030100333",
+      "num_students": 41
+    },
+    {
+      "id": "seat_46",
+      "group_number": 5,
+      "group": "Group 5",
+      "date": "Monday 09/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS121",
+      "course_title": "Vibration & Waves",
+      "course_arabic": "اهتزازات وأمواج (فيزياء)",
+      "hall": "B2-417",
+      "building": "Building 2",
+      "from_student": "26030100334",
+      "to_student": "26030110034",
+      "num_students": 20
+    },
+    {
+      "id": "seat_47",
+      "group_number": 6,
+      "group": "Group 6",
+      "date": "Monday 09/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS121",
+      "course_title": "Vibration & Waves",
+      "course_arabic": "اهتزازات وأمواج (فيزياء)",
+      "hall": "B2-410",
+      "building": "Building 2",
+      "from_student": "2503010074",
+      "to_student": "26030100386",
+      "num_students": 39
+    },
+    {
+      "id": "seat_48",
+      "group_number": 6,
+      "group": "Group 6",
+      "date": "Monday 09/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS121",
+      "course_title": "Vibration & Waves",
+      "course_arabic": "اهتزازات وأمواج (فيزياء)",
+      "hall": "B2-418",
+      "building": "Building 2",
+      "from_student": "26030100389",
+      "to_student": "26030110033",
+      "num_students": 23
+    },
+    {
+      "id": "seat_49",
+      "group_number": 7,
+      "group": "Group 7",
+      "date": "Monday 09/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS121",
+      "course_title": "Vibration & Waves",
+      "course_arabic": "اهتزازات وأمواج (فيزياء)",
+      "hall": "B2-215",
+      "building": "Building 2",
+      "from_student": "2503010160",
+      "to_student": "26030100432",
+      "num_students": 43
+    },
+    {
+      "id": "seat_50",
+      "group_number": 7,
+      "group": "Group 7",
+      "date": "Monday 09/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS121",
+      "course_title": "Vibration & Waves",
+      "course_arabic": "اهتزازات وأمواج (فيزياء)",
+      "hall": "B2-308",
+      "building": "Building 2",
+      "from_student": "26030100433",
+      "to_student": "26030110029",
+      "num_students": 27
+    },
+    {
+      "id": "seat_51",
+      "group_number": 8,
+      "group": "Group 8",
+      "date": "Monday 09/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS121",
+      "course_title": "Vibration & Waves",
+      "course_arabic": "اهتزازات وأمواج (فيزياء)",
+      "hall": "B2-108",
+      "building": "Building 2",
+      "from_student": "2503010063",
+      "to_student": "26030100453",
+      "num_students": 36
+    },
+    {
+      "id": "seat_52",
+      "group_number": 8,
+      "group": "Group 8",
+      "date": "Monday 09/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS121",
+      "course_title": "Vibration & Waves",
+      "course_arabic": "اهتزازات وأمواج (فيزياء)",
+      "hall": "B2-112",
+      "building": "Building 2",
+      "from_student": "26030100454",
+      "to_student": "26030110046",
+      "num_students": 35
+    },
+    {
+      "id": "seat_53",
+      "group_number": 9,
+      "group": "Group 9",
+      "date": "Monday 09/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS121",
+      "course_title": "Vibration & Waves",
+      "course_arabic": "اهتزازات وأمواج (فيزياء)",
+      "hall": "B2-412",
+      "building": "Building 2",
+      "from_student": "26030100027",
+      "to_student": "26030100388",
+      "num_students": 36
+    },
+    {
+      "id": "seat_54",
+      "group_number": 9,
+      "group": "Group 9",
+      "date": "Monday 09/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS121",
+      "course_title": "Vibration & Waves",
+      "course_arabic": "اهتزازات وأمواج (فيزياء)",
+      "hall": "B2-414",
+      "building": "Building 2",
+      "from_student": "26030100390",
+      "to_student": "26030100588",
+      "num_students": 23
+    },
+    {
+      "id": "seat_55",
+      "group_number": 1,
+      "group": "Group 1",
+      "date": "Tuesday 10/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "CUC111",
+      "course_title": "Introduction to Computer Systems",
+      "course_arabic": "مقدمة في نظم الحاسب",
+      "hall": "B2-210",
+      "building": "Building 2",
+      "from_student": "2403010013",
+      "to_student": "26030100056",
+      "num_students": 11
+    },
+    {
+      "id": "seat_56",
+      "group_number": 1,
+      "group": "Group 1",
+      "date": "Tuesday 10/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "CUC111",
+      "course_title": "Introduction to Computer Systems",
+      "course_arabic": "مقدمة في نظم الحاسب",
+      "hall": "B2-307",
+      "building": "Building 2",
+      "from_student": "26030100057",
+      "to_student": "26030110042",
+      "num_students": 27
+    },
+    {
+      "id": "seat_57",
+      "group_number": 2,
+      "group": "Group 2",
+      "date": "Tuesday 10/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "CUC111",
+      "course_title": "Introduction to Computer Systems",
+      "course_arabic": "مقدمة في نظم الحاسب",
+      "hall": "B2-201",
+      "building": "Building 2",
+      "from_student": "26030100034",
+      "to_student": "26030100134",
+      "num_students": 44
+    },
+    {
+      "id": "seat_58",
+      "group_number": 2,
+      "group": "Group 2",
+      "date": "Tuesday 10/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "CUC111",
+      "course_title": "Introduction to Computer Systems",
+      "course_arabic": "مقدمة في نظم الحاسب",
+      "hall": "B2-302",
+      "building": "Building 2",
+      "from_student": "26030100135",
+      "to_student": "26030110041",
+      "num_students": 14
+    },
+    {
+      "id": "seat_59",
+      "group_number": 2,
+      "group": "Group 2",
+      "date": "Tuesday 10/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "CUC111",
+      "course_title": "Introduction to Computer Systems",
+      "course_arabic": "مقدمة في نظم الحاسب",
+      "hall": "B2-108",
+      "building": "Building 2",
+      "from_student": "2503010124",
+      "to_student": "26030100192",
+      "num_students": 36
+    },
+    {
+      "id": "seat_60",
+      "group_number": 3,
+      "group": "Group 3",
+      "date": "Tuesday 10/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "CUC111",
+      "course_title": "Introduction to Computer Systems",
+      "course_arabic": "مقدمة في نظم الحاسب",
+      "hall": "B2-112",
+      "building": "Building 2",
+      "from_student": "26030100193",
+      "to_student": "26030110040",
+      "num_students": 35
+    },
+    {
+      "id": "seat_61",
+      "group_number": 4,
+      "group": "Group 4",
+      "date": "Tuesday 10/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "CUC111",
+      "course_title": "Introduction to Computer Systems",
+      "course_arabic": "مقدمة في نظم الحاسب",
+      "hall": "B2-214",
+      "building": "Building 2",
+      "from_student": "2503010141",
+      "to_student": "26030100526",
+      "num_students": 43
+    },
+    {
+      "id": "seat_62",
+      "group_number": 4,
+      "group": "Group 4",
+      "date": "Tuesday 10/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "CUC111",
+      "course_title": "Introduction to Computer Systems",
+      "course_arabic": "مقدمة في نظم الحاسب",
+      "hall": "B2-317",
+      "building": "Building 2",
+      "from_student": "26030100528",
+      "to_student": "26030110047",
+      "num_students": 23
+    },
+    {
+      "id": "seat_63",
+      "group_number": 4,
+      "group": "Group 4",
+      "date": "Tuesday 10/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "CUC111",
+      "course_title": "Introduction to Computer Systems",
+      "course_arabic": "مقدمة في نظم الحاسب",
+      "hall": "B2-413",
+      "building": "Building 2",
+      "from_student": "2303020004",
+      "to_student": "26030100331",
+      "num_students": 41
+    },
+    {
+      "id": "seat_64",
+      "group_number": 5,
+      "group": "Group 5",
+      "date": "Tuesday 10/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "CUC111",
+      "course_title": "Introduction to Computer Systems",
+      "course_arabic": "مقدمة في نظم الحاسب",
+      "hall": "B2-414",
+      "building": "Building 2",
+      "from_student": "26030100332",
+      "to_student": "26030110031",
+      "num_students": 22
+    },
+    {
+      "id": "seat_65",
+      "group_number": 6,
+      "group": "Group 6",
+      "date": "Tuesday 10/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "CUC111",
+      "course_title": "Introduction to Computer Systems",
+      "course_arabic": "مقدمة في نظم الحاسب",
+      "hall": "B2-215",
+      "building": "Building 2",
+      "from_student": "2503010162",
+      "to_student": "26030100538",
+      "num_students": 43
+    },
+    {
+      "id": "seat_66",
+      "group_number": 6,
+      "group": "Group 6",
+      "date": "Tuesday 10/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "CUC111",
+      "course_title": "Introduction to Computer Systems",
+      "course_arabic": "مقدمة في نظم الحاسب",
+      "hall": "B2-301",
+      "building": "Building 2",
+      "from_student": "26030100541",
+      "to_student": "26030100580",
+      "num_students": 11
+    },
+    {
+      "id": "seat_67",
+      "group_number": 7,
+      "group": "Group 7",
+      "date": "Tuesday 10/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "CUC111",
+      "course_title": "Introduction to Computer Systems",
+      "course_arabic": "مقدمة في نظم الحاسب",
+      "hall": "B2-211",
+      "building": "Building 2",
+      "from_student": "2503010264",
+      "to_student": "26030100433",
+      "num_students": 42
+    },
+    {
+      "id": "seat_68",
+      "group_number": 7,
+      "group": "Group 7",
+      "date": "Tuesday 10/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "CUC111",
+      "course_title": "Introduction to Computer Systems",
+      "course_arabic": "مقدمة في نظم الحاسب",
+      "hall": "B2-411",
+      "building": "Building 2",
+      "from_student": "26030100434",
+      "to_student": "26030110009",
+      "num_students": 26
+    },
+    {
+      "id": "seat_69",
+      "group_number": 8,
+      "group": "Group 8",
+      "date": "Tuesday 10/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "CUC111",
+      "course_title": "Introduction to Computer Systems",
+      "course_arabic": "مقدمة في نظم الحاسب",
+      "hall": "B2-310",
+      "building": "Building 2",
+      "from_student": "2503010063",
+      "to_student": "26030100454",
+      "num_students": 36
+    },
+    {
+      "id": "seat_70",
+      "group_number": 8,
+      "group": "Group 8",
+      "date": "Tuesday 10/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "CUC111",
+      "course_title": "Introduction to Computer Systems",
+      "course_arabic": "مقدمة في نظم الحاسب",
+      "hall": "B2-412",
+      "building": "Building 2",
+      "from_student": "26030100465",
+      "to_student": "26030110008",
+      "num_students": 33
+    },
+    {
+      "id": "seat_71",
+      "group_number": 8,
+      "group": "Group 8",
+      "date": "Tuesday 10/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "CUC111",
+      "course_title": "Introduction to Computer Systems",
+      "course_arabic": "مقدمة في نظم الحاسب",
+      "hall": "B2-410",
+      "building": "Building 2",
+      "from_student": "2503020005",
+      "to_student": "26030100397",
+      "num_students": 39
+    },
+    {
+      "id": "seat_72",
+      "group_number": 9,
+      "group": "Group 9",
+      "date": "Tuesday 10/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "CUC111",
+      "course_title": "Introduction to Computer Systems",
+      "course_arabic": "مقدمة في نظم الحاسب",
+      "hall": "B2-418",
+      "building": "Building 2",
+      "from_student": "26030100399",
+      "to_student": "26030110032",
+      "num_students": 23
+    },
+    {
+      "id": "seat_73",
+      "group_number": 1,
+      "group": "Group 1",
+      "date": "Wednesday 11/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS141",
+      "course_title": "Engineering Chemistry",
+      "course_arabic": "كيمياء هندسية",
+      "hall": "B2-211",
+      "building": "Building 2",
+      "from_student": "2503010278",
+      "to_student": "26030100067",
+      "num_students": 11
+    },
+    {
+      "id": "seat_74",
+      "group_number": 1,
+      "group": "Group 1",
+      "date": "Wednesday 11/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS141",
+      "course_title": "Engineering Chemistry",
+      "course_arabic": "كيمياء هندسية",
+      "hall": "B2-316",
+      "building": "Building 2",
+      "from_student": "26030100068",
+      "to_student": "26030110042",
+      "num_students": 18
+    },
+    {
+      "id": "seat_75",
+      "group_number": 2,
+      "group": "Group 2",
+      "date": "Wednesday 11/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS141",
+      "course_title": "Engineering Chemistry",
+      "course_arabic": "كيمياء هندسية",
+      "hall": "B2-201",
+      "building": "Building 2",
+      "from_student": "2503010275",
+      "to_student": "26030100134",
+      "num_students": 44
+    },
+    {
+      "id": "seat_76",
+      "group_number": 2,
+      "group": "Group 2",
+      "date": "Wednesday 11/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS141",
+      "course_title": "Engineering Chemistry",
+      "course_arabic": "كيمياء هندسية",
+      "hall": "B2-301",
+      "building": "Building 2",
+      "from_student": "26030100135",
+      "to_student": "26030110032",
+      "num_students": 13
+    },
+    {
+      "id": "seat_77",
+      "group_number": 2,
+      "group": "Group 2",
+      "date": "Wednesday 11/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS141",
+      "course_title": "Engineering Chemistry",
+      "course_arabic": "كيمياء هندسية",
+      "hall": "B2-214",
+      "building": "Building 2",
+      "from_student": "2503010124",
+      "to_student": "26030100200",
+      "num_students": 43
+    },
+    {
+      "id": "seat_78",
+      "group_number": 3,
+      "group": "Group 3",
+      "date": "Wednesday 11/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS141",
+      "course_title": "Engineering Chemistry",
+      "course_arabic": "كيمياء هندسية",
+      "hall": "B2-409",
+      "building": "Building 2",
+      "from_student": "26030100201",
+      "to_student": "26030110040",
+      "num_students": 26
+    },
+    {
+      "id": "seat_79",
+      "group_number": 4,
+      "group": "Group 4",
+      "date": "Wednesday 11/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS141",
+      "course_title": "Engineering Chemistry",
+      "course_arabic": "كيمياء هندسية",
+      "hall": "B2-210",
+      "building": "Building 2",
+      "from_student": "26030100089",
+      "to_student": "26030100521",
+      "num_students": 40
+    },
+    {
+      "id": "seat_80",
+      "group_number": 4,
+      "group": "Group 4",
+      "date": "Wednesday 11/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS141",
+      "course_title": "Engineering Chemistry",
+      "course_arabic": "كيمياء هندسية",
+      "hall": "B2-307",
+      "building": "Building 2",
+      "from_student": "26030100524",
+      "to_student": "26030110047",
+      "num_students": 25
+    },
+    {
+      "id": "seat_81",
+      "group_number": 4,
+      "group": "Group 4",
+      "date": "Wednesday 11/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS141",
+      "course_title": "Engineering Chemistry",
+      "course_arabic": "كيمياء هندسية",
+      "hall": "B2-413",
+      "building": "Building 2",
+      "from_student": "2503010016",
+      "to_student": "26030100333",
+      "num_students": 41
+    },
+    {
+      "id": "seat_82",
+      "group_number": 5,
+      "group": "Group 5",
+      "date": "Wednesday 11/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS141",
+      "course_title": "Engineering Chemistry",
+      "course_arabic": "كيمياء هندسية",
+      "hall": "B2-417",
+      "building": "Building 2",
+      "from_student": "26030100334",
+      "to_student": "26030110033",
+      "num_students": 20
+    },
+    {
+      "id": "seat_83",
+      "group_number": 6,
+      "group": "Group 6",
+      "date": "Wednesday 11/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS141",
+      "course_title": "Engineering Chemistry",
+      "course_arabic": "كيمياء هندسية",
+      "hall": "B2-410",
+      "building": "Building 2",
+      "from_student": "2503010162",
+      "to_student": "26030100395",
+      "num_students": 39
+    },
+    {
+      "id": "seat_84",
+      "group_number": 6,
+      "group": "Group 6",
+      "date": "Wednesday 11/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS141",
+      "course_title": "Engineering Chemistry",
+      "course_arabic": "كيمياء هندسية",
+      "hall": "B2-418",
+      "building": "Building 2",
+      "from_student": "26030100396",
+      "to_student": "26030100580",
+      "num_students": 16
+    },
+    {
+      "id": "seat_85",
+      "group_number": 7,
+      "group": "Group 7",
+      "date": "Wednesday 11/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS141",
+      "course_title": "Engineering Chemistry",
+      "course_arabic": "كيمياء هندسية",
+      "hall": "B2-215",
+      "building": "Building 2",
+      "from_student": "2503010232",
+      "to_student": "26030100434",
+      "num_students": 43
+    },
+    {
+      "id": "seat_86",
+      "group_number": 7,
+      "group": "Group 7",
+      "date": "Wednesday 11/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS141",
+      "course_title": "Engineering Chemistry",
+      "course_arabic": "كيمياء هندسية",
+      "hall": "B2-308",
+      "building": "Building 2",
+      "from_student": "26030100435",
+      "to_student": "26030100575",
+      "num_students": 22
+    },
+    {
+      "id": "seat_87",
+      "group_number": 8,
+      "group": "Group 8",
+      "date": "Wednesday 11/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS141",
+      "course_title": "Engineering Chemistry",
+      "course_arabic": "كيمياء هندسية",
+      "hall": "B2-108",
+      "building": "Building 2",
+      "from_student": "2503010063",
+      "to_student": "26030100465",
+      "num_students": 36
+    },
+    {
+      "id": "seat_88",
+      "group_number": 8,
+      "group": "Group 8",
+      "date": "Wednesday 11/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS141",
+      "course_title": "Engineering Chemistry",
+      "course_arabic": "كيمياء هندسية",
+      "hall": "B2-112",
+      "building": "Building 2",
+      "from_student": "26030100472",
+      "to_student": "26030110046",
+      "num_students": 34
+    },
+    {
+      "id": "seat_89",
+      "group_number": 8,
+      "group": "Group 8",
+      "date": "Wednesday 11/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS141",
+      "course_title": "Engineering Chemistry",
+      "course_arabic": "كيمياء هندسية",
+      "hall": "B2-412",
+      "building": "Building 2",
+      "from_student": "2503020025",
+      "to_student": "26030100387",
+      "num_students": 36
+    },
+    {
+      "id": "seat_90",
+      "group_number": 9,
+      "group": "Group 9",
+      "date": "Wednesday 11/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS141",
+      "course_title": "Engineering Chemistry",
+      "course_arabic": "كيمياء هندسية",
+      "hall": "B2-414",
+      "building": "Building 2",
+      "from_student": "26030100388",
+      "to_student": "26030100588",
+      "num_students": 24
+    },
+    {
+      "id": "seat_91",
+      "group_number": 1,
+      "group": "Group 1",
+      "date": "Thursday 12/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS131",
+      "course_title": "Statics",
+      "course_arabic": "استاتيكا (ميكانيكا)",
+      "hall": "B2-211",
+      "building": "Building 2",
+      "from_student": "2403010013",
+      "to_student": "26030100067",
+      "num_students": 11
+    },
+    {
+      "id": "seat_92",
+      "group_number": 1,
+      "group": "Group 1",
+      "date": "Thursday 12/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS131",
+      "course_title": "Statics",
+      "course_arabic": "استاتيكا (ميكانيكا)",
+      "hall": "B2-316",
+      "building": "Building 2",
+      "from_student": "26030100068",
+      "to_student": "26030110042",
+      "num_students": 17
+    },
+    {
+      "id": "seat_93",
+      "group_number": 2,
+      "group": "Group 2",
+      "date": "Thursday 12/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS131",
+      "course_title": "Statics",
+      "course_arabic": "استاتيكا (ميكانيكا)",
+      "hall": "B2-201",
+      "building": "Building 2",
+      "from_student": "26030100050",
+      "to_student": "26030100135",
+      "num_students": 44
+    },
+    {
+      "id": "seat_94",
+      "group_number": 2,
+      "group": "Group 2",
+      "date": "Thursday 12/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS131",
+      "course_title": "Statics",
+      "course_arabic": "استاتيكا (ميكانيكا)",
+      "hall": "B2-301",
+      "building": "Building 2",
+      "from_student": "26030100180",
+      "to_student": "26030110027",
+      "num_students": 11
+    },
+    {
+      "id": "seat_95",
+      "group_number": 3,
+      "group": "Group 3",
+      "date": "Thursday 12/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS131",
+      "course_title": "Statics",
+      "course_arabic": "استاتيكا (ميكانيكا)",
+      "hall": "B2-214",
+      "building": "Building 2",
+      "from_student": "2503010068",
+      "to_student": "26030100197",
+      "num_students": 43
+    },
+    {
+      "id": "seat_96",
+      "group_number": 3,
+      "group": "Group 3",
+      "date": "Thursday 12/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS131",
+      "course_title": "Statics",
+      "course_arabic": "استاتيكا (ميكانيكا)",
+      "hall": "B2-409",
+      "building": "Building 2",
+      "from_student": "26030100200",
+      "to_student": "26030110039",
+      "num_students": 22
+    },
+    {
+      "id": "seat_97",
+      "group_number": 4,
+      "group": "Group 4",
+      "date": "Thursday 12/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS131",
+      "course_title": "Statics",
+      "course_arabic": "استاتيكا (ميكانيكا)",
+      "hall": "B2-210",
+      "building": "Building 2",
+      "from_student": "26030100089",
+      "to_student": "26030100524",
+      "num_students": 40
+    },
+    {
+      "id": "seat_98",
+      "group_number": 4,
+      "group": "Group 4",
+      "date": "Thursday 12/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS131",
+      "course_title": "Statics",
+      "course_arabic": "استاتيكا (ميكانيكا)",
+      "hall": "B2-307",
+      "building": "Building 2",
+      "from_student": "26030100525",
+      "to_student": "26030110047",
+      "num_students": 24
+    },
+    {
+      "id": "seat_99",
+      "group_number": 5,
+      "group": "Group 5",
+      "date": "Thursday 12/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS131",
+      "course_title": "Statics",
+      "course_arabic": "استاتيكا (ميكانيكا)",
+      "hall": "B2-413",
+      "building": "Building 2",
+      "from_student": "2503010090",
+      "to_student": "26030100333",
+      "num_students": 41
+    },
+    {
+      "id": "seat_100",
+      "group_number": 5,
+      "group": "Group 5",
+      "date": "Thursday 12/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS131",
+      "course_title": "Statics",
+      "course_arabic": "استاتيكا (ميكانيكا)",
+      "hall": "B2-417",
+      "building": "Building 2",
+      "from_student": "26030100334",
+      "to_student": "26030110004",
+      "num_students": 19
+    },
+    {
+      "id": "seat_101",
+      "group_number": 6,
+      "group": "Group 6",
+      "date": "Thursday 12/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS131",
+      "course_title": "Statics",
+      "course_arabic": "استاتيكا (ميكانيكا)",
+      "hall": "B2-410",
+      "building": "Building 2",
+      "from_student": "2503010074",
+      "to_student": "26030100391",
+      "num_students": 39
+    },
+    {
+      "id": "seat_102",
+      "group_number": 6,
+      "group": "Group 6",
+      "date": "Thursday 12/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS131",
+      "course_title": "Statics",
+      "course_arabic": "استاتيكا (ميكانيكا)",
+      "hall": "B2-418",
+      "building": "Building 2",
+      "from_student": "26030100394",
+      "to_student": "26030110034",
+      "num_students": 21
+    },
+    {
+      "id": "seat_103",
+      "group_number": 7,
+      "group": "Group 7",
+      "date": "Thursday 12/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS131",
+      "course_title": "Statics",
+      "course_arabic": "استاتيكا (ميكانيكا)",
+      "hall": "B2-215",
+      "building": "Building 2",
+      "from_student": "2503010232",
+      "to_student": "26030100434",
+      "num_students": 43
+    },
+    {
+      "id": "seat_104",
+      "group_number": 7,
+      "group": "Group 7",
+      "date": "Thursday 12/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS131",
+      "course_title": "Statics",
+      "course_arabic": "استاتيكا (ميكانيكا)",
+      "hall": "B2-308",
+      "building": "Building 2",
+      "from_student": "26030100435",
+      "to_student": "26030100575",
+      "num_students": 22
+    },
+    {
+      "id": "seat_105",
+      "group_number": 8,
+      "group": "Group 8",
+      "date": "Thursday 12/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS131",
+      "course_title": "Statics",
+      "course_arabic": "استاتيكا (ميكانيكا)",
+      "hall": "B2-108",
+      "building": "Building 2",
+      "from_student": "2503010063",
+      "to_student": "26030100451",
+      "num_students": 36
+    },
+    {
+      "id": "seat_106",
+      "group_number": 8,
+      "group": "Group 8",
+      "date": "Thursday 12/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS131",
+      "course_title": "Statics",
+      "course_arabic": "استاتيكا (ميكانيكا)",
+      "hall": "B2-112",
+      "building": "Building 2",
+      "from_student": "26030100453",
+      "to_student": "26030110046",
+      "num_students": 35
+    },
+    {
+      "id": "seat_107",
+      "group_number": 9,
+      "group": "Group 9",
+      "date": "Thursday 12/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS131",
+      "course_title": "Statics",
+      "course_arabic": "استاتيكا (ميكانيكا)",
+      "hall": "B2-412",
+      "building": "Building 2",
+      "from_student": "26030100027",
+      "to_student": "26030100388",
+      "num_students": 36
+    },
+    {
+      "id": "seat_108",
+      "group_number": 9,
+      "group": "Group 9",
+      "date": "Thursday 12/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "BAS131",
+      "course_title": "Statics",
+      "course_arabic": "استاتيكا (ميكانيكا)",
+      "hall": "B2-414",
+      "building": "Building 2",
+      "from_student": "26030100390",
+      "to_student": "26030110038",
+      "num_students": 24
+    },
+    {
+      "id": "seat_109",
+      "group_number": 1,
+      "group": "Group 1",
+      "date": "Saturday 14/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "hall": "B2-215",
+      "building": "Building 2",
+      "from_student": "26030100048",
+      "to_student": "26030110045",
+      "num_students": 27
+    },
+    {
+      "id": "seat_110",
+      "group_number": 1,
+      "group": "Group 1",
+      "date": "Saturday 14/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "hall": "B1-201",
+      "building": "Building 1",
+      "from_student": "All Students",
+      "to_student": "All Students",
+      "num_students": 57
+    },
+    {
+      "id": "seat_111",
+      "group_number": 2,
+      "group": "Group 2",
+      "date": "Saturday 14/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "hall": "B2-210",
+      "building": "Building 2",
+      "from_student": "2503010245",
+      "to_student": "26030100185",
+      "num_students": 31
+    },
+    {
+      "id": "seat_112",
+      "group_number": 3,
+      "group": "Group 3",
+      "date": "Saturday 14/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "hall": "B2-211",
+      "building": "Building 2",
+      "from_student": "26030100186",
+      "to_student": "26030110039",
+      "num_students": 31
+    },
+    {
+      "id": "seat_113",
+      "group_number": 3,
+      "group": "Group 3",
+      "date": "Saturday 14/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "hall": "B2-311",
+      "building": "Building 2",
+      "from_student": "All Students",
+      "to_student": "All Students",
+      "num_students": 68
+    },
+    {
+      "id": "seat_114",
+      "group_number": 4,
+      "group": "Group 4",
+      "date": "Saturday 14/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "hall": "B2-313",
+      "building": "Building 2",
+      "from_student": "All Students",
+      "to_student": "All Students",
+      "num_students": 57
+    },
+    {
+      "id": "seat_115",
+      "group_number": 5,
+      "group": "Group 5",
+      "date": "Saturday 14/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "hall": "B2-307",
+      "building": "Building 2",
+      "from_student": "26030100001",
+      "to_student": "26030100379",
+      "num_students": 25
+    },
+    {
+      "id": "seat_116",
+      "group_number": 6,
+      "group": "Group 6",
+      "date": "Saturday 14/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "hall": "B2-308",
+      "building": "Building 2",
+      "from_student": "26030100381",
+      "to_student": "26030100580",
+      "num_students": 25
+    },
+    {
+      "id": "seat_117",
+      "group_number": 6,
+      "group": "Group 6",
+      "date": "Saturday 14/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "hall": "B1-213",
+      "building": "Building 1",
+      "from_student": "All Students",
+      "to_student": "All Students",
+      "num_students": 68
+    },
+    {
+      "id": "seat_118",
+      "group_number": 7,
+      "group": "Group 7",
+      "date": "Saturday 14/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "hall": "B2-108",
+      "building": "Building 2",
+      "from_student": "26030100040",
+      "to_student": "26030100465",
+      "num_students": 36
+    },
+    {
+      "id": "seat_119",
+      "group_number": 8,
+      "group": "Group 8",
+      "date": "Saturday 14/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "hall": "B2-112",
+      "building": "Building 2",
+      "from_student": "26030100472",
+      "to_student": "26030110046",
+      "num_students": 33
+    },
+    {
+      "id": "seat_120",
+      "group_number": 8,
+      "group": "Group 8",
+      "date": "Saturday 14/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "hall": "B2-309",
+      "building": "Building 2",
+      "from_student": "26030100027",
+      "to_student": "26030100219",
+      "num_students": 21
+    },
+    {
+      "id": "seat_121",
+      "group_number": 9,
+      "group": "Group 9",
+      "date": "Saturday 14/11/2026",
+      "time": "10:00 am - 11:00 am",
+      "course_code": "MEC111",
+      "course_title": "Engineering Drawing",
+      "course_arabic": "رسم هندسي وتطبيقات سوليدوركس",
+      "hall": "B2-310",
+      "building": "Building 2",
+      "from_student": "26030100255",
+      "to_student": "26030100588",
+      "num_students": 33
+    }
+  ],
+  "rooms": [
+    {
+      "room_id": "B1-201",
+      "name": "Hall B1-201",
+      "code": "B1-201",
+      "building": "Building 1",
+      "floor": "Floor 2",
+      "weekly_sessions_count": 0,
+      "exam_sessions_count": 1,
+      "session_types": [
+        "Midterm Exam Hall"
+      ],
+      "assigned_groups": [],
+      "assigned_courses": [
+        "MEC111"
+      ]
+    },
+    {
+      "room_id": "B1-213",
+      "name": "Hall B1-213",
+      "code": "B1-213",
+      "building": "Building 1",
+      "floor": "Floor 2",
+      "weekly_sessions_count": 7,
+      "exam_sessions_count": 1,
+      "session_types": [
+        "Section / Tutorial",
+        "Lecture",
+        "Midterm Exam Hall",
+        "SolidWorks CAD"
+      ],
+      "assigned_groups": [
+        "Group 8"
+      ],
+      "assigned_courses": [
+        "CUC112",
+        "MEC111"
+      ]
+    },
+    {
+      "room_id": "B2-108",
+      "name": "Hall B2-108",
+      "code": "B2-108",
+      "building": "Building 2",
+      "floor": "Floor 1",
+      "weekly_sessions_count": 4,
+      "exam_sessions_count": 7,
+      "session_types": [
+        "Section / Tutorial",
+        "Lecture",
+        "Midterm Exam Hall",
+        "Practical / Lab"
+      ],
+      "assigned_groups": [
+        "Group 9"
+      ],
+      "assigned_courses": [
+        "BAS111",
+        "BAS121",
+        "BAS131",
+        "BAS141",
+        "CUC111",
+        "CUC112",
+        "MEC111"
+      ]
+    },
+    {
+      "room_id": "B2-112",
+      "name": "Hall B2-112",
+      "code": "B2-112",
+      "building": "Building 2",
+      "floor": "Floor 1",
+      "weekly_sessions_count": 9,
+      "exam_sessions_count": 7,
+      "session_types": [
+        "Section / Tutorial",
+        "Lecture",
+        "Midterm Exam Hall",
+        "Practical / Lab"
+      ],
+      "assigned_groups": [
+        "Group 1"
+      ],
+      "assigned_courses": [
+        "BAS111",
+        "BAS121",
+        "BAS131",
+        "BAS141",
+        "CUC111",
+        "CUC112",
+        "MEC111"
+      ]
+    },
+    {
+      "room_id": "B2-201",
+      "name": "Hall B2-201",
+      "code": "B2-201",
+      "building": "Building 2",
+      "floor": "Floor 2",
+      "weekly_sessions_count": 14,
+      "exam_sessions_count": 6,
+      "session_types": [
+        "Section / Tutorial",
+        "Lecture",
+        "Midterm Exam Hall",
+        "Practical / Lab"
+      ],
+      "assigned_groups": [
+        "Group 2",
+        "Group 9"
+      ],
+      "assigned_courses": [
+        "BAS111",
+        "BAS121",
+        "BAS131",
+        "BAS141",
+        "CUC111",
+        "CUC112"
+      ]
+    },
+    {
+      "room_id": "B2-210",
+      "name": "Hall B2-210",
+      "code": "B2-210",
+      "building": "Building 2",
+      "floor": "Floor 2",
+      "weekly_sessions_count": 5,
+      "exam_sessions_count": 7,
+      "session_types": [
+        "Section / Tutorial",
+        "Lecture",
+        "Midterm Exam Hall",
+        "Practical / Lab"
+      ],
+      "assigned_groups": [
+        "Group 5"
+      ],
+      "assigned_courses": [
+        "BAS111",
+        "BAS121",
+        "BAS131",
+        "BAS141",
+        "CUC111",
+        "CUC112",
+        "MEC111"
+      ]
+    },
+    {
+      "room_id": "B2-211",
+      "name": "Hall B2-211",
+      "code": "B2-211",
+      "building": "Building 2",
+      "floor": "Floor 2",
+      "weekly_sessions_count": 9,
+      "exam_sessions_count": 7,
+      "session_types": [
+        "Section / Tutorial",
+        "Lecture",
+        "Midterm Exam Hall",
+        "Practical / Lab"
+      ],
+      "assigned_groups": [
+        "Group 6"
+      ],
+      "assigned_courses": [
+        "BAS111",
+        "BAS121",
+        "BAS131",
+        "BAS141",
+        "CUC111",
+        "CUC112",
+        "MEC111"
+      ]
+    },
+    {
+      "room_id": "B2-214",
+      "name": "Hall B2-214",
+      "code": "B2-214",
+      "building": "Building 2",
+      "floor": "Floor 2",
+      "weekly_sessions_count": 9,
+      "exam_sessions_count": 5,
+      "session_types": [
+        "Section / Tutorial",
+        "Lecture",
+        "Midterm Exam Hall",
+        "Practical / Lab"
+      ],
+      "assigned_groups": [
+        "Group 3"
+      ],
+      "assigned_courses": [
+        "BAS111",
+        "BAS121",
+        "BAS131",
+        "BAS141",
+        "CUC111",
+        "CUC112"
+      ]
+    },
+    {
+      "room_id": "B2-215",
+      "name": "Hall B2-215",
+      "code": "B2-215",
+      "building": "Building 2",
+      "floor": "Floor 2",
+      "weekly_sessions_count": 13,
+      "exam_sessions_count": 7,
+      "session_types": [
+        "Section / Tutorial",
+        "Lecture",
+        "Midterm Exam Hall",
+        "Practical / Lab"
+      ],
+      "assigned_groups": [
+        "Group 4",
+        "Group 5"
+      ],
+      "assigned_courses": [
+        "BAS111",
+        "BAS121",
+        "BAS131",
+        "BAS141",
+        "CUC111",
+        "CUC112",
+        "MEC111"
+      ]
+    },
+    {
+      "room_id": "B2-301",
+      "name": "Hall B2-301",
+      "code": "B2-301",
+      "building": "Building 2",
+      "floor": "Floor 3",
+      "weekly_sessions_count": 0,
+      "exam_sessions_count": 6,
+      "session_types": [
+        "Midterm Exam Hall"
+      ],
+      "assigned_groups": [],
+      "assigned_courses": [
+        "BAS111",
+        "BAS121",
+        "BAS131",
+        "BAS141",
+        "CUC111",
+        "CUC112"
+      ]
+    },
+    {
+      "room_id": "B2-302",
+      "name": "Hall B2-302",
+      "code": "B2-302",
+      "building": "Building 2",
+      "floor": "Floor 3",
+      "weekly_sessions_count": 0,
+      "exam_sessions_count": 3,
+      "session_types": [
+        "Midterm Exam Hall"
+      ],
+      "assigned_groups": [],
+      "assigned_courses": [
+        "BAS111",
+        "CUC111",
+        "CUC112"
+      ]
+    },
+    {
+      "room_id": "B2-307",
+      "name": "Hall B2-307",
+      "code": "B2-307",
+      "building": "Building 2",
+      "floor": "Floor 3",
+      "weekly_sessions_count": 0,
+      "exam_sessions_count": 7,
+      "session_types": [
+        "Midterm Exam Hall"
+      ],
+      "assigned_groups": [],
+      "assigned_courses": [
+        "BAS111",
+        "BAS121",
+        "BAS131",
+        "BAS141",
+        "CUC111",
+        "CUC112",
+        "MEC111"
+      ]
+    },
+    {
+      "room_id": "B2-308",
+      "name": "Hall B2-308",
+      "code": "B2-308",
+      "building": "Building 2",
+      "floor": "Floor 3",
+      "weekly_sessions_count": 0,
+      "exam_sessions_count": 6,
+      "session_types": [
+        "Midterm Exam Hall"
+      ],
+      "assigned_groups": [],
+      "assigned_courses": [
+        "BAS111",
+        "BAS121",
+        "BAS131",
+        "BAS141",
+        "CUC112",
+        "MEC111"
+      ]
+    },
+    {
+      "room_id": "B2-309",
+      "name": "Hall B2-309",
+      "code": "B2-309",
+      "building": "Building 2",
+      "floor": "Floor 3",
+      "weekly_sessions_count": 0,
+      "exam_sessions_count": 1,
+      "session_types": [
+        "Midterm Exam Hall"
+      ],
+      "assigned_groups": [],
+      "assigned_courses": [
+        "MEC111"
+      ]
+    },
+    {
+      "room_id": "B2-310",
+      "name": "Hall B2-310",
+      "code": "B2-310",
+      "building": "Building 2",
+      "floor": "Floor 3",
+      "weekly_sessions_count": 0,
+      "exam_sessions_count": 4,
+      "session_types": [
+        "Midterm Exam Hall"
+      ],
+      "assigned_groups": [],
+      "assigned_courses": [
+        "BAS111",
+        "CUC111",
+        "CUC112",
+        "MEC111"
+      ]
+    },
+    {
+      "room_id": "B2-311",
+      "name": "Hall B2-311",
+      "code": "B2-311",
+      "building": "Building 2",
+      "floor": "Floor 3",
+      "weekly_sessions_count": 35,
+      "exam_sessions_count": 1,
+      "session_types": [
+        "Section / Tutorial",
+        "Lecture",
+        "Midterm Exam Hall",
+        "SolidWorks CAD"
+      ],
+      "assigned_groups": [
+        "Group 1",
+        "Group 3",
+        "Group 5",
+        "Group 7",
+        "Group 9"
+      ],
+      "assigned_courses": [
+        "CUC112",
+        "MEC111"
+      ]
+    },
+    {
+      "room_id": "B2-313",
+      "name": "Hall B2-313",
+      "code": "B2-313",
+      "building": "Building 2",
+      "floor": "Floor 3",
+      "weekly_sessions_count": 21,
+      "exam_sessions_count": 1,
+      "session_types": [
+        "Section / Tutorial",
+        "Lecture",
+        "Midterm Exam Hall",
+        "SolidWorks CAD"
+      ],
+      "assigned_groups": [
+        "Group 2",
+        "Group 4",
+        "Group 6"
+      ],
+      "assigned_courses": [
+        "CUC112",
+        "MEC111"
+      ]
+    },
+    {
+      "room_id": "B2-316",
+      "name": "Hall B2-316",
+      "code": "B2-316",
+      "building": "Building 2",
+      "floor": "Floor 3",
+      "weekly_sessions_count": 0,
+      "exam_sessions_count": 4,
+      "session_types": [
+        "Midterm Exam Hall"
+      ],
+      "assigned_groups": [],
+      "assigned_courses": [
+        "BAS111",
+        "BAS121",
+        "BAS131",
+        "BAS141"
+      ]
+    },
+    {
+      "room_id": "B2-317",
+      "name": "Hall B2-317",
+      "code": "B2-317",
+      "building": "Building 2",
+      "floor": "Floor 3",
+      "weekly_sessions_count": 0,
+      "exam_sessions_count": 2,
+      "session_types": [
+        "Midterm Exam Hall"
+      ],
+      "assigned_groups": [],
+      "assigned_courses": [
+        "BAS111",
+        "CUC111"
+      ]
+    },
+    {
+      "room_id": "B2-409",
+      "name": "Hall B2-409",
+      "code": "B2-409",
+      "building": "Building 2",
+      "floor": "Floor 4",
+      "weekly_sessions_count": 0,
+      "exam_sessions_count": 5,
+      "session_types": [
+        "Midterm Exam Hall"
+      ],
+      "assigned_groups": [],
+      "assigned_courses": [
+        "BAS111",
+        "BAS121",
+        "BAS131",
+        "BAS141",
+        "CUC112"
+      ]
+    },
+    {
+      "room_id": "B2-410",
+      "name": "Hall B2-410",
+      "code": "B2-410",
+      "building": "Building 2",
+      "floor": "Floor 4",
+      "weekly_sessions_count": 0,
+      "exam_sessions_count": 5,
+      "session_types": [
+        "Midterm Exam Hall"
+      ],
+      "assigned_groups": [],
+      "assigned_courses": [
+        "BAS121",
+        "BAS131",
+        "BAS141",
+        "CUC111",
+        "CUC112"
+      ]
+    },
+    {
+      "room_id": "B2-411",
+      "name": "Hall B2-411",
+      "code": "B2-411",
+      "building": "Building 2",
+      "floor": "Floor 4",
+      "weekly_sessions_count": 0,
+      "exam_sessions_count": 2,
+      "session_types": [
+        "Midterm Exam Hall"
+      ],
+      "assigned_groups": [],
+      "assigned_courses": [
+        "BAS111",
+        "CUC111"
+      ]
+    },
+    {
+      "room_id": "B2-412",
+      "name": "Hall B2-412",
+      "code": "B2-412",
+      "building": "Building 2",
+      "floor": "Floor 4",
+      "weekly_sessions_count": 0,
+      "exam_sessions_count": 6,
+      "session_types": [
+        "Midterm Exam Hall"
+      ],
+      "assigned_groups": [],
+      "assigned_courses": [
+        "BAS111",
+        "BAS121",
+        "BAS131",
+        "BAS141",
+        "CUC111",
+        "CUC112"
+      ]
+    },
+    {
+      "room_id": "B2-413",
+      "name": "Hall B2-413",
+      "code": "B2-413",
+      "building": "Building 2",
+      "floor": "Floor 4",
+      "weekly_sessions_count": 9,
+      "exam_sessions_count": 5,
+      "session_types": [
+        "Section / Tutorial",
+        "Lecture",
+        "Midterm Exam Hall",
+        "Practical / Lab"
+      ],
+      "assigned_groups": [
+        "Group 7"
+      ],
+      "assigned_courses": [
+        "BAS111",
+        "BAS121",
+        "BAS131",
+        "BAS141",
+        "CUC111",
+        "CUC112"
+      ]
+    },
+    {
+      "room_id": "B2-414",
+      "name": "Hall B2-414",
+      "code": "B2-414",
+      "building": "Building 2",
+      "floor": "Floor 4",
+      "weekly_sessions_count": 9,
+      "exam_sessions_count": 5,
+      "session_types": [
+        "Section / Tutorial",
+        "Lecture",
+        "Midterm Exam Hall",
+        "Practical / Lab"
+      ],
+      "assigned_groups": [
+        "Group 8"
+      ],
+      "assigned_courses": [
+        "BAS111",
+        "BAS121",
+        "BAS131",
+        "BAS141",
+        "CUC111",
+        "CUC112"
+      ]
+    },
+    {
+      "room_id": "B2-417",
+      "name": "Hall B2-417",
+      "code": "B2-417",
+      "building": "Building 2",
+      "floor": "Floor 4",
+      "weekly_sessions_count": 0,
+      "exam_sessions_count": 5,
+      "session_types": [
+        "Midterm Exam Hall"
+      ],
+      "assigned_groups": [],
+      "assigned_courses": [
+        "BAS111",
+        "BAS121",
+        "BAS131",
+        "BAS141",
+        "CUC112"
+      ]
+    },
+    {
+      "room_id": "B2-418",
+      "name": "Hall B2-418",
+      "code": "B2-418",
+      "building": "Building 2",
+      "floor": "Floor 4",
+      "weekly_sessions_count": 0,
+      "exam_sessions_count": 5,
+      "session_types": [
+        "Midterm Exam Hall"
+      ],
+      "assigned_groups": [],
+      "assigned_courses": [
+        "BAS111",
+        "BAS121",
+        "BAS131",
+        "BAS141",
+        "CUC111"
+      ]
+    },
+    {
+      "room_id": "ONLINE",
+      "name": "Online / Virtual Classroom",
+      "code": "ONLINE",
+      "building": "Online Virtual",
+      "floor": "Online",
+      "weekly_sessions_count": 54,
+      "exam_sessions_count": 0,
+      "session_types": [
+        "Section / Tutorial",
+        "Lecture"
+      ],
+      "assigned_groups": [
+        "Group 1",
+        "Group 2",
+        "Group 3",
+        "Group 4",
+        "Group 5",
+        "Group 6",
+        "Group 7",
+        "Group 8",
+        "Group 9"
+      ],
+      "assigned_courses": [
+        "BAS121",
+        "BAS141",
+        "CUC111",
+        "CUC112"
+      ]
+    }
+  ],
+  "students": {
+    "26030100003": {
+      "id": "26030100003",
+      "group": 1,
+      "name": "احمد زكريا احمد صال ح",
+      "email": "26030100003@cuc.edu.eg"
+    },
+    "26030100007": {
+      "id": "26030100007",
+      "group": 1,
+      "name": "عمر تامر حسن فائق محمد حسن",
+      "email": "26030100007@cuc.edu.eg"
+    },
+    "26030100008": {
+      "id": "26030100008",
+      "group": 1,
+      "name": "خالد علي احمد عبدالمقصود الحديد ي",
+      "email": "26030100008@cuc.edu.eg"
+    },
+    "26030100009": {
+      "id": "26030100009",
+      "group": 1,
+      "name": "ادم احمد محسن عبدالحافظ",
+      "email": "26030100009@cuc.edu.eg"
+    },
+    "26030100010": {
+      "id": "26030100010",
+      "group": 1,
+      "name": "عبدالرحمن ابوحسيبة فاروق محمد احمد",
+      "email": "26030100010@cuc.edu.eg"
+    },
+    "26030100011": {
+      "id": "26030100011",
+      "group": 1,
+      "name": "صلاح السيد احمد السيد الشربينى",
+      "email": "26030100011@cuc.edu.eg"
+    },
+    "26030100012": {
+      "id": "26030100012",
+      "group": 1,
+      "name": "عمر حسام حموده حامد احمد",
+      "email": "26030100012@cuc.edu.eg"
+    },
+    "26030100013": {
+      "id": "26030100013",
+      "group": 1,
+      "name": "معتز عبدالحميد عبدالمعز عبدالكريم عبدالله",
+      "email": "26030100013@cuc.edu.eg"
+    },
+    "26030100014": {
+      "id": "26030100014",
+      "group": 1,
+      "name": "عمرو عادل محمد الشريف ابراهيم عبدالرحم ن",
+      "email": "26030100014@cuc.edu.eg"
+    },
+    "26030100015": {
+      "id": "26030100015",
+      "group": 1,
+      "name": "ياسين طارق محمد شحاته عبدالسيد زايد",
+      "email": "26030100015@cuc.edu.eg"
+    },
+    "26030100016": {
+      "id": "26030100016",
+      "group": 1,
+      "name": "علي احمد علي عبدالعال احمد الحمي ي",
+      "email": "26030100016@cuc.edu.eg"
+    },
+    "26030100017": {
+      "id": "26030100017",
+      "group": 1,
+      "name": "محمود عزت محمود عبدالرحمن",
+      "email": "26030100017@cuc.edu.eg"
+    },
+    "26030100018": {
+      "id": "26030100018",
+      "group": 1,
+      "name": "علي حسن علي البطره",
+      "email": "26030100018@cuc.edu.eg"
+    },
+    "26030100019": {
+      "id": "26030100019",
+      "group": 1,
+      "name": "عمر خالد جابر عبدالغني",
+      "email": "26030100019@cuc.edu.eg"
+    },
+    "26030100021": {
+      "id": "26030100021",
+      "group": 1,
+      "name": "محمد رمضان احمد عبدالعال",
+      "email": "26030100021@cuc.edu.eg"
+    },
+    "26030100022": {
+      "id": "26030100022",
+      "group": 1,
+      "name": "يوسف احمد صلاح الدين محمد عبدالنبى",
+      "email": "26030100022@cuc.edu.eg"
+    },
+    "26030100024": {
+      "id": "26030100024",
+      "group": 1,
+      "name": "مهند عمرو احمد امام عبدالوهاب",
+      "email": "26030100024@cuc.edu.eg"
+    },
+    "26030100025": {
+      "id": "26030100025",
+      "group": 1,
+      "name": "عمرو اشرف عبدالله مدين",
+      "email": "26030100025@cuc.edu.eg"
+    },
+    "26030100026": {
+      "id": "26030100026",
+      "group": 1,
+      "name": "ندي صابر احمد حسين هديه",
+      "email": "26030100026@cuc.edu.eg"
+    },
+    "26030100029": {
+      "id": "26030100029",
+      "group": 1,
+      "name": "عبدالرحمن محمد ابراهيم عبدالعظيم",
+      "email": "26030100029@cuc.edu.eg"
+    },
+    "26030100033": {
+      "id": "26030100033",
+      "group": 1,
+      "name": "هادى شريف عبدالهادى النجار",
+      "email": "26030100033@cuc.edu.eg"
+    },
+    "26030100036": {
+      "id": "26030100036",
+      "group": 1,
+      "name": "محمد عمرو محمد السيد عفيفى",
+      "email": "26030100036@cuc.edu.eg"
+    },
+    "26030100037": {
+      "id": "26030100037",
+      "group": 1,
+      "name": "عمر وائل يسرى حسن رمضان شلاطه",
+      "email": "26030100037@cuc.edu.eg"
+    },
+    "26030100039": {
+      "id": "26030100039",
+      "group": 1,
+      "name": "ايمن ابراهيم منصور محمد منصور",
+      "email": "26030100039@cuc.edu.eg"
+    },
+    "26030100043": {
+      "id": "26030100043",
+      "group": 1,
+      "name": "عبدالله محمد عبدالله سليمان يونس",
+      "email": "26030100043@cuc.edu.eg"
+    },
+    "26030100044": {
+      "id": "26030100044",
+      "group": 1,
+      "name": "اسلام محمد لبيب حسن مط ر",
+      "email": "26030100044@cuc.edu.eg"
+    },
+    "26030100045": {
+      "id": "26030100045",
+      "group": 1,
+      "name": "شيماء محمود حنفي عبدالرازق",
+      "email": "26030100045@cuc.edu.eg"
+    },
+    "26030100046": {
+      "id": "26030100046",
+      "group": 1,
+      "name": "سما شعبان احمد عبداللاه سيد",
+      "email": "26030100046@cuc.edu.eg"
+    },
+    "26030100047": {
+      "id": "26030100047",
+      "group": 1,
+      "name": "علي عمرو صلاح اسماعيل حسن صق ر",
+      "email": "26030100047@cuc.edu.eg"
+    },
+    "26030100048": {
+      "id": "26030100048",
+      "group": 1,
+      "name": "احمد طه محمد زكي",
+      "email": "26030100048@cuc.edu.eg"
+    },
+    "26030100051": {
+      "id": "26030100051",
+      "group": 1,
+      "name": "سيف الدين حمدي السيد محمد السيد",
+      "email": "26030100051@cuc.edu.eg"
+    },
+    "26030100052": {
+      "id": "26030100052",
+      "group": 1,
+      "name": "مصطفي صالح احمد ماهر عبدالمحسن",
+      "email": "26030100052@cuc.edu.eg"
+    },
+    "26030100053": {
+      "id": "26030100053",
+      "group": 1,
+      "name": "لمار حسام احمد مهدى الشرقاوى",
+      "email": "26030100053@cuc.edu.eg"
+    },
+    "26030100054": {
+      "id": "26030100054",
+      "group": 1,
+      "name": "جون ارميا عزت ملك حنا",
+      "email": "26030100054@cuc.edu.eg"
+    },
+    "26030100055": {
+      "id": "26030100055",
+      "group": 1,
+      "name": "محمد احمد عبدالرحمن مرسى حجازى",
+      "email": "26030100055@cuc.edu.eg"
+    },
+    "26030100056": {
+      "id": "26030100056",
+      "group": 1,
+      "name": "احمد علي عبدالكريم علي اسماعيل البقر ى",
+      "email": "26030100056@cuc.edu.eg"
+    },
+    "26030100057": {
+      "id": "26030100057",
+      "group": 1,
+      "name": "عبدالمسيح مهنى مسعود قليني خليل",
+      "email": "26030100057@cuc.edu.eg"
+    },
+    "26030100058": {
+      "id": "26030100058",
+      "group": 9,
+      "name": "محمد وائل عبده السيد عبدالحميد",
+      "email": "26030100058@cuc.edu.eg"
+    },
+    "26030100060": {
+      "id": "26030100060",
+      "group": 1,
+      "name": "باسل احمد سعيد احمد السيد الصوالحى",
+      "email": "26030100060@cuc.edu.eg"
+    },
+    "26030100065": {
+      "id": "26030100065",
+      "group": 1,
+      "name": "ادهم محمد فريد خليفه سيد عبدالجواد",
+      "email": "26030100065@cuc.edu.eg"
+    },
+    "26030100067": {
+      "id": "26030100067",
+      "group": 1,
+      "name": "محمود عطا محمود محمد عبدالواحد",
+      "email": "26030100067@cuc.edu.eg"
+    },
+    "26030100068": {
+      "id": "26030100068",
+      "group": 1,
+      "name": "طارق محمد عبدالحميد عبدالعزيز محمد فاض ل",
+      "email": "26030100068@cuc.edu.eg"
+    },
+    "26030100069": {
+      "id": "26030100069",
+      "group": 1,
+      "name": "خلود حسين عبدالعال حسن عليوه",
+      "email": "26030100069@cuc.edu.eg"
+    },
+    "26030100161": {
+      "id": "26030100161",
+      "group": 1,
+      "name": "طارق عادل عبدالهادى مطاوع",
+      "email": "26030100161@cuc.edu.eg"
+    },
+    "26030100162": {
+      "id": "26030100162",
+      "group": 1,
+      "name": "محمد مجدى محمد عطيه عوض",
+      "email": "26030100162@cuc.edu.eg"
+    },
+    "26030100240": {
+      "id": "26030100240",
+      "group": 1,
+      "name": "محمود اسماعيل عبدالرحمن محمود محمد",
+      "email": "26030100240@cuc.edu.eg"
+    },
+    "26030100459": {
+      "id": "26030100459",
+      "group": 1,
+      "name": "حسن عبدالخالق حسن عبدالسميع حسين",
+      "email": "26030100459@cuc.edu.eg"
+    },
+    "26030100469": {
+      "id": "26030100469",
+      "group": 1,
+      "name": "محمد حسين حسن محمد",
+      "email": "26030100469@cuc.edu.eg"
+    },
+    "26030100482": {
+      "id": "26030100482",
+      "group": 1,
+      "name": "يحيي اسامه حمدي الهادي ابراهيم",
+      "email": "26030100482@cuc.edu.eg"
+    },
+    "26030100489": {
+      "id": "26030100489",
+      "group": 1,
+      "name": "ساره منتصر محمد عبدالقادر محمد",
+      "email": "26030100489@cuc.edu.eg"
+    },
+    "26030100502": {
+      "id": "26030100502",
+      "group": 1,
+      "name": "احمد وائل حامد احمد احمد",
+      "email": "26030100502@cuc.edu.eg"
+    },
+    "26030100503": {
+      "id": "26030100503",
+      "group": 1,
+      "name": "مازن احمد محمود عبدالواحد حسويه",
+      "email": "26030100503@cuc.edu.eg"
+    },
+    "26030100504": {
+      "id": "26030100504",
+      "group": 1,
+      "name": "رفيق فادى متى نجيب",
+      "email": "26030100504@cuc.edu.eg"
+    },
+    "26030100505": {
+      "id": "26030100505",
+      "group": 1,
+      "name": "عبدالرحمن محمد فوزى ابوالوفا اللاوندى",
+      "email": "26030100505@cuc.edu.eg"
+    },
+    "26030100550": {
+      "id": "26030100550",
+      "group": 1,
+      "name": "تسبيح الرحمن عبدالمجيد عبدالرحمن عبد",
+      "email": "26030100550@cuc.edu.eg"
+    },
+    "26030100050": {
+      "id": "26030100050",
+      "group": 2,
+      "name": "زياد حسن حامد حسن",
+      "email": "26030100050@cuc.edu.eg"
+    },
+    "26030100070": {
+      "id": "26030100070",
+      "group": 2,
+      "name": "مازن عبدالعزيز خليل عبدالعزيز",
+      "email": "26030100070@cuc.edu.eg"
+    },
+    "26030100072": {
+      "id": "26030100072",
+      "group": 2,
+      "name": "حبيبه عوض محمد عوض عفيفى",
+      "email": "26030100072@cuc.edu.eg"
+    },
+    "26030100073": {
+      "id": "26030100073",
+      "group": 2,
+      "name": "مهند ياسر السيد محمد عبدالعظيم",
+      "email": "26030100073@cuc.edu.eg"
+    },
+    "26030100074": {
+      "id": "26030100074",
+      "group": 2,
+      "name": "خالد محمد مصطفي محمد الحشاش",
+      "email": "26030100074@cuc.edu.eg"
+    },
+    "26030100079": {
+      "id": "26030100079",
+      "group": 2,
+      "name": "فاطمة احمد حسين محمد عوض",
+      "email": "26030100079@cuc.edu.eg"
+    },
+    "26030100080": {
+      "id": "26030100080",
+      "group": 2,
+      "name": "مازن احمد حسن علي سرور",
+      "email": "26030100080@cuc.edu.eg"
+    },
+    "26030100081": {
+      "id": "26030100081",
+      "group": 2,
+      "name": "كيفين مايكل طلعت شهيد",
+      "email": "26030100081@cuc.edu.eg"
+    },
+    "26030100082": {
+      "id": "26030100082",
+      "group": 2,
+      "name": "محمد لبيب محمد عبدالسلام",
+      "email": "26030100082@cuc.edu.eg"
+    },
+    "26030100086": {
+      "id": "26030100086",
+      "group": 2,
+      "name": "يوسف اسامه علي عبدالحميد سعفا ن",
+      "email": "26030100086@cuc.edu.eg"
+    },
+    "26030100088": {
+      "id": "26030100088",
+      "group": 2,
+      "name": "رحمه عباده ابومسلم فرج عبدالبارى",
+      "email": "26030100088@cuc.edu.eg"
+    },
+    "26030100090": {
+      "id": "26030100090",
+      "group": 2,
+      "name": "محمد عبدالله عبده علي احمد",
+      "email": "26030100090@cuc.edu.eg"
+    },
+    "26030100091": {
+      "id": "26030100091",
+      "group": 2,
+      "name": "زياد هاني متولي عبده سويلم",
+      "email": "26030100091@cuc.edu.eg"
+    },
+    "26030100093": {
+      "id": "26030100093",
+      "group": 2,
+      "name": "ايتن محمد الحسينى ابراهيم ابوالقمصان",
+      "email": "26030100093@cuc.edu.eg"
+    },
+    "26030100095": {
+      "id": "26030100095",
+      "group": 2,
+      "name": "عمرو خالد ممدوح يسن موسي",
+      "email": "26030100095@cuc.edu.eg"
+    },
+    "26030100096": {
+      "id": "26030100096",
+      "group": 2,
+      "name": "هاجر وائل رفعت عبدالوهاب",
+      "email": "26030100096@cuc.edu.eg"
+    },
+    "26030100097": {
+      "id": "26030100097",
+      "group": 2,
+      "name": "محمد احمد محمد احمد رضوان",
+      "email": "26030100097@cuc.edu.eg"
+    },
+    "26030100098": {
+      "id": "26030100098",
+      "group": 2,
+      "name": "عبدالرحمن احمد جمال محمد السيد",
+      "email": "26030100098@cuc.edu.eg"
+    },
+    "26030100099": {
+      "id": "26030100099",
+      "group": 2,
+      "name": "ابراهيم نبيل ابراهيم حافظ فرماوى",
+      "email": "26030100099@cuc.edu.eg"
+    },
+    "26030100100": {
+      "id": "26030100100",
+      "group": 2,
+      "name": "جنا ابراهيم حسن محمد حسن",
+      "email": "26030100100@cuc.edu.eg"
+    },
+    "26030100101": {
+      "id": "26030100101",
+      "group": 2,
+      "name": "علي محمود ربيع ابوسريع محمد",
+      "email": "26030100101@cuc.edu.eg"
+    },
+    "26030100102": {
+      "id": "26030100102",
+      "group": 2,
+      "name": "محمد احمد محمود عاصم محمود فؤاد",
+      "email": "26030100102@cuc.edu.eg"
+    },
+    "26030100104": {
+      "id": "26030100104",
+      "group": 2,
+      "name": "يوسف عبدالعال نصر سلامه عراقي",
+      "email": "26030100104@cuc.edu.eg"
+    },
+    "26030100105": {
+      "id": "26030100105",
+      "group": 2,
+      "name": "ابراهيم سعيد ابراهيم مصطفى الكلاف",
+      "email": "26030100105@cuc.edu.eg"
+    },
+    "26030100106": {
+      "id": "26030100106",
+      "group": 2,
+      "name": "محمد عماد الدين محمد عبدالرحمن علي",
+      "email": "26030100106@cuc.edu.eg"
+    },
+    "26030100107": {
+      "id": "26030100107",
+      "group": 2,
+      "name": "يوسف محمد عبدالعزيز السيد فيصل",
+      "email": "26030100107@cuc.edu.eg"
+    },
+    "26030100108": {
+      "id": "26030100108",
+      "group": 2,
+      "name": "محمد احمد عادل محمد عام ر",
+      "email": "26030100108@cuc.edu.eg"
+    },
+    "26030100109": {
+      "id": "26030100109",
+      "group": 2,
+      "name": "محمد ابراهيم محمد احمد الحفني",
+      "email": "26030100109@cuc.edu.eg"
+    },
+    "26030100111": {
+      "id": "26030100111",
+      "group": 2,
+      "name": "محمد اشرف محمد علي ابراهيم",
+      "email": "26030100111@cuc.edu.eg"
+    },
+    "26030100112": {
+      "id": "26030100112",
+      "group": 2,
+      "name": "جومانه السيد محمد عبدالحميد علي عمري ه",
+      "email": "26030100112@cuc.edu.eg"
+    },
+    "26030100113": {
+      "id": "26030100113",
+      "group": 2,
+      "name": "عبدالله محمد محسن محي محمد",
+      "email": "26030100113@cuc.edu.eg"
+    },
+    "26030100114": {
+      "id": "26030100114",
+      "group": 2,
+      "name": "مهند احمد عطيه محمد عطيه عوض الله",
+      "email": "26030100114@cuc.edu.eg"
+    },
+    "26030100115": {
+      "id": "26030100115",
+      "group": 2,
+      "name": "محمد ايهاب طلعت زكي محمد",
+      "email": "26030100115@cuc.edu.eg"
+    },
+    "26030100117": {
+      "id": "26030100117",
+      "group": 2,
+      "name": "احمد ابراهيم عبدالمطلب خض ر",
+      "email": "26030100117@cuc.edu.eg"
+    },
+    "26030100122": {
+      "id": "26030100122",
+      "group": 2,
+      "name": "ياسين محمد عبدالوهاب ابراهيم محمد",
+      "email": "26030100122@cuc.edu.eg"
+    },
+    "26030100123": {
+      "id": "26030100123",
+      "group": 2,
+      "name": "كنزى محمد محمود عبدالعزي ز",
+      "email": "26030100123@cuc.edu.eg"
+    },
+    "26030100126": {
+      "id": "26030100126",
+      "group": 2,
+      "name": "محمد عبدالسميع محمد ابوالعزم البسيون ي",
+      "email": "26030100126@cuc.edu.eg"
+    },
+    "26030100127": {
+      "id": "26030100127",
+      "group": 2,
+      "name": "محمد ابراهيم محمد بكر احمد",
+      "email": "26030100127@cuc.edu.eg"
+    },
+    "26030100128": {
+      "id": "26030100128",
+      "group": 2,
+      "name": "مهند طلعت فايق محمد رضوان",
+      "email": "26030100128@cuc.edu.eg"
+    },
+    "26030100129": {
+      "id": "26030100129",
+      "group": 2,
+      "name": "محمد عيد صوفي عبدالسلام محم د",
+      "email": "26030100129@cuc.edu.eg"
+    },
+    "26030100130": {
+      "id": "26030100130",
+      "group": 2,
+      "name": "يوسف احمد مصطفى عبدالوهاب",
+      "email": "26030100130@cuc.edu.eg"
+    },
+    "26030100131": {
+      "id": "26030100131",
+      "group": 2,
+      "name": "طارق محمد سيد عي ي",
+      "email": "26030100131@cuc.edu.eg"
+    },
+    "26030100132": {
+      "id": "26030100132",
+      "group": 2,
+      "name": "يارا محمد احمد ابراهيم حنفى",
+      "email": "26030100132@cuc.edu.eg"
+    },
+    "26030100134": {
+      "id": "26030100134",
+      "group": 2,
+      "name": "نور محمد عبدالله مرسي عي ي",
+      "email": "26030100134@cuc.edu.eg"
+    },
+    "26030100135": {
+      "id": "26030100135",
+      "group": 2,
+      "name": "عمر محمود سالم طه محمد هيكل",
+      "email": "26030100135@cuc.edu.eg"
+    },
+    "26030100180": {
+      "id": "26030100180",
+      "group": 2,
+      "name": "نورين محمد فتحى عبدالعزيز خليف ه",
+      "email": "26030100180@cuc.edu.eg"
+    },
+    "26030100443": {
+      "id": "26030100443",
+      "group": 2,
+      "name": "محمد محسن عبدالفتاح علي عثمان",
+      "email": "26030100443@cuc.edu.eg"
+    },
+    "26030100496": {
+      "id": "26030100496",
+      "group": 2,
+      "name": "محمد رضا محمد محمود",
+      "email": "26030100496@cuc.edu.eg"
+    },
+    "26030100497": {
+      "id": "26030100497",
+      "group": 2,
+      "name": "عمر عبدالحليم محمود محمد احمد شعي ر",
+      "email": "26030100497@cuc.edu.eg"
+    },
+    "26030100513": {
+      "id": "26030100513",
+      "group": 2,
+      "name": "يوسف ياسر محمد عبدالبارى فرغلي",
+      "email": "26030100513@cuc.edu.eg"
+    },
+    "26030100514": {
+      "id": "26030100514",
+      "group": 2,
+      "name": "عمر ابو بكر عوض احمد محمد",
+      "email": "26030100514@cuc.edu.eg"
+    },
+    "26030100517": {
+      "id": "26030100517",
+      "group": 2,
+      "name": "محمد عماد مصطفى دردير محمد",
+      "email": "26030100517@cuc.edu.eg"
+    },
+    "26030100518": {
+      "id": "26030100518",
+      "group": 2,
+      "name": "احمد وليد احمد احمد قاسم",
+      "email": "26030100518@cuc.edu.eg"
+    },
+    "26030100521": {
+      "id": "26030100521",
+      "group": 2,
+      "name": "محمد حسام يحيى حماد عبدالمقصود",
+      "email": "26030100521@cuc.edu.eg"
+    },
+    "26030100522": {
+      "id": "26030100522",
+      "group": 2,
+      "name": "عبدالرحمن عادل عبدالرحمن فياض عم ر",
+      "email": "26030100522@cuc.edu.eg"
+    },
+    "26030100198": {
+      "id": "26030100198",
+      "group": 2,
+      "name": "انس محمد طه طه غزاله",
+      "email": "26030100198@cuc.edu.eg"
+    },
+    "26030100076": {
+      "id": "26030100076",
+      "group": 3,
+      "name": "معتز محمد عبدالباقي سعيد متولي",
+      "email": "26030100076@cuc.edu.eg"
+    },
+    "26030100136": {
+      "id": "26030100136",
+      "group": 3,
+      "name": "يوسف احمد ناجى محمد حسن",
+      "email": "26030100136@cuc.edu.eg"
+    },
+    "26030100137": {
+      "id": "26030100137",
+      "group": 3,
+      "name": "فاطمه محمود عبدالعال عبداللطيف",
+      "email": "26030100137@cuc.edu.eg"
+    },
+    "26030100139": {
+      "id": "26030100139",
+      "group": 3,
+      "name": "احمد وجيه محمد عبدالعظيم احمد",
+      "email": "26030100139@cuc.edu.eg"
+    },
+    "26030100140": {
+      "id": "26030100140",
+      "group": 3,
+      "name": "أميره احمد صابر محمد احمد",
+      "email": "26030100140@cuc.edu.eg"
+    },
+    "26030100142": {
+      "id": "26030100142",
+      "group": 3,
+      "name": "مينا الفريد تادرس قلدس تاوضرو س",
+      "email": "26030100142@cuc.edu.eg"
+    },
+    "26030100143": {
+      "id": "26030100143",
+      "group": 3,
+      "name": "عبدالرحمن ايهاب احمد خلف",
+      "email": "26030100143@cuc.edu.eg"
+    },
+    "26030100146": {
+      "id": "26030100146",
+      "group": 3,
+      "name": "ميرنا وائل شعبان محمد شعبان",
+      "email": "26030100146@cuc.edu.eg"
+    },
+    "26030100148": {
+      "id": "26030100148",
+      "group": 3,
+      "name": "شذي اسامه الباز محمد",
+      "email": "26030100148@cuc.edu.eg"
+    },
+    "26030100149": {
+      "id": "26030100149",
+      "group": 3,
+      "name": "محمد شريف محمد احمد النجار",
+      "email": "26030100149@cuc.edu.eg"
+    },
+    "26030100151": {
+      "id": "26030100151",
+      "group": 3,
+      "name": "محمد سليمان محمد محمود احمد",
+      "email": "26030100151@cuc.edu.eg"
+    },
+    "26030100153": {
+      "id": "26030100153",
+      "group": 3,
+      "name": "احمد عبدالمعز عبدالشافي حسن",
+      "email": "26030100153@cuc.edu.eg"
+    },
+    "26030100154": {
+      "id": "26030100154",
+      "group": 3,
+      "name": "محمد عبدالله سيد عبدالله",
+      "email": "26030100154@cuc.edu.eg"
+    },
+    "26030100155": {
+      "id": "26030100155",
+      "group": 3,
+      "name": "مهند محمد فوزي عبدالمنعم قنديل",
+      "email": "26030100155@cuc.edu.eg"
+    },
+    "26030100159": {
+      "id": "26030100159",
+      "group": 3,
+      "name": "سارة احمد حسن احمد",
+      "email": "26030100159@cuc.edu.eg"
+    },
+    "26030100160": {
+      "id": "26030100160",
+      "group": 3,
+      "name": "مريم ياسر عرفات حسن احمد",
+      "email": "26030100160@cuc.edu.eg"
+    },
+    "26030100163": {
+      "id": "26030100163",
+      "group": 3,
+      "name": "عمر محمد صبري عبدالمعطى",
+      "email": "26030100163@cuc.edu.eg"
+    },
+    "26030100166": {
+      "id": "26030100166",
+      "group": 3,
+      "name": "خالد طه المتولي طه المني ر",
+      "email": "26030100166@cuc.edu.eg"
+    },
+    "26030100168": {
+      "id": "26030100168",
+      "group": 3,
+      "name": "حنين محمد سامي حبشي محمد احمد",
+      "email": "26030100168@cuc.edu.eg"
+    },
+    "26030100169": {
+      "id": "26030100169",
+      "group": 3,
+      "name": "محمود محمد مصطفى ابراهيم عبدالقادر",
+      "email": "26030100169@cuc.edu.eg"
+    },
+    "26030100170": {
+      "id": "26030100170",
+      "group": 3,
+      "name": "محمد محمود امين عبدالباقي سعيد",
+      "email": "26030100170@cuc.edu.eg"
+    },
+    "26030100171": {
+      "id": "26030100171",
+      "group": 3,
+      "name": "احمد محمود حسنى هلال سالم",
+      "email": "26030100171@cuc.edu.eg"
+    },
+    "26030100172": {
+      "id": "26030100172",
+      "group": 3,
+      "name": "محمد احمد مطاوع عبدالله حسن",
+      "email": "26030100172@cuc.edu.eg"
+    },
+    "26030100175": {
+      "id": "26030100175",
+      "group": 3,
+      "name": "عمر مالك محمد السعيد صالح عبدالحليم",
+      "email": "26030100175@cuc.edu.eg"
+    },
+    "26030100176": {
+      "id": "26030100176",
+      "group": 3,
+      "name": "محمد احمد محمد محفوظ محمد زين",
+      "email": "26030100176@cuc.edu.eg"
+    },
+    "26030100177": {
+      "id": "26030100177",
+      "group": 3,
+      "name": "زياد ممدوح المهدي محمد علي معلاو ي",
+      "email": "26030100177@cuc.edu.eg"
+    },
+    "26030100178": {
+      "id": "26030100178",
+      "group": 3,
+      "name": "عمار عماد حمدى عبدالعزيز ابوالخير",
+      "email": "26030100178@cuc.edu.eg"
+    },
+    "26030100179": {
+      "id": "26030100179",
+      "group": 3,
+      "name": "يوسف السيد قرني عبدالظاه ر",
+      "email": "26030100179@cuc.edu.eg"
+    },
+    "26030100181": {
+      "id": "26030100181",
+      "group": 3,
+      "name": "شهد سيد احمد احمد عطيه",
+      "email": "26030100181@cuc.edu.eg"
+    },
+    "26030100182": {
+      "id": "26030100182",
+      "group": 3,
+      "name": "يوسف اشرف محمد محمود الدكروري",
+      "email": "26030100182@cuc.edu.eg"
+    },
+    "26030100185": {
+      "id": "26030100185",
+      "group": 3,
+      "name": "يوسف محمد حسن عبدالوهاب حسن",
+      "email": "26030100185@cuc.edu.eg"
+    },
+    "26030100186": {
+      "id": "26030100186",
+      "group": 3,
+      "name": "عبدالعزيز محمد عبدالعزيز سعد محمد عيا ط",
+      "email": "26030100186@cuc.edu.eg"
+    },
+    "26030100187": {
+      "id": "26030100187",
+      "group": 3,
+      "name": "محمد خالد محمد مصطفى بدر",
+      "email": "26030100187@cuc.edu.eg"
+    },
+    "26030100188": {
+      "id": "26030100188",
+      "group": 3,
+      "name": "محمود عادل فوزي محمد ابوالسعود",
+      "email": "26030100188@cuc.edu.eg"
+    },
+    "26030100190": {
+      "id": "26030100190",
+      "group": 3,
+      "name": "فاطمه الزهراء احمد عبدالقادر احمد",
+      "email": "26030100190@cuc.edu.eg"
+    },
+    "26030100191": {
+      "id": "26030100191",
+      "group": 3,
+      "name": "يوسف مدحت محى بديع المهدى",
+      "email": "26030100191@cuc.edu.eg"
+    },
+    "26030100192": {
+      "id": "26030100192",
+      "group": 3,
+      "name": "اندرو رامي ويصا عطيه ويصا",
+      "email": "26030100192@cuc.edu.eg"
+    },
+    "26030100193": {
+      "id": "26030100193",
+      "group": 3,
+      "name": "سلمى محمد حسن المتولي محم د",
+      "email": "26030100193@cuc.edu.eg"
+    },
+    "26030100194": {
+      "id": "26030100194",
+      "group": 3,
+      "name": "عبدالحميد شفيع حفناوي محمود",
+      "email": "26030100194@cuc.edu.eg"
+    },
+    "26030100195": {
+      "id": "26030100195",
+      "group": 3,
+      "name": "عمر محمد رضا الامام حبيب",
+      "email": "26030100195@cuc.edu.eg"
+    },
+    "26030100196": {
+      "id": "26030100196",
+      "group": 3,
+      "name": "احمد محمد سلامه جاد الحق محمد",
+      "email": "26030100196@cuc.edu.eg"
+    },
+    "26030100197": {
+      "id": "26030100197",
+      "group": 3,
+      "name": "علي محمود السيد محمود الحويزى",
+      "email": "26030100197@cuc.edu.eg"
+    },
+    "26030100200": {
+      "id": "26030100200",
+      "group": 3,
+      "name": "يحيى ولاء بهاء الدين حسن عبدالنبى",
+      "email": "26030100200@cuc.edu.eg"
+    },
+    "26030100201": {
+      "id": "26030100201",
+      "group": 3,
+      "name": "كنزي احمد بدوي محمدين محمد علي فر ج",
+      "email": "26030100201@cuc.edu.eg"
+    },
+    "26030100203": {
+      "id": "26030100203",
+      "group": 3,
+      "name": "احمد السيد علي علي المواف ي",
+      "email": "26030100203@cuc.edu.eg"
+    },
+    "26030100204": {
+      "id": "26030100204",
+      "group": 3,
+      "name": "امين عمر انور امين",
+      "email": "26030100204@cuc.edu.eg"
+    },
+    "26030100246": {
+      "id": "26030100246",
+      "group": 3,
+      "name": "جني احمد محمد عمر متولي ديا ب",
+      "email": "26030100246@cuc.edu.eg"
+    },
+    "26030100288": {
+      "id": "26030100288",
+      "group": 3,
+      "name": "حسن احمد حسن محمود عوض",
+      "email": "26030100288@cuc.edu.eg"
+    },
+    "26030100302": {
+      "id": "26030100302",
+      "group": 3,
+      "name": "ياسين عماد عبدالهادي موسى حجازي",
+      "email": "26030100302@cuc.edu.eg"
+    },
+    "26030100342": {
+      "id": "26030100342",
+      "group": 3,
+      "name": "عبدالرحمن محمد همام محمد",
+      "email": "26030100342@cuc.edu.eg"
+    },
+    "26030100422": {
+      "id": "26030100422",
+      "group": 3,
+      "name": "عادل سعيد عبدالحميد علي محم د",
+      "email": "26030100422@cuc.edu.eg"
+    },
+    "26030100439": {
+      "id": "26030100439",
+      "group": 3,
+      "name": "مصطفي محمد نظير دكروري",
+      "email": "26030100439@cuc.edu.eg"
+    },
+    "26030100458": {
+      "id": "26030100458",
+      "group": 3,
+      "name": "يوسف محمد جميل محمد سليمان",
+      "email": "26030100458@cuc.edu.eg"
+    },
+    "26030100471": {
+      "id": "26030100471",
+      "group": 3,
+      "name": "كريم شاذلي احمد عبدالحكم عبدالعزي ز",
+      "email": "26030100471@cuc.edu.eg"
+    },
+    "26030100485": {
+      "id": "26030100485",
+      "group": 3,
+      "name": "علاء عبدالصادق عبدالغنى احمد عي ي",
+      "email": "26030100485@cuc.edu.eg"
+    },
+    "26030100492": {
+      "id": "26030100492",
+      "group": 3,
+      "name": "محمد عصام احمد محمد السيد",
+      "email": "26030100492@cuc.edu.eg"
+    },
+    "26030100089": {
+      "id": "26030100089",
+      "group": 4,
+      "name": "أدهم ايمن محمد فهمي عبدالعظيم",
+      "email": "26030100089@cuc.edu.eg"
+    },
+    "26030100205": {
+      "id": "26030100205",
+      "group": 4,
+      "name": "محمد اسامه سليمان غانم",
+      "email": "26030100205@cuc.edu.eg"
+    },
+    "26030100210": {
+      "id": "26030100210",
+      "group": 4,
+      "name": "احمد كامل عبداللطيف خليل",
+      "email": "26030100210@cuc.edu.eg"
+    },
+    "26030100211": {
+      "id": "26030100211",
+      "group": 4,
+      "name": "عصام احمد ابراهيم عم ر",
+      "email": "26030100211@cuc.edu.eg"
+    },
+    "26030100213": {
+      "id": "26030100213",
+      "group": 4,
+      "name": "يوسف محمد محمود ابراهيم محمود",
+      "email": "26030100213@cuc.edu.eg"
+    },
+    "26030100214": {
+      "id": "26030100214",
+      "group": 4,
+      "name": "عمر حاتم فتحي بدي ر",
+      "email": "26030100214@cuc.edu.eg"
+    },
+    "26030100216": {
+      "id": "26030100216",
+      "group": 4,
+      "name": "محمد جمال مهدى بدران",
+      "email": "26030100216@cuc.edu.eg"
+    },
+    "26030100218": {
+      "id": "26030100218",
+      "group": 4,
+      "name": "مصطفى السيد محمد عبدالعزيز خريب ي",
+      "email": "26030100218@cuc.edu.eg"
+    },
+    "26030100219": {
+      "id": "26030100219",
+      "group": 4,
+      "name": "نور الدين باسم محمد حسين احمد",
+      "email": "26030100219@cuc.edu.eg"
+    },
+    "26030100221": {
+      "id": "26030100221",
+      "group": 4,
+      "name": "ياسين محمود فتحى صادق مدين",
+      "email": "26030100221@cuc.edu.eg"
+    },
+    "26030100223": {
+      "id": "26030100223",
+      "group": 4,
+      "name": "محمد اسامه محمد خيري عبدالشكور",
+      "email": "26030100223@cuc.edu.eg"
+    },
+    "26030100224": {
+      "id": "26030100224",
+      "group": 4,
+      "name": "معاذ خالد محمد سليمان محمد",
+      "email": "26030100224@cuc.edu.eg"
+    },
+    "26030100225": {
+      "id": "26030100225",
+      "group": 4,
+      "name": "فاروق احمد فاروق احمد محمود",
+      "email": "26030100225@cuc.edu.eg"
+    },
+    "26030100227": {
+      "id": "26030100227",
+      "group": 4,
+      "name": "عمر عبدالناصر مصطفى عبدالباقي محم د",
+      "email": "26030100227@cuc.edu.eg"
+    },
+    "26030100228": {
+      "id": "26030100228",
+      "group": 4,
+      "name": "بافلي بخيت امين سعيد بشا ى",
+      "email": "26030100228@cuc.edu.eg"
+    },
+    "26030100230": {
+      "id": "26030100230",
+      "group": 4,
+      "name": "احمد محمد السيد محمد عبدالهادى عسك ر",
+      "email": "26030100230@cuc.edu.eg"
+    },
+    "26030100231": {
+      "id": "26030100231",
+      "group": 4,
+      "name": "عاصم ايهاب ثابت دردير محمد",
+      "email": "26030100231@cuc.edu.eg"
+    },
+    "26030100233": {
+      "id": "26030100233",
+      "group": 4,
+      "name": "خديجه محمد احمد مجاهد",
+      "email": "26030100233@cuc.edu.eg"
+    },
+    "26030100235": {
+      "id": "26030100235",
+      "group": 4,
+      "name": "احمد محمد احمد احمد السيد",
+      "email": "26030100235@cuc.edu.eg"
+    },
+    "26030100237": {
+      "id": "26030100237",
+      "group": 4,
+      "name": "بسمه خليفه حميده محمد خليفه",
+      "email": "26030100237@cuc.edu.eg"
+    },
+    "26030100238": {
+      "id": "26030100238",
+      "group": 4,
+      "name": "عبدالرحمن عطيه صبرى محمد دحروج",
+      "email": "26030100238@cuc.edu.eg"
+    },
+    "26030100239": {
+      "id": "26030100239",
+      "group": 4,
+      "name": "عمرو اشرف متولي عبدالعليم طلب ه",
+      "email": "26030100239@cuc.edu.eg"
+    },
+    "26030100241": {
+      "id": "26030100241",
+      "group": 4,
+      "name": "مريم عطيه عبدالله عطيه بدو ى",
+      "email": "26030100241@cuc.edu.eg"
+    },
+    "26030100242": {
+      "id": "26030100242",
+      "group": 4,
+      "name": "عبدالله احمد صدقي عي ي",
+      "email": "26030100242@cuc.edu.eg"
+    },
+    "26030100243": {
+      "id": "26030100243",
+      "group": 4,
+      "name": "جودي محمد صابر جاب الله ابراهيم",
+      "email": "26030100243@cuc.edu.eg"
+    },
+    "26030100244": {
+      "id": "26030100244",
+      "group": 4,
+      "name": "منه مصطفى محمد محمد منصور",
+      "email": "26030100244@cuc.edu.eg"
+    },
+    "26030100245": {
+      "id": "26030100245",
+      "group": 4,
+      "name": "انس بسيوني فهيم بسيون ي",
+      "email": "26030100245@cuc.edu.eg"
+    },
+    "26030100247": {
+      "id": "26030100247",
+      "group": 4,
+      "name": "فارس احمد عنتر عبدالستار شفت ر",
+      "email": "26030100247@cuc.edu.eg"
+    },
+    "26030100248": {
+      "id": "26030100248",
+      "group": 4,
+      "name": "خالد حسن احمد حسن متول ي",
+      "email": "26030100248@cuc.edu.eg"
+    },
+    "26030100249": {
+      "id": "26030100249",
+      "group": 4,
+      "name": "محمد عمرو سعيد حافظ محمد ابوالمجد",
+      "email": "26030100249@cuc.edu.eg"
+    },
+    "26030100251": {
+      "id": "26030100251",
+      "group": 4,
+      "name": "عبدالله محمد فهمى حسن نصر",
+      "email": "26030100251@cuc.edu.eg"
+    },
+    "26030100260": {
+      "id": "26030100260",
+      "group": 4,
+      "name": "احمد محمد فتحى احمد عبدالمقصود",
+      "email": "26030100260@cuc.edu.eg"
+    },
+    "26030100261": {
+      "id": "26030100261",
+      "group": 4,
+      "name": "بلال محمد رياض عبدالسمي ع",
+      "email": "26030100261@cuc.edu.eg"
+    },
+    "26030100262": {
+      "id": "26030100262",
+      "group": 4,
+      "name": "عمرو محمد احمد احمد محمد دردير",
+      "email": "26030100262@cuc.edu.eg"
+    },
+    "26030100263": {
+      "id": "26030100263",
+      "group": 4,
+      "name": "احمد حسين محى الدين عبدالحليم",
+      "email": "26030100263@cuc.edu.eg"
+    },
+    "26030100266": {
+      "id": "26030100266",
+      "group": 4,
+      "name": "يحي جمال علي عبدالرحمن يونس",
+      "email": "26030100266@cuc.edu.eg"
+    },
+    "26030100267": {
+      "id": "26030100267",
+      "group": 4,
+      "name": "احمد السيد ابوالكرمات محمد عبدالكري م",
+      "email": "26030100267@cuc.edu.eg"
+    },
+    "26030100268": {
+      "id": "26030100268",
+      "group": 4,
+      "name": "مروان يوسف محمود عي ي",
+      "email": "26030100268@cuc.edu.eg"
+    },
+    "26030100270": {
+      "id": "26030100270",
+      "group": 4,
+      "name": "يوسف وليد بدير عيسي",
+      "email": "26030100270@cuc.edu.eg"
+    },
+    "26030100271": {
+      "id": "26030100271",
+      "group": 4,
+      "name": "محمد رمضان محمد احمد مدكور",
+      "email": "26030100271@cuc.edu.eg"
+    },
+    "26030100296": {
+      "id": "26030100296",
+      "group": 4,
+      "name": "عبدالرحيم عماد محمد مصطفى",
+      "email": "26030100296@cuc.edu.eg"
+    },
+    "26030100298": {
+      "id": "26030100298",
+      "group": 4,
+      "name": "علي احمد انور السيد عطي ه",
+      "email": "26030100298@cuc.edu.eg"
+    },
+    "26030100411": {
+      "id": "26030100411",
+      "group": 4,
+      "name": "حبيبه خالد محمد سليمان",
+      "email": "26030100411@cuc.edu.eg"
+    },
+    "26030100419": {
+      "id": "26030100419",
+      "group": 4,
+      "name": "محمد باسم محمود محمد منصور",
+      "email": "26030100419@cuc.edu.eg"
+    },
+    "26030100467": {
+      "id": "26030100467",
+      "group": 4,
+      "name": "زياد عصام حمدى شعبا ن",
+      "email": "26030100467@cuc.edu.eg"
+    },
+    "26030100470": {
+      "id": "26030100470",
+      "group": 4,
+      "name": "بسمله سعد فتحى مرسى عياد",
+      "email": "26030100470@cuc.edu.eg"
+    },
+    "26030100498": {
+      "id": "26030100498",
+      "group": 4,
+      "name": "شاء الله محمد محمد نافد",
+      "email": "26030100498@cuc.edu.eg"
+    },
+    "26030100499": {
+      "id": "26030100499",
+      "group": 4,
+      "name": "منه الله حسن عبدالحميد احمد الصايغ",
+      "email": "26030100499@cuc.edu.eg"
+    },
+    "26030100506": {
+      "id": "26030100506",
+      "group": 4,
+      "name": "لوجينا اسامه مدبولي احمد حسن ابوالنيل",
+      "email": "26030100506@cuc.edu.eg"
+    },
+    "26030100523": {
+      "id": "26030100523",
+      "group": 4,
+      "name": "كمال عمر كمال عبدالونيس عبده",
+      "email": "26030100523@cuc.edu.eg"
+    },
+    "26030100524": {
+      "id": "26030100524",
+      "group": 4,
+      "name": "محمد محمد حسنين عصفور الديبان ي",
+      "email": "26030100524@cuc.edu.eg"
+    },
+    "26030100525": {
+      "id": "26030100525",
+      "group": 4,
+      "name": "عمار ياسر محمد سلامه نصار",
+      "email": "26030100525@cuc.edu.eg"
+    },
+    "26030100526": {
+      "id": "26030100526",
+      "group": 4,
+      "name": "زياد محمود السيد محمود موسى",
+      "email": "26030100526@cuc.edu.eg"
+    },
+    "26030100528": {
+      "id": "26030100528",
+      "group": 4,
+      "name": "ياسين حمدى هريدى قناوى مسعو د",
+      "email": "26030100528@cuc.edu.eg"
+    },
+    "26030100551": {
+      "id": "26030100551",
+      "group": 4,
+      "name": "محمود محمد عبدالباقي ابوالعزم فايد",
+      "email": "26030100551@cuc.edu.eg"
+    },
+    "26030100006": {
+      "id": "26030100006",
+      "group": 5,
+      "name": "فهد فارس جمال الدين عثمان عزت",
+      "email": "26030100006@cuc.edu.eg"
+    },
+    "26030100226": {
+      "id": "26030100226",
+      "group": 5,
+      "name": "احمد صابر ابوالنجا عويس عيد",
+      "email": "26030100226@cuc.edu.eg"
+    },
+    "26030100273": {
+      "id": "26030100273",
+      "group": 5,
+      "name": "محمد وليد كمال خميس عمار",
+      "email": "26030100273@cuc.edu.eg"
+    },
+    "26030100276": {
+      "id": "26030100276",
+      "group": 5,
+      "name": "زياد محمد عبدالرحمن ابراهيم قادوس",
+      "email": "26030100276@cuc.edu.eg"
+    },
+    "26030100278": {
+      "id": "26030100278",
+      "group": 5,
+      "name": "كريم عمرو محمد مجدى لبيب عبدالمعبو د",
+      "email": "26030100278@cuc.edu.eg"
+    },
+    "26030100280": {
+      "id": "26030100280",
+      "group": 5,
+      "name": "مصطفي عبدالباسط السيد احمد ابو قرن",
+      "email": "26030100280@cuc.edu.eg"
+    },
+    "26030100281": {
+      "id": "26030100281",
+      "group": 5,
+      "name": "احمد طارق احمد السيسي",
+      "email": "26030100281@cuc.edu.eg"
+    },
+    "26030100284": {
+      "id": "26030100284",
+      "group": 5,
+      "name": "علي وليد علي يوسف محم د",
+      "email": "26030100284@cuc.edu.eg"
+    },
+    "26030100285": {
+      "id": "26030100285",
+      "group": 5,
+      "name": "سيف مجدي رضا حسن خليل الجمال",
+      "email": "26030100285@cuc.edu.eg"
+    },
+    "26030100286": {
+      "id": "26030100286",
+      "group": 5,
+      "name": "مايا احمد محمد مصطفى موسى",
+      "email": "26030100286@cuc.edu.eg"
+    },
+    "26030100287": {
+      "id": "26030100287",
+      "group": 5,
+      "name": "عمر محمد محمد زيات بسيون ي",
+      "email": "26030100287@cuc.edu.eg"
+    },
+    "26030100290": {
+      "id": "26030100290",
+      "group": 5,
+      "name": "محمد عمرو محمد ثروت محمود زايد",
+      "email": "26030100290@cuc.edu.eg"
+    },
+    "26030100291": {
+      "id": "26030100291",
+      "group": 5,
+      "name": "مريم مشهور عنتر عبدالمنعم حمدو ن",
+      "email": "26030100291@cuc.edu.eg"
+    },
+    "26030100292": {
+      "id": "26030100292",
+      "group": 5,
+      "name": "نادر محمد عبدالله محمد",
+      "email": "26030100292@cuc.edu.eg"
+    },
+    "26030100293": {
+      "id": "26030100293",
+      "group": 5,
+      "name": "زياد محمد محمد عبدالخال ق",
+      "email": "26030100293@cuc.edu.eg"
+    },
+    "26030100299": {
+      "id": "26030100299",
+      "group": 5,
+      "name": "الاء عبدالله فوزي عبدالله فتيان ي",
+      "email": "26030100299@cuc.edu.eg"
+    },
+    "26030100300": {
+      "id": "26030100300",
+      "group": 5,
+      "name": "منى مصطفى احمد محمد محمدى",
+      "email": "26030100300@cuc.edu.eg"
+    },
+    "26030100301": {
+      "id": "26030100301",
+      "group": 5,
+      "name": "عبدالحميد محمد عبدالحميد نوح حسن",
+      "email": "26030100301@cuc.edu.eg"
+    },
+    "26030100304": {
+      "id": "26030100304",
+      "group": 5,
+      "name": "حسن مصطفى حسن علي عي د",
+      "email": "26030100304@cuc.edu.eg"
+    },
+    "26030100306": {
+      "id": "26030100306",
+      "group": 5,
+      "name": "ياسين عصام السيد احمد محمد",
+      "email": "26030100306@cuc.edu.eg"
+    },
+    "26030100307": {
+      "id": "26030100307",
+      "group": 5,
+      "name": "محمد كريم متولي عبدالخالق جمع ه",
+      "email": "26030100307@cuc.edu.eg"
+    },
+    "26030100309": {
+      "id": "26030100309",
+      "group": 5,
+      "name": "عبدالمنعم عثمان عبدالمنعم سالم سيد احمد",
+      "email": "26030100309@cuc.edu.eg"
+    },
+    "26030100310": {
+      "id": "26030100310",
+      "group": 5,
+      "name": "يوسف محمد جوده حسنين جوده",
+      "email": "26030100310@cuc.edu.eg"
+    },
+    "26030100312": {
+      "id": "26030100312",
+      "group": 5,
+      "name": "عبدالرحمن احمد علي عبدالفتاح",
+      "email": "26030100312@cuc.edu.eg"
+    },
+    "26030100313": {
+      "id": "26030100313",
+      "group": 5,
+      "name": "مينا مرزق سليمان عبدالمسيح",
+      "email": "26030100313@cuc.edu.eg"
+    },
+    "26030100315": {
+      "id": "26030100315",
+      "group": 5,
+      "name": "عمر محمود ربيع محمد عبدالرحم ن",
+      "email": "26030100315@cuc.edu.eg"
+    },
+    "26030100316": {
+      "id": "26030100316",
+      "group": 5,
+      "name": "عبدالله حمدى بيومى عبدالغنى عبدالرحمن",
+      "email": "26030100316@cuc.edu.eg"
+    },
+    "26030100319": {
+      "id": "26030100319",
+      "group": 5,
+      "name": "احمد يسري فكيه ابراهيم ابوالسعود",
+      "email": "26030100319@cuc.edu.eg"
+    },
+    "26030100320": {
+      "id": "26030100320",
+      "group": 5,
+      "name": "عبدالله صبري محمد الطنطاوى الدسوقي",
+      "email": "26030100320@cuc.edu.eg"
+    },
+    "26030100321": {
+      "id": "26030100321",
+      "group": 5,
+      "name": "عمر بكري عفيفي عبدالسميع عفيفى",
+      "email": "26030100321@cuc.edu.eg"
+    },
+    "26030100322": {
+      "id": "26030100322",
+      "group": 5,
+      "name": "نجوان عبدالرحمن عبدالرحمن احمد ابراهيم",
+      "email": "26030100322@cuc.edu.eg"
+    },
+    "26030100324": {
+      "id": "26030100324",
+      "group": 5,
+      "name": "كيرلس ايمن متواضع ايوب",
+      "email": "26030100324@cuc.edu.eg"
+    },
+    "26030100325": {
+      "id": "26030100325",
+      "group": 5,
+      "name": "محمد ناصر مرسى رمضان",
+      "email": "26030100325@cuc.edu.eg"
+    },
+    "26030100326": {
+      "id": "26030100326",
+      "group": 5,
+      "name": "احمد جمال عبدالرحيم حسن",
+      "email": "26030100326@cuc.edu.eg"
+    },
+    "26030100327": {
+      "id": "26030100327",
+      "group": 5,
+      "name": "ياسين كامل حلمى طه شلبى",
+      "email": "26030100327@cuc.edu.eg"
+    },
+    "26030100328": {
+      "id": "26030100328",
+      "group": 5,
+      "name": "منار السيد محمد عبدالسلام كريم",
+      "email": "26030100328@cuc.edu.eg"
+    },
+    "26030100331": {
+      "id": "26030100331",
+      "group": 5,
+      "name": "يوسف ياسر نصر محمود عي ي",
+      "email": "26030100331@cuc.edu.eg"
+    },
+    "26030100332": {
+      "id": "26030100332",
+      "group": 5,
+      "name": "عبدالله سليم كامل احمد",
+      "email": "26030100332@cuc.edu.eg"
+    },
+    "26030100333": {
+      "id": "26030100333",
+      "group": 5,
+      "name": "يوسف محمد سعيد محمد عبدالعليم",
+      "email": "26030100333@cuc.edu.eg"
+    },
+    "26030100334": {
+      "id": "26030100334",
+      "group": 5,
+      "name": "يحي احمد جابر خليل حزي ن",
+      "email": "26030100334@cuc.edu.eg"
+    },
+    "26030100336": {
+      "id": "26030100336",
+      "group": 5,
+      "name": "احمد محمد صلاح محمد حجازى",
+      "email": "26030100336@cuc.edu.eg"
+    },
+    "26030100337": {
+      "id": "26030100337",
+      "group": 5,
+      "name": "بلال عبدالغنى محمد طلبه عبدالفتاح",
+      "email": "26030100337@cuc.edu.eg"
+    },
+    "26030100345": {
+      "id": "26030100345",
+      "group": 5,
+      "name": "عمر عادل عبدالله عمر عطيه",
+      "email": "26030100345@cuc.edu.eg"
+    },
+    "26030100384": {
+      "id": "26030100384",
+      "group": 5,
+      "name": "محمد عبداللاه محمد عبدالراضي",
+      "email": "26030100384@cuc.edu.eg"
+    },
+    "26030100463": {
+      "id": "26030100463",
+      "group": 5,
+      "name": "معاذ محمود عبدالسميع محمد مؤمن",
+      "email": "26030100463@cuc.edu.eg"
+    },
+    "26030100500": {
+      "id": "26030100500",
+      "group": 5,
+      "name": "شهد سيد عبدالغنى السيد عيد",
+      "email": "26030100500@cuc.edu.eg"
+    },
+    "26030100507": {
+      "id": "26030100507",
+      "group": 5,
+      "name": "ولاء خلف محمد سعداوى عي ي",
+      "email": "26030100507@cuc.edu.eg"
+    },
+    "26030100508": {
+      "id": "26030100508",
+      "group": 5,
+      "name": "محمد احمد بشير طه عبدالمجيد",
+      "email": "26030100508@cuc.edu.eg"
+    },
+    "26030100509": {
+      "id": "26030100509",
+      "group": 5,
+      "name": "عبدالوهاب محسن عبدالوهاب محمد",
+      "email": "26030100509@cuc.edu.eg"
+    },
+    "26030100527": {
+      "id": "26030100527",
+      "group": 5,
+      "name": "ملك احمد عبدالسلام اسماعيل",
+      "email": "26030100527@cuc.edu.eg"
+    },
+    "26030100531": {
+      "id": "26030100531",
+      "group": 5,
+      "name": "جنى هاني السعيد علي ابراهي م",
+      "email": "26030100531@cuc.edu.eg"
+    },
+    "26030100532": {
+      "id": "26030100532",
+      "group": 5,
+      "name": "ابراهيم عادل السادات زيدان عي ي",
+      "email": "26030100532@cuc.edu.eg"
+    },
+    "26030100552": {
+      "id": "26030100552",
+      "group": 5,
+      "name": "كامل مصطفى كامل امام",
+      "email": "26030100552@cuc.edu.eg"
+    },
+    "26030100561": {
+      "id": "26030100561",
+      "group": 5,
+      "name": "فارس محمد احمد عبدالله جاد الكريم",
+      "email": "26030100561@cuc.edu.eg"
+    },
+    "26030100001": {
+      "id": "26030100001",
+      "group": 6,
+      "name": "احمد ايمن محمد رضا السيد محمود سعيد",
+      "email": "26030100001@cuc.edu.eg"
+    },
+    "26030100002": {
+      "id": "26030100002",
+      "group": 6,
+      "name": "زياد ايمن محمد رضا السيد محمود سعيد",
+      "email": "26030100002@cuc.edu.eg"
+    },
+    "26030100274": {
+      "id": "26030100274",
+      "group": 6,
+      "name": "بافلي مجدى نبيه نجيب اسرائيل",
+      "email": "26030100274@cuc.edu.eg"
+    },
+    "26030100339": {
+      "id": "26030100339",
+      "group": 6,
+      "name": "محمد وليد محمد محمود السيد صاب ر",
+      "email": "26030100339@cuc.edu.eg"
+    },
+    "26030100340": {
+      "id": "26030100340",
+      "group": 6,
+      "name": "محمد عبدالفتاح محمد عبدالفتاح ابو",
+      "email": "26030100340@cuc.edu.eg"
+    },
+    "26030100341": {
+      "id": "26030100341",
+      "group": 6,
+      "name": "عمر محمد عرفه البنداري احمد ر اضي",
+      "email": "26030100341@cuc.edu.eg"
+    },
+    "26030100344": {
+      "id": "26030100344",
+      "group": 6,
+      "name": "محمد احمد عبدالحفيظ احمد بركات",
+      "email": "26030100344@cuc.edu.eg"
+    },
+    "26030100346": {
+      "id": "26030100346",
+      "group": 6,
+      "name": "احمد علي ماهر حماده",
+      "email": "26030100346@cuc.edu.eg"
+    },
+    "26030100347": {
+      "id": "26030100347",
+      "group": 6,
+      "name": "عبدالحميد احمد عبدالحميد احمد ابوالغيط",
+      "email": "26030100347@cuc.edu.eg"
+    },
+    "26030100348": {
+      "id": "26030100348",
+      "group": 6,
+      "name": "محمد سيد طه فراج محمد",
+      "email": "26030100348@cuc.edu.eg"
+    },
+    "26030100349": {
+      "id": "26030100349",
+      "group": 6,
+      "name": "مروان محمود محمد عبده احمد",
+      "email": "26030100349@cuc.edu.eg"
+    },
+    "26030100350": {
+      "id": "26030100350",
+      "group": 6,
+      "name": "محمد ايمن رمضان عبدالخالق البراوى",
+      "email": "26030100350@cuc.edu.eg"
+    },
+    "26030100351": {
+      "id": "26030100351",
+      "group": 6,
+      "name": "خالد ياسر علي الانصارى ابو حلوه",
+      "email": "26030100351@cuc.edu.eg"
+    },
+    "26030100352": {
+      "id": "26030100352",
+      "group": 6,
+      "name": "محمد كرم عبدالحكم احمد درويش",
+      "email": "26030100352@cuc.edu.eg"
+    },
+    "26030100354": {
+      "id": "26030100354",
+      "group": 6,
+      "name": "مهند محمود علي محمود عي ي",
+      "email": "26030100354@cuc.edu.eg"
+    },
+    "26030100355": {
+      "id": "26030100355",
+      "group": 6,
+      "name": "عبدالله أبوالقاسم عبدالرحمن احمد عبدالعال",
+      "email": "26030100355@cuc.edu.eg"
+    },
+    "26030100356": {
+      "id": "26030100356",
+      "group": 6,
+      "name": "جنى وائل سعد عبدالفتاح السباعي",
+      "email": "26030100356@cuc.edu.eg"
+    },
+    "26030100358": {
+      "id": "26030100358",
+      "group": 6,
+      "name": "محمد جمال عبدالعزيز حسين اسماعي ل",
+      "email": "26030100358@cuc.edu.eg"
+    },
+    "26030100360": {
+      "id": "26030100360",
+      "group": 6,
+      "name": "احمد محمد حسن محمد السروجي",
+      "email": "26030100360@cuc.edu.eg"
+    },
+    "26030100361": {
+      "id": "26030100361",
+      "group": 6,
+      "name": "ابراهيم محمد ابراهيم ابراهيم احمد",
+      "email": "26030100361@cuc.edu.eg"
+    },
+    "26030100362": {
+      "id": "26030100362",
+      "group": 6,
+      "name": "مصطفي محمد عبدالمحسن عطيه سرور",
+      "email": "26030100362@cuc.edu.eg"
+    },
+    "26030100365": {
+      "id": "26030100365",
+      "group": 6,
+      "name": "عبدالرحمن بركات عبدالحليم علي احمد",
+      "email": "26030100365@cuc.edu.eg"
+    },
+    "26030100367": {
+      "id": "26030100367",
+      "group": 6,
+      "name": "احمد احمد فكرى محمد بدي ر",
+      "email": "26030100367@cuc.edu.eg"
+    },
+    "26030100368": {
+      "id": "26030100368",
+      "group": 6,
+      "name": "معتز احمد محمد علي مصطفى حسين البرا د",
+      "email": "26030100368@cuc.edu.eg"
+    },
+    "26030100369": {
+      "id": "26030100369",
+      "group": 6,
+      "name": "عمرو محمد جوده عبدالمنعم سلام",
+      "email": "26030100369@cuc.edu.eg"
+    },
+    "26030100375": {
+      "id": "26030100375",
+      "group": 6,
+      "name": "مصطفى عبدالرحيم حسن عبدالموجود",
+      "email": "26030100375@cuc.edu.eg"
+    },
+    "26030100376": {
+      "id": "26030100376",
+      "group": 6,
+      "name": "هند مجدي مصطفي ابراهيم",
+      "email": "26030100376@cuc.edu.eg"
+    },
+    "26030100379": {
+      "id": "26030100379",
+      "group": 6,
+      "name": "محمد السيد خلف الله ابراهيم",
+      "email": "26030100379@cuc.edu.eg"
+    },
+    "26030100381": {
+      "id": "26030100381",
+      "group": 6,
+      "name": "تسنيم ابراهيم فتحى عبدالحكيم جعف ر",
+      "email": "26030100381@cuc.edu.eg"
+    },
+    "26030100382": {
+      "id": "26030100382",
+      "group": 6,
+      "name": "محمد سلامه ابوالسعود موسى حمد",
+      "email": "26030100382@cuc.edu.eg"
+    },
+    "26030100383": {
+      "id": "26030100383",
+      "group": 6,
+      "name": "حسن سعودى حسن عبدالمجيد",
+      "email": "26030100383@cuc.edu.eg"
+    },
+    "26030100385": {
+      "id": "26030100385",
+      "group": 6,
+      "name": "عمرو طارق يحيى عبدالعال",
+      "email": "26030100385@cuc.edu.eg"
+    },
+    "26030100386": {
+      "id": "26030100386",
+      "group": 6,
+      "name": "بلال رجب محمد احمد عبدالصالحين",
+      "email": "26030100386@cuc.edu.eg"
+    },
+    "26030100389": {
+      "id": "26030100389",
+      "group": 6,
+      "name": "محمد السيد محمد صبرى حسن شريبه",
+      "email": "26030100389@cuc.edu.eg"
+    },
+    "26030100391": {
+      "id": "26030100391",
+      "group": 6,
+      "name": "كيرلس رزيق بخيت حناوى بولس",
+      "email": "26030100391@cuc.edu.eg"
+    },
+    "26030100394": {
+      "id": "26030100394",
+      "group": 6,
+      "name": "محمد احمد محمد السعيد زكى عصر",
+      "email": "26030100394@cuc.edu.eg"
+    },
+    "26030100395": {
+      "id": "26030100395",
+      "group": 6,
+      "name": "يوسف سالم عبدالمطلب توفيق عبدالسميع",
+      "email": "26030100395@cuc.edu.eg"
+    },
+    "26030100396": {
+      "id": "26030100396",
+      "group": 6,
+      "name": "يوسف محمد سعد عبدالمعطى",
+      "email": "26030100396@cuc.edu.eg"
+    },
+    "26030100397": {
+      "id": "26030100397",
+      "group": 6,
+      "name": "احمد عز الدين مصطفي صلاح الدين عرفه",
+      "email": "26030100397@cuc.edu.eg"
+    },
+    "26030100398": {
+      "id": "26030100398",
+      "group": 6,
+      "name": "مصطفى عبدالرحمن حسان ابراهيم عي ي",
+      "email": "26030100398@cuc.edu.eg"
+    },
+    "26030100400": {
+      "id": "26030100400",
+      "group": 6,
+      "name": "طاهر حسام فتح الدين محمد",
+      "email": "26030100400@cuc.edu.eg"
+    },
+    "26030100402": {
+      "id": "26030100402",
+      "group": 6,
+      "name": "محمد احمد رمضان جعفر ابراهيم",
+      "email": "26030100402@cuc.edu.eg"
+    },
+    "26030100529": {
+      "id": "26030100529",
+      "group": 6,
+      "name": "سندس عبدالكريم ابراهيم مصطفى الزايد ه",
+      "email": "26030100529@cuc.edu.eg"
+    },
+    "26030100537": {
+      "id": "26030100537",
+      "group": 6,
+      "name": "احمد محمد جوده محمود سالم",
+      "email": "26030100537@cuc.edu.eg"
+    },
+    "26030100538": {
+      "id": "26030100538",
+      "group": 6,
+      "name": "امير احمد مصطفى محمد حسن",
+      "email": "26030100538@cuc.edu.eg"
+    },
+    "26030100539": {
+      "id": "26030100539",
+      "group": 6,
+      "name": "جبران عبدالنبي حلمي سعيد ابراهيم",
+      "email": "26030100539@cuc.edu.eg"
+    },
+    "26030100541": {
+      "id": "26030100541",
+      "group": 6,
+      "name": "عبدالرحمن اسماعيل سيد رشاد غريب",
+      "email": "26030100541@cuc.edu.eg"
+    },
+    "26030100542": {
+      "id": "26030100542",
+      "group": 6,
+      "name": "عليان جلال ربيع محم د",
+      "email": "26030100542@cuc.edu.eg"
+    },
+    "26030100554": {
+      "id": "26030100554",
+      "group": 6,
+      "name": "محمد بدر محمد محمد حليس",
+      "email": "26030100554@cuc.edu.eg"
+    },
+    "26030100555": {
+      "id": "26030100555",
+      "group": 6,
+      "name": "عبدالله عطيه حسين ابوالعلا",
+      "email": "26030100555@cuc.edu.eg"
+    },
+    "26030100556": {
+      "id": "26030100556",
+      "group": 6,
+      "name": "زياد محمد الشحات عو ض",
+      "email": "26030100556@cuc.edu.eg"
+    },
+    "26030100564": {
+      "id": "26030100564",
+      "group": 6,
+      "name": "زياد محمد سباعى محمد سباعى",
+      "email": "26030100564@cuc.edu.eg"
+    },
+    "26030100572": {
+      "id": "26030100572",
+      "group": 6,
+      "name": "نور اسلام محمد محمد عي ي",
+      "email": "26030100572@cuc.edu.eg"
+    },
+    "26030100573": {
+      "id": "26030100573",
+      "group": 6,
+      "name": "صلاح طاهر عبدالعظيم السيد عبدالرحيم",
+      "email": "26030100573@cuc.edu.eg"
+    },
+    "26030100574": {
+      "id": "26030100574",
+      "group": 6,
+      "name": "زياد ماهر عبدالرؤف رزق علي غني م",
+      "email": "26030100574@cuc.edu.eg"
+    },
+    "26030100035": {
+      "id": "26030100035",
+      "group": 7,
+      "name": "علي عبدالعزيز السيد عبدالعزيز عتمان",
+      "email": "26030100035@cuc.edu.eg"
+    },
+    "26030100066": {
+      "id": "26030100066",
+      "group": 7,
+      "name": "عبدالرحمن محمد صبري لبيب",
+      "email": "26030100066@cuc.edu.eg"
+    },
+    "26030100103": {
+      "id": "26030100103",
+      "group": 7,
+      "name": "افنان احمد عبدربه سليمان محمد فودة",
+      "email": "26030100103@cuc.edu.eg"
+    },
+    "26030100121": {
+      "id": "26030100121",
+      "group": 7,
+      "name": "عمر محمد النعيمي ابراهيم مصطفى",
+      "email": "26030100121@cuc.edu.eg"
+    },
+    "26030100124": {
+      "id": "26030100124",
+      "group": 7,
+      "name": "كيرلس عيد مرقص زكى مترى",
+      "email": "26030100124@cuc.edu.eg"
+    },
+    "26030100152": {
+      "id": "26030100152",
+      "group": 7,
+      "name": "جاسمن محمد مسعد حسن ابراهيم خليل",
+      "email": "26030100152@cuc.edu.eg"
+    },
+    "26030100212": {
+      "id": "26030100212",
+      "group": 7,
+      "name": "مازن وليد محمد رضا عبدالفتاح جادالرب",
+      "email": "26030100212@cuc.edu.eg"
+    },
+    "26030100229": {
+      "id": "26030100229",
+      "group": 7,
+      "name": "مريم محمد عبدالله محمد فضل",
+      "email": "26030100229@cuc.edu.eg"
+    },
+    "26030100250": {
+      "id": "26030100250",
+      "group": 7,
+      "name": "عبدالله محمود احمد محمد سعد",
+      "email": "26030100250@cuc.edu.eg"
+    },
+    "26030100252": {
+      "id": "26030100252",
+      "group": 7,
+      "name": "بيتر جورج عبدالمسيح كيرلس عبدالشهيد",
+      "email": "26030100252@cuc.edu.eg"
+    },
+    "26030100254": {
+      "id": "26030100254",
+      "group": 7,
+      "name": "كيرلس عماد نبيه فيلبس شكرالله",
+      "email": "26030100254@cuc.edu.eg"
+    },
+    "26030100259": {
+      "id": "26030100259",
+      "group": 7,
+      "name": "احمد عبدالسلام محمد محمد محمود",
+      "email": "26030100259@cuc.edu.eg"
+    },
+    "26030100303": {
+      "id": "26030100303",
+      "group": 7,
+      "name": "ابراهيم احمد محمد حسن",
+      "email": "26030100303@cuc.edu.eg"
+    },
+    "26030100305": {
+      "id": "26030100305",
+      "group": 7,
+      "name": "احمد اشرف عبدالرازق عبدالنبى علي عام ر",
+      "email": "26030100305@cuc.edu.eg"
+    },
+    "26030100329": {
+      "id": "26030100329",
+      "group": 7,
+      "name": "ريتاج ابراهيم محمد ابراهيم الخطا ب",
+      "email": "26030100329@cuc.edu.eg"
+    },
+    "26030100363": {
+      "id": "26030100363",
+      "group": 7,
+      "name": "محمد عمر محمد عبدالعزيز مصطف ي",
+      "email": "26030100363@cuc.edu.eg"
+    },
+    "26030100372": {
+      "id": "26030100372",
+      "group": 7,
+      "name": "محمد عماد عبدالنبى علي حسن",
+      "email": "26030100372@cuc.edu.eg"
+    },
+    "26030100380": {
+      "id": "26030100380",
+      "group": 7,
+      "name": "محمد عبدالتواب رمضان حامد سيد",
+      "email": "26030100380@cuc.edu.eg"
+    },
+    "26030100405": {
+      "id": "26030100405",
+      "group": 7,
+      "name": "احمد رأفت ابراهيم محمد",
+      "email": "26030100405@cuc.edu.eg"
+    },
+    "26030100406": {
+      "id": "26030100406",
+      "group": 7,
+      "name": "خلود وليد رأفت السيد عثمان",
+      "email": "26030100406@cuc.edu.eg"
+    },
+    "26030100407": {
+      "id": "26030100407",
+      "group": 7,
+      "name": "عمرو علي عبدالحكيم السيد عي ي",
+      "email": "26030100407@cuc.edu.eg"
+    },
+    "26030100408": {
+      "id": "26030100408",
+      "group": 7,
+      "name": "عبدالرحمن احمد عبدالرحمن محمد سليمان",
+      "email": "26030100408@cuc.edu.eg"
+    },
+    "26030100409": {
+      "id": "26030100409",
+      "group": 7,
+      "name": "محمد صالح حمدي ابراهيم عبدربه",
+      "email": "26030100409@cuc.edu.eg"
+    },
+    "26030100410": {
+      "id": "26030100410",
+      "group": 7,
+      "name": "يوسف عمرو عبدالجليل سليمان يوسف",
+      "email": "26030100410@cuc.edu.eg"
+    },
+    "26030100412": {
+      "id": "26030100412",
+      "group": 7,
+      "name": "يوسف رضا عبدالعظيم احمد فراج",
+      "email": "26030100412@cuc.edu.eg"
+    },
+    "26030100414": {
+      "id": "26030100414",
+      "group": 7,
+      "name": "عزه عبدالرحمن عبدالعزيز محمد ثابت",
+      "email": "26030100414@cuc.edu.eg"
+    },
+    "26030100415": {
+      "id": "26030100415",
+      "group": 7,
+      "name": "جنى احمد شحاته مصلحى",
+      "email": "26030100415@cuc.edu.eg"
+    },
+    "26030100416": {
+      "id": "26030100416",
+      "group": 7,
+      "name": "ايهاب محمد احمد محمود الشاهد",
+      "email": "26030100416@cuc.edu.eg"
+    },
+    "26030100417": {
+      "id": "26030100417",
+      "group": 7,
+      "name": "احمد محمد علي ابوالعلا عي ي",
+      "email": "26030100417@cuc.edu.eg"
+    },
+    "26030100418": {
+      "id": "26030100418",
+      "group": 7,
+      "name": "مصطفي ايمن عدوي زكي",
+      "email": "26030100418@cuc.edu.eg"
+    },
+    "26030100420": {
+      "id": "26030100420",
+      "group": 7,
+      "name": "علي خالد رجب محمد محم د",
+      "email": "26030100420@cuc.edu.eg"
+    },
+    "26030100421": {
+      "id": "26030100421",
+      "group": 7,
+      "name": "جنى عبدالله رجب شعبان محمد ابراهيم",
+      "email": "26030100421@cuc.edu.eg"
+    },
+    "26030100423": {
+      "id": "26030100423",
+      "group": 7,
+      "name": "شروق رمضان سيد عي ي",
+      "email": "26030100423@cuc.edu.eg"
+    },
+    "26030100424": {
+      "id": "26030100424",
+      "group": 7,
+      "name": "أحمد محمد سيد محمد",
+      "email": "26030100424@cuc.edu.eg"
+    },
+    "26030100427": {
+      "id": "26030100427",
+      "group": 7,
+      "name": "سيف الله عاطف عبدالعزيز عبدالحلي م",
+      "email": "26030100427@cuc.edu.eg"
+    },
+    "26030100428": {
+      "id": "26030100428",
+      "group": 7,
+      "name": "ناديه المعتزبالله محمد عبدالفتاح ابراهيم",
+      "email": "26030100428@cuc.edu.eg"
+    },
+    "26030100429": {
+      "id": "26030100429",
+      "group": 7,
+      "name": "حازم بدوى احمد بدوى",
+      "email": "26030100429@cuc.edu.eg"
+    },
+    "26030100432": {
+      "id": "26030100432",
+      "group": 7,
+      "name": "حسين محمد احمد زيدا ن",
+      "email": "26030100432@cuc.edu.eg"
+    },
+    "26030100433": {
+      "id": "26030100433",
+      "group": 7,
+      "name": "ريام خالد احمد يوس ف",
+      "email": "26030100433@cuc.edu.eg"
+    },
+    "26030100434": {
+      "id": "26030100434",
+      "group": 7,
+      "name": "كريم عبدالهادي شعبان عبدالهادي العزاز ي",
+      "email": "26030100434@cuc.edu.eg"
+    },
+    "26030100435": {
+      "id": "26030100435",
+      "group": 7,
+      "name": "محمد رجب قطب رمضان متول ي",
+      "email": "26030100435@cuc.edu.eg"
+    },
+    "26030100436": {
+      "id": "26030100436",
+      "group": 7,
+      "name": "محمد منتصر عطا حامد",
+      "email": "26030100436@cuc.edu.eg"
+    },
+    "26030100437": {
+      "id": "26030100437",
+      "group": 7,
+      "name": "عبدالله عبدالظاهر عبدالحميد ناجي",
+      "email": "26030100437@cuc.edu.eg"
+    },
+    "26030100440": {
+      "id": "26030100440",
+      "group": 7,
+      "name": "عبدالوهاب محمد عبدالوهاب محمد البيك",
+      "email": "26030100440@cuc.edu.eg"
+    },
+    "26030100455": {
+      "id": "26030100455",
+      "group": 7,
+      "name": "محمد عادل عبدالمقصود عبدالنور شطى",
+      "email": "26030100455@cuc.edu.eg"
+    },
+    "26030100456": {
+      "id": "26030100456",
+      "group": 7,
+      "name": "محمد ابوبكر فتحى عبدالعزيز عبدالله",
+      "email": "26030100456@cuc.edu.eg"
+    },
+    "26030100457": {
+      "id": "26030100457",
+      "group": 7,
+      "name": "عبدالوهاب محمد عبدالوهاب عايش حلاوه",
+      "email": "26030100457@cuc.edu.eg"
+    },
+    "26030100460": {
+      "id": "26030100460",
+      "group": 7,
+      "name": "زياد ناصر يوسف عبدالعاطى عبدالمنع م",
+      "email": "26030100460@cuc.edu.eg"
+    },
+    "26030100462": {
+      "id": "26030100462",
+      "group": 7,
+      "name": "يوسف ناصر عبدالمرضى عبدالمعز مبروك",
+      "email": "26030100462@cuc.edu.eg"
+    },
+    "26030100464": {
+      "id": "26030100464",
+      "group": 7,
+      "name": "زياد سمير خيرى محروس عبدالحلي م",
+      "email": "26030100464@cuc.edu.eg"
+    },
+    "26030100466": {
+      "id": "26030100466",
+      "group": 7,
+      "name": "محمود احمد عبدالمبدى محمد عبدالله",
+      "email": "26030100466@cuc.edu.eg"
+    },
+    "26030100468": {
+      "id": "26030100468",
+      "group": 7,
+      "name": "يوسف وليد عبدالمنعم عبدالحميد عميره",
+      "email": "26030100468@cuc.edu.eg"
+    },
+    "26030100495": {
+      "id": "26030100495",
+      "group": 7,
+      "name": "ابرام عماد شهدى ذكى",
+      "email": "26030100495@cuc.edu.eg"
+    },
+    "26030100511": {
+      "id": "26030100511",
+      "group": 7,
+      "name": "يوسف حسنى محمد محمد عمر",
+      "email": "26030100511@cuc.edu.eg"
+    },
+    "26030100520": {
+      "id": "26030100520",
+      "group": 7,
+      "name": "احمد جمال كمال لبيب سالم",
+      "email": "26030100520@cuc.edu.eg"
+    },
+    "26030100530": {
+      "id": "26030100530",
+      "group": 7,
+      "name": "مريم تامر حسن سيد محمد عفيف ى",
+      "email": "26030100530@cuc.edu.eg"
+    },
+    "26030100535": {
+      "id": "26030100535",
+      "group": 7,
+      "name": "انس عصمت رشدى عبدالفتاح",
+      "email": "26030100535@cuc.edu.eg"
+    },
+    "26030100540": {
+      "id": "26030100540",
+      "group": 7,
+      "name": "محمد يحيى عبدالعزيز البيطار",
+      "email": "26030100540@cuc.edu.eg"
+    },
+    "26030100547": {
+      "id": "26030100547",
+      "group": 7,
+      "name": "عمر هشام نعيم نعيم ابوالنيل",
+      "email": "26030100547@cuc.edu.eg"
+    },
+    "26030100562": {
+      "id": "26030100562",
+      "group": 7,
+      "name": "انس محمد رشاد محمد صالح",
+      "email": "26030100562@cuc.edu.eg"
+    },
+    "26030100040": {
+      "id": "26030100040",
+      "group": 8,
+      "name": "حنين محمد فهمى طه السيسى",
+      "email": "26030100040@cuc.edu.eg"
+    },
+    "26030100042": {
+      "id": "26030100042",
+      "group": 8,
+      "name": "سلمي اسلام محمد قنديل محمد",
+      "email": "26030100042@cuc.edu.eg"
+    },
+    "26030100064": {
+      "id": "26030100064",
+      "group": 8,
+      "name": "عبدالرحمن معتز السيد الدسوقي نيل",
+      "email": "26030100064@cuc.edu.eg"
+    },
+    "26030100125": {
+      "id": "26030100125",
+      "group": 8,
+      "name": "دنيا هاني رجب السي د",
+      "email": "26030100125@cuc.edu.eg"
+    },
+    "26030100147": {
+      "id": "26030100147",
+      "group": 8,
+      "name": "محمد علي صلاح محمد احمد عمار",
+      "email": "26030100147@cuc.edu.eg"
+    },
+    "26030100150": {
+      "id": "26030100150",
+      "group": 8,
+      "name": "احمد جمال ابراهيم محمد البربر ى",
+      "email": "26030100150@cuc.edu.eg"
+    },
+    "26030100174": {
+      "id": "26030100174",
+      "group": 8,
+      "name": "مينا راضي انيس رزق",
+      "email": "26030100174@cuc.edu.eg"
+    },
+    "26030100256": {
+      "id": "26030100256",
+      "group": 8,
+      "name": "جودي محمد فاروق حسن يونس",
+      "email": "26030100256@cuc.edu.eg"
+    },
+    "26030100279": {
+      "id": "26030100279",
+      "group": 8,
+      "name": "معاذ كمال محمد عباس",
+      "email": "26030100279@cuc.edu.eg"
+    },
+    "26030100311": {
+      "id": "26030100311",
+      "group": 8,
+      "name": "عبدالرحمن زكي سيد زكى عنان ي",
+      "email": "26030100311@cuc.edu.eg"
+    },
+    "26030100370": {
+      "id": "26030100370",
+      "group": 8,
+      "name": "يوسف عمرو محمد البسيوني قنديل",
+      "email": "26030100370@cuc.edu.eg"
+    },
+    "26030100371": {
+      "id": "26030100371",
+      "group": 8,
+      "name": "خالد رضا حسن محمد ابوزي د",
+      "email": "26030100371@cuc.edu.eg"
+    },
+    "26030100373": {
+      "id": "26030100373",
+      "group": 8,
+      "name": "محمد عثمان محمد عبدالرحمن محمود",
+      "email": "26030100373@cuc.edu.eg"
+    },
+    "26030100377": {
+      "id": "26030100377",
+      "group": 8,
+      "name": "فاطمه محمد ابراهيم راشد عيد",
+      "email": "26030100377@cuc.edu.eg"
+    },
+    "26030100392": {
+      "id": "26030100392",
+      "group": 8,
+      "name": "حسام رشدي محمد ابوزي د",
+      "email": "26030100392@cuc.edu.eg"
+    },
+    "26030100401": {
+      "id": "26030100401",
+      "group": 8,
+      "name": "مصطفى ممدوح رجب عبدالظاهر",
+      "email": "26030100401@cuc.edu.eg"
+    },
+    "26030100404": {
+      "id": "26030100404",
+      "group": 8,
+      "name": "عمار محمد اسماعيل السيد عام ر",
+      "email": "26030100404@cuc.edu.eg"
+    },
+    "26030100413": {
+      "id": "26030100413",
+      "group": 8,
+      "name": "حمزه محمد مصطفي سليمان الجعبري",
+      "email": "26030100413@cuc.edu.eg"
+    },
+    "26030100426": {
+      "id": "26030100426",
+      "group": 8,
+      "name": "خديجة حسين حمد بياض",
+      "email": "26030100426@cuc.edu.eg"
+    },
+    "26030100430": {
+      "id": "26030100430",
+      "group": 8,
+      "name": "عبدالرحمن عادل حسن عبدالمطلب رجب",
+      "email": "26030100430@cuc.edu.eg"
+    },
+    "26030100438": {
+      "id": "26030100438",
+      "group": 8,
+      "name": "محمد عبدالحليم عبدالحي عبدالحليم",
+      "email": "26030100438@cuc.edu.eg"
+    },
+    "26030100441": {
+      "id": "26030100441",
+      "group": 8,
+      "name": "محمد محمود محمد عبدالصادق",
+      "email": "26030100441@cuc.edu.eg"
+    },
+    "26030100442": {
+      "id": "26030100442",
+      "group": 8,
+      "name": "محمد شعبان محمد متولي شهاب الدي ن",
+      "email": "26030100442@cuc.edu.eg"
+    },
+    "26030100444": {
+      "id": "26030100444",
+      "group": 8,
+      "name": "محمد سيد عبدالوهاب السيد محمد احمد",
+      "email": "26030100444@cuc.edu.eg"
+    },
+    "26030100445": {
+      "id": "26030100445",
+      "group": 8,
+      "name": "كيرلس سامح شبيب لبيب",
+      "email": "26030100445@cuc.edu.eg"
+    },
+    "26030100446": {
+      "id": "26030100446",
+      "group": 8,
+      "name": "نور الدين محمد رضوان بسيوني مصطف ى",
+      "email": "26030100446@cuc.edu.eg"
+    },
+    "26030100447": {
+      "id": "26030100447",
+      "group": 8,
+      "name": "عبدالرحمن مصطفى فكري عبدالقادر",
+      "email": "26030100447@cuc.edu.eg"
+    },
+    "26030100449": {
+      "id": "26030100449",
+      "group": 8,
+      "name": "توماس ناروز غطاس تاوضروس عيد",
+      "email": "26030100449@cuc.edu.eg"
+    },
+    "26030100451": {
+      "id": "26030100451",
+      "group": 8,
+      "name": "محمد سامي عبدالفتاح سلام",
+      "email": "26030100451@cuc.edu.eg"
+    },
+    "26030100453": {
+      "id": "26030100453",
+      "group": 8,
+      "name": "عمر حسام الدين الله ديتا فضل اللاهى",
+      "email": "26030100453@cuc.edu.eg"
+    },
+    "26030100454": {
+      "id": "26030100454",
+      "group": 8,
+      "name": "كيرلس اسحاق ناجح عبدالمسيح",
+      "email": "26030100454@cuc.edu.eg"
+    },
+    "26030100465": {
+      "id": "26030100465",
+      "group": 8,
+      "name": "سيف الدين محمد امين عارف الرفاعى",
+      "email": "26030100465@cuc.edu.eg"
+    },
+    "26030100475": {
+      "id": "26030100475",
+      "group": 8,
+      "name": "محمد عباس علي سال م",
+      "email": "26030100475@cuc.edu.eg"
+    },
+    "26030100477": {
+      "id": "26030100477",
+      "group": 8,
+      "name": "زياد احمد عبدالفتاح طايع كيلان ي",
+      "email": "26030100477@cuc.edu.eg"
+    },
+    "26030100478": {
+      "id": "26030100478",
+      "group": 8,
+      "name": "احمد عصام محمد عبدالعزيز محمود",
+      "email": "26030100478@cuc.edu.eg"
+    },
+    "26030100480": {
+      "id": "26030100480",
+      "group": 8,
+      "name": "مهند محمد محمد ممدوح محمد حسن",
+      "email": "26030100480@cuc.edu.eg"
+    },
+    "26030100481": {
+      "id": "26030100481",
+      "group": 8,
+      "name": "ادم احمد محمد احمد سيد",
+      "email": "26030100481@cuc.edu.eg"
+    },
+    "26030100483": {
+      "id": "26030100483",
+      "group": 8,
+      "name": "ياسين عويس ياسين محمد",
+      "email": "26030100483@cuc.edu.eg"
+    },
+    "26030100484": {
+      "id": "26030100484",
+      "group": 8,
+      "name": "كيرلس يوسف ابراهيم صادق يسى",
+      "email": "26030100484@cuc.edu.eg"
+    },
+    "26030100486": {
+      "id": "26030100486",
+      "group": 8,
+      "name": "فارس محمد ضاحى رجب",
+      "email": "26030100486@cuc.edu.eg"
+    },
+    "26030100487": {
+      "id": "26030100487",
+      "group": 8,
+      "name": "محمد عبدالرحمن احمد عبدالرحمن عفيفى",
+      "email": "26030100487@cuc.edu.eg"
+    },
+    "26030100488": {
+      "id": "26030100488",
+      "group": 8,
+      "name": "احمد غريب عبدالحميد محمد عي ي",
+      "email": "26030100488@cuc.edu.eg"
+    },
+    "26030100490": {
+      "id": "26030100490",
+      "group": 8,
+      "name": "محمد عادل سليمان سالم ابراهيم",
+      "email": "26030100490@cuc.edu.eg"
+    },
+    "26030100491": {
+      "id": "26030100491",
+      "group": 8,
+      "name": "يوسف مصطفى محمد مصطفى محمد",
+      "email": "26030100491@cuc.edu.eg"
+    },
+    "26030100510": {
+      "id": "26030100510",
+      "group": 8,
+      "name": "محمد عبدالمجيد الطنطاوى عبدالمجيد ابوزي د",
+      "email": "26030100510@cuc.edu.eg"
+    },
+    "26030100515": {
+      "id": "26030100515",
+      "group": 8,
+      "name": "عبدالله امين امين علي التلين ى",
+      "email": "26030100515@cuc.edu.eg"
+    },
+    "26030100544": {
+      "id": "26030100544",
+      "group": 8,
+      "name": "زياد عطيه محمد عطيه حسين",
+      "email": "26030100544@cuc.edu.eg"
+    },
+    "26030100545": {
+      "id": "26030100545",
+      "group": 8,
+      "name": "يوسف خالد محمد احمد",
+      "email": "26030100545@cuc.edu.eg"
+    },
+    "26030100566": {
+      "id": "26030100566",
+      "group": 8,
+      "name": "روان احمد علي يوسف سي د",
+      "email": "26030100566@cuc.edu.eg"
+    },
+    "26030100576": {
+      "id": "26030100576",
+      "group": 8,
+      "name": "معاذ محمد دسوقي شيلاي عي ي",
+      "email": "26030100576@cuc.edu.eg"
+    },
+    "26030100577": {
+      "id": "26030100577",
+      "group": 8,
+      "name": "محمد عرفه عادل شحاته",
+      "email": "26030100577@cuc.edu.eg"
+    },
+    "26030100579": {
+      "id": "26030100579",
+      "group": 8,
+      "name": "انس احمد محمد عبدالظاهر احمد",
+      "email": "26030100579@cuc.edu.eg"
+    },
+    "26030100582": {
+      "id": "26030100582",
+      "group": 8,
+      "name": "محمد عبدالباسط عبدالله محمد سالم",
+      "email": "26030100582@cuc.edu.eg"
+    },
+    "26030100583": {
+      "id": "26030100583",
+      "group": 8,
+      "name": "مريم سامح سعد محمد محم د",
+      "email": "26030100583@cuc.edu.eg"
+    },
+    "26030100585": {
+      "id": "26030100585",
+      "group": 8,
+      "name": "طاهر عبدالمنعم عبدالدايم حسن حسين",
+      "email": "26030100585@cuc.edu.eg"
+    },
+    "26030100586": {
+      "id": "26030100586",
+      "group": 8,
+      "name": "محمد احمد السيد عيسى",
+      "email": "26030100586@cuc.edu.eg"
+    },
+    "26030100027": {
+      "id": "26030100027",
+      "group": 9,
+      "name": "عمر هيثم محمد توفيق المنشاوى",
+      "email": "26030100027@cuc.edu.eg"
+    },
+    "26030100028": {
+      "id": "26030100028",
+      "group": 9,
+      "name": "ادهم محمد جلال محمد انيس",
+      "email": "26030100028@cuc.edu.eg"
+    },
+    "26030100062": {
+      "id": "26030100062",
+      "group": 9,
+      "name": "زياد احمد عزت محمد سليمان",
+      "email": "26030100062@cuc.edu.eg"
+    },
+    "26030100063": {
+      "id": "26030100063",
+      "group": 9,
+      "name": "مريم محمود احمد محمد متول ي",
+      "email": "26030100063@cuc.edu.eg"
+    },
+    "26030100077": {
+      "id": "26030100077",
+      "group": 9,
+      "name": "عمر خالد فاروق امين الديب",
+      "email": "26030100077@cuc.edu.eg"
+    },
+    "26030100083": {
+      "id": "26030100083",
+      "group": 9,
+      "name": "مازن ايمن المعزلدين الله بدوى خليفة",
+      "email": "26030100083@cuc.edu.eg"
+    },
+    "26030100084": {
+      "id": "26030100084",
+      "group": 9,
+      "name": "لجين حسام الدين محمود محمد نورالدين",
+      "email": "26030100084@cuc.edu.eg"
+    },
+    "26030100085": {
+      "id": "26030100085",
+      "group": 9,
+      "name": "مريم احمد محمود حسنى عبدالحمي د",
+      "email": "26030100085@cuc.edu.eg"
+    },
+    "26030100094": {
+      "id": "26030100094",
+      "group": 9,
+      "name": "مريم محمد عبدالستار ابوالمجد عي ي",
+      "email": "26030100094@cuc.edu.eg"
+    },
+    "26030100110": {
+      "id": "26030100110",
+      "group": 9,
+      "name": "نوران عادل خليل احمد حسن",
+      "email": "26030100110@cuc.edu.eg"
+    },
+    "26030100116": {
+      "id": "26030100116",
+      "group": 9,
+      "name": "بسملة عصام علي سليمان محمدي ن",
+      "email": "26030100116@cuc.edu.eg"
+    },
+    "26030100118": {
+      "id": "26030100118",
+      "group": 9,
+      "name": "جون ميشيل جورج عزيز خلي ل",
+      "email": "26030100118@cuc.edu.eg"
+    },
+    "26030100119": {
+      "id": "26030100119",
+      "group": 9,
+      "name": "عبدالحميد ياسر عبدالحميد محمد",
+      "email": "26030100119@cuc.edu.eg"
+    },
+    "26030100120": {
+      "id": "26030100120",
+      "group": 9,
+      "name": "جني مصعب صبري حسن محمد عودة",
+      "email": "26030100120@cuc.edu.eg"
+    },
+    "26030100133": {
+      "id": "26030100133",
+      "group": 9,
+      "name": "محمد مصطفى سعد صالح بدوى",
+      "email": "26030100133@cuc.edu.eg"
+    },
+    "26030100144": {
+      "id": "26030100144",
+      "group": 9,
+      "name": "فرح ابراهيم احمد انور ابراهيم",
+      "email": "26030100144@cuc.edu.eg"
+    },
+    "26030100165": {
+      "id": "26030100165",
+      "group": 9,
+      "name": "اياد سعيد احمد رشوان عبداللطيف",
+      "email": "26030100165@cuc.edu.eg"
+    },
+    "26030100183": {
+      "id": "26030100183",
+      "group": 9,
+      "name": "لي لي وائل السيد احمد مصطفى ابراهي م",
+      "email": "26030100183@cuc.edu.eg"
+    },
+    "26030100253": {
+      "id": "26030100253",
+      "group": 9,
+      "name": "ربيع الانوار محمد سعيد العلاف",
+      "email": "26030100253@cuc.edu.eg"
+    },
+    "26030100255": {
+      "id": "26030100255",
+      "group": 9,
+      "name": "عبدالرحمن صالح محمد محمد مسلم",
+      "email": "26030100255@cuc.edu.eg"
+    },
+    "26030100264": {
+      "id": "26030100264",
+      "group": 9,
+      "name": "يحيي احمد نديم يوسف",
+      "email": "26030100264@cuc.edu.eg"
+    },
+    "26030100277": {
+      "id": "26030100277",
+      "group": 9,
+      "name": "عمر اسامه ابوالنور عيد احمد",
+      "email": "26030100277@cuc.edu.eg"
+    },
+    "26030100282": {
+      "id": "26030100282",
+      "group": 9,
+      "name": "رقيه محمد صابر محمود عوض",
+      "email": "26030100282@cuc.edu.eg"
+    },
+    "26030100294": {
+      "id": "26030100294",
+      "group": 9,
+      "name": "هيلانه ممدوح فايز عزي ز",
+      "email": "26030100294@cuc.edu.eg"
+    },
+    "26030100317": {
+      "id": "26030100317",
+      "group": 9,
+      "name": "احمد محمد محمد ابراهيم العبد",
+      "email": "26030100317@cuc.edu.eg"
+    },
+    "26030100323": {
+      "id": "26030100323",
+      "group": 9,
+      "name": "حبيبه محمد شاهر عصام الدين محمود",
+      "email": "26030100323@cuc.edu.eg"
+    },
+    "26030100330": {
+      "id": "26030100330",
+      "group": 9,
+      "name": "اسماعيل صبري مرسي اسماعيل مرسى",
+      "email": "26030100330@cuc.edu.eg"
+    },
+    "26030100343": {
+      "id": "26030100343",
+      "group": 9,
+      "name": "عبدالرحمن هاني رمضان فؤاد محم د",
+      "email": "26030100343@cuc.edu.eg"
+    },
+    "26030100357": {
+      "id": "26030100357",
+      "group": 9,
+      "name": "محمد اشرف كمال جاد",
+      "email": "26030100357@cuc.edu.eg"
+    },
+    "26030100359": {
+      "id": "26030100359",
+      "group": 9,
+      "name": "اكرم نادر محمد احمد محمود",
+      "email": "26030100359@cuc.edu.eg"
+    },
+    "26030100364": {
+      "id": "26030100364",
+      "group": 9,
+      "name": "عبدالملك محمد حسن محمد السيد",
+      "email": "26030100364@cuc.edu.eg"
+    },
+    "26030100374": {
+      "id": "26030100374",
+      "group": 9,
+      "name": "عمار عمر الفاروق صلاح سيد مصطفى",
+      "email": "26030100374@cuc.edu.eg"
+    },
+    "26030100378": {
+      "id": "26030100378",
+      "group": 9,
+      "name": "سيف وليد كمال محمد الهادى السيد",
+      "email": "26030100378@cuc.edu.eg"
+    },
+    "26030100387": {
+      "id": "26030100387",
+      "group": 9,
+      "name": "بلال كريم احمد محمود السيد بلال",
+      "email": "26030100387@cuc.edu.eg"
+    },
+    "26030100388": {
+      "id": "26030100388",
+      "group": 9,
+      "name": "مهند ناصف توفيق عبدالدايم",
+      "email": "26030100388@cuc.edu.eg"
+    },
+    "26030100390": {
+      "id": "26030100390",
+      "group": 9,
+      "name": "زياد محمد امام محمد الكوم ي",
+      "email": "26030100390@cuc.edu.eg"
+    },
+    "26030100399": {
+      "id": "26030100399",
+      "group": 9,
+      "name": "عبدالرحمن احمد مرضي البيطا ر",
+      "email": "26030100399@cuc.edu.eg"
+    },
+    "26030100431": {
+      "id": "26030100431",
+      "group": 9,
+      "name": "عبدالرحمن رابح سلامه هنداوي",
+      "email": "26030100431@cuc.edu.eg"
+    },
+    "26030100450": {
+      "id": "26030100450",
+      "group": 9,
+      "name": "علي احمد علي حسن عبدالرازق",
+      "email": "26030100450@cuc.edu.eg"
+    },
+    "26030100452": {
+      "id": "26030100452",
+      "group": 9,
+      "name": "كيرلس مجدى خليل اسكند ر",
+      "email": "26030100452@cuc.edu.eg"
+    },
+    "26030100461": {
+      "id": "26030100461",
+      "group": 9,
+      "name": "سها احمد سعيد احمد عماره",
+      "email": "26030100461@cuc.edu.eg"
+    },
+    "26030100473": {
+      "id": "26030100473",
+      "group": 9,
+      "name": "ساجد حامد عبدالبارى حنفى",
+      "email": "26030100473@cuc.edu.eg"
+    },
+    "26030100479": {
+      "id": "26030100479",
+      "group": 9,
+      "name": "سيف ياسر امام محمد ابراهيم",
+      "email": "26030100479@cuc.edu.eg"
+    },
+    "26030100493": {
+      "id": "26030100493",
+      "group": 9,
+      "name": "عدنان عصام كمال عبدالعزيز سليم حبو س",
+      "email": "26030100493@cuc.edu.eg"
+    },
+    "26030100494": {
+      "id": "26030100494",
+      "group": 9,
+      "name": "احمد سيد عبدالهادى السيد خليل",
+      "email": "26030100494@cuc.edu.eg"
+    },
+    "26030100512": {
+      "id": "26030100512",
+      "group": 9,
+      "name": "عبدالرحمن احمد منصور محمد الصغي ر",
+      "email": "26030100512@cuc.edu.eg"
+    },
+    "26030100519": {
+      "id": "26030100519",
+      "group": 9,
+      "name": "ستيفن ايمن سعيد بطرس تاوضروس",
+      "email": "26030100519@cuc.edu.eg"
+    },
+    "26030100533": {
+      "id": "26030100533",
+      "group": 9,
+      "name": "سيدرا اسعد ظهير صديق عبدالجبار صديق",
+      "email": "26030100533@cuc.edu.eg"
+    },
+    "26030100534": {
+      "id": "26030100534",
+      "group": 9,
+      "name": "ادهم اسامه مصطفى ابراهيم امام الاشهب",
+      "email": "26030100534@cuc.edu.eg"
+    },
+    "26030100543": {
+      "id": "26030100543",
+      "group": 9,
+      "name": "مازن محمد صابر احمد حلاوه",
+      "email": "26030100543@cuc.edu.eg"
+    },
+    "26030100546": {
+      "id": "26030100546",
+      "group": 9,
+      "name": "علي احمد محمد عرفه مصطفى",
+      "email": "26030100546@cuc.edu.eg"
+    },
+    "26030100553": {
+      "id": "26030100553",
+      "group": 9,
+      "name": "يوسف مسعود احمد عبدالقوى سعيد",
+      "email": "26030100553@cuc.edu.eg"
+    },
+    "26030100559": {
+      "id": "26030100559",
+      "group": 9,
+      "name": "عبدالرحمن محمد فاروق علي ابراهي م",
+      "email": "26030100559@cuc.edu.eg"
+    },
+    "26030100563": {
+      "id": "26030100563",
+      "group": 9,
+      "name": "اسلام فرج صالح فرج",
+      "email": "26030100563@cuc.edu.eg"
+    },
+    "26030100565": {
+      "id": "26030100565",
+      "group": 9,
+      "name": "ادهم البدراوى احمد البدراوى طلبه",
+      "email": "26030100565@cuc.edu.eg"
+    },
+    "26030100571": {
+      "id": "26030100571",
+      "group": 9,
+      "name": "احمد هاني عاطف الشحات محم د",
+      "email": "26030100571@cuc.edu.eg"
+    },
+    "26030100318": {
+      "id": "26030100318",
+      "group": 9,
+      "name": "هنا احمد شوقي هاني ديا ب",
+      "email": "26030100318@cuc.edu.eg"
+    },
+    "26030100474": {
+      "id": "26030100474",
+      "group": 9,
+      "name": "عبدالرحمن عمرو السعيد عبدالرحمن حسن",
+      "email": "26030100474@cuc.edu.eg"
+    },
+    "26030100578": {
+      "id": "26030100578",
+      "group": 9,
+      "name": "الزهراء طارق احمد ابراهيم احمد",
+      "email": "26030100578@cuc.edu.eg"
+    },
+    "26030100560": {
+      "id": "26030100560",
+      "group": 9,
+      "name": "سما علاء محمد احمد عبدالحليم",
+      "email": "26030100560@cuc.edu.eg"
+    }
+  }
+};
