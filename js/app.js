@@ -430,12 +430,9 @@
                 </div>
               ` : ''}
 
-              <div class="sub-tutor-banner">
-                <div>
-                  <p>Stuck on a tricky problem in ${s.name}?</p>
-                  <small>Open the AI Tutor for silly, stress-free step-by-step motion breakdowns.</small>
-                </div>
-                <button class="btn-ask-tutor" type="button" data-subject="${s.code}">Ask AI Tutor →</button>
+              <div class="sub-solver-link">
+                <span>Problem Solver</span>
+                <a href="#/tutor" data-subject="${s.code}">View step-by-step derivations for ${s.name} →</a>
               </div>
             </div>
           `;
@@ -486,124 +483,111 @@
   }
 
   
-  /* ---------- AI Tutor Data & Engine ---------- */
+  /* ---------- Problem Solver (Clean & Editorial) ---------- */
   const TUTOR_PROBLEMS = {
     BAS111: [
       {
         id: 'm1',
-        title: 'Chain Rule: Derivative of y = sin³(2x)',
-        topic: 'Differentiation',
+        title: 'Derivative of y = sin³(2x)',
+        topic: 'Differentiation · Chain Rule',
         diagram: 'calc',
-        question: 'Find the first derivative dy/dx of the composite function y = sin³(2x).',
-        sillyComment: 'Think of the Chain Rule like peeling an onion: outer shell, middle layer, inner core. Keep calm and do not cry!',
+        question: 'Find the first derivative dy/dx of the composite trigonometric function y = sin³(2x).',
+        concept: 'Think of the Chain Rule as peeling layers: differentiate the outside power first, then the trigonometric function, and finally the inside linear argument.',
         steps: [
-          { num: 'Step 1: The Outer Shell', math: "d/du [ u³ ] = 3 u²", exp: "Identify the outermost power of 3. Bring 3 to the front and drop the exponent by 1 to get 3·sin²(2x)." },
-          { num: 'Step 2: The Middle Layer', math: "d/dx [ sin(2x) ] = cos(2x)", exp: "Now differentiate the sine function itself. The derivative of sin(θ) is cos(θ), so you get cos(2x)." },
-          { num: 'Step 3: The Inner Core', math: "d/dx [ 2x ] = 2", exp: "Differentiate the innermost baby 2x. Its derivative is just 2." },
-          { num: 'Step 4: Final Product', math: "dy/dx = 3 sin²(2x) · cos(2x) · 2 = 6 sin²(2x) cos(2x)", exp: "Multiply all layers together. 3 times 2 gives 6. Boom! Clean, flawless 5 marks." }
+          { num: '01', math: 'Outer Power: d/du [ u³ ] = 3 u²', exp: 'Apply the power rule to the outermost cube exponent to get 3·sin²(2x).' },
+          { num: '02', math: 'Trig Function: d/dx [ sin(2x) ] = cos(2x)', exp: 'Differentiate the sine function with respect to its inner argument.' },
+          { num: '03', math: 'Inner Argument: d/dx [ 2x ] = 2', exp: 'Differentiate the innermost 2x with respect to x.' },
+          { num: '04', math: 'Result: dy/dx = 6 sin²(2x) cos(2x)', exp: 'Multiply all three derivative factors: 3 · sin²(2x) · cos(2x) · 2 = 6 sin²(2x) cos(2x).' }
         ]
       },
       {
         id: 'm2',
-        title: 'Trig Limit: lim (x→0) sin(5x) / tan(2x)',
-        topic: 'Limits',
+        title: 'Limit: lim (x→0) sin(5x) / tan(2x)',
+        topic: 'Limits · Small Angle Approximation',
         diagram: 'calc',
         question: 'Evaluate the limit as x approaches 0 of sin(5x) / tan(2x).',
-        sillyComment: "L'Hôpital? Who has the energy? For tiny angles, sine and tan are basically just normal linear variables playing dress-up!",
+        concept: 'For small angles near zero, sin(θ) ≈ θ and tan(θ) ≈ θ. This avoids lengthy algebraic expansion or multiple rounds of L\'Hôpital\'s Rule.',
         steps: [
-          { num: 'Step 1: Small-Angle Behavior', math: "As x → 0 : sin(5x) ≈ 5x  and  tan(2x) ≈ 2x", exp: "Near zero, sin(θ)/θ → 1 and tan(θ)/θ → 1. So sin(5x) behaves exactly like 5x." },
-          { num: 'Step 2: Substitute & Simplify', math: "lim (x→0) [ 5x / 2x ]", exp: "Replace the trig functions with their linear approximations." },
-          { num: 'Step 3: Cancel Common Factor', math: "5x / 2x = 5/2 = 2.5", exp: "The x cancels out completely leaving a pure constant 5/2. Done in 10 seconds!" }
+          { num: '01', math: 'Small-Angle Identity: sin(5x) ≈ 5x and tan(2x) ≈ 2x', exp: 'Since x → 0, both sine and tangent approach their arguments linearly.' },
+          { num: '02', math: 'Ratio Substitution: lim (5x / 2x)', exp: 'Substitute the linear terms into the quotient.' },
+          { num: '03', math: 'Result: Limit = 5/2 = 2.5', exp: 'Cancel the common variable x to obtain the exact value 5/2.' }
         ]
       },
       {
         id: 'm3',
         title: 'Tangent Line to y = x² - 4x + 3 at x = 3',
-        topic: 'Geometry of Derivatives',
+        topic: 'Calculus · Tangent Lines',
         diagram: 'calc',
-        question: 'Find the equation of the tangent line to the curve y = x² - 4x + 3 at the point where x = 3.',
-        sillyComment: 'A tangent line is just a polite straight line that gives the parabola a quick high-five at one single point and walks away.',
+        question: 'Determine the equation of the line tangent to y = x² - 4x + 3 at the point where x = 3.',
+        concept: 'The derivative evaluated at a point yields the instantaneous slope m. Combined with the coordinate point (x₀, y₀), the point-slope form gives the line.',
         steps: [
-          { num: 'Step 1: Find the y-coordinate', math: "y(3) = 3² - 4(3) + 3 = 9 - 12 + 3 = 0", exp: "Plug x = 3 into the original equation. The touch point is (3, 0)." },
-          { num: 'Step 2: Differentiate for Slope', math: "y' = 2x - 4  →  m = 2(3) - 4 = 2", exp: "Derivative is your slope speedometer. At x=3, slope m = 2." },
-          { num: 'Step 3: Point-Slope Equation', math: "y - 0 = 2(x - 3)  →  y = 2x - 6", exp: "Plug slope and point into y - y₁ = m(x - x₁). The tangent line is y = 2x - 6." }
+          { num: '01', math: 'Find Coordinate: y(3) = 3² - 4(3) + 3 = 0', exp: 'Evaluate the curve at x = 3 to find the contact point (3, 0).' },
+          { num: '02', math: 'Evaluate Slope: y\' = 2x - 4 → m = 2(3) - 4 = 2', exp: 'Differentiate the parabola to obtain the general slope function.' },
+          { num: '03', math: 'Result: y - 0 = 2(x - 3) → y = 2x - 6', exp: 'Substitute m = 2 and (3, 0) into the point-slope formula.' }
         ]
       }
     ],
     BAS141: [
       {
         id: 'c1',
-        title: 'Thermodynamics: Reversible Isothermal Gas Work',
-        topic: 'Thermodynamics',
+        title: 'Isothermal Reversible Gas Expansion',
+        topic: 'Thermodynamics · Work & First Law',
         diagram: 'chem',
-        question: 'Calculate the work done during isothermal reversible expansion of n moles of an ideal gas from V₁ to V₂.',
-        sillyComment: "Gas expansion is basically students pouring out of the lecture hall at 5 PM: spontaneous, loud, and doing work on everything around them!",
+        question: 'Derive the expression for work done W during reversible isothermal expansion of an ideal gas from V₁ to V₂.',
+        concept: 'Because the process is isothermal, temperature is constant and internal energy change ΔU is zero. The system does work at the expense of absorbed heat.',
         steps: [
-          { num: 'Step 1: Isothermal Condition', math: "ΔT = 0  →  ΔU = 0 (Internal Energy is constant)", exp: "Because temperature is locked, the internal energy of the ideal gas doesn't change." },
-          { num: 'Step 2: Work Integral', math: "W = - ∫ P dV = - ∫ (nRT / V) dV", exp: "Substitute ideal gas law P = nRT/V into the mechanical work integral." },
-          { num: 'Step 3: Integrate Volume', math: "W = - n R T · ln(V₂ / V₁)", exp: "Because V₂ > V₁, ln(V₂/V₁) is positive, so W is negative: the gas spent its own energy pushing the piston!" }
+          { num: '01', math: 'Isothermal Condition: ΔT = 0 → ΔU = 0', exp: 'For an ideal gas, internal energy is a function of temperature alone.' },
+          { num: '02', math: 'Integral Form: W = - ∫ P dV = - ∫ (nRT / V) dV', exp: 'Substitute P = nRT/V from the ideal gas equation of state.' },
+          { num: '03', math: 'Result: W = - n R T ln(V₂ / V₁)', exp: 'Since V₂ > V₁, the logarithmic term is positive, confirming the gas performs work on the surroundings.' }
         ]
       },
       {
         id: 'c2',
-        title: 'Solutions: Why Salt Lowers Water Freezing Point',
-        topic: 'Colligative Properties',
+        title: 'Freezing Point Depression (Colligative Property)',
+        topic: 'Physical Chemistry · Solutions',
         diagram: 'chem',
-        question: 'Explain colligative freezing point depression using the Van \'t Hoff factor equation.',
-        sillyComment: 'Pure water molecules love arranging themselves into neat ice hexagons, until salt particles show up like noisy uninvited guests blocking the dancefloor!',
+        question: 'Explain why dissolving a non-volatile solute depresses the freezing point of water.',
+        concept: 'Solute particles disrupt liquid solvent lattice formation, lowering the chemical potential and requiring a lower temperature to reach equilibrium with pure ice.',
         steps: [
-          { num: 'Step 1: Dissociation Factor i', math: "NaCl (s) → Na⁺ (aq) + Cl⁻ (aq)  →  i = 2", exp: "Every 1 mole of NaCl splits into 2 moles of annoying gatekeeping ions." },
-          { num: 'Step 2: Freezing Depression Law', math: "ΔT_f = i · K_f · m", exp: "Freezing depression depends purely on the number of solute particles, not their chemical identity." },
-          { num: 'Step 3: The Result', math: "T_freeze = 0°C - ΔT_f < 0°C", exp: "Because of the ions in the way, water has to drop below 0°C to finally lock into ice. Physics wins!" }
+          { num: '01', math: 'Dissociation Factor: NaCl → Na⁺ + Cl⁻ (i = 2)', exp: 'Electrolytes dissociate into individual ions, each contributing to the colligative effect.' },
+          { num: '02', math: 'Depression Formula: ΔT_f = i · K_f · m', exp: 'The temperature drop is directly proportional to the total molality of dissolved particles.' },
+          { num: '03', math: 'Result: T_freezing = T_pure - ΔT_f', exp: 'The solution remains liquid at 0°C and solidifies only when cooled to the depressed temperature.' }
         ]
       }
     ],
     BAS121: [
       {
         id: 'p1',
-        title: 'SHM: Period of a Mass-Spring System',
-        topic: 'Oscillations',
+        title: 'Period of a Mass-Spring System',
+        topic: 'Oscillations · Simple Harmonic Motion',
         diagram: 'wave',
-        question: 'Derive the period formula T for a mass m attached to a horizontal ideal spring of stiffness k.',
-        sillyComment: 'A spring has extreme commitment issues: pull it away from equilibrium, it rushes back, overshoots, panics, and bounces back and forth forever!',
+        question: 'Derive the oscillation period T for a mass m attached to a spring with stiffness constant k.',
+        concept: 'The restoring force is directly proportional to displacement. Applying Newton\'s second law yields the classic harmonic differential equation.',
         steps: [
-          { num: 'Step 1: Hooke’s Restoring Force', math: "F = - k x = m · a = m (d²x / dt²)", exp: "The negative sign means the spring always pulls backward toward equilibrium." },
-          { num: 'Step 2: Harmonic Oscillator Equation', math: "d²x/dt² + (k/m) x = 0  →  ω² = k / m", exp: "Angular frequency ω is determined purely by stiffness k divided by inertia m." },
-          { num: 'Step 3: Oscillation Period', math: "T = 2π / ω = 2π √(m / k)", exp: "Heavy mass = slow lazy bounces. Stiff spring = rapid angry vibrations. Beautiful and simple!" }
+          { num: '01', math: 'Restoring Force: F = - k x = m (d²x / dt²)', exp: 'Hooke\'s law opposes displacement from equilibrium.' },
+          { num: '02', math: 'Equation of Motion: d²x/dt² + (k/m) x = 0 → ω = √(k/m)', exp: 'Angular frequency is determined solely by spring stiffness and mass inertia.' },
+          { num: '03', math: 'Result: T = 2π / ω = 2π √(m / k)', exp: 'The period depends on the square root of mass over stiffness, independent of amplitude.' }
         ]
       },
       {
         id: 'p2',
-        title: 'Wave Velocity from Traveling Wave Equation',
-        topic: 'Wave Motion',
+        title: 'Traveling Wave Velocity',
+        topic: 'Wave Motion · Wave Equation',
         diagram: 'wave',
-        question: 'Given traveling wave y(x,t) = 0.04 sin(40π t - 2π x), find its frequency, wavelength, and speed.',
-        sillyComment: 'Do not let the greek letters intimidate you: ω is just how fast the wave bobs up and down, and k is how squeezed the ripples are!',
+        question: 'Given the wave equation y(x,t) = A sin(ω t - k x), determine its propagation speed in terms of ω and k.',
+        concept: 'The phase of the wave is constant along any crest. Differentiating the phase condition with respect to time yields the propagation velocity.',
         steps: [
-          { num: 'Step 1: Extract ω and k', math: "ω = 40π rad/s , k = 2π rad/m", exp: "Compare directly with general form y = A sin(ω t - k x)." },
-          { num: 'Step 2: Frequency & Wavelength', math: "f = ω / 2π = 20 Hz  ;  λ = 2π / k = 1 m", exp: "Frequency is 20 cycles per second; distance from crest to crest is 1 meter." },
-          { num: 'Step 3: Wave Propagation Speed', math: "v = ω / k = (40π) / (2π) = 20 m/s", exp: "Wave velocity is exactly 20 meters per second traveling in the positive x direction." }
+          { num: '01', math: 'Wave Parameters: ω = 2π f , k = 2π / λ', exp: 'Identify the temporal frequency ω and spatial wavenumber k.' },
+          { num: '02', math: 'Phase Condition: (ω t - k x) = constant', exp: 'Track the motion of a single point of constant phase.' },
+          { num: '03', math: 'Result: v = dx/dt = ω / k = f · λ', exp: 'The phase speed is the ratio of angular frequency to wavenumber.' }
         ]
       }
     ]
   };
 
-  let tutorVoice = false;
-  let tutorTimer = null;
   state.tutorSub = state.tutorSub || 'BAS111';
   state.tutorProbId = state.tutorProbId || 'm1';
-  state.tutorStep = state.tutorStep || 0;
-
-  function speakText(txt) {
-    if (!tutorVoice || !window.speechSynthesis) return;
-    try {
-      window.speechSynthesis.cancel();
-      const u = new SpeechSynthesisUtterance(txt);
-      u.rate = 1.05;
-      u.pitch = 1.05;
-      window.speechSynthesis.speak(u);
-    } catch (e) {}
-  }
+  state.tutorShowAll = false;
 
   function getActiveProblem() {
     const list = TUTOR_PROBLEMS[state.tutorSub] || TUTOR_PROBLEMS['BAS111'];
@@ -612,7 +596,7 @@
 
   function renderTutor() {
     const root = $('#v-tutor');
-    const subCodes = [
+    const subjects = [
       { code: 'BAS111', name: 'Mathematics I' },
       { code: 'BAS141', name: 'Engineering Chemistry' },
       { code: 'BAS121', name: 'Vibration & Waves' }
@@ -621,234 +605,143 @@
     if (!TUTOR_PROBLEMS[state.tutorSub]) state.tutorSub = 'BAS111';
     const probList = TUTOR_PROBLEMS[state.tutorSub];
     const currentProb = getActiveProblem();
-    if (state.tutorStep >= currentProb.steps.length) state.tutorStep = currentProb.steps.length - 1;
 
     let diagramSvg = '';
     if (currentProb.diagram === 'chem') {
-      diagramSvg = `<svg viewBox="0 0 400 90" fill="none">
-        <rect x="70" y="15" width="260" height="60" rx="8" stroke="#a4a49d" stroke-width="2"/>
-        <rect x="180" y="17" width="16" height="56" fill="#FF4A1C" rx="3">
-          <animate attributeName="x" values="130;230;130" dur="4s" repeatCount="indefinite" />
+      diagramSvg = `<svg viewBox="0 0 380 70" fill="none">
+        <rect x="50" y="10" width="280" height="50" rx="6" stroke="currentColor" stroke-width="1.5" opacity="0.3"/>
+        <rect x="160" y="12" width="12" height="46" fill="var(--ink)" rx="2">
+          <animate attributeName="x" values="130;210;130" dur="4s" repeatCount="indefinite" />
         </rect>
-        <line x1="196" y1="45" x2="310" y2="45" stroke="#FF4A1C" stroke-width="4">
-          <animate attributeName="x1" values="146;246;146" dur="4s" repeatCount="indefinite" />
+        <line x1="172" y1="35" x2="280" y2="35" stroke="currentColor" stroke-width="2" opacity="0.4">
+          <animate attributeName="x1" values="142;222;142" dur="4s" repeatCount="indefinite" />
         </line>
-        <text x="85" y="50" fill="#67e8f9" font-size="12" font-family="monospace">Piston Work: P·ΔV</text>
+        <text x="65" y="39" fill="currentColor" font-size="11" opacity="0.8">Piston Work (P · ΔV)</text>
       </svg>`;
     } else if (currentProb.diagram === 'wave') {
-      diagramSvg = `<svg viewBox="0 0 400 90" fill="none">
-        <path d="M 20 45 C 60 15, 100 75, 140 45 C 180 15, 220 75, 260 45 C 300 15, 340 75, 380 45" stroke="#67e8f9" stroke-width="3" stroke-linecap="round">
+      diagramSvg = `<svg viewBox="0 0 380 70" fill="none">
+        <path d="M 20 35 C 60 10, 100 60, 140 35 C 180 10, 220 60, 260 35 C 300 10, 340 60, 380 35" stroke="var(--ink)" stroke-width="2" stroke-linecap="round">
           <animate attributeName="d" values="
-            M 20 45 C 60 15, 100 75, 140 45 C 180 15, 220 75, 260 45 C 300 15, 340 75, 380 45;
-            M 20 45 C 60 75, 100 15, 140 45 C 180 75, 220 15, 260 45 C 300 75, 340 15, 380 45;
-            M 20 45 C 60 15, 100 75, 140 45 C 180 15, 220 75, 260 45 C 300 15, 340 75, 380 45" dur="2.5s" repeatCount="indefinite" />
+            M 20 35 C 60 10, 100 60, 140 35 C 180 10, 220 60, 260 35 C 300 10, 340 60, 380 35;
+            M 20 35 C 60 60, 100 10, 140 35 C 180 60, 220 10, 260 35 C 300 60, 340 10, 380 35;
+            M 20 35 C 60 10, 100 60, 140 35 C 180 10, 220 60, 260 35 C 300 10, 340 60, 380 35" dur="3s" repeatCount="indefinite" />
         </path>
-        <circle cx="140" cy="45" r="4" fill="#FF4A1C"/>
-        <circle cx="260" cy="45" r="4" fill="#FF4A1C"/>
-        <text x="145" y="38" fill="#fff" font-size="10" font-family="monospace">Node</text>
-        <text x="265" y="38" fill="#fff" font-size="10" font-family="monospace">Node</text>
+        <circle cx="140" cy="35" r="3.5" fill="var(--accent)"/>
+        <circle cx="260" cy="35" r="3.5" fill="var(--accent)"/>
+        <text x="145" y="30" fill="currentColor" font-size="10" opacity="0.6">Node</text>
+        <text x="265" y="30" fill="currentColor" font-size="10" opacity="0.6">Node</text>
       </svg>`;
     } else {
-      diagramSvg = `<svg viewBox="0 0 400 90" fill="none">
-        <path d="M 20 70 Q 120 70 200 40 T 380 15" stroke="#67e8f9" stroke-width="2.5" stroke-linecap="round"/>
-        <line x1="120" y1="75" x2="280" y2="10" stroke="#FF4A1C" stroke-width="2" stroke-dasharray="4 4"/>
-        <circle cx="200" cy="40" r="5" fill="#FF4A1C"/>
-        <text x="215" y="42" fill="#fff" font-size="11" font-family="monospace">Tangent Slope Touch</text>
+      diagramSvg = `<svg viewBox="0 0 380 70" fill="none">
+        <path d="M 20 55 Q 120 55 190 35 T 360 15" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/>
+        <line x1="110" y1="62" x2="270" y2="8" stroke="var(--accent)" stroke-width="1.8" stroke-dasharray="3 3"/>
+        <circle cx="190" cy="35" r="4" fill="var(--accent)"/>
+        <text x="202" y="36" fill="currentColor" font-size="10" opacity="0.7">Tangent Slope m</text>
       </svg>`;
     }
 
     root.innerHTML = `
-      <p class="kicker" data-reveal>Interactive Problem Solver</p>
-      <h1 class="h1"><span class="ln"><span>Silly Genius</span></span><span class="ln"><span><em>AI Tutor.</em></span></span></h1>
-      <p class="lead">Select a problem or ask your own question. Watch the live motion blackboard screen break down the solution step-by-step with funny, stress-relieving guidance.</p>
+      <p class="kicker" data-reveal>Study Assistant</p>
+      <h1 class="h1"><span class="ln"><span>Problem</span></span><span class="ln"><span><em>solver.</em></span></span></h1>
+      <p class="lead">Select a course and topic to review mathematical derivations and step-by-step solutions.</p>
 
-      <div class="tutor-layout">
-        <div class="tutor-pills">
-          ${subCodes.map((s) => `<button type="button" class="tutor-pill${state.tutorSub === s.code ? ' active' : ''}" data-sub="${s.code}">${s.name}</button>`).join('')}
+      <div class="solver-layout">
+        <div class="solver-tabs">
+          ${subjects.map((s) => `<button type="button" class="solver-tab${state.tutorSub === s.code ? ' on' : ''}" data-sub="${s.code}">${s.name}</button>`).join('')}
         </div>
 
-        <div class="tutor-picker">
-          <span class="lbl">Choose a Problem to Solve</span>
-          <div class="tutor-q-grid">
-            ${probList.map((p) => `
-              <button type="button" class="tutor-q-btn${p.id === currentProb.id ? ' active' : ''}" data-prob="${p.id}">
-                <div>
-                  <strong>${p.title}</strong>
-                  <small style="display:block;color:var(--mute);margin-top:2px">${p.topic}</small>
-                </div>
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6"><polyline points="9 18 15 12 9 6"/></svg>
-              </button>
-            `).join('')}
+        <div class="solver-body">
+          <div class="solver-list-wrap">
+            <span class="lbl">Sample Problems</span>
+            <ul class="solver-list">
+              ${probList.map((p) => `
+                <li class="solver-item${p.id === currentProb.id ? ' on' : ''}" data-prob="${p.id}">
+                  <div class="solver-info">
+                    <span class="solver-topic">${p.topic}</span>
+                    <h3 class="solver-title">${p.title}</h3>
+                  </div>
+                  <span class="solver-arrow">→</span>
+                </li>
+              `).join('')}
+            </ul>
+
+            <form id="solverCustomForm" class="solver-custom-form">
+              <input id="solverInput" class="solver-input" placeholder="Ask a question or enter a topic..." autocomplete="off">
+              <button class="solver-btn" type="submit">Derive</button>
+            </form>
           </div>
 
-          <form id="tutorCustomForm" class="tutor-custom">
-            <input id="tutorInput" placeholder="Or type your own question (e.g. explain wave velocity or enthalpy)..." autocomplete="off">
-            <button type="submit">Ask AI</button>
-          </form>
-        </div>
-
-        <!-- Live Motion Blackboard Screen -->
-        <div class="motion-screen" id="motionScreen">
-          <div class="screen-bar">
-            <div class="screen-live"><i></i> Live Motion Screen</div>
-            <div class="screen-title">${currentProb.title}</div>
-            <div class="screen-tools">
-              <button type="button" id="btnTutorVoice" class="btn-voice${tutorVoice ? ' speaking' : ''}">
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
-                <span>${tutorVoice ? 'Voice: ON' : 'Voice: OFF'}</span>
-              </button>
-            </div>
-          </div>
-
-          <div class="screen-canvas-area">
-            <div class="chalk-question">${currentProb.question}</div>
-
-            <div class="silly-commentary">
-              <div class="silly-avatar">🧠</div>
-              <div class="silly-bubble">
-                <p>${currentProb.sillyComment}</p>
-                <small>— Prof. Silly Genius AI</small>
-              </div>
+          <div class="solver-card">
+            <div class="sc-head">
+              <span class="lbl">${state.tutorSub} · ${currentProb.topic}</span>
+              <h2>${currentProb.title}</h2>
+              <p class="sc-question">${currentProb.question}</p>
             </div>
 
-            <div class="motion-diagram-box">
+            <div class="sc-concept">
+              <small>Key Concept</small>
+              ${currentProb.concept}
+            </div>
+
+            <div class="sc-diagram">
               ${diagramSvg}
             </div>
 
-            <div class="chalk-steps" id="chalkSteps">
-              ${currentProb.steps.map((st, i) => `
-                <div class="c-step${i <= state.tutorStep ? ' active' : ''}${i === currentProb.steps.length - 1 && i <= state.tutorStep ? ' final' : ''}" data-step="${i}">
-                  <div class="step-header">
-                    <span class="step-num">${st.num}</span>
-                    <span style="font-size:11px;color:rgba(255,255,255,.4)">Step ${i + 1} of ${currentProb.steps.length}</span>
+            <div class="sc-steps">
+              ${currentProb.steps.map((st) => `
+                <div class="sc-step">
+                  <span class="sc-num">${st.num}</span>
+                  <div class="sc-content">
+                    <div class="sc-math">${st.math}</div>
+                    <p class="sc-exp">${st.exp}</p>
                   </div>
-                  <div class="step-math">${st.math}</div>
-                  <div class="step-exp">${st.exp}</div>
                 </div>
               `).join('')}
-            </div>
-          </div>
-
-          <div class="screen-playback">
-            <div class="pb-controls">
-              <button type="button" id="btnPlayTutor" class="btn-ctrl primary">
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                <span>${state.tutorStep >= currentProb.steps.length - 1 ? 'Replay Solution' : 'Auto Play'}</span>
-              </button>
-              <button type="button" id="btnPrevStep" class="btn-ctrl" ${state.tutorStep === 0 ? 'disabled' : ''}>Previous</button>
-              <button type="button" id="btnNextStep" class="btn-ctrl" ${state.tutorStep >= currentProb.steps.length - 1 ? 'disabled' : ''}>Next Step</button>
-            </div>
-
-            <div class="pb-progress">
-              <span>Step ${state.tutorStep + 1}/${currentProb.steps.length}</span>
-              <div class="pb-dots">
-                ${currentProb.steps.map((_, i) => `<span class="pb-dot${i <= state.tutorStep ? ' on' : ''}"></span>`).join('')}
-              </div>
             </div>
           </div>
         </div>
       </div>
     `;
 
-    // Event handlers for Subject Pills
-    $('#v-tutor .tutor-pill').forEach((btn) => btn.addEventListener('click', () => {
-      state.tutorSub = btn.dataset.sub;
+    // Subject tab switching
+    $('#v-tutor .solver-tab').forEach((b) => b.addEventListener('click', () => {
+      state.tutorSub = b.dataset.sub;
       state.tutorProbId = TUTOR_PROBLEMS[state.tutorSub][0].id;
-      state.tutorStep = 0;
-      clearInterval(tutorTimer);
       renderTutor();
     }));
 
-    // Event handlers for Problem buttons
-    $('#v-tutor .tutor-q-btn').forEach((btn) => btn.addEventListener('click', () => {
-      state.tutorProbId = btn.dataset.prob;
-      state.tutorStep = 0;
-      clearInterval(tutorTimer);
+    // Problem selection
+    $('#v-tutor .solver-item').forEach((item) => item.addEventListener('click', () => {
+      state.tutorProbId = item.dataset.prob;
       renderTutor();
     }));
 
-    // Voice toggle
-    $('#btnTutorVoice').addEventListener('click', () => {
-      tutorVoice = !tutorVoice;
-      toast(tutorVoice ? 'AI Voice Narration enabled' : 'AI Voice Narration muted');
-      renderTutor();
-      if (tutorVoice) {
-        const cur = getActiveProblem();
-        speakText(cur.sillyComment + '. ' + cur.steps[state.tutorStep].exp);
-      }
-    });
-
-    // Step Back
-    $('#btnPrevStep').addEventListener('click', () => {
-      if (state.tutorStep > 0) {
-        state.tutorStep--;
-        clearInterval(tutorTimer);
-        renderTutor();
-        const cur = getActiveProblem();
-        speakText(cur.steps[state.tutorStep].exp);
-      }
-    });
-
-    // Next Step
-    $('#btnNextStep').addEventListener('click', () => {
-      const cur = getActiveProblem();
-      if (state.tutorStep < cur.steps.length - 1) {
-        state.tutorStep++;
-        clearInterval(tutorTimer);
-        renderTutor();
-        speakText(cur.steps[state.tutorStep].exp);
-      }
-    });
-
-    // Auto Play / Replay
-    $('#btnPlayTutor').addEventListener('click', () => {
-      const cur = getActiveProblem();
-      if (state.tutorStep >= cur.steps.length - 1) {
-        state.tutorStep = 0;
-      }
-      renderTutor();
-      speakText(cur.sillyComment);
-
-      clearInterval(tutorTimer);
-      tutorTimer = setInterval(() => {
-        if (state.tutorStep < cur.steps.length - 1) {
-          state.tutorStep++;
-          renderTutor();
-          speakText(cur.steps[state.tutorStep].exp);
-        } else {
-          clearInterval(tutorTimer);
-        }
-      }, 4500);
-    });
-
-    // Custom question submission
-    $('#tutorCustomForm').addEventListener('submit', (e) => {
+    // Custom query submission
+    $('#solverCustomForm').addEventListener('submit', (e) => {
       e.preventDefault();
-      const q = $('#tutorInput').value.trim();
+      const q = $('#solverInput').value.trim();
       if (!q) return;
 
       const customId = 'custom-' + Date.now();
       const newProblem = {
         id: customId,
-        title: q.slice(0, 36) + (q.length > 36 ? '...' : ''),
-        topic: 'Custom Question',
+        title: q.slice(0, 40) + (q.length > 40 ? '...' : ''),
+        topic: 'Custom Query',
         diagram: /wave|vibrat|spring/i.test(q) ? 'wave' : /gas|chem|enthalp|thermo/i.test(q) ? 'chem' : 'calc',
         question: q,
-        sillyComment: `Great question! The universe loves throwing this curveball at students, but here is the secret trick to ace it!`,
+        concept: 'Break the problem into primary physical/mathematical laws, isolate known boundary conditions, and calculate the governing result.',
         steps: [
-          { num: 'Step 1: Unpack the Problem', math: "Identify Variables & Given Constants", exp: "First, isolate what you are asked to find versus what is already given so you don't panic." },
-          { num: 'Step 2: Choose the Master Formula', math: "Apply Governing Principle / Conservation Law", exp: "Recall the core governing equation that links these specific parameters together." },
-          { num: 'Step 3: Solve & Simplify', math: "Substitute → Calculate → Verify Units", exp: "Crunch the numbers carefully and double-check your units at the end. That's a wrap!" }
+          { num: '01', math: 'Identify Given Parameters & Goal', exp: 'State known variables and define the exact target quantity to evaluate.' },
+          { num: '02', math: 'Apply Governing Formula', exp: 'Select the standard theorem or equilibrium relation connecting these quantities.' },
+          { num: '03', math: 'Solve & Verify Dimensional Units', exp: 'Substitute given numeric parameters and confirm unit consistency.' }
         ]
       };
 
       if (!TUTOR_PROBLEMS[state.tutorSub]) TUTOR_PROBLEMS[state.tutorSub] = [];
       TUTOR_PROBLEMS[state.tutorSub].unshift(newProblem);
       state.tutorProbId = customId;
-      state.tutorStep = 0;
-      clearInterval(tutorTimer);
       renderTutor();
-      toast('AI Tutor generated custom breakdown!');
+      toast('Solution derivation generated');
     });
   }
 
@@ -1002,7 +895,7 @@
     ex.forEach((e) => items.push({ t: `${e.name} exam`, s: `${dateParts(e.start).day} ${dateParts(e.start).mon} · ${e.hall}`, k: `exam midterm ${e.name} ${e.code} ${e.hall}`, go: () => (location.hash = '#/exams') }));
     [...new Set(sess.map((x) => x.room))].forEach((r) => items.push({ t: roomText(r), s: hallInfo(r), k: `room hall ${r} ${hallInfo(r)}`, go: () => (location.hash = '#/week') }));
     
-    items.push({ t: 'AI Tutor: Silly Problem Solver', s: 'Interactive step-by-step motion breakdowns', k: 'ai tutor solver math physics chemistry questions help', go: () => (location.hash = '#/tutor') });
+    items.push({ t: 'Problem Solver: Step-by-Step Derivations', s: 'Interactive step-by-step motion breakdowns', k: 'ai tutor solver math physics chemistry questions help', go: () => (location.hash = '#/tutor') });
     palItems = (q ? items.filter((i) => i.k.toLowerCase().includes(q)) : items).slice(0, 8);
     palSel = 0;
     palList.innerHTML = palItems.length ? palItems.map((i, n) => `<li class="${n ? '' : 'sel'}" data-n="${n}"><b>${i.t}</b><small>${i.s}</small></li>`).join('') : '<li class="none">Nothing matches that.</li>';
