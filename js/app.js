@@ -43,8 +43,8 @@
     const list = D.exam_seating.filter((e) => e.group_number === g && e.course_code === code);
     if (!list.length) return { hall: 'Not listed', seats: '' };
     const id = Number(state.user.id);
-    const hit = list.find((a) => id >= Number(a.from_student) && id <= Number(a.to_student));
-    if (hit) return { hall: hit.hall, seats: list.length > 1 ? `Seat range ${hit.from_student} – ${hit.to_student}` : '' };
+    const hit = list.find((a) => a.from_student === 'All' || (id >= Number(a.from_student) && id <= Number(a.to_student)));
+    if (hit) return { hall: hit.hall, seats: list.length > 1 ? `Seat range ${hit.from_student} - ${hit.to_student}` : '' };
     return { hall: 'Not listed', seats: 'Your ID is not in the published hall list for this exam. Please confirm with the exams office.' };
   }
 
@@ -183,7 +183,7 @@
         <p class="hero-ar" lang="ar">${ne.arabic_name}</p>
         <div class="hero-grid">
           <div><span class="lbl">Your hall</span><strong class="room" id="heroRoom">${ne.hall}</strong><span>${hallInfo(ne.hall)}</span></div>
-          <div><span class="lbl">When</span><strong>${p.wd.slice(0, 3)} ${p.day} ${p.mon}</strong><span>10:00 – 11:00 AM</span></div>
+          <div><span class="lbl">When</span><strong>${p.wd.slice(0, 3)} ${p.day} ${p.mon}</strong><span>10:00 - 11:00 AM</span></div>
           <div><span class="lbl">Starts in</span><strong id="countdown">${countdownText(ne.start, ne.end)}</strong><span>${ne.code}</span></div>
         </div></article>`;
       body = `<div class="sec-head"><h2>The exam week</h2><a href="#/exams">All details</a></div>
@@ -200,7 +200,7 @@
           <p class="hero-ar" lang="ar">${s.course_arabic}</p>
           <div class="hero-grid">
             <div><span class="lbl">Room</span><strong class="room" id="heroRoom">${roomText(s.room)}</strong><span>${hallInfo(s.room)}</span></div>
-            <div><span class="lbl">Time</span><strong>${fmt12(s.start_time)} – ${fmt12(s.end_time)}</strong><span>${s.day}</span></div>
+            <div><span class="lbl">Time</span><strong>${fmt12(s.start_time)} - ${fmt12(s.end_time)}</strong><span>${s.day}</span></div>
             <div><span class="lbl">${s.session_type}</span><strong>${s.course_code}</strong><span>${s.instructor || ''}</span></div>
           </div></article>`;
       } else {
@@ -280,7 +280,7 @@
           </button>
           <div class="acc-b"><div><div class="acc-in">
             <p class="desc">${s.description}</p>
-            ${sess.map((x) => `<div class="mini"><span>${x.day}</span><div>${fmt12(x.start_time)} – ${fmt12(x.end_time)} ${ampm(x.end_time)} · ${x.session_type}${x.instructor ? ' · ' + x.instructor : ''}</div><b>${roomText(x.room)}</b></div>`).join('')}
+            ${sess.map((x) => `<div class="mini"><span>${x.day}</span><div>${fmt12(x.start_time)} - ${fmt12(x.end_time)} ${ampm(x.end_time)} · ${x.session_type}${x.instructor ? ' · ' + x.instructor : ''}</div><b>${roomText(x.room)}</b></div>`).join('')}
             ${e ? `<div class="mini"><span>Midterm</span><div>${dateParts(e.start).wd}, ${dateParts(e.start).day} ${dateParts(e.start).mon} · 10:00 AM</div><b>${e.hall}</b></div>` : ''}
           </div></div></div>
         </div>`;
@@ -295,9 +295,9 @@
 
   const NOTICES = [
     { d: 'Fri, 6 Nov', t: 'Midterm exams begin tomorrow', p: 'The first exam is Report Writing & Communication Skills (CUC112) on Saturday, 7 November at 10:00 AM. Check your hall before you leave.', a: ['exams', 'Open my exam halls'] },
-    { d: 'Fri, 6 Nov', t: 'Group 9 exam halls published', p: 'Each exam is split across two halls by student ID. The portal shows the hall for your own ID, together with the seat range.' },
+    { d: 'Fri, 6 Nov', t: 'Exam halls published for Groups 1 to 9', p: 'Most exams are split across two halls by student ID. The portal shows the hall for your own ID, together with the seat range.' },
     { d: 'Fri, 6 Nov', t: 'Classes resume on 15 November', p: 'After the last exam on Saturday, 14 November, the portal switches back to your regular weekly timetable on its own.' },
-    { d: 'Thu, 5 Nov', t: 'Group 9 student list updated', p: 'Sign in with your 11-digit student ID to see your classes and exam halls.' }
+    { d: 'Thu, 5 Nov', t: 'Student lists updated', p: 'The Groups 1-9 lists have been refreshed. Sign in with your 11-digit student ID to see your group, classes and exam halls.' }
   ];
   function renderUpdates() {
     $('#v-updates').innerHTML = `
@@ -437,7 +437,7 @@
     e.preventDefault();
     const u = lookup(input.value);
     if (!u) {
-      err.textContent = input.value.trim() ? "We couldn't find that ID in Group 9. Check the digits and try again." : 'Enter your student ID to continue.';
+      err.textContent = input.value.trim() ? "We couldn't find that ID. Check the digits and try again." : 'Enter your student ID to continue.';
       const f = $('.field', form); f.classList.remove('shake'); void f.offsetWidth; f.classList.add('shake');
       return;
     }
