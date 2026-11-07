@@ -357,12 +357,90 @@
   function renderSubjects() {
     const g = state.user.group, list = sessionsFor(g), ex = examsFor(g);
     const subs = D.subjects.filter((s) => list.some((x) => x.course_code === s.code));
+    const MAT = window.MATERIALS_DATA || {};
+
     $('#v-subjects').innerHTML = `
       <p class="kicker" data-reveal>Group ${g} · First term</p>
       <h1 class="h1"><span class="ln"><span>Your</span></span><span class="ln"><span><em>subjects.</em></span></span></h1>
       <div class="subject-list">${subs.map((s) => {
         const sess = list.filter((x) => x.course_code === s.code).sort((a, b) => DAYS.indexOf(a.day) - DAYS.indexOf(b.day) || mins(a.start_time) - mins(b.start_time));
         const e = ex.find((x) => x.code === s.code);
+        const mat = MAT[s.code];
+
+        let matHtml = '';
+        if (mat) {
+          matHtml = `
+            <div class="mat-wrap">
+              ${mat.revisions && mat.revisions.length ? `
+                <div class="mat-sec">
+                  <div class="mat-sec-title"><span class="mat-tag highlight">Midterm Exam Revision & Question Banks</span></div>
+                  <div class="mat-grid">
+                    ${mat.revisions.map((r) => `
+                      <a class="mat-card feature" href="${r.file}" target="_blank" rel="noopener">
+                        <div class="mc-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+                        <div class="mc-info">
+                          <span class="mc-badge">${r.badge}</span>
+                          <h4>${r.title}</h4>
+                          <p>${r.desc || 'Click to view PDF'}</p>
+                        </div>
+                        <span class="mc-arrow"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M7 17L17 7M7 7h10v10"/></svg></span>
+                      </a>
+                    `).join('')}
+                  </div>
+                </div>
+              ` : ''}
+
+              ${mat.chapters && mat.chapters.length ? `
+                <div class="mat-sec">
+                  <div class="mat-sec-title"><span class="mat-tag">Lectures & Chapters</span></div>
+                  <div class="mat-grid">
+                    ${mat.chapters.map((c) => `
+                      <a class="mat-card" href="${c.file}" target="_blank" rel="noopener">
+                        <div class="mc-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+                        <div class="mc-info">
+                          ${c.tag ? `<span class="mc-badge soft">${c.tag}</span>` : ''}
+                          <h4>${c.title}</h4>
+                          ${c.desc ? `<p>${c.desc}</p>` : ''}
+                        </div>
+                        <span class="mc-arrow"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M7 17L17 7M7 7h10v10"/></svg></span>
+                      </a>
+                    `).join('')}
+                  </div>
+                </div>
+              ` : ''}
+
+              ${mat.sheets && mat.sheets.length ? `
+                <div class="mat-sec">
+                  <div class="mat-sec-title"><span class="mat-tag">Practice Sheets & Assignments</span></div>
+                  <div class="mat-grid">
+                    ${mat.sheets.map((sh) => `
+                      <div class="mat-card sheet">
+                        <div class="mc-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="15" x2="15" y2="15"/></svg></div>
+                        <div class="mc-info">
+                          ${sh.badge ? `<span class="mc-badge soft">${sh.badge}</span>` : ''}
+                          <h4>${sh.title}</h4>
+                        </div>
+                        <div class="mc-actions">
+                          <a class="btn-mat" href="${sh.file}" target="_blank" rel="noopener">Sheet</a>
+                          ${sh.solution ? `<a class="btn-mat sol" href="${sh.solution}" target="_blank" rel="noopener">Model Answer</a>` : ''}
+                        </div>
+                      </div>
+                    `).join('')}
+                  </div>
+                </div>
+              ` : ''}
+
+              <div class="sub-tutor-banner">
+                <div>
+                  <p>Stuck on a tricky problem in ${s.name}?</p>
+                  <small>Open the AI Tutor for silly, stress-free step-by-step motion breakdowns.</small>
+                </div>
+                <button class="btn-ask-tutor" type="button" data-subject="${s.code}">Ask AI Tutor →</button>
+              </div>
+            </div>
+          `;
+        }
+
         return `<div class="acc${state.openSubject === s.code ? ' open' : ''}" id="sub-${s.code}" data-reveal>
           <button class="acc-h" type="button" aria-expanded="${state.openSubject === s.code}">
             <span class="code">${s.code}</span>
@@ -373,14 +451,24 @@
             <p class="desc">${s.description}</p>
             ${sess.map((x) => `<div class="mini"><span>${x.day}</span><div>${fmt12(x.start_time)} - ${fmt12(x.end_time)} ${ampm(x.end_time)} · ${x.session_type}${x.instructor ? ' · ' + x.instructor : ''}</div><b>${roomText(x.room)}</b></div>`).join('')}
             ${e ? `<div class="mini"><span>Midterm</span><div>${dateParts(e.start).wd}, ${dateParts(e.start).day} ${dateParts(e.start).mon} · 10:00 AM</div><div class="sub-halls">${(e.allHalls || []).map((h) => `<span class="sh-badge${h.isMine ? ' my' : ''}">${h.isMine ? '<span>Your hall</span>' : ''}<b>${h.hall}</b><span>${h.from_student} – ${h.to_student}</span></span>`).join('')}</div></div>` : ''}
+            ${matHtml}
           </div></div></div>
         </div>`;
       }).join('')}</div>`;
-    $$('#v-subjects .acc-h').forEach((h) => h.addEventListener('click', () => {
+
+    $('#v-subjects .acc-h').forEach((h) => h.addEventListener('click', () => {
       const a = h.parentElement, open = !a.classList.contains('open');
-      $$('#v-subjects .acc').forEach((x) => { x.classList.remove('open'); $('.acc-h', x).setAttribute('aria-expanded', 'false'); });
+      $('#v-subjects .acc').forEach((x) => { x.classList.remove('open'); $('.acc-h', x).setAttribute('aria-expanded', 'false'); });
       state.openSubject = null;
       if (open) { a.classList.add('open'); h.setAttribute('aria-expanded', 'true'); state.openSubject = a.id.slice(4); }
+    }));
+
+    $('#v-subjects .btn-ask-tutor').forEach((btn) => btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const code = btn.dataset.subject;
+      state.tutorSub = code;
+      location.hash = '#/tutor';
+      if (state.view === 'tutor') show('tutor');
     }));
   }
 
@@ -397,7 +485,374 @@
       <div class="notice-list">${NOTICES.map((n) => `<article class="note" data-reveal><time>${n.d}</time><div><h3>${n.t}</h3><p>${n.p}</p>${n.a ? `<a class="link" href="#/${n.a[0]}">${n.a[1]}</a>` : ''}</div></article>`).join('')}</div>`;
   }
 
-  const RENDER = { home: renderHome, week: renderWeek, exams: renderExams, subjects: renderSubjects, updates: renderUpdates };
+  
+  /* ---------- AI Tutor Data & Engine ---------- */
+  const TUTOR_PROBLEMS = {
+    BAS111: [
+      {
+        id: 'm1',
+        title: 'Chain Rule: Derivative of y = sin³(2x)',
+        topic: 'Differentiation',
+        diagram: 'calc',
+        question: 'Find the first derivative dy/dx of the composite function y = sin³(2x).',
+        sillyComment: 'Think of the Chain Rule like peeling an onion: outer shell, middle layer, inner core. Keep calm and do not cry!',
+        steps: [
+          { num: 'Step 1: The Outer Shell', math: "d/du [ u³ ] = 3 u²", exp: "Identify the outermost power of 3. Bring 3 to the front and drop the exponent by 1 to get 3·sin²(2x)." },
+          { num: 'Step 2: The Middle Layer', math: "d/dx [ sin(2x) ] = cos(2x)", exp: "Now differentiate the sine function itself. The derivative of sin(θ) is cos(θ), so you get cos(2x)." },
+          { num: 'Step 3: The Inner Core', math: "d/dx [ 2x ] = 2", exp: "Differentiate the innermost baby 2x. Its derivative is just 2." },
+          { num: 'Step 4: Final Product', math: "dy/dx = 3 sin²(2x) · cos(2x) · 2 = 6 sin²(2x) cos(2x)", exp: "Multiply all layers together. 3 times 2 gives 6. Boom! Clean, flawless 5 marks." }
+        ]
+      },
+      {
+        id: 'm2',
+        title: 'Trig Limit: lim (x→0) sin(5x) / tan(2x)',
+        topic: 'Limits',
+        diagram: 'calc',
+        question: 'Evaluate the limit as x approaches 0 of sin(5x) / tan(2x).',
+        sillyComment: "L'Hôpital? Who has the energy? For tiny angles, sine and tan are basically just normal linear variables playing dress-up!",
+        steps: [
+          { num: 'Step 1: Small-Angle Behavior', math: "As x → 0 : sin(5x) ≈ 5x  and  tan(2x) ≈ 2x", exp: "Near zero, sin(θ)/θ → 1 and tan(θ)/θ → 1. So sin(5x) behaves exactly like 5x." },
+          { num: 'Step 2: Substitute & Simplify', math: "lim (x→0) [ 5x / 2x ]", exp: "Replace the trig functions with their linear approximations." },
+          { num: 'Step 3: Cancel Common Factor', math: "5x / 2x = 5/2 = 2.5", exp: "The x cancels out completely leaving a pure constant 5/2. Done in 10 seconds!" }
+        ]
+      },
+      {
+        id: 'm3',
+        title: 'Tangent Line to y = x² - 4x + 3 at x = 3',
+        topic: 'Geometry of Derivatives',
+        diagram: 'calc',
+        question: 'Find the equation of the tangent line to the curve y = x² - 4x + 3 at the point where x = 3.',
+        sillyComment: 'A tangent line is just a polite straight line that gives the parabola a quick high-five at one single point and walks away.',
+        steps: [
+          { num: 'Step 1: Find the y-coordinate', math: "y(3) = 3² - 4(3) + 3 = 9 - 12 + 3 = 0", exp: "Plug x = 3 into the original equation. The touch point is (3, 0)." },
+          { num: 'Step 2: Differentiate for Slope', math: "y' = 2x - 4  →  m = 2(3) - 4 = 2", exp: "Derivative is your slope speedometer. At x=3, slope m = 2." },
+          { num: 'Step 3: Point-Slope Equation', math: "y - 0 = 2(x - 3)  →  y = 2x - 6", exp: "Plug slope and point into y - y₁ = m(x - x₁). The tangent line is y = 2x - 6." }
+        ]
+      }
+    ],
+    BAS141: [
+      {
+        id: 'c1',
+        title: 'Thermodynamics: Reversible Isothermal Gas Work',
+        topic: 'Thermodynamics',
+        diagram: 'chem',
+        question: 'Calculate the work done during isothermal reversible expansion of n moles of an ideal gas from V₁ to V₂.',
+        sillyComment: "Gas expansion is basically students pouring out of the lecture hall at 5 PM: spontaneous, loud, and doing work on everything around them!",
+        steps: [
+          { num: 'Step 1: Isothermal Condition', math: "ΔT = 0  →  ΔU = 0 (Internal Energy is constant)", exp: "Because temperature is locked, the internal energy of the ideal gas doesn't change." },
+          { num: 'Step 2: Work Integral', math: "W = - ∫ P dV = - ∫ (nRT / V) dV", exp: "Substitute ideal gas law P = nRT/V into the mechanical work integral." },
+          { num: 'Step 3: Integrate Volume', math: "W = - n R T · ln(V₂ / V₁)", exp: "Because V₂ > V₁, ln(V₂/V₁) is positive, so W is negative: the gas spent its own energy pushing the piston!" }
+        ]
+      },
+      {
+        id: 'c2',
+        title: 'Solutions: Why Salt Lowers Water Freezing Point',
+        topic: 'Colligative Properties',
+        diagram: 'chem',
+        question: 'Explain colligative freezing point depression using the Van \'t Hoff factor equation.',
+        sillyComment: 'Pure water molecules love arranging themselves into neat ice hexagons, until salt particles show up like noisy uninvited guests blocking the dancefloor!',
+        steps: [
+          { num: 'Step 1: Dissociation Factor i', math: "NaCl (s) → Na⁺ (aq) + Cl⁻ (aq)  →  i = 2", exp: "Every 1 mole of NaCl splits into 2 moles of annoying gatekeeping ions." },
+          { num: 'Step 2: Freezing Depression Law', math: "ΔT_f = i · K_f · m", exp: "Freezing depression depends purely on the number of solute particles, not their chemical identity." },
+          { num: 'Step 3: The Result', math: "T_freeze = 0°C - ΔT_f < 0°C", exp: "Because of the ions in the way, water has to drop below 0°C to finally lock into ice. Physics wins!" }
+        ]
+      }
+    ],
+    BAS121: [
+      {
+        id: 'p1',
+        title: 'SHM: Period of a Mass-Spring System',
+        topic: 'Oscillations',
+        diagram: 'wave',
+        question: 'Derive the period formula T for a mass m attached to a horizontal ideal spring of stiffness k.',
+        sillyComment: 'A spring has extreme commitment issues: pull it away from equilibrium, it rushes back, overshoots, panics, and bounces back and forth forever!',
+        steps: [
+          { num: 'Step 1: Hooke’s Restoring Force', math: "F = - k x = m · a = m (d²x / dt²)", exp: "The negative sign means the spring always pulls backward toward equilibrium." },
+          { num: 'Step 2: Harmonic Oscillator Equation', math: "d²x/dt² + (k/m) x = 0  →  ω² = k / m", exp: "Angular frequency ω is determined purely by stiffness k divided by inertia m." },
+          { num: 'Step 3: Oscillation Period', math: "T = 2π / ω = 2π √(m / k)", exp: "Heavy mass = slow lazy bounces. Stiff spring = rapid angry vibrations. Beautiful and simple!" }
+        ]
+      },
+      {
+        id: 'p2',
+        title: 'Wave Velocity from Traveling Wave Equation',
+        topic: 'Wave Motion',
+        diagram: 'wave',
+        question: 'Given traveling wave y(x,t) = 0.04 sin(40π t - 2π x), find its frequency, wavelength, and speed.',
+        sillyComment: 'Do not let the greek letters intimidate you: ω is just how fast the wave bobs up and down, and k is how squeezed the ripples are!',
+        steps: [
+          { num: 'Step 1: Extract ω and k', math: "ω = 40π rad/s , k = 2π rad/m", exp: "Compare directly with general form y = A sin(ω t - k x)." },
+          { num: 'Step 2: Frequency & Wavelength', math: "f = ω / 2π = 20 Hz  ;  λ = 2π / k = 1 m", exp: "Frequency is 20 cycles per second; distance from crest to crest is 1 meter." },
+          { num: 'Step 3: Wave Propagation Speed', math: "v = ω / k = (40π) / (2π) = 20 m/s", exp: "Wave velocity is exactly 20 meters per second traveling in the positive x direction." }
+        ]
+      }
+    ]
+  };
+
+  let tutorVoice = false;
+  let tutorTimer = null;
+  state.tutorSub = state.tutorSub || 'BAS111';
+  state.tutorProbId = state.tutorProbId || 'm1';
+  state.tutorStep = state.tutorStep || 0;
+
+  function speakText(txt) {
+    if (!tutorVoice || !window.speechSynthesis) return;
+    try {
+      window.speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(txt);
+      u.rate = 1.05;
+      u.pitch = 1.05;
+      window.speechSynthesis.speak(u);
+    } catch (e) {}
+  }
+
+  function getActiveProblem() {
+    const list = TUTOR_PROBLEMS[state.tutorSub] || TUTOR_PROBLEMS['BAS111'];
+    return list.find((p) => p.id === state.tutorProbId) || list[0];
+  }
+
+  function renderTutor() {
+    const root = $('#v-tutor');
+    const subCodes = [
+      { code: 'BAS111', name: 'Mathematics I' },
+      { code: 'BAS141', name: 'Engineering Chemistry' },
+      { code: 'BAS121', name: 'Vibration & Waves' }
+    ];
+
+    if (!TUTOR_PROBLEMS[state.tutorSub]) state.tutorSub = 'BAS111';
+    const probList = TUTOR_PROBLEMS[state.tutorSub];
+    const currentProb = getActiveProblem();
+    if (state.tutorStep >= currentProb.steps.length) state.tutorStep = currentProb.steps.length - 1;
+
+    let diagramSvg = '';
+    if (currentProb.diagram === 'chem') {
+      diagramSvg = `<svg viewBox="0 0 400 90" fill="none">
+        <rect x="70" y="15" width="260" height="60" rx="8" stroke="#a4a49d" stroke-width="2"/>
+        <rect x="180" y="17" width="16" height="56" fill="#FF4A1C" rx="3">
+          <animate attributeName="x" values="130;230;130" dur="4s" repeatCount="indefinite" />
+        </rect>
+        <line x1="196" y1="45" x2="310" y2="45" stroke="#FF4A1C" stroke-width="4">
+          <animate attributeName="x1" values="146;246;146" dur="4s" repeatCount="indefinite" />
+        </line>
+        <text x="85" y="50" fill="#67e8f9" font-size="12" font-family="monospace">Piston Work: P·ΔV</text>
+      </svg>`;
+    } else if (currentProb.diagram === 'wave') {
+      diagramSvg = `<svg viewBox="0 0 400 90" fill="none">
+        <path d="M 20 45 C 60 15, 100 75, 140 45 C 180 15, 220 75, 260 45 C 300 15, 340 75, 380 45" stroke="#67e8f9" stroke-width="3" stroke-linecap="round">
+          <animate attributeName="d" values="
+            M 20 45 C 60 15, 100 75, 140 45 C 180 15, 220 75, 260 45 C 300 15, 340 75, 380 45;
+            M 20 45 C 60 75, 100 15, 140 45 C 180 75, 220 15, 260 45 C 300 75, 340 15, 380 45;
+            M 20 45 C 60 15, 100 75, 140 45 C 180 15, 220 75, 260 45 C 300 15, 340 75, 380 45" dur="2.5s" repeatCount="indefinite" />
+        </path>
+        <circle cx="140" cy="45" r="4" fill="#FF4A1C"/>
+        <circle cx="260" cy="45" r="4" fill="#FF4A1C"/>
+        <text x="145" y="38" fill="#fff" font-size="10" font-family="monospace">Node</text>
+        <text x="265" y="38" fill="#fff" font-size="10" font-family="monospace">Node</text>
+      </svg>`;
+    } else {
+      diagramSvg = `<svg viewBox="0 0 400 90" fill="none">
+        <path d="M 20 70 Q 120 70 200 40 T 380 15" stroke="#67e8f9" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="120" y1="75" x2="280" y2="10" stroke="#FF4A1C" stroke-width="2" stroke-dasharray="4 4"/>
+        <circle cx="200" cy="40" r="5" fill="#FF4A1C"/>
+        <text x="215" y="42" fill="#fff" font-size="11" font-family="monospace">Tangent Slope Touch</text>
+      </svg>`;
+    }
+
+    root.innerHTML = `
+      <p class="kicker" data-reveal>Interactive Problem Solver</p>
+      <h1 class="h1"><span class="ln"><span>Silly Genius</span></span><span class="ln"><span><em>AI Tutor.</em></span></span></h1>
+      <p class="lead">Select a problem or ask your own question. Watch the live motion blackboard screen break down the solution step-by-step with funny, stress-relieving guidance.</p>
+
+      <div class="tutor-layout">
+        <div class="tutor-pills">
+          ${subCodes.map((s) => `<button type="button" class="tutor-pill${state.tutorSub === s.code ? ' active' : ''}" data-sub="${s.code}">${s.name}</button>`).join('')}
+        </div>
+
+        <div class="tutor-picker">
+          <span class="lbl">Choose a Problem to Solve</span>
+          <div class="tutor-q-grid">
+            ${probList.map((p) => `
+              <button type="button" class="tutor-q-btn${p.id === currentProb.id ? ' active' : ''}" data-prob="${p.id}">
+                <div>
+                  <strong>${p.title}</strong>
+                  <small style="display:block;color:var(--mute);margin-top:2px">${p.topic}</small>
+                </div>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6"><polyline points="9 18 15 12 9 6"/></svg>
+              </button>
+            `).join('')}
+          </div>
+
+          <form id="tutorCustomForm" class="tutor-custom">
+            <input id="tutorInput" placeholder="Or type your own question (e.g. explain wave velocity or enthalpy)..." autocomplete="off">
+            <button type="submit">Ask AI</button>
+          </form>
+        </div>
+
+        <!-- Live Motion Blackboard Screen -->
+        <div class="motion-screen" id="motionScreen">
+          <div class="screen-bar">
+            <div class="screen-live"><i></i> Live Motion Screen</div>
+            <div class="screen-title">${currentProb.title}</div>
+            <div class="screen-tools">
+              <button type="button" id="btnTutorVoice" class="btn-voice${tutorVoice ? ' speaking' : ''}">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+                <span>${tutorVoice ? 'Voice: ON' : 'Voice: OFF'}</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="screen-canvas-area">
+            <div class="chalk-question">${currentProb.question}</div>
+
+            <div class="silly-commentary">
+              <div class="silly-avatar">🧠</div>
+              <div class="silly-bubble">
+                <p>${currentProb.sillyComment}</p>
+                <small>— Prof. Silly Genius AI</small>
+              </div>
+            </div>
+
+            <div class="motion-diagram-box">
+              ${diagramSvg}
+            </div>
+
+            <div class="chalk-steps" id="chalkSteps">
+              ${currentProb.steps.map((st, i) => `
+                <div class="c-step${i <= state.tutorStep ? ' active' : ''}${i === currentProb.steps.length - 1 && i <= state.tutorStep ? ' final' : ''}" data-step="${i}">
+                  <div class="step-header">
+                    <span class="step-num">${st.num}</span>
+                    <span style="font-size:11px;color:rgba(255,255,255,.4)">Step ${i + 1} of ${currentProb.steps.length}</span>
+                  </div>
+                  <div class="step-math">${st.math}</div>
+                  <div class="step-exp">${st.exp}</div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+
+          <div class="screen-playback">
+            <div class="pb-controls">
+              <button type="button" id="btnPlayTutor" class="btn-ctrl primary">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                <span>${state.tutorStep >= currentProb.steps.length - 1 ? 'Replay Solution' : 'Auto Play'}</span>
+              </button>
+              <button type="button" id="btnPrevStep" class="btn-ctrl" ${state.tutorStep === 0 ? 'disabled' : ''}>Previous</button>
+              <button type="button" id="btnNextStep" class="btn-ctrl" ${state.tutorStep >= currentProb.steps.length - 1 ? 'disabled' : ''}>Next Step</button>
+            </div>
+
+            <div class="pb-progress">
+              <span>Step ${state.tutorStep + 1}/${currentProb.steps.length}</span>
+              <div class="pb-dots">
+                ${currentProb.steps.map((_, i) => `<span class="pb-dot${i <= state.tutorStep ? ' on' : ''}"></span>`).join('')}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+
+    // Event handlers for Subject Pills
+    $('#v-tutor .tutor-pill').forEach((btn) => btn.addEventListener('click', () => {
+      state.tutorSub = btn.dataset.sub;
+      state.tutorProbId = TUTOR_PROBLEMS[state.tutorSub][0].id;
+      state.tutorStep = 0;
+      clearInterval(tutorTimer);
+      renderTutor();
+    }));
+
+    // Event handlers for Problem buttons
+    $('#v-tutor .tutor-q-btn').forEach((btn) => btn.addEventListener('click', () => {
+      state.tutorProbId = btn.dataset.prob;
+      state.tutorStep = 0;
+      clearInterval(tutorTimer);
+      renderTutor();
+    }));
+
+    // Voice toggle
+    $('#btnTutorVoice').addEventListener('click', () => {
+      tutorVoice = !tutorVoice;
+      toast(tutorVoice ? 'AI Voice Narration enabled' : 'AI Voice Narration muted');
+      renderTutor();
+      if (tutorVoice) {
+        const cur = getActiveProblem();
+        speakText(cur.sillyComment + '. ' + cur.steps[state.tutorStep].exp);
+      }
+    });
+
+    // Step Back
+    $('#btnPrevStep').addEventListener('click', () => {
+      if (state.tutorStep > 0) {
+        state.tutorStep--;
+        clearInterval(tutorTimer);
+        renderTutor();
+        const cur = getActiveProblem();
+        speakText(cur.steps[state.tutorStep].exp);
+      }
+    });
+
+    // Next Step
+    $('#btnNextStep').addEventListener('click', () => {
+      const cur = getActiveProblem();
+      if (state.tutorStep < cur.steps.length - 1) {
+        state.tutorStep++;
+        clearInterval(tutorTimer);
+        renderTutor();
+        speakText(cur.steps[state.tutorStep].exp);
+      }
+    });
+
+    // Auto Play / Replay
+    $('#btnPlayTutor').addEventListener('click', () => {
+      const cur = getActiveProblem();
+      if (state.tutorStep >= cur.steps.length - 1) {
+        state.tutorStep = 0;
+      }
+      renderTutor();
+      speakText(cur.sillyComment);
+
+      clearInterval(tutorTimer);
+      tutorTimer = setInterval(() => {
+        if (state.tutorStep < cur.steps.length - 1) {
+          state.tutorStep++;
+          renderTutor();
+          speakText(cur.steps[state.tutorStep].exp);
+        } else {
+          clearInterval(tutorTimer);
+        }
+      }, 4500);
+    });
+
+    // Custom question submission
+    $('#tutorCustomForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const q = $('#tutorInput').value.trim();
+      if (!q) return;
+
+      const customId = 'custom-' + Date.now();
+      const newProblem = {
+        id: customId,
+        title: q.slice(0, 36) + (q.length > 36 ? '...' : ''),
+        topic: 'Custom Question',
+        diagram: /wave|vibrat|spring/i.test(q) ? 'wave' : /gas|chem|enthalp|thermo/i.test(q) ? 'chem' : 'calc',
+        question: q,
+        sillyComment: `Great question! The universe loves throwing this curveball at students, but here is the secret trick to ace it!`,
+        steps: [
+          { num: 'Step 1: Unpack the Problem', math: "Identify Variables & Given Constants", exp: "First, isolate what you are asked to find versus what is already given so you don't panic." },
+          { num: 'Step 2: Choose the Master Formula', math: "Apply Governing Principle / Conservation Law", exp: "Recall the core governing equation that links these specific parameters together." },
+          { num: 'Step 3: Solve & Simplify', math: "Substitute → Calculate → Verify Units", exp: "Crunch the numbers carefully and double-check your units at the end. That's a wrap!" }
+        ]
+      };
+
+      if (!TUTOR_PROBLEMS[state.tutorSub]) TUTOR_PROBLEMS[state.tutorSub] = [];
+      TUTOR_PROBLEMS[state.tutorSub].unshift(newProblem);
+      state.tutorProbId = customId;
+      state.tutorStep = 0;
+      clearInterval(tutorTimer);
+      renderTutor();
+      toast('AI Tutor generated custom breakdown!');
+    });
+  }
+
+  const RENDER = { home: renderHome, week: renderWeek, exams: renderExams, subjects: renderSubjects, updates: renderUpdates , tutor: renderTutor };
 
   /* ---------- calendar export ---------- */
   function downloadIcs() {
@@ -546,6 +1001,8 @@
     D.subjects.forEach((s) => items.push({ t: s.name, s: s.code, k: `${s.name} ${s.code} ${s.arabic_name}`, go: () => { state.openSubject = s.code; location.hash = '#/subjects'; if (state.view === 'subjects') show('subjects'); } }));
     ex.forEach((e) => items.push({ t: `${e.name} exam`, s: `${dateParts(e.start).day} ${dateParts(e.start).mon} · ${e.hall}`, k: `exam midterm ${e.name} ${e.code} ${e.hall}`, go: () => (location.hash = '#/exams') }));
     [...new Set(sess.map((x) => x.room))].forEach((r) => items.push({ t: roomText(r), s: hallInfo(r), k: `room hall ${r} ${hallInfo(r)}`, go: () => (location.hash = '#/week') }));
+    
+    items.push({ t: 'AI Tutor: Silly Problem Solver', s: 'Interactive step-by-step motion breakdowns', k: 'ai tutor solver math physics chemistry questions help', go: () => (location.hash = '#/tutor') });
     palItems = (q ? items.filter((i) => i.k.toLowerCase().includes(q)) : items).slice(0, 8);
     palSel = 0;
     palList.innerHTML = palItems.length ? palItems.map((i, n) => `<li class="${n ? '' : 'sel'}" data-n="${n}"><b>${i.t}</b><small>${i.s}</small></li>`).join('') : '<li class="none">Nothing matches that.</li>';
