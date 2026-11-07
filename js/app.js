@@ -6,7 +6,12 @@
 
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
-  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const motionPreference = matchMedia('(prefers-reduced-motion: reduce)');
+  let reduce = motionPreference.matches;
+  motionPreference.addEventListener('change', (e) => {
+    reduce = e.matches;
+    if (reduce) document.getAnimations().forEach((a) => a.cancel());
+  });
   const EASE = 'cubic-bezier(.16,1,.3,1)';
   const anim = (el, kf, o = {}) => {
     if (!el || reduce || !el.animate) return Promise.resolve();
@@ -96,35 +101,66 @@
     toast.t = setTimeout(() => t.classList.remove('show'), 2800);
   }
 
-  function scramble(el, finalText) {
-    if (!el || reduce) { if (el) el.textContent = finalText; return; }
-    const chars = 'ABCDEFGHJKLMNPRSTUVWXYZ0123456789';
-    const t0 = performance.now(), dur = 700;
-    const tick = (now) => {
-      const p = Math.min(1, (now - t0) / dur);
-      let out = '';
-      for (let i = 0; i < finalText.length; i++) {
-        const c = finalText[i];
-        out += (c === '-' || c === ' ' || p > (i + 1) / (finalText.length + 1) ? c : chars[(Math.random() * chars.length) | 0]);
-      }
-      el.textContent = out;
-      if (p < 1) requestAnimationFrame(tick); else el.textContent = finalText;
-    };
-    requestAnimationFrame(tick);
-  }
-
   function lines(root) {
     $$('.ln > span', root).forEach((s) => { s.style.animation = 'none'; void s.offsetWidth; s.style.animation = ''; });
   }
 
-  /* ---------- reveal on scroll ---------- */
+  function rollNumber(el, value = el.dataset.numberValue || el.textContent) {
+    const previous = el.dataset.numberValue;
+    if (previous === value) return;
+    el.dataset.numberValue = value;
+    if (reduce || !/\d/.test(value)) { el.textContent = value; return; }
+    const label = document.createElement('span');
+    label.className = 'number-label';
+    label.textContent = value;
+    const visual = document.createElement('span');
+    visual.className = 'number-visual';
+    visual.setAttribute('aria-hidden', 'true');
+    const compact = matchMedia('(max-width: 600px)').matches;
+    const steps = compact ? 5 : 10;
+    const tracks = [];
+    [...value].forEach((char, index) => {
+      if (!/\d/.test(char)) { visual.append(document.createTextNode(char)); return; }
+      const wheel = document.createElement('span');
+      wheel.className = 'number-wheel';
+      const track = document.createElement('span');
+      track.className = 'number-track';
+      const changed = !previous || previous[index] !== char;
+      const start = previous && /\d/.test(previous[index]) ? Number(previous[index]) : (Number(char) - steps + 10) % 10;
+      const count = changed ? steps : 0;
+      for (let step = 0; step <= count; step++) {
+        const digit = document.createElement('span');
+        digit.textContent = step === count ? char : String((start + step) % 10);
+        track.append(digit);
+      }
+      const end = `translateY(-${count * 1.15}em)`;
+      track.style.transform = end;
+      wheel.append(track);
+      visual.append(wheel);
+      if (changed) tracks.push({ track, end, index });
+    });
+    el.replaceChildren(label, visual);
+    tracks.forEach(({ track, end, index }) => {
+      track.animate([{ transform: 'translateY(0)' }, { transform: end }], {
+        duration: compact ? 620 : 900,
+        delay: index * (compact ? 25 : 45),
+        easing: EASE,
+        fill: 'backwards'
+      });
+    });
+  }
+
+  function reveal(el) {
+    el.classList.add('in');
+    $$('[data-number]', el).forEach((number) => rollNumber(number));
+  }
   const io = 'IntersectionObserver' in window
-    ? new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: 0.08, rootMargin: '0px 0px -40px 0px' })
+    ? new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { reveal(e.target); io.unobserve(e.target); } }), { threshold: 0.08, rootMargin: '0px 0px -24px 0px' })
     : null;
   function watch(root) {
     $$('[data-reveal]', root).forEach((el, i) => {
       if (!el.style.getPropertyValue('--i')) el.style.setProperty('--i', Math.min(i, 10));
-      if (io) io.observe(el); else el.classList.add('in');
+      if (io) io.observe(el); else reveal(el);
     });
   }
 
@@ -144,7 +180,7 @@
     const live = nowMin != null && nowMin >= mins(s.start_time) && nowMin < mins(s.end_time);
     const who = [s.instructor, ...(s.assistants || [])].filter(Boolean).join(', ');
     return `<li class="row${live ? ' now' : ''}" data-reveal>
-      <div class="r-time"><b>${fmt12(s.start_time)}</b><span>to ${fmt12(s.end_time)} ${ampm(s.end_time)}</span></div>
+      <div class="r-time"><b data-number>${fmt12(s.start_time)}</b><span>to ${fmt12(s.end_time)} ${ampm(s.end_time)}</span></div>
       <div class="r-main"><h3>${s.course_title}</h3><p><span class="tag">${s.session_type}</span>${who}</p></div>
       <div class="r-room">${roomText(s.room)}<small>${s.room === 'ONLINE' ? '' : hallInfo(s.room)}</small></div>
     </li>`;
@@ -160,15 +196,15 @@
                 <span class="hb-pill">${h.isMine ? 'Your Hall' : h.label}</span>
                 ${h.count ? `<span class="hb-count">${h.count} std</span>` : ''}
               </div>
-              <div class="hb-hall">${h.hall}</div>
-              <div class="hb-range">${h.from_student} – ${h.to_student}</div>
+              <div class="hb-hall" data-number>${h.hall}</div>
+              <div class="hb-range"><span>${h.from_student}</span> – <span>${h.to_student}</span></div>
             </div>
           `).join('')}
         </div>`
       : `<div class="r-room">${e.hall}<small>${hallInfo(e.hall)}</small></div>`;
 
     return `<li class="row exam-row" data-reveal>
-      <div class="r-date"><b>${p.day} ${p.mon}</b><span>${p.wd}, 10:00 AM</span></div>
+      <div class="r-date"><b data-number>${p.day} ${p.mon}</b><span>${p.wd}, 10:00 AM</span></div>
       <div class="r-main">
         <h3>${e.name}</h3>
         <p>${e.code}${detailed ? ' · 1 hour · Group 9' : ''}</p>
@@ -228,9 +264,9 @@
         <h2 class="hero-title">${ne.name}</h2>
         <p class="hero-ar" lang="ar">${ne.arabic_name}</p>
         <div class="hero-grid">
-          <div><span class="lbl">Your hall</span><strong class="room" id="heroRoom">${ne.hall}</strong><span>${hallInfo(ne.hall)}</span></div>
+          <div><span class="lbl">Your hall</span><strong class="room" id="heroRoom" data-number>${ne.hall}</strong><span>${hallInfo(ne.hall)}</span></div>
           <div><span class="lbl">When</span><strong>${p.wd.slice(0, 3)} ${p.day} ${p.mon}</strong><span>10:00 - 11:00 AM</span></div>
-          <div><span class="lbl">Starts in</span><strong id="countdown">${countdownText(ne.start, ne.end)}</strong><span>${ne.code}</span></div>
+          <div><span class="lbl">Starts in</span><strong id="countdown" data-number>${countdownText(ne.start, ne.end)}</strong><span>${ne.code}</span></div>
         </div></article>`;
       body = `<div class="sec-head"><h2>The exam week</h2><a href="#/exams">All details</a></div>
         <ul class="rows">${examsFor(g).map((e) => examRow(e, false)).join('')}</ul>`;
@@ -245,7 +281,7 @@
           <h2 class="hero-title">${s.course_title}</h2>
           <p class="hero-ar" lang="ar">${s.course_arabic}</p>
           <div class="hero-grid">
-            <div><span class="lbl">Room</span><strong class="room" id="heroRoom">${roomText(s.room)}</strong><span>${hallInfo(s.room)}</span></div>
+            <div><span class="lbl">Room</span><strong class="room" id="heroRoom" data-number>${roomText(s.room)}</strong><span>${hallInfo(s.room)}</span></div>
             <div><span class="lbl">Time</span><strong>${fmt12(s.start_time)} - ${fmt12(s.end_time)}</strong><span>${s.day}</span></div>
             <div><span class="lbl">${s.session_type}</span><strong>${s.course_code}</strong><span>${s.instructor || ''}</span></div>
           </div></article>`;
@@ -278,21 +314,30 @@
       <div class="seg" id="seg" role="tablist"><i class="seg-thumb" id="segThumb"></i>
         ${DAYS.map((d) => `<button type="button" role="tab" data-day="${d}" class="${list.some((s) => s.day === d) ? '' : 'free'}">${d.slice(0, 3)}</button>`).join('')}
       </div>
-      <ul class="rows" id="weekList" style="margin-top:12px"></ul>`;
+      <ul class="rows week-list" id="weekList" role="tabpanel" aria-label="Daily classes"></ul>`;
     $$('#seg button').forEach((b) => b.addEventListener('click', () => { state.day = b.dataset.day; paintDay(true); }));
+    $('#seg').addEventListener('keydown', (e) => {
+      if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(e.key)) return;
+      e.preventDefault();
+      const index = DAYS.indexOf(state.day);
+      const next = e.key === 'Home' ? 0 : e.key === 'End' ? DAYS.length - 1 : (index + (e.key === 'ArrowRight' ? 1 : -1) + DAYS.length) % DAYS.length;
+      state.day = DAYS[next];
+      paintDay(true);
+      $('#seg button.on').focus({ preventScroll: true });
+    });
     paintDay(false);
   }
 
   function paintDay(animate) {
     const g = state.user.group;
     const list = sessionsFor(g).filter((s) => s.day === state.day).sort((a, b) => mins(a.start_time) - mins(b.start_time));
-    $$('#seg button').forEach((b) => { const on = b.dataset.day === state.day; b.classList.toggle('on', on); b.setAttribute('aria-selected', on); });
-    const on = $('#seg button.on'), th = $('#segThumb');
-    if (on && th) { th.style.width = on.offsetWidth + 'px'; th.style.transform = `translateX(${on.offsetLeft}px)`; }
+    $$('#seg button').forEach((b) => { const on = b.dataset.day === state.day; b.classList.toggle('on', on); b.setAttribute('aria-selected', on); b.tabIndex = on ? 0 : -1; });
+    positionDayThumb();
+    $('#seg button.on').scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: 'instant' });
     const ul = $('#weekList');
     ul.innerHTML = list.length ? list.map((s) => sessionRow(s, null)).join('') : `<li class="empty">No classes on ${state.day}.</li>`;
     if (animate) {
-      $$('li', ul).forEach((li, i) => { li.classList.add('in'); anim(li, [{ opacity: 0, transform: 'translateY(16px)' }, { opacity: 1, transform: 'none' }], { d: 700, delay: i * 60 }); });
+      $$('li', ul).forEach((li, i) => { reveal(li); anim(li, [{ opacity: 0, transform: 'translateY(12px)' }, { opacity: 1, transform: 'none' }], { d: 400, delay: i * 40 }); });
     } else watch(ul);
   }
 
@@ -303,7 +348,7 @@
       <h1 class="h1"><span class="ln"><span>Exam</span></span><span class="ln"><span><em>halls.</em></span></span></h1>
       <p class="lead">Seven exams, one hour each, all starting at 10:00 AM. Your hall is shown on the right.</p>
       <div class="actions"><button class="btn solid" id="btnIcs" type="button">Add to calendar</button><button class="btn" id="btnPrint" type="button">Print slip</button></div>
-      <ul class="rows" style="margin-top:36px">${ex.map((e) => examRow(e, true)).join('')}</ul>
+      <ul class="rows exam-list">${ex.map((e) => examRow(e, true)).join('')}</ul>
       <p class="exam-meta">Student ID ${state.user.id}</p>`;
     $('#btnIcs').addEventListener('click', downloadIcs);
     $('#btnPrint').addEventListener('click', () => window.print());
@@ -315,7 +360,7 @@
     $('#v-subjects').innerHTML = `
       <p class="kicker" data-reveal>Group ${g} · First term</p>
       <h1 class="h1"><span class="ln"><span>Your</span></span><span class="ln"><span><em>subjects.</em></span></span></h1>
-      <div style="margin-top:48px">${subs.map((s) => {
+      <div class="subject-list">${subs.map((s) => {
         const sess = list.filter((x) => x.course_code === s.code).sort((a, b) => DAYS.indexOf(a.day) - DAYS.indexOf(b.day) || mins(a.start_time) - mins(b.start_time));
         const e = ex.find((x) => x.code === s.code);
         return `<div class="acc${state.openSubject === s.code ? ' open' : ''}" id="sub-${s.code}" data-reveal>
@@ -327,7 +372,7 @@
           <div class="acc-b"><div><div class="acc-in">
             <p class="desc">${s.description}</p>
             ${sess.map((x) => `<div class="mini"><span>${x.day}</span><div>${fmt12(x.start_time)} - ${fmt12(x.end_time)} ${ampm(x.end_time)} · ${x.session_type}${x.instructor ? ' · ' + x.instructor : ''}</div><b>${roomText(x.room)}</b></div>`).join('')}
-            ${e ? `<div class="mini"><span>Midterm</span><div>${dateParts(e.start).wd}, ${dateParts(e.start).day} ${dateParts(e.start).mon} · 10:00 AM</div><div class="sub-halls">${(e.allHalls || []).map((h) => `<span class="sh-badge${h.isMine ? ' my' : ''}">${h.isMine ? '★ ' : ''}<b>${h.hall}</b> (${h.from_student} – ${h.to_student})</span>`).join('')}</div></div>` : ''}
+            ${e ? `<div class="mini"><span>Midterm</span><div>${dateParts(e.start).wd}, ${dateParts(e.start).day} ${dateParts(e.start).mon} · 10:00 AM</div><div class="sub-halls">${(e.allHalls || []).map((h) => `<span class="sh-badge${h.isMine ? ' my' : ''}">${h.isMine ? '<span>Your hall</span>' : ''}<b>${h.hall}</b><span>${h.from_student} – ${h.to_student}</span></span>`).join('')}</div></div>` : ''}
           </div></div></div>
         </div>`;
       }).join('')}</div>`;
@@ -349,7 +394,7 @@
     $('#v-updates').innerHTML = `
       <p class="kicker" data-reveal>Latest</p>
       <h1 class="h1"><span class="ln"><span>Recent</span></span><span class="ln"><span><em>updates.</em></span></span></h1>
-      <div style="margin-top:48px">${NOTICES.map((n) => `<article class="note" data-reveal><time>${n.d}</time><div><h3>${n.t}</h3><p>${n.p}</p>${n.a ? `<a class="link" href="#/${n.a[0]}">${n.a[1]}</a>` : ''}</div></article>`).join('')}</div>`;
+      <div class="notice-list">${NOTICES.map((n) => `<article class="note" data-reveal><time>${n.d}</time><div><h3>${n.t}</h3><p>${n.p}</p>${n.a ? `<a class="link" href="#/${n.a[0]}">${n.a[1]}</a>` : ''}</div></article>`).join('')}</div>`;
   }
 
   const RENDER = { home: renderHome, week: renderWeek, exams: renderExams, subjects: renderSubjects, updates: renderUpdates };
@@ -374,11 +419,15 @@
   /* ---------- views / nav ---------- */
   function moveInk(name) {
     const ink = $('#navInk'), a = $(`#nav a[data-view="${name}"]`);
-    $$('#nav a, .menu-links a').forEach((l) => l.classList.toggle('on', l.dataset.view === name));
+    $$('#nav a, .menu-links a').forEach((l) => {
+      const on = l.dataset.view === name;
+      l.classList.toggle('on', on);
+      if (on) l.setAttribute('aria-current', 'page'); else l.removeAttribute('aria-current');
+    });
     if (a && ink && a.offsetWidth) {
-      const w = a.firstChild.textContent.length * 8;
-      ink.style.width = Math.min(a.offsetWidth - 28, w) + 'px';
-      ink.style.transform = `translateX(${a.offsetLeft + 14}px)`;
+      const padding = parseFloat(getComputedStyle(a).paddingLeft);
+      ink.style.width = a.offsetWidth - padding * 2 + 'px';
+      ink.style.transform = `translateX(${a.offsetLeft + padding}px)`;
     }
   }
 
@@ -389,13 +438,10 @@
     const v = $(`#v-${name}`);
     RENDER[name]();
     moveInk(name);
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: 'instant' });
     watch(v);
     lines(v);
-    if (!first) anim(v, [{ opacity: 0, transform: 'translateY(14px)' }, { opacity: 1, transform: 'none' }], { d: 600 });
-    const r = $('#heroRoom');
-    if (r) scramble(r, r.textContent);
-    syncRail();
+    if (!first) anim(v, [{ opacity: 0, transform: 'translateY(8px)' }, { opacity: 1, transform: 'none' }], { d: 300 });
   }
 
   function route() {
@@ -406,13 +452,42 @@
 
   /* ---------- mobile menu ---------- */
   const burger = $('#btnBurger');
-  function openMenu() { document.body.classList.add('menu-open'); burger.setAttribute('aria-expanded', 'true'); $('#menu').setAttribute('aria-hidden', 'false'); }
-  function closeMenu() { document.body.classList.remove('menu-open'); burger.setAttribute('aria-expanded', 'false'); $('#menu').setAttribute('aria-hidden', 'true'); }
+  function openMenu() {
+    togglePop(false);
+    document.body.classList.add('menu-open');
+    burger.setAttribute('aria-expanded', 'true');
+    burger.setAttribute('aria-label', 'Close menu');
+    $('#menu').inert = false;
+    $('#menu').setAttribute('aria-hidden', 'false');
+    $('#stage').inert = $('#foot').inert = $('.skip-link').inert = true;
+    $('#top > .wordmark').inert = true;
+    burger.focus({ preventScroll: true });
+  }
+  function closeMenu() {
+    const wasOpen = document.body.classList.contains('menu-open');
+    document.body.classList.remove('menu-open');
+    burger.setAttribute('aria-expanded', 'false');
+    burger.setAttribute('aria-label', 'Open menu');
+    $('#stage').inert = $('#foot').inert = $('.skip-link').inert = false;
+    $('#top > .wordmark').inert = false;
+    if (wasOpen) burger.focus({ preventScroll: true });
+    $('#menu').inert = true;
+    $('#menu').setAttribute('aria-hidden', 'true');
+  }
   burger.addEventListener('click', () => (document.body.classList.contains('menu-open') ? closeMenu() : openMenu()));
   $$('#menu .menu-links a').forEach((a) => a.addEventListener('click', () => { if (a.dataset.view === state.view) closeMenu(); }));
-  $('#menuSearch').addEventListener('click', () => { closeMenu(); setTimeout(openPalette, 250); });
+  $('#menuSearch').addEventListener('click', () => { closeMenu(); openPalette(); });
   $('#menuOut').addEventListener('click', () => { closeMenu(); signOut(); });
-  addEventListener('resize', () => { if (innerWidth > 960) closeMenu(); moveInk(state.view); syncRail(); });
+  function positionDayThumb() {
+    const on = $('#seg button.on'), th = $('#segThumb');
+    if (on && th) {
+      th.style.width = on.offsetWidth + 'px';
+      th.style.transform = `translateX(${on.offsetLeft}px)`;
+    }
+  }
+  addEventListener('resize', () => { if (innerWidth > 1180) closeMenu(); moveInk(state.view); positionDayThumb(); });
+  document.fonts.ready.then(() => { moveInk(state.view); positionDayThumb(); });
+  $('.skip-link').addEventListener('click', (e) => { e.preventDefault(); $('#stage').focus(); });
 
   /* ---------- profile popover ---------- */
   const btnMe = $('#btnMe'), pop = $('#mePop');
@@ -439,9 +514,31 @@
 
   /* ---------- search ---------- */
   const pal = $('#palette'), palIn = $('#palInput'), palList = $('#palList');
-  let palItems = [], palSel = 0;
-  function openPalette() { pal.classList.add('open'); pal.setAttribute('aria-hidden', 'false'); document.body.classList.add('pal-open'); palIn.value = ''; paintPal(''); setTimeout(() => palIn.focus(), 60); }
-  function closePalette() { pal.classList.remove('open'); pal.setAttribute('aria-hidden', 'true'); document.body.classList.remove('pal-open'); }
+  let palItems = [], palSel = 0, palReturnFocus;
+  function openPalette() {
+    closeMenu();
+    togglePop(false);
+    palReturnFocus = document.activeElement;
+    pal.inert = false;
+    pal.classList.add('open');
+    pal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('pal-open');
+    palIn.value = '';
+    paintPal('');
+    $('#app').inert = true;
+    Promise.all(pal.getAnimations({ subtree: true }).map((a) => a.finished.catch(() => {}))).then(() => {
+      if (pal.classList.contains('open')) palIn.focus({ preventScroll: true });
+    });
+  }
+  function closePalette() {
+    const wasOpen = pal.classList.contains('open');
+    pal.classList.remove('open');
+    document.body.classList.remove('pal-open');
+    $('#app').inert = false;
+    if (wasOpen && palReturnFocus?.isConnected) palReturnFocus.focus({ preventScroll: true });
+    pal.inert = true;
+    pal.setAttribute('aria-hidden', 'true');
+  }
   function paintPal(q) {
     const g = state.user.group; q = q.trim().toLowerCase();
     const sess = sessionsFor(g), ex = examsFor(g);
@@ -461,18 +558,29 @@
       e.preventDefault();
       palSel = (palSel + (e.key === 'ArrowDown' ? 1 : -1) + palItems.length) % Math.max(1, palItems.length);
       $$('#palList li').forEach((li, i) => li.classList.toggle('sel', i === palSel));
-    } else if (e.key === 'Enter') pickPal(palSel);
+      $('#palList li.sel')?.scrollIntoView({ block: 'nearest', behavior: 'instant' });
+    } else if (e.key === 'Enter') { e.preventDefault(); pickPal(palSel); }
   });
-  pal.addEventListener('click', (e) => { if (e.target.hasAttribute('data-close')) closePalette(); });
+  pal.addEventListener('click', (e) => { if (e.target.closest('[data-close]')) closePalette(); });
   $('#btnSearch').addEventListener('click', openPalette);
   addEventListener('keydown', (e) => {
     if (!state.user) return;
     if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); pal.classList.contains('open') ? closePalette() : openPalette(); }
     if (e.key === 'Escape') { closePalette(); closeMenu(); togglePop(false); }
+    if (e.key === 'Tab') {
+      const inPalette = pal.classList.contains('open');
+      const inMenu = document.body.classList.contains('menu-open');
+      if (!inPalette && !inMenu) return;
+      const controls = inPalette ? $$('input,button', pal) : [burger, ...$$('a,button', $('#menu'))];
+      const first = controls[0], last = controls[controls.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
   });
 
   /* ---------- auth ---------- */
   const gate = $('#gate'), form = $('#gateForm'), input = $('#gateInput'), err = $('#gateError');
+  let gateTimer;
   function lookup(raw) {
     let id = String(raw || '').trim().toLowerCase().replace('@cuc.edu.eg', '').replace(/\D/g, '');
     id = ALIASES[id] || id;
@@ -484,6 +592,8 @@
     const u = lookup(input.value);
     if (!u) {
       err.textContent = input.value.trim() ? "This ID was not found in Group 9. Check the digits and try again." : 'Enter your student ID to continue.';
+      input.setAttribute('aria-invalid', 'true');
+      input.focus({ preventScroll: true });
       const f = $('.field', form); f.classList.remove('shake'); void f.offsetWidth; f.classList.add('shake');
       return;
     }
@@ -491,7 +601,7 @@
     try { localStorage.setItem(KEY_USER, u.id); } catch (x) {}
     enter(u, true);
   });
-  input.addEventListener('input', () => { err.textContent = ''; });
+  input.addEventListener('input', () => { err.textContent = ''; input.setAttribute('aria-invalid', 'false'); });
 
   function enter(u, animateGate) {
     state.user = u;
@@ -513,11 +623,17 @@
     route();
     if (animateGate) {
       gate.classList.add('leave');
-      setTimeout(() => { gate.hidden = true; }, 1000);
+      gateTimer = setTimeout(() => { gate.hidden = true; $('#stage').focus({ preventScroll: true }); }, reduce ? 0 : 350);
     } else gate.hidden = true;
   }
 
   function signOut() {
+    clearTimeout(gateTimer);
+    closePalette();
+    closeMenu();
+    togglePop(false);
+    err.textContent = '';
+    input.setAttribute('aria-invalid', 'false');
     try { localStorage.removeItem(KEY_USER); } catch (e) {}
     state.user = null;
     history.replaceState(null, '', location.pathname);
@@ -532,71 +648,13 @@
     setTimeout(() => input.focus(), 400);
   }
 
-  /* ---------- scroll chrome: header, custom rail ---------- */
-  const rail = $('#rail'), thumb = $('#rail b'), top = $('#top');
-  let railTimer;
-  function syncRail() {
-    const doc = document.documentElement, vh = innerHeight, H = doc.scrollHeight;
-    if (H <= vh + 4 || document.body.classList.contains('is-gate')) { rail.classList.remove('on'); return; }
-    const track = vh - 16, h = Math.max(48, (vh / H) * track);
-    const y = (scrollY / (H - vh)) * (track - h);
-    thumb.style.height = h + 'px';
-    thumb.style.transform = `translateY(${y}px)`;
-  }
-  addEventListener('scroll', () => {
-    top.classList.toggle('stuck', scrollY > 8);
-    syncRail();
-    if (document.documentElement.scrollHeight > innerHeight + 4) {
-      rail.classList.add('on');
-      clearTimeout(railTimer);
-      railTimer = setTimeout(() => { if (!rail.classList.contains('drag') && !rail.matches(':hover')) rail.classList.remove('on'); }, 1100);
-    }
-  }, { passive: true });
-  let drag = null;
-  thumb.addEventListener('pointerdown', (e) => { drag = { y: e.clientY, s: scrollY }; rail.classList.add('drag'); thumb.setPointerCapture(e.pointerId); e.preventDefault(); });
-  thumb.addEventListener('pointermove', (e) => {
-    if (!drag) return;
-    const vh = innerHeight, H = document.documentElement.scrollHeight, track = vh - 16, h = Math.max(48, (vh / H) * track);
-    scrollTo(0, drag.s + ((e.clientY - drag.y) / (track - h)) * (H - vh));
-  });
-  const endDrag = () => { drag = null; rail.classList.remove('drag'); };
-  thumb.addEventListener('pointerup', endDrag);
-  thumb.addEventListener('pointercancel', endDrag);
-  rail.addEventListener('pointerdown', (e) => {
-    if (e.target === thumb) return;
-    const H = document.documentElement.scrollHeight;
-    scrollTo({ top: (e.clientY / innerHeight) * (H - innerHeight), behavior: reduce ? 'auto' : 'smooth' });
-  });
-
-  /* ---------- cursor + magnetic ---------- */
-  if (matchMedia('(hover:hover) and (pointer:fine)').matches && !reduce) {
-    document.body.classList.add('has-cursor');
-    const c = $('#cursor');
-    let tx = -50, ty = -50, x = -50, y = -50;
-    addEventListener('pointermove', (e) => {
-      tx = e.clientX; ty = e.clientY;
-      c.classList.toggle('hover', !!e.target.closest('a,button,input,.row,[role="switch"],li[data-n]'));
-    }, { passive: true });
-    addEventListener('pointerdown', () => c.classList.add('down'));
-    addEventListener('pointerup', () => c.classList.remove('down'));
-    (function loop() {
-      x += (tx - x) * 0.22; y += (ty - y) * 0.22;
-      c.style.transform = `translate3d(${x}px,${y}px,0)`;
-      requestAnimationFrame(loop);
-    })();
-    $$('.magnetic').forEach((m) => {
-      m.addEventListener('pointermove', (e) => {
-        const r = m.getBoundingClientRect();
-        m.style.transform = `translate(${(e.clientX - r.left - r.width / 2) * 0.35}px,${(e.clientY - r.top - r.height / 2) * 0.35}px)`;
-      });
-      m.addEventListener('pointerleave', () => { m.style.transform = ''; });
-    });
-  }
+  const top = $('#top');
+  addEventListener('scroll', () => top.classList.toggle('stuck', scrollY > 8), { passive: true });
 
   /* ---------- live countdown ---------- */
   setInterval(() => {
     const c = $('#countdown');
-    if (c && state.user && state.view === 'home') { const e = nextExam(state.user.group); if (e) c.textContent = countdownText(e.start, e.end); }
+    if (c && state.user && state.view === 'home') { const e = nextExam(state.user.group); if (e) rollNumber(c, countdownText(e.start, e.end)); }
   }, 20000);
 
   /* ---------- boot ---------- */
