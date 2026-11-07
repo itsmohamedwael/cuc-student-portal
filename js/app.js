@@ -357,87 +357,12 @@
   function renderSubjects() {
     const g = state.user.group, list = sessionsFor(g), ex = examsFor(g);
     const subs = D.subjects.filter((s) => list.some((x) => x.course_code === s.code));
-    const MAT = window.MATERIALS_DATA || {};
-
     $('#v-subjects').innerHTML = `
       <p class="kicker" data-reveal>Group ${g} · First term</p>
       <h1 class="h1"><span class="ln"><span>Your</span></span><span class="ln"><span><em>subjects.</em></span></span></h1>
       <div class="subject-list">${subs.map((s) => {
         const sess = list.filter((x) => x.course_code === s.code).sort((a, b) => DAYS.indexOf(a.day) - DAYS.indexOf(b.day) || mins(a.start_time) - mins(b.start_time));
         const e = ex.find((x) => x.code === s.code);
-        const mat = MAT[s.code];
-
-        let matHtml = '';
-        if (mat) {
-          matHtml = `
-            <div class="mat-wrap">
-              ${mat.revisions && mat.revisions.length ? `
-                <div class="mat-sec">
-                  <div class="mat-sec-title"><span class="mat-tag highlight">Midterm Exam Revision & Question Banks</span></div>
-                  <div class="mat-grid">
-                    ${mat.revisions.map((r) => `
-                      <a class="mat-card feature" href="${r.file}" target="_blank" rel="noopener">
-                        <div class="mc-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
-                        <div class="mc-info">
-                          <span class="mc-badge">${r.badge}</span>
-                          <h4>${r.title}</h4>
-                          <p>${r.desc || 'Click to view PDF'}</p>
-                        </div>
-                        <span class="mc-arrow"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M7 17L17 7M7 7h10v10"/></svg></span>
-                      </a>
-                    `).join('')}
-                  </div>
-                </div>
-              ` : ''}
-
-              ${mat.chapters && mat.chapters.length ? `
-                <div class="mat-sec">
-                  <div class="mat-sec-title"><span class="mat-tag">Lectures & Chapters</span></div>
-                  <div class="mat-grid">
-                    ${mat.chapters.map((c) => `
-                      <a class="mat-card" href="${c.file}" target="_blank" rel="noopener">
-                        <div class="mc-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
-                        <div class="mc-info">
-                          ${c.tag ? `<span class="mc-badge soft">${c.tag}</span>` : ''}
-                          <h4>${c.title}</h4>
-                          ${c.desc ? `<p>${c.desc}</p>` : ''}
-                        </div>
-                        <span class="mc-arrow"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M7 17L17 7M7 7h10v10"/></svg></span>
-                      </a>
-                    `).join('')}
-                  </div>
-                </div>
-              ` : ''}
-
-              ${mat.sheets && mat.sheets.length ? `
-                <div class="mat-sec">
-                  <div class="mat-sec-title"><span class="mat-tag">Practice Sheets & Assignments</span></div>
-                  <div class="mat-grid">
-                    ${mat.sheets.map((sh) => `
-                      <div class="mat-card sheet">
-                        <div class="mc-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="15" x2="15" y2="15"/></svg></div>
-                        <div class="mc-info">
-                          ${sh.badge ? `<span class="mc-badge soft">${sh.badge}</span>` : ''}
-                          <h4>${sh.title}</h4>
-                        </div>
-                        <div class="mc-actions">
-                          <a class="btn-mat" href="${sh.file}" target="_blank" rel="noopener">Sheet</a>
-                          ${sh.solution ? `<a class="btn-mat sol" href="${sh.solution}" target="_blank" rel="noopener">Model Answer</a>` : ''}
-                        </div>
-                      </div>
-                    `).join('')}
-                  </div>
-                </div>
-              ` : ''}
-
-              <div class="sub-solver-link">
-                <span>Problem Solver</span>
-                <a href="#/tutor" data-subject="${s.code}">View step-by-step derivations for ${s.name} →</a>
-              </div>
-            </div>
-          `;
-        }
-
         return `<div class="acc${state.openSubject === s.code ? ' open' : ''}" id="sub-${s.code}" data-reveal>
           <button class="acc-h" type="button" aria-expanded="${state.openSubject === s.code}">
             <span class="code">${s.code}</span>
@@ -448,24 +373,14 @@
             <p class="desc">${s.description}</p>
             ${sess.map((x) => `<div class="mini"><span>${x.day}</span><div>${fmt12(x.start_time)} - ${fmt12(x.end_time)} ${ampm(x.end_time)} · ${x.session_type}${x.instructor ? ' · ' + x.instructor : ''}</div><b>${roomText(x.room)}</b></div>`).join('')}
             ${e ? `<div class="mini"><span>Midterm</span><div>${dateParts(e.start).wd}, ${dateParts(e.start).day} ${dateParts(e.start).mon} · 10:00 AM</div><div class="sub-halls">${(e.allHalls || []).map((h) => `<span class="sh-badge${h.isMine ? ' my' : ''}">${h.isMine ? '<span>Your hall</span>' : ''}<b>${h.hall}</b><span>${h.from_student} – ${h.to_student}</span></span>`).join('')}</div></div>` : ''}
-            ${matHtml}
           </div></div></div>
         </div>`;
       }).join('')}</div>`;
-
-    $('#v-subjects .acc-h').forEach((h) => h.addEventListener('click', () => {
+    $$('#v-subjects .acc-h').forEach((h) => h.addEventListener('click', () => {
       const a = h.parentElement, open = !a.classList.contains('open');
-      $('#v-subjects .acc').forEach((x) => { x.classList.remove('open'); $('.acc-h', x).setAttribute('aria-expanded', 'false'); });
+      $$('#v-subjects .acc').forEach((x) => { x.classList.remove('open'); $('.acc-h', x).setAttribute('aria-expanded', 'false'); });
       state.openSubject = null;
       if (open) { a.classList.add('open'); h.setAttribute('aria-expanded', 'true'); state.openSubject = a.id.slice(4); }
-    }));
-
-    $('#v-subjects .btn-ask-tutor').forEach((btn) => btn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const code = btn.dataset.subject;
-      state.tutorSub = code;
-      location.hash = '#/tutor';
-      if (state.view === 'tutor') show('tutor');
     }));
   }
 
@@ -482,270 +397,7 @@
       <div class="notice-list">${NOTICES.map((n) => `<article class="note" data-reveal><time>${n.d}</time><div><h3>${n.t}</h3><p>${n.p}</p>${n.a ? `<a class="link" href="#/${n.a[0]}">${n.a[1]}</a>` : ''}</div></article>`).join('')}</div>`;
   }
 
-  
-  /* ---------- Problem Solver (Clean & Editorial) ---------- */
-  const TUTOR_PROBLEMS = {
-    BAS111: [
-      {
-        id: 'm1',
-        title: 'Derivative of y = sin³(2x)',
-        topic: 'Differentiation · Chain Rule',
-        diagram: 'calc',
-        question: 'Find the first derivative dy/dx of the composite trigonometric function y = sin³(2x).',
-        concept: 'Think of the Chain Rule as peeling layers: differentiate the outside power first, then the trigonometric function, and finally the inside linear argument.',
-        steps: [
-          { num: '01', math: 'Outer Power: d/du [ u³ ] = 3 u²', exp: 'Apply the power rule to the outermost cube exponent to get 3·sin²(2x).' },
-          { num: '02', math: 'Trig Function: d/dx [ sin(2x) ] = cos(2x)', exp: 'Differentiate the sine function with respect to its inner argument.' },
-          { num: '03', math: 'Inner Argument: d/dx [ 2x ] = 2', exp: 'Differentiate the innermost 2x with respect to x.' },
-          { num: '04', math: 'Result: dy/dx = 6 sin²(2x) cos(2x)', exp: 'Multiply all three derivative factors: 3 · sin²(2x) · cos(2x) · 2 = 6 sin²(2x) cos(2x).' }
-        ]
-      },
-      {
-        id: 'm2',
-        title: 'Limit: lim (x→0) sin(5x) / tan(2x)',
-        topic: 'Limits · Small Angle Approximation',
-        diagram: 'calc',
-        question: 'Evaluate the limit as x approaches 0 of sin(5x) / tan(2x).',
-        concept: 'For small angles near zero, sin(θ) ≈ θ and tan(θ) ≈ θ. This avoids lengthy algebraic expansion or multiple rounds of L\'Hôpital\'s Rule.',
-        steps: [
-          { num: '01', math: 'Small-Angle Identity: sin(5x) ≈ 5x and tan(2x) ≈ 2x', exp: 'Since x → 0, both sine and tangent approach their arguments linearly.' },
-          { num: '02', math: 'Ratio Substitution: lim (5x / 2x)', exp: 'Substitute the linear terms into the quotient.' },
-          { num: '03', math: 'Result: Limit = 5/2 = 2.5', exp: 'Cancel the common variable x to obtain the exact value 5/2.' }
-        ]
-      },
-      {
-        id: 'm3',
-        title: 'Tangent Line to y = x² - 4x + 3 at x = 3',
-        topic: 'Calculus · Tangent Lines',
-        diagram: 'calc',
-        question: 'Determine the equation of the line tangent to y = x² - 4x + 3 at the point where x = 3.',
-        concept: 'The derivative evaluated at a point yields the instantaneous slope m. Combined with the coordinate point (x₀, y₀), the point-slope form gives the line.',
-        steps: [
-          { num: '01', math: 'Find Coordinate: y(3) = 3² - 4(3) + 3 = 0', exp: 'Evaluate the curve at x = 3 to find the contact point (3, 0).' },
-          { num: '02', math: 'Evaluate Slope: y\' = 2x - 4 → m = 2(3) - 4 = 2', exp: 'Differentiate the parabola to obtain the general slope function.' },
-          { num: '03', math: 'Result: y - 0 = 2(x - 3) → y = 2x - 6', exp: 'Substitute m = 2 and (3, 0) into the point-slope formula.' }
-        ]
-      }
-    ],
-    BAS141: [
-      {
-        id: 'c1',
-        title: 'Isothermal Reversible Gas Expansion',
-        topic: 'Thermodynamics · Work & First Law',
-        diagram: 'chem',
-        question: 'Derive the expression for work done W during reversible isothermal expansion of an ideal gas from V₁ to V₂.',
-        concept: 'Because the process is isothermal, temperature is constant and internal energy change ΔU is zero. The system does work at the expense of absorbed heat.',
-        steps: [
-          { num: '01', math: 'Isothermal Condition: ΔT = 0 → ΔU = 0', exp: 'For an ideal gas, internal energy is a function of temperature alone.' },
-          { num: '02', math: 'Integral Form: W = - ∫ P dV = - ∫ (nRT / V) dV', exp: 'Substitute P = nRT/V from the ideal gas equation of state.' },
-          { num: '03', math: 'Result: W = - n R T ln(V₂ / V₁)', exp: 'Since V₂ > V₁, the logarithmic term is positive, confirming the gas performs work on the surroundings.' }
-        ]
-      },
-      {
-        id: 'c2',
-        title: 'Freezing Point Depression (Colligative Property)',
-        topic: 'Physical Chemistry · Solutions',
-        diagram: 'chem',
-        question: 'Explain why dissolving a non-volatile solute depresses the freezing point of water.',
-        concept: 'Solute particles disrupt liquid solvent lattice formation, lowering the chemical potential and requiring a lower temperature to reach equilibrium with pure ice.',
-        steps: [
-          { num: '01', math: 'Dissociation Factor: NaCl → Na⁺ + Cl⁻ (i = 2)', exp: 'Electrolytes dissociate into individual ions, each contributing to the colligative effect.' },
-          { num: '02', math: 'Depression Formula: ΔT_f = i · K_f · m', exp: 'The temperature drop is directly proportional to the total molality of dissolved particles.' },
-          { num: '03', math: 'Result: T_freezing = T_pure - ΔT_f', exp: 'The solution remains liquid at 0°C and solidifies only when cooled to the depressed temperature.' }
-        ]
-      }
-    ],
-    BAS121: [
-      {
-        id: 'p1',
-        title: 'Period of a Mass-Spring System',
-        topic: 'Oscillations · Simple Harmonic Motion',
-        diagram: 'wave',
-        question: 'Derive the oscillation period T for a mass m attached to a spring with stiffness constant k.',
-        concept: 'The restoring force is directly proportional to displacement. Applying Newton\'s second law yields the classic harmonic differential equation.',
-        steps: [
-          { num: '01', math: 'Restoring Force: F = - k x = m (d²x / dt²)', exp: 'Hooke\'s law opposes displacement from equilibrium.' },
-          { num: '02', math: 'Equation of Motion: d²x/dt² + (k/m) x = 0 → ω = √(k/m)', exp: 'Angular frequency is determined solely by spring stiffness and mass inertia.' },
-          { num: '03', math: 'Result: T = 2π / ω = 2π √(m / k)', exp: 'The period depends on the square root of mass over stiffness, independent of amplitude.' }
-        ]
-      },
-      {
-        id: 'p2',
-        title: 'Traveling Wave Velocity',
-        topic: 'Wave Motion · Wave Equation',
-        diagram: 'wave',
-        question: 'Given the wave equation y(x,t) = A sin(ω t - k x), determine its propagation speed in terms of ω and k.',
-        concept: 'The phase of the wave is constant along any crest. Differentiating the phase condition with respect to time yields the propagation velocity.',
-        steps: [
-          { num: '01', math: 'Wave Parameters: ω = 2π f , k = 2π / λ', exp: 'Identify the temporal frequency ω and spatial wavenumber k.' },
-          { num: '02', math: 'Phase Condition: (ω t - k x) = constant', exp: 'Track the motion of a single point of constant phase.' },
-          { num: '03', math: 'Result: v = dx/dt = ω / k = f · λ', exp: 'The phase speed is the ratio of angular frequency to wavenumber.' }
-        ]
-      }
-    ]
-  };
-
-  state.tutorSub = state.tutorSub || 'BAS111';
-  state.tutorProbId = state.tutorProbId || 'm1';
-  state.tutorShowAll = false;
-
-  function getActiveProblem() {
-    const list = TUTOR_PROBLEMS[state.tutorSub] || TUTOR_PROBLEMS['BAS111'];
-    return list.find((p) => p.id === state.tutorProbId) || list[0];
-  }
-
-  function renderTutor() {
-    const root = $('#v-tutor');
-    const subjects = [
-      { code: 'BAS111', name: 'Mathematics I' },
-      { code: 'BAS141', name: 'Engineering Chemistry' },
-      { code: 'BAS121', name: 'Vibration & Waves' }
-    ];
-
-    if (!TUTOR_PROBLEMS[state.tutorSub]) state.tutorSub = 'BAS111';
-    const probList = TUTOR_PROBLEMS[state.tutorSub];
-    const currentProb = getActiveProblem();
-
-    let diagramSvg = '';
-    if (currentProb.diagram === 'chem') {
-      diagramSvg = `<svg viewBox="0 0 380 70" fill="none">
-        <rect x="50" y="10" width="280" height="50" rx="6" stroke="currentColor" stroke-width="1.5" opacity="0.3"/>
-        <rect x="160" y="12" width="12" height="46" fill="var(--ink)" rx="2">
-          <animate attributeName="x" values="130;210;130" dur="4s" repeatCount="indefinite" />
-        </rect>
-        <line x1="172" y1="35" x2="280" y2="35" stroke="currentColor" stroke-width="2" opacity="0.4">
-          <animate attributeName="x1" values="142;222;142" dur="4s" repeatCount="indefinite" />
-        </line>
-        <text x="65" y="39" fill="currentColor" font-size="11" opacity="0.8">Piston Work (P · ΔV)</text>
-      </svg>`;
-    } else if (currentProb.diagram === 'wave') {
-      diagramSvg = `<svg viewBox="0 0 380 70" fill="none">
-        <path d="M 20 35 C 60 10, 100 60, 140 35 C 180 10, 220 60, 260 35 C 300 10, 340 60, 380 35" stroke="var(--ink)" stroke-width="2" stroke-linecap="round">
-          <animate attributeName="d" values="
-            M 20 35 C 60 10, 100 60, 140 35 C 180 10, 220 60, 260 35 C 300 10, 340 60, 380 35;
-            M 20 35 C 60 60, 100 10, 140 35 C 180 60, 220 10, 260 35 C 300 60, 340 10, 380 35;
-            M 20 35 C 60 10, 100 60, 140 35 C 180 10, 220 60, 260 35 C 300 10, 340 60, 380 35" dur="3s" repeatCount="indefinite" />
-        </path>
-        <circle cx="140" cy="35" r="3.5" fill="var(--accent)"/>
-        <circle cx="260" cy="35" r="3.5" fill="var(--accent)"/>
-        <text x="145" y="30" fill="currentColor" font-size="10" opacity="0.6">Node</text>
-        <text x="265" y="30" fill="currentColor" font-size="10" opacity="0.6">Node</text>
-      </svg>`;
-    } else {
-      diagramSvg = `<svg viewBox="0 0 380 70" fill="none">
-        <path d="M 20 55 Q 120 55 190 35 T 360 15" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/>
-        <line x1="110" y1="62" x2="270" y2="8" stroke="var(--accent)" stroke-width="1.8" stroke-dasharray="3 3"/>
-        <circle cx="190" cy="35" r="4" fill="var(--accent)"/>
-        <text x="202" y="36" fill="currentColor" font-size="10" opacity="0.7">Tangent Slope m</text>
-      </svg>`;
-    }
-
-    root.innerHTML = `
-      <p class="kicker" data-reveal>Study Assistant</p>
-      <h1 class="h1"><span class="ln"><span>Problem</span></span><span class="ln"><span><em>solver.</em></span></span></h1>
-      <p class="lead">Select a course and topic to review mathematical derivations and step-by-step solutions.</p>
-
-      <div class="solver-layout">
-        <div class="solver-tabs">
-          ${subjects.map((s) => `<button type="button" class="solver-tab${state.tutorSub === s.code ? ' on' : ''}" data-sub="${s.code}">${s.name}</button>`).join('')}
-        </div>
-
-        <div class="solver-body">
-          <div class="solver-list-wrap">
-            <span class="lbl">Sample Problems</span>
-            <ul class="solver-list">
-              ${probList.map((p) => `
-                <li class="solver-item${p.id === currentProb.id ? ' on' : ''}" data-prob="${p.id}">
-                  <div class="solver-info">
-                    <span class="solver-topic">${p.topic}</span>
-                    <h3 class="solver-title">${p.title}</h3>
-                  </div>
-                  <span class="solver-arrow">→</span>
-                </li>
-              `).join('')}
-            </ul>
-
-            <form id="solverCustomForm" class="solver-custom-form">
-              <input id="solverInput" class="solver-input" placeholder="Ask a question or enter a topic..." autocomplete="off">
-              <button class="solver-btn" type="submit">Derive</button>
-            </form>
-          </div>
-
-          <div class="solver-card">
-            <div class="sc-head">
-              <span class="lbl">${state.tutorSub} · ${currentProb.topic}</span>
-              <h2>${currentProb.title}</h2>
-              <p class="sc-question">${currentProb.question}</p>
-            </div>
-
-            <div class="sc-concept">
-              <small>Key Concept</small>
-              ${currentProb.concept}
-            </div>
-
-            <div class="sc-diagram">
-              ${diagramSvg}
-            </div>
-
-            <div class="sc-steps">
-              ${currentProb.steps.map((st) => `
-                <div class="sc-step">
-                  <span class="sc-num">${st.num}</span>
-                  <div class="sc-content">
-                    <div class="sc-math">${st.math}</div>
-                    <p class="sc-exp">${st.exp}</p>
-                  </div>
-                </div>
-              `).join('')}
-            </div>
-          </div>
-        </div>
-      </div>
-    `;
-
-    // Subject tab switching
-    $('#v-tutor .solver-tab').forEach((b) => b.addEventListener('click', () => {
-      state.tutorSub = b.dataset.sub;
-      state.tutorProbId = TUTOR_PROBLEMS[state.tutorSub][0].id;
-      renderTutor();
-    }));
-
-    // Problem selection
-    $('#v-tutor .solver-item').forEach((item) => item.addEventListener('click', () => {
-      state.tutorProbId = item.dataset.prob;
-      renderTutor();
-    }));
-
-    // Custom query submission
-    $('#solverCustomForm').addEventListener('submit', (e) => {
-      e.preventDefault();
-      const q = $('#solverInput').value.trim();
-      if (!q) return;
-
-      const customId = 'custom-' + Date.now();
-      const newProblem = {
-        id: customId,
-        title: q.slice(0, 40) + (q.length > 40 ? '...' : ''),
-        topic: 'Custom Query',
-        diagram: /wave|vibrat|spring/i.test(q) ? 'wave' : /gas|chem|enthalp|thermo/i.test(q) ? 'chem' : 'calc',
-        question: q,
-        concept: 'Break the problem into primary physical/mathematical laws, isolate known boundary conditions, and calculate the governing result.',
-        steps: [
-          { num: '01', math: 'Identify Given Parameters & Goal', exp: 'State known variables and define the exact target quantity to evaluate.' },
-          { num: '02', math: 'Apply Governing Formula', exp: 'Select the standard theorem or equilibrium relation connecting these quantities.' },
-          { num: '03', math: 'Solve & Verify Dimensional Units', exp: 'Substitute given numeric parameters and confirm unit consistency.' }
-        ]
-      };
-
-      if (!TUTOR_PROBLEMS[state.tutorSub]) TUTOR_PROBLEMS[state.tutorSub] = [];
-      TUTOR_PROBLEMS[state.tutorSub].unshift(newProblem);
-      state.tutorProbId = customId;
-      renderTutor();
-      toast('Solution derivation generated');
-    });
-  }
-
-  const RENDER = { home: renderHome, week: renderWeek, exams: renderExams, subjects: renderSubjects, updates: renderUpdates , tutor: renderTutor };
+  const RENDER = { home: renderHome, week: renderWeek, exams: renderExams, subjects: renderSubjects, updates: renderUpdates };
 
   /* ---------- calendar export ---------- */
   function downloadIcs() {
@@ -894,8 +546,6 @@
     D.subjects.forEach((s) => items.push({ t: s.name, s: s.code, k: `${s.name} ${s.code} ${s.arabic_name}`, go: () => { state.openSubject = s.code; location.hash = '#/subjects'; if (state.view === 'subjects') show('subjects'); } }));
     ex.forEach((e) => items.push({ t: `${e.name} exam`, s: `${dateParts(e.start).day} ${dateParts(e.start).mon} · ${e.hall}`, k: `exam midterm ${e.name} ${e.code} ${e.hall}`, go: () => (location.hash = '#/exams') }));
     [...new Set(sess.map((x) => x.room))].forEach((r) => items.push({ t: roomText(r), s: hallInfo(r), k: `room hall ${r} ${hallInfo(r)}`, go: () => (location.hash = '#/week') }));
-    
-    items.push({ t: 'Problem Solver: Step-by-Step Derivations', s: 'Interactive step-by-step motion breakdowns', k: 'ai tutor solver math physics chemistry questions help', go: () => (location.hash = '#/tutor') });
     palItems = (q ? items.filter((i) => i.k.toLowerCase().includes(q)) : items).slice(0, 8);
     palSel = 0;
     palList.innerHTML = palItems.length ? palItems.map((i, n) => `<li class="${n ? '' : 'sel'}" data-n="${n}"><b>${i.t}</b><small>${i.s}</small></li>`).join('') : '<li class="none">Nothing matches that.</li>';
