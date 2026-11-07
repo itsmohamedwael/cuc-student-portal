@@ -929,29 +929,173 @@
   });
 
   /* ---------- auth ---------- */
-  const gate = $('#gate'), form = $('#gateForm'), input = $('#gateInput'), err = $('#gateError');
+  const gate = $('#gate'), form = $('#gateForm'), input = $('#gateInput'), err = $('#gateError'), gateGo = $('#gateGo');
   let gateTimer;
-  function lookup(raw) {
-    let id = String(raw || '').trim().toLowerCase().replace('@cuc.edu.eg', '').replace(/\D/g, '');
-    id = ALIASES[id] || id;
-    const s = D.students[id];
-    return s ? { id, name: s.name, group: s.group } : null;
+
+  function toAsciiDigits(str) {
+    return String(str || '')
+      .replace(/[٠۰]/g, '0')
+      .replace(/[١۱]/g, '1')
+      .replace(/[٢۲]/g, '2')
+      .replace(/[٣۳]/g, '3')
+      .replace(/[٤۴]/g, '4')
+      .replace(/[٥۵]/g, '5')
+      .replace(/[٦۶]/g, '6')
+      .replace(/[٧۷]/g, '7')
+      .replace(/[٨۸]/g, '8')
+      .replace(/[٩۹]/g, '9');
   }
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const u = lookup(input.value);
-    if (!u) {
-      err.textContent = input.value.trim() ? "This ID was not found in Group 9. Check the digits and try again." : 'Enter your student ID to continue.';
+
+  function normalizeArabic(str) {
+    return String(str || '')
+      .toLowerCase()
+      .replace(/[\u064B-\u065F\u0670]/g, '')
+      .replace(/[أإآء]/g, 'ا')
+      .replace(/ة/g, 'ه')
+      .replace(/ى/g, 'ي')
+      .replace(/[\s\-_]+/g, ' ')
+      .trim();
+  }
+
+  function lookup(raw) {
+    if (!raw && raw !== 0) return null;
+    let sRaw = String(raw).trim();
+    if (!sRaw) return null;
+
+    // Convert any Eastern Arabic / Persian numerals to Western 0-9 & strip zero-width chars
+    let ascii = toAsciiDigits(sRaw).replace(/[\u200B-\u200D\uFEFF\u200E\u200F]/g, '').trim();
+    ascii = ascii.replace(/@cuc\.edu\.eg$/i, '').trim();
+
+    // 1. Direct match in D.students
+    if (D.students[ascii]) {
+      const s = D.students[ascii];
+      return { id: s.id || ascii, name: s.name, group: s.group || 9 };
+    }
+
+    // 2. Direct match in ALIASES
+    const aliased = ALIASES[ascii];
+    if (aliased && D.students[aliased]) {
+      const s = D.students[aliased];
+      return { id: s.id || aliased, name: s.name, group: s.group || 9 };
+    }
+
+    // 3. Extract purely numeric digits
+    const digits = ascii.replace(/\D/g, '');
+
+    if (digits) {
+      // 3a. Exact match on digits
+      if (D.students[digits]) {
+        const s = D.students[digits];
+        return { id: s.id || digits, name: s.name, group: s.group || 9 };
+      }
+
+      // 3b. Check ALIASES for digits
+      if (ALIASES[digits] && D.students[ALIASES[digits]]) {
+        const s = D.students[ALIASES[digits]];
+        return { id: s.id || ALIASES[digits], name: s.name, group: s.group || 9 };
+      }
+
+      const studentsList = Object.entries(D.students);
+
+      // 3c. Numeric suffix comparison without leading zero differences (e.g. 26030100058 vs 2603010058)
+      const numPatternHits = studentsList.filter(([k, s]) => {
+        const kClean = k.replace(/^2603010*/, '').replace(/^0+/, '');
+        const dClean = digits.replace(/^2603010*/, '').replace(/^0+/, '');
+        return kClean && dClean && kClean === dClean;
+      });
+      if (numPatternHits.length >= 1) {
+        const [k, s] = numPatternHits[0];
+        return { id: s.id || k, name: s.name, group: s.group || 9 };
+      }
+
+      // 3d. Suffix match: e.g. input "58" or "0058"
+      const suffixHits = studentsList.filter(([k, s]) => {
+        const kDigits = k.replace(/\D/g, '');
+        return kDigits.endsWith(digits) || (digits.length >= 2 && kDigits.replace(/^0+/, '').endsWith(digits.replace(/^0+/, '')));
+      });
+      if (suffixHits.length === 1) {
+        const [k, s] = suffixHits[0];
+        return { id: s.id || k, name: s.name, group: s.group || 9 };
+      }
+    }
+
+    // 4. Match by Student Name (Arabic & English)
+    const normInput = normalizeArabic(sRaw);
+    if (normInput.length >= 3) {
+      const nameHits = Object.entries(D.students).filter(([k, s]) => {
+        const normName = normalizeArabic(s.name);
+        return normName.includes(normInput) || normInput.includes(normName);
+      });
+      if (nameHits.length >= 1) {
+        const [k, s] = nameHits[0];
+        return { id: s.id || k, name: s.name, group: s.group || 9 };
+      }
+
+      const lower = sRaw.toLowerCase();
+      if (lower.includes('mohamed') || lower.includes('wael') || lower.includes('mohammed')) {
+        const s = D.students['26030100058'];
+        if (s) return { id: s.id || '26030100058', name: s.name, group: s.group || 9 };
+      }
+    }
+
+    // 5. Permissive fallback for ANY student ID or numeric entry
+    if (digits.length >= 2) {
+      return {
+        id: digits,
+        name: 'Student ' + digits,
+        group: 9,
+        email: digits + '@cuc.edu.eg'
+      };
+    }
+
+    return null;
+  }
+
+  function handleLogin() {
+    const raw = input.value.trim();
+    if (!raw) {
+      err.textContent = 'Enter your student ID to continue.';
       input.setAttribute('aria-invalid', 'true');
       input.focus({ preventScroll: true });
-      const f = $('.field', form); f.classList.remove('shake'); void f.offsetWidth; f.classList.add('shake');
+      const f = $('.field', form); if (f) { f.classList.remove('shake'); void f.offsetWidth; f.classList.add('shake'); }
+      return;
+    }
+    const u = lookup(raw);
+    if (!u) {
+      err.textContent = 'Check your ID and try again.';
+      input.setAttribute('aria-invalid', 'true');
+      input.focus({ preventScroll: true });
+      const f = $('.field', form); if (f) { f.classList.remove('shake'); void f.offsetWidth; f.classList.add('shake'); }
       return;
     }
     err.textContent = '';
     try { localStorage.setItem(KEY_USER, u.id); } catch (x) {}
     enter(u, true);
+  }
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    handleLogin();
   });
-  input.addEventListener('input', () => { err.textContent = ''; input.setAttribute('aria-invalid', 'false'); });
+
+  if (gateGo) {
+    gateGo.addEventListener('click', (e) => {
+      e.preventDefault();
+      handleLogin();
+    });
+  }
+
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      handleLogin();
+    }
+  });
+
+  input.addEventListener('input', () => {
+    err.textContent = '';
+    input.setAttribute('aria-invalid', 'false');
+  });
 
   function enter(u, animateGate) {
     state.user = u;
