@@ -165,37 +165,6 @@ body:not(.is-gate){padding-top:72px}
 .empty{padding:36px 0;color:var(--mute);border-bottom:1px solid var(--line);font-size:17px;max-width:560px}
 .tag{display:inline-block;font-size:12px;padding:3px 9px;border-radius:99px;border:1px solid var(--line);color:var(--mute);margin-right:6px}
 
-/* Dual Hall badges in exam rows */
-.r-halls{display:flex;gap:10px;align-items:stretch;flex-wrap:wrap;justify-content:flex-end}
-.hall-badge{background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:10px 14px;min-width:136px;display:flex;flex-direction:column;gap:3px;text-align:left;transition:transform .3s var(--ease),border-color .3s var(--ease),box-shadow .3s var(--ease)}
-.hall-badge.my-hall{background:color-mix(in srgb,var(--accent) 8%,var(--surface));border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
-.hb-head{display:flex;align-items:center;justify-content:space-between;gap:8px}
-.hb-pill{font-size:10px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:2px 7px;border-radius:99px;background:var(--line);color:var(--mute)}
-.hall-badge.my-hall .hb-pill{background:var(--accent);color:#fff}
-.hb-hall{font-family:var(--sans);font-size:18px;font-weight:700;letter-spacing:-.03em;color:var(--ink);line-height:1.1}
-.hb-range{font-size:11px;font-family:var(--sans);color:var(--ink);opacity:.9;margin-top:2px}
-.hb-count{font-size:11px;color:var(--mute)}
-
-/* Exam notice banner */
-.exam-banner{margin-top:24px;padding:16px 20px;border-radius:18px;background:var(--soft);border:1px solid var(--line);display:flex;gap:14px;align-items:flex-start}
-.exam-banner svg{flex:none;margin-top:2px;color:var(--accent)}
-.exam-banner h4{font-size:14px;font-weight:600;letter-spacing:-.01em;margin-bottom:2px}
-.exam-banner p{font-size:13px;color:var(--mute);line-height:1.4}
-
-/* Subject accordion dual halls */
-.sub-halls{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
-.sh-badge{display:inline-flex;align-items:center;gap:6px;padding:5px 10px;border-radius:8px;background:var(--soft);border:1px solid var(--line);font-size:12px}
-.sh-badge.my{background:color-mix(in srgb,var(--accent) 10%,var(--surface));border-color:var(--accent);font-weight:500}
-.sh-badge b{font-weight:600}
-
-/* Hero card halls line */
-.hero-halls{margin-top:24px;padding-top:18px;border-top:1px solid rgba(255,255,255,.14);display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:13px}
-[data-theme="dark"] .hero-halls{border-top-color:rgba(0,0,0,.14)}
-.hero-halls .hh-lbl{color:var(--inv-mute);font-size:12px;text-transform:uppercase;letter-spacing:.05em}
-.hh-badge{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:99px;background:rgba(255,255,255,.12);color:var(--inv-ink)}
-[data-theme="dark"] .hh-badge{background:rgba(0,0,0,.08)}
-.hh-badge.my{background:var(--accent);color:#fff;font-weight:500}
-
 /* segmented days */
 .seg{position:relative;display:inline-flex;gap:2px;padding:4px;border-radius:99px;background:var(--soft);margin-top:36px;max-width:100%;overflow-x:auto;scrollbar-width:none}
 .seg::-webkit-scrollbar{display:none}
@@ -302,9 +271,6 @@ kbd{font:inherit;font-size:12px;padding:3px 8px;border:1px solid var(--line);bor
   #stage{border-radius:26px;margin:0 10px;padding:28px 18px 40px}
   #foot{padding-left:18px;padding-right:18px}
   .row{grid-template-columns:78px 1fr;row-gap:8px}
-  .row.exam-row{grid-template-columns:1fr;row-gap:12px}
-  .r-halls{grid-column:1;justify-content:flex-start;width:100%}
-  .hall-badge{flex:1 1 calc(50% - 6px);min-width:125px}
   .r-room{grid-column:2;text-align:left;font-size:26px}
   .r-room small{display:inline;margin-left:8px}
   .acc-h{grid-template-columns:1fr 24px}

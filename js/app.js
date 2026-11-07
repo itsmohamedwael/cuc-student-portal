@@ -39,30 +39,22 @@
 
   const sessionsFor = (g) => D.weekly_sessions.filter((s) => s.group === g);
 
-  function examsFor(g) {
+  function hallFor(g, code) {
+    const list = D.exam_seating.filter((e) => e.group_number === g && e.course_code === code);
+    if (!list.length) return { hall: 'Not listed', seats: '' };
     const id = Number(state.user.id);
+    let hit = list.find((a) => a.from_student === 'All' || (id >= Number(a.from_student) && id <= Number(a.to_student)));
+    if (!hit && list.length) {
+      hit = id < Number(list[0].from_student) ? list[0] : list[list.length - 1];
+    }
+    if (hit) return { hall: hit.hall, seats: list.length > 1 ? `Seat range ${hit.from_student} - ${hit.to_student}` : '' };
+    return { hall: 'Not listed', seats: 'Your ID is not in the published hall list for this exam. Please confirm with the exams office.' };
+  }
+
+  function examsFor(g) {
     return D.subjects.map((s) => {
       const [dd, mm, yy] = s.exam_date.split('/').map(Number);
-      const allHalls = D.exam_seating
-        .filter((e) => e.group_number === g && e.course_code === s.code)
-        .map((a, idx) => {
-          const isMine = a.from_student === 'All' || (id >= Number(a.from_student) && id <= Number(a.to_student));
-          return {
-            ...a,
-            isMine,
-            label: `Hall ${idx + 1}`
-          };
-        });
-      const myHall = allHalls.find((h) => h.isMine) || allHalls[0] || { hall: 'Not listed', from_student: '', to_student: '' };
-      return {
-        ...s,
-        start: new Date(yy, mm - 1, dd, 10, 0),
-        end: new Date(yy, mm - 1, dd, 11, 0),
-        hall: myHall.hall,
-        seats: allHalls.length > 1 ? `Seat range ${myHall.from_student} - ${myHall.to_student}` : '',
-        allHalls,
-        myHall
-      };
+      return { ...s, start: new Date(yy, mm - 1, dd, 10, 0), end: new Date(yy, mm - 1, dd, 11, 0), ...hallFor(g, s.code) };
     }).sort((a, b) => a.start - b.start);
   }
 
@@ -136,28 +128,10 @@
 
   function examRow(e, detailed) {
     const p = dateParts(e.start);
-    const halls = e.allHalls && e.allHalls.length ? e.allHalls : [{ hall: e.hall, isMine: true, from_student: '', to_student: '', num_students: '' }];
-    const hallsHtml = halls.map((h, i) => `
-      <div class="hall-badge${h.isMine ? ' my-hall' : ''}">
-        <div class="hb-head">
-          <span class="hb-pill">${h.isMine ? '★ Your Hall' : `Hall ${i + 1}`}</span>
-          <b class="hb-hall">${h.hall}</b>
-        </div>
-        ${h.from_student ? `<div class="hb-range">${h.from_student} - ${h.to_student}</div>` : ''}
-        ${h.num_students ? `<div class="hb-count">${h.num_students} students</div>` : ''}
-      </div>
-    `).join('');
-
-    return `<li class="row exam-row" data-reveal>
+    return `<li class="row" data-reveal>
       <div class="r-date"><b>${p.day} ${p.mon}</b><span>${p.wd}, 10:00 AM</span></div>
-      <div class="r-main">
-        <h3>${e.name}</h3>
-        <p>${e.code}${detailed ? ' · 1 hour · Group 9' : ''}</p>
-        <span class="ar" lang="ar">${e.arabic_name}</span>
-      </div>
-      <div class="r-halls">
-        ${hallsHtml}
-      </div>
+      <div class="r-main"><h3>${e.name}</h3><p>${e.code}${detailed ? ' · 1 hour' : ''}</p>${detailed && e.seats ? `<p>${e.seats}</p>` : ''}${detailed ? `<span class="ar" lang="ar">${e.arabic_name}</span>` : ''}</div>
+      <div class="r-room">${e.hall}<small>${hallInfo(e.hall)}</small></div>
     </li>`;
   }
 
@@ -214,14 +188,6 @@
           <div><span class="lbl">Your hall</span><strong class="room" id="heroRoom">${ne.hall}</strong><span>${hallInfo(ne.hall)}</span></div>
           <div><span class="lbl">When</span><strong>${p.wd.slice(0, 3)} ${p.day} ${p.mon}</strong><span>10:00 - 11:00 AM</span></div>
           <div><span class="lbl">Starts in</span><strong id="countdown">${countdownText(ne.start, ne.end)}</strong><span>${ne.code}</span></div>
-        </div>
-        <div class="hero-halls">
-          <span class="hh-lbl">Group 9 Halls:</span>
-          ${(ne.allHalls || []).map((h) => `
-            <span class="hh-badge${h.isMine ? ' my' : ''}">
-              ${h.isMine ? '★ ' : ''}<b>${h.hall}</b> <small>(${h.from_student} - ${h.to_student})</small>
-            </span>
-          `).join('')}
         </div></article>`;
       body = `<div class="sec-head"><h2>The exam week</h2><a href="#/exams">All details</a></div>
         <ul class="rows">${examsFor(g).map((e) => examRow(e, false)).join('')}</ul>`;
@@ -292,17 +258,10 @@
     $('#v-exams').innerHTML = `
       <p class="kicker" data-reveal>Group ${g} · Midterms</p>
       <h1 class="h1"><span class="ln"><span>Exam</span></span><span class="ln"><span><em>halls.</em></span></span></h1>
-      <p class="lead">Seven exams, one hour each, all starting at 10:00 AM. Both designated examination halls are shown below for each subject.</p>
-      <div class="exam-banner" data-reveal>
-        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="m9 16 2 2 4-4"/></svg>
-        <div>
-          <h4>Group 9 Official 2-Hall Seating Distribution</h4>
-          <p>Every midterm exam in Group 9 is split between 2 halls based on student ID numbers. Both halls with their full ID brackets are displayed below, with your assigned hall highlighted.</p>
-        </div>
-      </div>
+      <p class="lead">Seven exams, one hour each, all starting at 10:00 AM. Your hall is shown on the right.</p>
       <div class="actions"><button class="btn solid" id="btnIcs" type="button">Add to calendar</button><button class="btn" id="btnPrint" type="button">Print slip</button></div>
       <ul class="rows" style="margin-top:36px">${ex.map((e) => examRow(e, true)).join('')}</ul>
-      <p class="exam-meta">Student ID ${state.user.id} · Group ${g}</p>`;
+      <p class="exam-meta">Student ID ${state.user.id}</p>`;
     $('#btnIcs').addEventListener('click', downloadIcs);
     $('#btnPrint').addEventListener('click', () => window.print());
   }
@@ -325,7 +284,7 @@
           <div class="acc-b"><div><div class="acc-in">
             <p class="desc">${s.description}</p>
             ${sess.map((x) => `<div class="mini"><span>${x.day}</span><div>${fmt12(x.start_time)} - ${fmt12(x.end_time)} ${ampm(x.end_time)} · ${x.session_type}${x.instructor ? ' · ' + x.instructor : ''}</div><b>${roomText(x.room)}</b></div>`).join('')}
-            ${e ? `<div class="mini"><span>Midterm Exam</span><div>${dateParts(e.start).wd}, ${dateParts(e.start).day} ${dateParts(e.start).mon} · 10:00 AM</div><div class="sub-halls">${(e.allHalls || []).map((h) => `<span class="sh-badge${h.isMine ? ' my' : ''}">${h.isMine ? '★ ' : ''}<b>${h.hall}</b> (${h.from_student} - ${h.to_student})</span>`).join('')}</div></div>` : ''}
+            ${e ? `<div class="mini"><span>Midterm</span><div>${dateParts(e.start).wd}, ${dateParts(e.start).day} ${dateParts(e.start).mon} · 10:00 AM</div><b>${e.hall}</b></div>` : ''}
           </div></div></div>
         </div>`;
       }).join('')}</div>`;
@@ -359,7 +318,7 @@
       'BEGIN:VEVENT', `UID:${e.code}-${state.user.id}@cucportal`, `DTSTAMP:${z(new Date())}`,
       `DTSTART:${z(e.start)}`, `DTEND:${z(e.end)}`,
       `SUMMARY:Midterm - ${e.name}`, `LOCATION:Hall ${e.hall}`,
-      `DESCRIPTION:${e.code} · Group ${state.user.group} (Hall ${e.hall}${e.seats ? ' · ' + e.seats : ''})`,
+      `DESCRIPTION:${e.code} · Group ${state.user.group}`,
       'BEGIN:VALARM', 'TRIGGER:-PT1H', 'ACTION:DISPLAY', 'DESCRIPTION:Exam in one hour', 'END:VALARM', 'END:VEVENT'].join('\r\n'));
     const ics = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//CUC Student Portal//EN', ...ev, 'END:VCALENDAR'].join('\r\n');
     const a = document.createElement('a');
