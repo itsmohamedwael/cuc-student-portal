@@ -52,9 +52,33 @@
   }
 
   function examsFor(g) {
+    const id = Number(state.user.id);
     return D.subjects.map((s) => {
       const [dd, mm, yy] = s.exam_date.split('/').map(Number);
-      return { ...s, start: new Date(yy, mm - 1, dd, 10, 0), end: new Date(yy, mm - 1, dd, 11, 0), ...hallFor(g, s.code) };
+      const allHalls = D.exam_seating
+        .filter((e) => e.group_number === g && e.course_code === s.code)
+        .map((a, idx) => {
+          const isMine = a.from_student === 'All' || (id >= Number(a.from_student) && id <= Number(a.to_student));
+          return {
+            ...a,
+            isMine,
+            label: `Hall ${idx + 1}`
+          };
+        });
+      let myHall = allHalls.find((h) => h.isMine);
+      if (!myHall && allHalls.length) {
+        myHall = id < Number(allHalls[0].from_student) ? allHalls[0] : allHalls[allHalls.length - 1];
+        myHall.isMine = true;
+      }
+      return {
+        ...s,
+        start: new Date(yy, mm - 1, dd, 10, 0),
+        end: new Date(yy, mm - 1, dd, 11, 0),
+        hall: myHall ? myHall.hall : 'Not listed',
+        seats: allHalls.length > 1 && myHall ? `Seat range ${myHall.from_student} - ${myHall.to_student}` : '',
+        allHalls,
+        myHall
+      };
     }).sort((a, b) => a.start - b.start);
   }
 
@@ -128,10 +152,29 @@
 
   function examRow(e, detailed) {
     const p = dateParts(e.start);
-    return `<li class="row" data-reveal>
+    const hallsHtml = (e.allHalls && e.allHalls.length > 0)
+      ? `<div class="r-halls">
+          ${e.allHalls.map((h) => `
+            <div class="hall-badge${h.isMine ? ' my-hall' : ''}">
+              <div class="hb-head">
+                <span class="hb-pill">${h.isMine ? 'Your Hall' : h.label}</span>
+                ${h.count ? `<span class="hb-count">${h.count} std</span>` : ''}
+              </div>
+              <div class="hb-hall">${h.hall}</div>
+              <div class="hb-range">${h.from_student} – ${h.to_student}</div>
+            </div>
+          `).join('')}
+        </div>`
+      : `<div class="r-room">${e.hall}<small>${hallInfo(e.hall)}</small></div>`;
+
+    return `<li class="row exam-row" data-reveal>
       <div class="r-date"><b>${p.day} ${p.mon}</b><span>${p.wd}, 10:00 AM</span></div>
-      <div class="r-main"><h3>${e.name}</h3><p>${e.code}${detailed ? ' · 1 hour' : ''}</p>${detailed && e.seats ? `<p>${e.seats}</p>` : ''}${detailed ? `<span class="ar" lang="ar">${e.arabic_name}</span>` : ''}</div>
-      <div class="r-room">${e.hall}<small>${hallInfo(e.hall)}</small></div>
+      <div class="r-main">
+        <h3>${e.name}</h3>
+        <p>${e.code}${detailed ? ' · 1 hour · Group 9' : ''}</p>
+        ${detailed ? `<span class="ar" lang="ar">${e.arabic_name}</span>` : ''}
+      </div>
+      ${hallsHtml}
     </li>`;
   }
 
@@ -284,7 +327,7 @@
           <div class="acc-b"><div><div class="acc-in">
             <p class="desc">${s.description}</p>
             ${sess.map((x) => `<div class="mini"><span>${x.day}</span><div>${fmt12(x.start_time)} - ${fmt12(x.end_time)} ${ampm(x.end_time)} · ${x.session_type}${x.instructor ? ' · ' + x.instructor : ''}</div><b>${roomText(x.room)}</b></div>`).join('')}
-            ${e ? `<div class="mini"><span>Midterm</span><div>${dateParts(e.start).wd}, ${dateParts(e.start).day} ${dateParts(e.start).mon} · 10:00 AM</div><b>${e.hall}</b></div>` : ''}
+            ${e ? `<div class="mini"><span>Midterm</span><div>${dateParts(e.start).wd}, ${dateParts(e.start).day} ${dateParts(e.start).mon} · 10:00 AM</div><div class="sub-halls">${(e.allHalls || []).map((h) => `<span class="sh-badge${h.isMine ? ' my' : ''}">${h.isMine ? '★ ' : ''}<b>${h.hall}</b> (${h.from_student} – ${h.to_student})</span>`).join('')}</div></div>` : ''}
           </div></div></div>
         </div>`;
       }).join('')}</div>`;
