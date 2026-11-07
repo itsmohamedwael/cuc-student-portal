@@ -27,6 +27,7 @@
   const ampm = (t) => (Number(t.split(':')[0]) >= 12 ? 'PM' : 'AM');
   const mins = (t) => { const [h, m] = t.split(':').map(Number); return h * 60 + m; };
   const hallInfo = (r) => {
+    if (r === 'Not listed') return 'Check with the exams office';
     if (!r || r === 'ONLINE') return 'Online session';
     const m = /B(\d)-(\d)/.exec(r);
     return m ? `Building ${m[1]} · Floor ${m[2]}` : r;
@@ -40,12 +41,11 @@
 
   function hallFor(g, code) {
     const list = D.exam_seating.filter((e) => e.group_number === g && e.course_code === code);
-    if (!list.length) return { hall: '—', seats: '' };
-    if (list.length === 1) return { hall: list[0].hall, seats: '' };
+    if (!list.length) return { hall: 'Not listed', seats: '' };
     const id = Number(state.user.id);
     const hit = list.find((a) => id >= Number(a.from_student) && id <= Number(a.to_student));
-    if (hit) return { hall: hit.hall, seats: `Seat range ${hit.from_student} – ${hit.to_student}` };
-    return { hall: list.map((a) => a.hall).join(' / '), seats: '' };
+    if (hit) return { hall: hit.hall, seats: list.length > 1 ? `Seat range ${hit.from_student} – ${hit.to_student}` : '' };
+    return { hall: 'Not listed', seats: 'Your ID is not in the published hall list for this exam. Please confirm with the exams office.' };
   }
 
   function examsFor(g) {
@@ -295,9 +295,9 @@
 
   const NOTICES = [
     { d: 'Fri, 6 Nov', t: 'Midterm exams begin tomorrow', p: 'The first exam is Report Writing & Communication Skills (CUC112) on Saturday, 7 November at 10:00 AM. Check your hall before you leave.', a: ['exams', 'Open my exam halls'] },
-    { d: 'Fri, 6 Nov', t: 'Halls published for Groups 1 to 9', p: 'Every group now has its exam halls listed in the portal, including the seat range where a group is split across two halls.' },
+    { d: 'Fri, 6 Nov', t: 'Group 9 exam halls published', p: 'Each exam is split across two halls by student ID. The portal shows the hall for your own ID, together with the seat range.' },
     { d: 'Fri, 6 Nov', t: 'Classes resume on 15 November', p: 'After the last exam on Saturday, 14 November, the portal switches back to your regular weekly timetable on its own.' },
-    { d: 'Thu, 5 Nov', t: 'Student lists refreshed', p: 'The Groups 1–9 student lists have been updated. Sign in with your 11-digit student ID to see your group.' }
+    { d: 'Thu, 5 Nov', t: 'Group 9 student list updated', p: 'Sign in with your 11-digit student ID to see your classes and exam halls.' }
   ];
   function renderUpdates() {
     $('#v-updates').innerHTML = `
@@ -437,7 +437,7 @@
     e.preventDefault();
     const u = lookup(input.value);
     if (!u) {
-      err.textContent = input.value.trim() ? "We couldn't find that ID. Check the digits and try again." : 'Enter your student ID to continue.';
+      err.textContent = input.value.trim() ? "We couldn't find that ID in Group 9. Check the digits and try again." : 'Enter your student ID to continue.';
       const f = $('.field', form); f.classList.remove('shake'); void f.offsetWidth; f.classList.add('shake');
       return;
     }
