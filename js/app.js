@@ -294,10 +294,10 @@
   }
 
   const NOTICES = [
-    { d: 'Fri, 6 Nov', t: 'Midterm exams begin tomorrow', p: 'The first exam is Report Writing & Communication Skills (CUC112) on Saturday, 7 November at 10:00 AM. Check your hall before you leave.', a: ['exams', 'Open my exam halls'] },
-    { d: 'Fri, 6 Nov', t: 'Exam halls published for Groups 1 to 9', p: 'Most exams are split across two halls by student ID. The portal shows the hall for your own ID, together with the seat range.' },
-    { d: 'Fri, 6 Nov', t: 'Classes resume on 15 November', p: 'After the last exam on Saturday, 14 November, the portal switches back to your regular weekly timetable on its own.' },
-    { d: 'Thu, 5 Nov', t: 'Student lists updated', p: 'The Groups 1-9 lists have been refreshed. Sign in with your 11-digit student ID to see your group, classes and exam halls.' }
+    { d: 'Fri, 6 Nov', t: 'Group 9 Midterm exams begin tomorrow', p: 'The first exam is Report Writing & Communication Skills (CUC112) on Saturday, 7 November at 10:00 AM. Check your hall before you leave.', a: ['exams', 'Open my exam halls'] },
+    { d: 'Fri, 6 Nov', t: 'Group 9 exam halls published', p: 'Each exam is split across two halls by student ID (e.g. B2-210 and B2-413 for CUC112). The portal shows the exact hall for your ID with the seat range.' },
+    { d: 'Fri, 6 Nov', t: 'Classes resume on 15 November', p: 'After the last exam (Engineering Drawing MEC111) on Saturday, 14 November, the portal automatically returns to your regular weekly timetable.' },
+    { d: 'Thu, 5 Nov', t: 'Group 9 student roster active', p: 'The portal is exclusively configured for Group 9 students. Sign in with your student ID to view your customized schedule and exam hall assignments.' }
   ];
   function renderUpdates() {
     $('#v-updates').innerHTML = `
@@ -437,7 +437,7 @@
     e.preventDefault();
     const u = lookup(input.value);
     if (!u) {
-      err.textContent = input.value.trim() ? "We couldn't find that ID. Check the digits and try again." : 'Enter your student ID to continue.';
+      err.textContent = input.value.trim() ? "This ID was not found in Group 9. Check the digits and try again." : 'Enter your student ID to continue.';
       const f = $('.field', form); f.classList.remove('shake'); void f.offsetWidth; f.classList.add('shake');
       return;
     }
