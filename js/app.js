@@ -19,7 +19,6 @@
   };
 
   const KEY_USER = 'cucsp_user', KEY_THEME = 'cucsp_theme', KEY_EXAM = 'cucsp_exam_view';
-  const ALIASES = { '2603010058': '26030100058' };
   const DAYS = ['Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday'];
   const JS_DAY = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
   const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -28,8 +27,10 @@
   const state = { user: null, view: 'home', day: null, examView: true, openSubject: null };
 
   /* ---------- helpers ---------- */
+  const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const fmt12 = (t) => { const [h, m] = t.split(':').map(Number); return `${((h + 11) % 12) + 1}:${String(m).padStart(2, '0')}`; };
   const ampm = (t) => (Number(t.split(':')[0]) >= 12 ? 'PM' : 'AM');
+  const fmtRange = (s, e) => (ampm(s) === ampm(e) ? `${fmt12(s)} – ${fmt12(e)} ${ampm(e)}` : `${fmt12(s)} ${ampm(s)} – ${fmt12(e)} ${ampm(e)}`);
   const mins = (t) => { const [h, m] = t.split(':').map(Number); return h * 60 + m; };
   const hallInfo = (r) => {
     if (r === 'Not listed') return 'Check with the exams office';
@@ -40,48 +41,116 @@
   const roomText = (r) => (!r || r === 'ONLINE' ? 'Online' : r);
   const inWindow = (d = new Date()) => d >= EXAM_WINDOW[0] && d <= EXAM_WINDOW[1];
   const examViewOn = () => inWindow() && state.examView;
-  const firstName = (n) => (n || '').split(' ')[0];
+
+  function toAsciiDigits(str) {
+    return String(str || '')
+      .replace(/[٠۰]/g, '0')
+      .replace(/[١۱]/g, '1')
+      .replace(/[٢۲]/g, '2')
+      .replace(/[٣۳]/g, '3')
+      .replace(/[٤۴]/g, '4')
+      .replace(/[٥۵]/g, '5')
+      .replace(/[٦۶]/g, '6')
+      .replace(/[٧۷]/g, '7')
+      .replace(/[٨۸]/g, '8')
+      .replace(/[٩۹]/g, '9');
+  }
+
+  function normalizeArabic(str) {
+    return String(str || '')
+      .toLowerCase()
+      .replace(/[\u064B-\u065F\u0670\u0640]/g, '')
+      .replace(/[أإآء]/g, 'ا')
+      .replace(/ة/g, 'ه')
+      .replace(/ى/g, 'ي')
+      .replace(/[\s\-_]+/g, ' ')
+      .trim();
+  }
+
+  /* Smart Arabic compound-name splitter (preserves عبد الملك, نور الدين, لي لي, ربيع الانوار, سيف الله, etc.) */
+  const COMPOUND_PREFIXES = new Set(['عبد', 'ابو', 'ام', 'ابن', 'بنت', 'ذو']);
+  const COMPOUND_SUFFIXES = new Set(['الدين', 'الله', 'الرحمن', 'الاسلام', 'الانوار', 'الحق', 'الفاروق', 'المسيح', 'الزهراء', 'الهدي']);
+
+  function takeNameUnit(words, idx) {
+    if (idx >= words.length) return ['', idx];
+    const w0 = words[idx];
+    const w1 = words[idx + 1];
+    if (w1) {
+      const n0 = normalizeArabic(w0);
+      const n1 = normalizeArabic(w1);
+      if (COMPOUND_PREFIXES.has(n0) || COMPOUND_SUFFIXES.has(n1) || w0 === w1) {
+        return [`${w0} ${w1}`, idx + 2];
+      }
+    }
+    return [w0, idx + 1];
+  }
+
+  function givenName(fullName) {
+    const clean = String(fullName || '').trim().replace(/\s+/g, ' ');
+    if (!clean) return '';
+    return takeNameUnit(clean.split(' '), 0)[0];
+  }
+
+  function shortName(fullName) {
+    const clean = String(fullName || '').trim().replace(/\s+/g, ' ');
+    if (!clean) return '';
+    const words = clean.split(' ');
+    const [first, nextIdx] = takeNameUnit(words, 0);
+    const [second] = takeNameUnit(words, nextIdx);
+    return second ? `${first} ${second}` : first;
+  }
 
   const sessionsFor = (g) => D.weekly_sessions.filter((s) => s.group === g);
 
-  function hallFor(g, code) {
-    const list = D.exam_seating.filter((e) => e.group_number === g && e.course_code === code);
-    if (!list.length) return { hall: 'Not listed', seats: '' };
-    const id = Number(state.user.id);
-    let hit = list.find((a) => a.from_student === 'All' || (id >= Number(a.from_student) && id <= Number(a.to_student)));
-    if (!hit && list.length) {
-      hit = id < Number(list[0].from_student) ? list[0] : list[list.length - 1];
-    }
-    if (hit) return { hall: hit.hall, seats: list.length > 1 ? `Seat range ${hit.from_student} - ${hit.to_student}` : '' };
-    return { hall: 'Not listed', seats: 'Your ID is not in the published hall list for this exam. Please confirm with the exams office.' };
-  }
-
   function examsFor(g) {
     const id = Number(state.user.id);
+    const now = new Date();
     return D.subjects.map((s) => {
       const [dd, mm, yy] = s.exam_date.split('/').map(Number);
-      const allHalls = D.exam_seating
+      const start = new Date(yy, mm - 1, dd, 10, 0);
+      const end = new Date(yy, mm - 1, dd, 11, 0);
+      const rawHalls = D.exam_seating
         .filter((e) => e.group_number === g && e.course_code === s.code)
         .map((a, idx) => {
-          const isMine = a.from_student === 'All' || (id >= Number(a.from_student) && id <= Number(a.to_student));
+          const fromId = Number(a.from_student);
+          const toId = Number(a.to_student);
+          const exactMatch = a.from_student === 'All' || (id >= fromId && id <= toId);
           return {
             ...a,
-            isMine,
-            label: `Hall ${idx + 1}`
+            hallNum: idx + 1,
+            label: `Hall ${idx + 1}`,
+            isMine: exactMatch,
+            isFallback: false
           };
         });
-      let myHall = allHalls.find((h) => h.isMine);
-      if (!myHall && allHalls.length) {
-        myHall = id < Number(allHalls[0].from_student) ? allHalls[0] : allHalls[allHalls.length - 1];
+
+      let myHall = rawHalls.find((h) => h.isMine) || null;
+      if (!myHall && rawHalls.length) {
+        let best = rawHalls[0], bestDist = Infinity;
+        for (const h of rawHalls) {
+          const f = Number(h.from_student), t = Number(h.to_student);
+          const dist = id < f ? f - id : id > t ? id - t : 0;
+          if (dist < bestDist) { bestDist = dist; best = h; }
+        }
+        myHall = best;
         myHall.isMine = true;
+        myHall.isFallback = true;
       }
+
+      // Always lock the student's assigned hall in the primary (first) slot so its position never shifts across rows
+      const orderedHalls = myHall
+        ? [myHall, ...rawHalls.filter((h) => h !== myHall)]
+        : rawHalls;
+
       return {
         ...s,
-        start: new Date(yy, mm - 1, dd, 10, 0),
-        end: new Date(yy, mm - 1, dd, 11, 0),
+        start,
+        end,
+        isPast: now >= end,
+        isLive: now >= start && now < end,
         hall: myHall ? myHall.hall : 'Not listed',
-        seats: allHalls.length > 1 && myHall ? `Seat range ${myHall.from_student} - ${myHall.to_student}` : '',
-        allHalls,
+        seats: rawHalls.length > 1 && myHall ? `Seat range ${myHall.from_student} – ${myHall.to_student}` : '',
+        allHalls: orderedHalls,
         myHall
       };
     }).sort((a, b) => a.start - b.start);
@@ -105,54 +174,8 @@
     $$('.ln > span', root).forEach((s) => { s.style.animation = 'none'; void s.offsetWidth; s.style.animation = ''; });
   }
 
-  function rollNumber(el, value = el.dataset.numberValue || el.textContent) {
-    const previous = el.dataset.numberValue;
-    if (previous === value) return;
-    el.dataset.numberValue = value;
-    if (reduce || !/\d/.test(value)) { el.textContent = value; return; }
-    const label = document.createElement('span');
-    label.className = 'number-label';
-    label.textContent = value;
-    const visual = document.createElement('span');
-    visual.className = 'number-visual';
-    visual.setAttribute('aria-hidden', 'true');
-    const compact = matchMedia('(max-width: 600px)').matches;
-    const steps = compact ? 5 : 10;
-    const tracks = [];
-    [...value].forEach((char, index) => {
-      if (!/\d/.test(char)) { visual.append(document.createTextNode(char)); return; }
-      const wheel = document.createElement('span');
-      wheel.className = 'number-wheel';
-      const track = document.createElement('span');
-      track.className = 'number-track';
-      const changed = !previous || previous[index] !== char;
-      const start = previous && /\d/.test(previous[index]) ? Number(previous[index]) : (Number(char) - steps + 10) % 10;
-      const count = changed ? steps : 0;
-      for (let step = 0; step <= count; step++) {
-        const digit = document.createElement('span');
-        digit.textContent = step === count ? char : String((start + step) % 10);
-        track.append(digit);
-      }
-      const end = `translateY(-${count * 1.15}em)`;
-      track.style.transform = end;
-      wheel.append(track);
-      visual.append(wheel);
-      if (changed) tracks.push({ track, end, index });
-    });
-    el.replaceChildren(label, visual);
-    tracks.forEach(({ track, end, index }) => {
-      track.animate([{ transform: 'translateY(0)' }, { transform: end }], {
-        duration: compact ? 620 : 900,
-        delay: index * (compact ? 25 : 45),
-        easing: EASE,
-        fill: 'backwards'
-      });
-    });
-  }
-
   function reveal(el) {
     el.classList.add('in');
-    $$('[data-number]', el).forEach((number) => rollNumber(number));
   }
   const io = 'IntersectionObserver' in window
     ? new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { reveal(e.target); io.unobserve(e.target); } }), { threshold: 0.08, rootMargin: '0px 0px -24px 0px' })
@@ -180,35 +203,52 @@
     const live = nowMin != null && nowMin >= mins(s.start_time) && nowMin < mins(s.end_time);
     const who = [s.instructor, ...(s.assistants || [])].filter(Boolean).join(', ');
     return `<li class="row${live ? ' now' : ''}" data-reveal>
-      <div class="r-time"><b data-number>${fmt12(s.start_time)}</b><span>to ${fmt12(s.end_time)} ${ampm(s.end_time)}</span></div>
-      <div class="r-main"><h3>${s.course_title}</h3><p><span class="tag">${s.session_type}</span>${who}</p></div>
-      <div class="r-room">${roomText(s.room)}<small>${s.room === 'ONLINE' ? '' : hallInfo(s.room)}</small></div>
+      <div class="r-time"><b>${fmt12(s.start_time)}</b><span>to ${fmt12(s.end_time)} ${ampm(s.end_time)}</span></div>
+      <div class="r-main"><h3>${esc(s.course_title)}</h3><p><span class="tag">${esc(s.session_type)}</span>${esc(who)}</p></div>
+      <div class="r-room">${esc(roomText(s.room))}<small>${s.room === 'ONLINE' ? '' : esc(hallInfo(s.room))}</small></div>
     </li>`;
   }
 
-  function examRow(e, detailed) {
+  function examRow(e, detailed, nextCode) {
     const p = dateParts(e.start);
+    const isNext = e.code === nextCode;
+    const statusBadge = e.isLive
+      ? '<span class="r-status">Now</span>'
+      : isNext
+        ? '<span class="r-status">Next</span>'
+        : e.isPast
+          ? '<span class="r-status">Done</span>'
+          : '';
+
     const hallsHtml = (e.allHalls && e.allHalls.length > 0)
       ? `<div class="r-halls">
-          ${e.allHalls.map((h) => `
-            <div class="hall-badge${h.isMine ? ' my-hall' : ''}">
+          ${e.allHalls.map((h) => {
+            const countText = h.num_students ? `${h.label} · ${h.num_students} std` : h.label;
+            const pillText = h.isMine ? (h.isFallback ? 'Nearest Hall' : 'Your Hall') : 'Other Hall';
+            const cls = h.isMine
+              ? `hall-badge my-hall${h.isFallback ? ' verify-hall' : ''}`
+              : 'hall-badge other-hall';
+            return `<div class="${cls}">
               <div class="hb-head">
-                <span class="hb-pill">${h.isMine ? 'Your Hall' : h.label}</span>
-                ${h.count ? `<span class="hb-count">${h.count} std</span>` : ''}
+                <span class="hb-pill">${pillText}</span>
+                <span class="hb-count">${esc(countText)}</span>
               </div>
-              <div class="hb-hall" data-number>${h.hall}</div>
-              <div class="hb-range"><span>${h.from_student}</span> – <span>${h.to_student}</span></div>
-            </div>
-          `).join('')}
+              <div class="hb-hall">${esc(h.hall)}</div>
+              ${detailed ? `<div class="hb-sub">${esc(hallInfo(h.hall))}</div>` : ''}
+              <div class="hb-range">${esc(h.from_student)} – ${esc(h.to_student)}</div>
+              ${h.isMine && h.isFallback ? '<div class="hb-note">ID outside printed range · confirm with proctor</div>' : ''}
+            </div>`;
+          }).join('')}
         </div>`
-      : `<div class="r-room">${e.hall}<small>${hallInfo(e.hall)}</small></div>`;
+      : `<div class="r-room">${esc(e.hall)}<small>${esc(hallInfo(e.hall))}</small></div>`;
 
-    return `<li class="row exam-row" data-reveal>
-      <div class="r-date"><b data-number>${p.day} ${p.mon}</b><span>${p.wd}, 10:00 AM</span></div>
+    const rowCls = `row exam-row${e.isPast ? ' past' : ''}${isNext ? ' up-next' : ''}`;
+    return `<li class="${rowCls}" data-reveal>
+      <div class="r-date"><b>${p.day} ${p.mon}</b><span>${p.wd}, 10:00 AM</span>${statusBadge}</div>
       <div class="r-main">
-        <h3>${e.name}</h3>
-        <p>${e.code}${detailed ? ' · 1 hour · Group 9' : ''}</p>
-        ${detailed ? `<span class="ar" lang="ar">${e.arabic_name}</span>` : ''}
+        <h3>${esc(e.name)}</h3>
+        <p>${esc(e.code)}${detailed ? ' · 1 hour · Group 9' : ''}</p>
+        ${detailed ? `<span class="ar" lang="ar">${esc(e.arabic_name)}</span>` : ''}
       </div>
       ${hallsHtml}
     </li>`;
@@ -217,7 +257,6 @@
   function nextClass(g) {
     const now = new Date();
     const list = sessionsFor(g);
-    const todayIdx = DAYS.indexOf(JS_DAY[now.getDay()]);
     const nowMin = now.getHours() * 60 + now.getMinutes();
     for (let off = 0; off < 7; off++) {
       const dayName = JS_DAY[(now.getDay() + off) % 7];
@@ -256,20 +295,24 @@
     const root = $('#v-home');
     let hero = '', body = '';
 
-    const ne = examViewOn() ? nextExam(g) : null;
+    const allEx = examsFor(g);
+    const ne = examViewOn() ? (allEx.find((e) => !e.isPast) || null) : null;
     if (ne) {
       const p = dateParts(ne.start);
+      const subHallInfo = ne.myHall && ne.myHall.isFallback
+        ? `${hallInfo(ne.hall)} · Confirm with proctor`
+        : hallInfo(ne.hall);
       hero = `<article class="hero" data-reveal>
-        <p class="kicker"><i class="dot live"></i>Next exam</p>
-        <h2 class="hero-title">${ne.name}</h2>
-        <p class="hero-ar" lang="ar">${ne.arabic_name}</p>
+        <p class="kicker"><i class="dot live"></i>${ne.isLive ? 'Exam in progress' : 'Next exam'}</p>
+        <h2 class="hero-title">${esc(ne.name)}</h2>
+        <p class="hero-ar" lang="ar">${esc(ne.arabic_name)}</p>
         <div class="hero-grid">
-          <div><span class="lbl">Your hall</span><strong class="room" id="heroRoom" data-number>${ne.hall}</strong><span>${hallInfo(ne.hall)}</span></div>
-          <div><span class="lbl">When</span><strong>${p.wd.slice(0, 3)} ${p.day} ${p.mon}</strong><span>10:00 - 11:00 AM</span></div>
-          <div><span class="lbl">Starts in</span><strong id="countdown" data-number>${countdownText(ne.start, ne.end)}</strong><span>${ne.code}</span></div>
+          <div><span class="lbl">${ne.myHall && ne.myHall.isFallback ? 'Nearest hall' : 'Your hall'}</span><strong class="room" id="heroRoom">${esc(ne.hall)}</strong><span>${esc(subHallInfo)}</span></div>
+          <div><span class="lbl">When</span><strong>${p.wd.slice(0, 3)} ${p.day} ${p.mon}</strong><span>10:00 – 11:00 AM</span></div>
+          <div><span class="lbl">${ne.isLive ? 'Status' : 'Starts in'}</span><strong id="countdown">${countdownText(ne.start, ne.end)}</strong><span>${esc(ne.code)}</span></div>
         </div></article>`;
       body = `<div class="sec-head"><h2>The exam week</h2><a href="#/exams">All details</a></div>
-        <ul class="rows">${examsFor(g).map((e) => examRow(e, false)).join('')}</ul>`;
+        <ul class="rows">${allEx.map((e) => examRow(e, false, ne.code)).join('')}</ul>`;
     } else {
       const nc = nextClass(g);
       const now = new Date();
@@ -278,12 +321,12 @@
         const kick = nc.live ? 'Happening now' : nc.off === 0 ? 'Up next today' : nc.off === 1 ? 'Tomorrow' : `Next class · ${nc.dayName}`;
         hero = `<article class="hero" data-reveal>
           <p class="kicker"><i class="dot${nc.live ? ' live' : ''}"></i>${kick}</p>
-          <h2 class="hero-title">${s.course_title}</h2>
-          <p class="hero-ar" lang="ar">${s.course_arabic}</p>
+          <h2 class="hero-title">${esc(s.course_title)}</h2>
+          <p class="hero-ar" lang="ar">${esc(s.course_arabic)}</p>
           <div class="hero-grid">
-            <div><span class="lbl">Room</span><strong class="room" id="heroRoom" data-number>${roomText(s.room)}</strong><span>${hallInfo(s.room)}</span></div>
-            <div><span class="lbl">Time</span><strong>${fmt12(s.start_time)} - ${fmt12(s.end_time)}</strong><span>${s.day}</span></div>
-            <div><span class="lbl">${s.session_type}</span><strong>${s.course_code}</strong><span>${s.instructor || ''}</span></div>
+            <div><span class="lbl">Room</span><strong class="room" id="heroRoom">${esc(roomText(s.room))}</strong><span>${esc(hallInfo(s.room))}</span></div>
+            <div><span class="lbl">Time</span><strong>${fmtRange(s.start_time, s.end_time)}</strong><span>${esc(s.day)}</span></div>
+            <div><span class="lbl">${esc(s.session_type)}</span><strong>${esc(s.course_code)}</strong><span>${esc(s.instructor || '')}</span></div>
           </div></article>`;
       } else {
         hero = `<article class="hero quiet" data-reveal><p class="kicker">Nothing scheduled</p><h2 class="hero-title">No upcoming classes for your group.</h2></article>`;
@@ -296,9 +339,14 @@
           : `<p class="empty">${dayName === 'Friday' ? 'Friday is a day off.' : 'No classes today.'} Enjoy it.</p>`);
     }
 
+    const gName = givenName(u.name);
+    const headingHtml = gName
+      ? `<h1 class="h1"><span class="ln"><span>${greeting()}</span></span><span class="ln"><span><em class="name" dir="rtl" lang="ar">${esc(gName)}</em></span></span></h1>`
+      : `<h1 class="h1"><span class="ln"><span>${greeting().replace(/,$/, '.')}</span></span></h1>`;
+
     root.innerHTML = `
-      <p class="kicker" data-reveal>Group ${g}</p>
-      <h1 class="h1"><span class="ln"><span>${greeting()}</span></span><span class="ln"><span><em class="name" dir="rtl" lang="ar">${firstName(u.name)}</em></span></span></h1>
+      <p class="kicker" data-reveal>Group ${g}${gName ? '' : ` · ID ${esc(u.id)}`}</p>
+      ${headingHtml}
       ${hero}${body}`;
   }
 
@@ -342,14 +390,18 @@
   }
 
   function renderExams() {
-    const g = state.user.group, ex = examsFor(g);
+    const u = state.user, g = u.group, ex = examsFor(g);
+    const ne = ex.find((e) => !e.isPast);
+    const metaLabel = u.name
+      ? `<span dir="rtl" lang="ar">${esc(u.name)}</span> · Student ID ${esc(u.id)} · Group ${g}`
+      : `Student ID ${esc(u.id)} · Group ${g}`;
     $('#v-exams').innerHTML = `
       <p class="kicker" data-reveal>Group ${g} · Midterms</p>
       <h1 class="h1"><span class="ln"><span>Exam</span></span><span class="ln"><span><em>halls.</em></span></span></h1>
-      <p class="lead">Seven exams, one hour each, all starting at 10:00 AM. Your hall is shown on the right.</p>
+      <p class="lead">Seven exams, one hour each, all starting at 10:00 AM. Your assigned hall is always highlighted first, alongside the other Group 9 hall.</p>
       <div class="actions"><button class="btn solid" id="btnIcs" type="button">Add to calendar</button><button class="btn" id="btnPrint" type="button">Print slip</button></div>
-      <ul class="rows exam-list">${ex.map((e) => examRow(e, true)).join('')}</ul>
-      <p class="exam-meta">Student ID ${state.user.id}</p>`;
+      <ul class="rows exam-list">${ex.map((e) => examRow(e, true, ne ? ne.code : null)).join('')}</ul>
+      <p class="exam-meta">${metaLabel}</p>`;
     $('#btnIcs').addEventListener('click', downloadIcs);
     $('#btnPrint').addEventListener('click', () => window.print());
   }
@@ -365,14 +417,14 @@
         const e = ex.find((x) => x.code === s.code);
         return `<div class="acc${state.openSubject === s.code ? ' open' : ''}" id="sub-${s.code}" data-reveal>
           <button class="acc-h" type="button" aria-expanded="${state.openSubject === s.code}">
-            <span class="code">${s.code}</span>
-            <div><h3>${s.name}</h3><span class="ar" lang="ar">${s.arabic_name}</span></div>
+            <span class="code">${esc(s.code)}</span>
+            <div><h3>${esc(s.name)}</h3><span class="ar" lang="ar">${esc(s.arabic_name)}</span></div>
             <span class="plus"></span>
           </button>
           <div class="acc-b"><div><div class="acc-in">
-            <p class="desc">${s.description}</p>
-            ${sess.map((x) => `<div class="mini"><span>${x.day}</span><div>${fmt12(x.start_time)} - ${fmt12(x.end_time)} ${ampm(x.end_time)} · ${x.session_type}${x.instructor ? ' · ' + x.instructor : ''}</div><b>${roomText(x.room)}</b></div>`).join('')}
-            ${e ? `<div class="mini"><span>Midterm</span><div>${dateParts(e.start).wd}, ${dateParts(e.start).day} ${dateParts(e.start).mon} · 10:00 AM</div><div class="sub-halls">${(e.allHalls || []).map((h) => `<span class="sh-badge${h.isMine ? ' my' : ''}">${h.isMine ? '<span>Your hall</span>' : ''}<b>${h.hall}</b><span>${h.from_student} – ${h.to_student}</span></span>`).join('')}</div></div>` : ''}
+            <p class="desc">${esc(s.description)}</p>
+            ${sess.map((x) => `<div class="mini"><span>${esc(x.day)}</span><div>${fmtRange(x.start_time, x.end_time)} · ${esc(x.session_type)}${x.instructor ? ' · ' + esc(x.instructor) : ''}</div><b>${esc(roomText(x.room))}</b></div>`).join('')}
+            ${e ? `<div class="mini"><span>Midterm</span><div>${dateParts(e.start).wd}, ${dateParts(e.start).day} ${dateParts(e.start).mon} · 10:00 AM</div><div class="sub-halls">${(e.allHalls || []).map((h) => `<span class="sh-badge${h.isMine ? ' my' : ' other'}">${h.isMine ? `<span class="sh-pill">${h.isFallback ? 'Nearest hall' : 'Your hall'}</span>` : `<span>${esc(h.label)}</span>`}<b>${esc(h.hall)}</b><span>${esc(h.from_student)} – ${esc(h.to_student)}</span></span>`).join('')}</div></div>` : ''}
           </div></div></div>
         </div>`;
       }).join('')}</div>`;
@@ -385,34 +437,59 @@
   }
 
   const NOTICES = [
-    { d: 'Fri, 6 Nov', t: 'Group 9 Midterm exams begin tomorrow', p: 'The first exam is Report Writing & Communication Skills (CUC112) on Saturday, 7 November at 10:00 AM. Check your hall before you leave.', a: ['exams', 'Open my exam halls'] },
-    { d: 'Fri, 6 Nov', t: 'Group 9 exam halls published', p: 'Each exam is split across two halls by student ID (e.g. B2-210 and B2-413 for CUC112). The portal shows the exact hall for your ID with the seat range.' },
-    { d: 'Fri, 6 Nov', t: 'Classes resume on 15 November', p: 'After the last exam (Engineering Drawing MEC111) on Saturday, 14 November, the portal automatically returns to your regular weekly timetable.' },
-    { d: 'Thu, 5 Nov', t: 'Group 9 student roster active', p: 'The portal is exclusively configured for Group 9 students. Sign in with your student ID to view your customized schedule and exam hall assignments.' }
+    { d: '7–14 Nov', t: 'Group 9 Midterm exams in progress', p: 'All seven Group 9 midterm exams start at 10:00 AM and run for one hour. Check your assigned hall for each subject before heading to Building 2.', a: ['exams', 'Open my exam halls'] },
+    { d: 'Fri, 6 Nov', t: 'Official dual-hall seating verified', p: 'Each exam splits Group 9 across two Building 2 halls by Student ID range. Your assigned hall is pinned in the first column on every exam row.' },
+    { d: 'Fri, 6 Nov', t: 'Classes resume on Sunday, 15 November', p: 'After Engineering Drawing (MEC111) on Saturday, 14 November, the portal automatically switches back to your regular weekly timetable.' },
+    { d: 'Thu, 5 Nov', t: 'Complete Group 9 student roster active', p: 'Sign in with your 11-digit CUC Student ID to view your verified name, weekly classes, and exact midterm hall assignments.' }
   ];
   function renderUpdates() {
     $('#v-updates').innerHTML = `
       <p class="kicker" data-reveal>Latest</p>
       <h1 class="h1"><span class="ln"><span>Recent</span></span><span class="ln"><span><em>updates.</em></span></span></h1>
-      <div class="notice-list">${NOTICES.map((n) => `<article class="note" data-reveal><time>${n.d}</time><div><h3>${n.t}</h3><p>${n.p}</p>${n.a ? `<a class="link" href="#/${n.a[0]}">${n.a[1]}</a>` : ''}</div></article>`).join('')}</div>`;
+      <div class="notice-list">${NOTICES.map((n) => `<article class="note" data-reveal><time>${esc(n.d)}</time><div><h3>${esc(n.t)}</h3><p>${esc(n.p)}</p>${n.a ? `<a class="link" href="#/${n.a[0]}">${esc(n.a[1])}</a>` : ''}</div></article>`).join('')}</div>`;
   }
 
   const RENDER = { home: renderHome, week: renderWeek, exams: renderExams, subjects: renderSubjects, updates: renderUpdates };
 
   /* ---------- calendar export ---------- */
   function downloadIcs() {
-    const z = (d) => d.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
+    const pad2 = (n) => String(n).padStart(2, '0');
+    const localCal = (d) => `${d.getFullYear()}${pad2(d.getMonth() + 1)}${pad2(d.getDate())}T${pad2(d.getHours())}${pad2(d.getMinutes())}00`;
+    const utcStamp = (d) => d.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
+    const tzBlock = [
+      'BEGIN:VTIMEZONE',
+      'TZID:Africa/Cairo',
+      'BEGIN:STANDARD',
+      'DTSTART:20261030T000000',
+      'TZOFFSETFROM:+0300',
+      'TZOFFSETTO:+0200',
+      'TZNAME:EET',
+      'END:STANDARD',
+      'END:VTIMEZONE'
+    ].join('\r\n');
     const ev = examsFor(state.user.group).map((e) => [
-      'BEGIN:VEVENT', `UID:${e.code}-${state.user.id}@cucportal`, `DTSTAMP:${z(new Date())}`,
-      `DTSTART:${z(e.start)}`, `DTEND:${z(e.end)}`,
-      `SUMMARY:Midterm - ${e.name}`, `LOCATION:Hall ${e.hall}`,
-      `DESCRIPTION:${e.code} · Group ${state.user.group}`,
-      'BEGIN:VALARM', 'TRIGGER:-PT1H', 'ACTION:DISPLAY', 'DESCRIPTION:Exam in one hour', 'END:VALARM', 'END:VEVENT'].join('\r\n'));
-    const ics = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//CUC Student Portal//EN', ...ev, 'END:VCALENDAR'].join('\r\n');
+      'BEGIN:VEVENT',
+      `UID:${e.code}-${state.user.id}@cucportal`,
+      `DTSTAMP:${utcStamp(new Date())}`,
+      `DTSTART;TZID=Africa/Cairo:${localCal(e.start)}`,
+      `DTEND;TZID=Africa/Cairo:${localCal(e.end)}`,
+      `SUMMARY:Midterm - ${e.name}`,
+      `LOCATION:Hall ${e.hall} (${hallInfo(e.hall)})`,
+      `DESCRIPTION:${e.code} · Group ${state.user.group}${e.seats ? ' · ' + e.seats : ''}`,
+      'BEGIN:VALARM',
+      'TRIGGER:-PT1H',
+      'ACTION:DISPLAY',
+      'DESCRIPTION:Exam in one hour',
+      'END:VALARM',
+      'END:VEVENT'
+    ].join('\r\n'));
+    const ics = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//CUC Student Portal//EN', 'CALSCALE:GREGORIAN', tzBlock, ...ev, 'END:VCALENDAR'].join('\r\n');
+    const url = URL.createObjectURL(new Blob([ics], { type: 'text/calendar;charset=utf-8' }));
     const a = document.createElement('a');
-    a.href = URL.createObjectURL(new Blob([ics], { type: 'text/calendar' }));
+    a.href = url;
     a.download = 'cuc-midterm-exams.ics';
     a.click();
+    setTimeout(() => URL.revokeObjectURL(url), 2000);
     toast('Your 7 exams are ready for your calendar');
   }
 
@@ -548,7 +625,7 @@
     [...new Set(sess.map((x) => x.room))].forEach((r) => items.push({ t: roomText(r), s: hallInfo(r), k: `room hall ${r} ${hallInfo(r)}`, go: () => (location.hash = '#/week') }));
     palItems = (q ? items.filter((i) => i.k.toLowerCase().includes(q)) : items).slice(0, 8);
     palSel = 0;
-    palList.innerHTML = palItems.length ? palItems.map((i, n) => `<li class="${n ? '' : 'sel'}" data-n="${n}"><b>${i.t}</b><small>${i.s}</small></li>`).join('') : '<li class="none">Nothing matches that.</li>';
+    palList.innerHTML = palItems.length ? palItems.map((i, n) => `<li class="${n ? '' : 'sel'}" data-n="${n}"><b>${esc(i.t)}</b><small>${esc(i.s)}</small></li>`).join('') : '<li class="none">Nothing matches that.</li>';
   }
   function pickPal(n) { const it = palItems[n]; if (it) { closePalette(); it.go(); } }
   palIn.addEventListener('input', () => paintPal(palIn.value));
@@ -582,145 +659,139 @@
   const gate = $('#gate'), form = $('#gateForm'), input = $('#gateInput'), err = $('#gateError'), gateGo = $('#gateGo');
   let gateTimer;
 
-  function toAsciiDigits(str) {
-    return String(str || '')
-      .replace(/[٠۰]/g, '0')
-      .replace(/[١۱]/g, '1')
-      .replace(/[٢۲]/g, '2')
-      .replace(/[٣۳]/g, '3')
-      .replace(/[٤۴]/g, '4')
-      .replace(/[٥۵]/g, '5')
-      .replace(/[٦۶]/g, '6')
-      .replace(/[٧۷]/g, '7')
-      .replace(/[٨۸]/g, '8')
-      .replace(/[٩۹]/g, '9');
+  function makeUser(id, s) {
+    return {
+      user: {
+        id: s.id || id,
+        name: s.name || '',
+        group: s.group || 9,
+        g9: Boolean(s.g9)
+      }
+    };
   }
 
-  function normalizeArabic(str) {
-    return String(str || '')
-      .toLowerCase()
-      .replace(/[\u064B-\u065F\u0670]/g, '')
-      .replace(/[أإآء]/g, 'ا')
-      .replace(/ة/g, 'ه')
-      .replace(/ى/g, 'ي')
-      .replace(/[\s\-_]+/g, ' ')
-      .trim();
+  /* Repairs common missing-zero or transposed-zero typos in CUC Student IDs */
+  function candidateIds(digits) {
+    const out = [digits];
+    const add = (v) => { if (v && v !== digits && !out.includes(v)) out.push(v); };
+    if (/^260301\d{4}$/.test(digits)) {
+      add('2603010' + digits.slice(6));
+      if (digits[6] === '1') add('26030110' + digits.slice(7));
+    }
+    if (/^260301\d{3}$/.test(digits)) add('26030100' + digits.slice(6));
+    if (/^26031[01]\d{4}$/.test(digits)) add('260301' + digits.slice(5));
+    if (/^26301[01]\d{4}$/.test(digits)) add('260301' + digits.slice(5));
+    if (/^260301000\d{3}$/.test(digits)) add('26030100' + digits.slice(9));
+    if (/^25030[12]0\d{4}$/.test(digits)) add(digits.slice(0, 6) + digits.slice(7));
+    if (/^25030[12]\d{3}$/.test(digits)) add(digits.slice(0, 6) + '0' + digits.slice(6));
+    return out;
+  }
+
+  function isValidCucIdFormat(id) {
+    return /^260301(?:0\d{4}|10\d{3})$/.test(id) || /^2[3-5]030[12]\d{4}$/.test(id);
   }
 
   function lookup(raw) {
     if (!raw && raw !== 0) return null;
-    let sRaw = String(raw).trim();
+    const sRaw = String(raw).trim();
     if (!sRaw) return null;
 
-    // Convert any Eastern Arabic / Persian numerals to Western 0-9 & strip zero-width chars
-    let ascii = toAsciiDigits(sRaw).replace(/[\u200B-\u200D\uFEFF\u200E\u200F]/g, '').trim();
-    ascii = ascii.replace(/@cuc\.edu\.eg$/i, '').trim();
+    const ascii = toAsciiDigits(sRaw)
+      .replace(/[\u200B-\u200D\uFEFF\u200E\u200F]/g, '')
+      .replace(/@cuc\.edu\.eg$/i, '')
+      .trim();
 
-    // 1. Direct match in D.students
-    if (D.students[ascii]) {
-      const s = D.students[ascii];
-      return { id: s.id || ascii, name: s.name, group: s.group || 9 };
+    const entries = Object.entries(D.students);
+    const g9Entries = entries.filter(([, s]) => s.g9);
+
+    // 1. Numeric ID / short-suffix lookup
+    if (/^[\d\s\-]+$/.test(ascii)) {
+      const digits = ascii.replace(/\D/g, '');
+      if (!digits) return { error: 'Enter your 11-digit Student ID to continue.' };
+
+      const candidates = candidateIds(digits);
+      for (const cand of candidates) {
+        if (D.students[cand]) return makeUser(cand, D.students[cand]);
+      }
+
+      // Short suffix convenience (2 to 5 digits) — check confirmed Group 9 roster first
+      if (digits.length >= 2 && digits.length <= 5) {
+        const g9Hits = g9Entries.filter(([k]) => k.endsWith(digits));
+        if (g9Hits.length === 1) {
+          const [k, s] = g9Hits[0];
+          return makeUser(k, s);
+        }
+        if (g9Hits.length > 1) {
+          return { error: `Multiple Group 9 IDs end with "${digits}". Please enter your full 11-digit Student ID.` };
+        }
+        if (digits.length >= 3) {
+          const allHits = entries.filter(([k]) => k.endsWith(digits));
+          if (allHits.length === 1) {
+            const [k, s] = allHits[0];
+            return makeUser(k, s);
+          }
+          if (allHits.length > 1) {
+            return { error: `Multiple Student IDs end with "${digits}". Please enter your full 11-digit Student ID.` };
+          }
+        }
+        return { error: `No Group 9 student matches "${digits}". Enter your full 11-digit Student ID.` };
+      }
+
+      // Valid full CUC ID not yet in the name directory (e.g. late registration IDs in exam brackets)
+      const canonical = candidates.find(isValidCucIdFormat);
+      if (canonical) {
+        return { user: { id: canonical, name: '', group: 9, g9: false } };
+      }
+
+      return { error: 'Check your 11-digit CUC Student ID (for example, 26030100058) and try again.' };
     }
 
-    // 2. Direct match in ALIASES
-    const aliased = ALIASES[ascii];
-    if (aliased && D.students[aliased]) {
-      const s = D.students[aliased];
-      return { id: s.id || aliased, name: s.name, group: s.group || 9 };
-    }
-
-    // 3. Extract purely numeric digits
-    const digits = ascii.replace(/\D/g, '');
-
-    if (digits) {
-      // 3a. Exact match on digits
-      if (D.students[digits]) {
-        const s = D.students[digits];
-        return { id: s.id || digits, name: s.name, group: s.group || 9 };
-      }
-
-      // 3b. Check ALIASES for digits
-      if (ALIASES[digits] && D.students[ALIASES[digits]]) {
-        const s = D.students[ALIASES[digits]];
-        return { id: s.id || ALIASES[digits], name: s.name, group: s.group || 9 };
-      }
-
-      const studentsList = Object.entries(D.students);
-
-      // 3c. Numeric suffix comparison without leading zero differences (e.g. 26030100058 vs 2603010058)
-      const numPatternHits = studentsList.filter(([k, s]) => {
-        const kClean = k.replace(/^2603010*/, '').replace(/^0+/, '');
-        const dClean = digits.replace(/^2603010*/, '').replace(/^0+/, '');
-        return kClean && dClean && kClean === dClean;
-      });
-      if (numPatternHits.length >= 1) {
-        const [k, s] = numPatternHits[0];
-        return { id: s.id || k, name: s.name, group: s.group || 9 };
-      }
-
-      // 3d. Suffix match: e.g. input "58" or "0058"
-      const suffixHits = studentsList.filter(([k, s]) => {
-        const kDigits = k.replace(/\D/g, '');
-        return kDigits.endsWith(digits) || (digits.length >= 2 && kDigits.replace(/^0+/, '').endsWith(digits.replace(/^0+/, '')));
-      });
-      if (suffixHits.length === 1) {
-        const [k, s] = suffixHits[0];
-        return { id: s.id || k, name: s.name, group: s.group || 9 };
-      }
-    }
-
-    // 4. Match by Student Name (Arabic & English)
+    // 2. Arabic full/multi-part name lookup (only succeeds when unambiguous)
     const normInput = normalizeArabic(sRaw);
-    if (normInput.length >= 3) {
-      const nameHits = Object.entries(D.students).filter(([k, s]) => {
+    const inputWords = normInput.split(' ').filter(Boolean);
+    if (inputWords.length >= 2 || normInput.length >= 6) {
+      const matchName = ([, s]) => {
         const normName = normalizeArabic(s.name);
-        return normName.includes(normInput) || normInput.includes(normName);
-      });
-      if (nameHits.length >= 1) {
-        const [k, s] = nameHits[0];
-        return { id: s.id || k, name: s.name, group: s.group || 9 };
-      }
-
-      const lower = sRaw.toLowerCase();
-      if (lower.includes('mohamed') || lower.includes('wael') || lower.includes('mohammed')) {
-        const s = D.students['26030100058'];
-        if (s) return { id: s.id || '26030100058', name: s.name, group: s.group || 9 };
-      }
-    }
-
-    // 5. Permissive fallback for ANY student ID or numeric entry
-    if (digits.length >= 2) {
-      return {
-        id: digits,
-        name: 'Student ' + digits,
-        group: 9,
-        email: digits + '@cuc.edu.eg'
+        if (normName === normInput || normName.startsWith(normInput + ' ') || normName.includes(' ' + normInput)) return true;
+        return inputWords.length >= 2 && inputWords.every((w) => normName.split(' ').includes(w));
       };
+      const g9NameHits = g9Entries.filter(matchName);
+      if (g9NameHits.length === 1) return makeUser(g9NameHits[0][0], g9NameHits[0][1]);
+      if (g9NameHits.length > 1) return { error: 'Multiple Group 9 students share that name. Please enter your 11-digit Student ID.' };
+
+      const allNameHits = entries.filter(matchName);
+      if (allNameHits.length === 1) return makeUser(allNameHits[0][0], allNameHits[0][1]);
+      if (allNameHits.length > 1) return { error: 'Multiple students share that name. Please enter your 11-digit Student ID.' };
+    } else if (/[\u0600-\u06FFa-zA-Z]/.test(sRaw)) {
+      return { error: 'Please enter your 11-digit Student ID (or your full Arabic name).' };
     }
 
-    return null;
+    return { error: 'Check your 11-digit Student ID and try again.' };
+  }
+
+  function showGateError(message) {
+    err.textContent = message;
+    input.setAttribute('aria-invalid', 'true');
+    input.focus({ preventScroll: true });
+    const f = $('.field', form);
+    if (f) { f.classList.remove('shake'); void f.offsetWidth; f.classList.add('shake'); }
   }
 
   function handleLogin() {
     const raw = input.value.trim();
     if (!raw) {
-      err.textContent = 'Enter your student ID to continue.';
-      input.setAttribute('aria-invalid', 'true');
-      input.focus({ preventScroll: true });
-      const f = $('.field', form); if (f) { f.classList.remove('shake'); void f.offsetWidth; f.classList.add('shake'); }
+      showGateError('Enter your student ID to continue.');
       return;
     }
-    const u = lookup(raw);
-    if (!u) {
-      err.textContent = 'Check your ID and try again.';
-      input.setAttribute('aria-invalid', 'true');
-      input.focus({ preventScroll: true });
-      const f = $('.field', form); if (f) { f.classList.remove('shake'); void f.offsetWidth; f.classList.add('shake'); }
+    const res = lookup(raw);
+    if (!res || !res.user) {
+      showGateError((res && res.error) || 'Check your Student ID and try again.');
       return;
     }
     err.textContent = '';
-    try { localStorage.setItem(KEY_USER, u.id); } catch (x) {}
-    enter(u, true);
+    input.setAttribute('aria-invalid', 'false');
+    try { localStorage.setItem(KEY_USER, res.user.id); } catch (x) {}
+    enter(res.user, true);
   }
 
   form.addEventListener('submit', (e) => {
@@ -752,13 +823,23 @@
     state.day = null;
     state.openSubject = null;
     try { state.examView = localStorage.getItem(KEY_EXAM) !== '0'; } catch (e) { state.examView = true; }
-    const initial = u.name.trim().charAt(0);
-    ['meAvatar', 'menuAvatar'].forEach((id) => { $('#' + id).textContent = initial; });
-    $('#meName').textContent = u.name.split(' ').slice(0, 2).join(' ');
+
+    const hasName = Boolean(u.name && u.name.trim());
+    const initial = hasName ? u.name.trim().charAt(0) : '#';
+    ['meAvatar', 'menuAvatar'].forEach((id) => {
+      const el = $('#' + id);
+      el.textContent = initial;
+      el.classList.toggle('id-fallback', !hasName);
+    });
+
+    const meName = $('#meName'), popName = $('#popName'), menuName = $('#menuName');
+    meName.textContent = hasName ? shortName(u.name) : `ID ${u.id}`;
+    popName.textContent = hasName ? u.name : `Student ID ${u.id}`;
+    menuName.textContent = hasName ? u.name : `Student ID ${u.id}`;
+    [meName, popName, menuName].forEach((el) => el.classList.toggle('id-fallback', !hasName));
+
     $('#meGroup').textContent = `Group ${u.group}`;
-    $('#popName').textContent = u.name;
     $('#popMeta').textContent = `ID ${u.id} · Group ${u.group}`;
-    $('#menuName').textContent = u.name;
     $('#menuMeta').textContent = `ID ${u.id} · Group ${u.group}`;
     syncExamSwitch();
     document.body.classList.remove('is-gate');
@@ -796,16 +877,33 @@
   addEventListener('scroll', () => top.classList.toggle('stuck', scrollY > 8), { passive: true });
 
   /* ---------- live countdown ---------- */
+  let lastNextCode = null;
   setInterval(() => {
+    if (!state.user) return;
+    const e = nextExam(state.user.group);
+    const code = e ? e.code : null;
+    if (lastNextCode !== null && code !== lastNextCode && (state.view === 'home' || state.view === 'exams')) {
+      lastNextCode = code;
+      show(state.view, true);
+      return;
+    }
+    lastNextCode = code;
     const c = $('#countdown');
-    if (c && state.user && state.view === 'home') { const e = nextExam(state.user.group); if (e) rollNumber(c, countdownText(e.start, e.end)); }
+    if (c && e && state.view === 'home') {
+      c.textContent = countdownText(e.start, e.end);
+    }
   }, 20000);
 
   /* ---------- boot ---------- */
   lines(gate);
   let saved = null;
   try { saved = localStorage.getItem(KEY_USER); } catch (e) {}
-  const u = saved && lookup(saved);
-  if (u) enter(u, false); else setTimeout(() => input.focus(), 700);
+  const bootRes = saved ? lookup(saved) : null;
+  if (bootRes && bootRes.user) {
+    try { localStorage.setItem(KEY_USER, bootRes.user.id); } catch (e) {}
+    enter(bootRes.user, false);
+  } else {
+    if (saved) { try { localStorage.removeItem(KEY_USER); } catch (e) {} }
+    setTimeout(() => input.focus(), 700);
+  }
 })();
-
