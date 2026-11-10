@@ -1,7 +1,5 @@
 scratch/
 *.py
-*.png
-!assets/*.png
 __pycache__/
 .vercel
 .vscode/

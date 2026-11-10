@@ -22,7 +22,7 @@
   const DAYS = ['Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday'];
   const JS_DAY = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
   const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-  const EXAM_WINDOW = [new Date(2026, 10, 6, 0, 0), new Date(2026, 10, 14, 23, 59)];
+  const EXAM_WINDOW = [new Date(2026, 10, 6, 0, 0), new Date(2026, 10, 21, 23, 59)];
 
   const state = { user: null, view: 'home', day: null, examView: true, openSubject: null };
 
@@ -215,10 +215,12 @@
     const statusBadge = e.isLive
       ? '<span class="r-status">Now</span>'
       : isNext
-        ? '<span class="r-status">Next</span>'
+        ? `<span class="r-status">Next</span>${e.postponed ? '<span class="r-status postponed">Postponed</span>' : ''}`
         : e.isPast
           ? '<span class="r-status">Done</span>'
-          : '';
+          : e.postponed
+            ? '<span class="r-status postponed">Postponed</span>'
+            : '';
 
     const hallsHtml = (e.allHalls && e.allHalls.length > 0)
       ? `<div class="r-halls">
@@ -247,6 +249,7 @@
       <div class="r-date"><b>${p.day} ${p.mon}</b><span>${p.wd}, 10:00 AM</span>${statusBadge}</div>
       <div class="r-main">
         <h3>${esc(e.name)}</h3>
+        ${e.postponed ? `<div class="postponed-note"><span class="postponed-pill">Postponed</span><span>${esc(e.postponed_note || 'Moved from Sat 14 Nov to next Saturday, 21 Nov')}</span></div>` : ''}
         <p>${esc(e.code)}${detailed ? ' · 1 hour · Group 9' : ''}</p>
         ${detailed ? `<span class="ar" lang="ar">${esc(e.arabic_name)}</span>` : ''}
       </div>
@@ -303,7 +306,7 @@
         ? `${hallInfo(ne.hall)} · Confirm with proctor`
         : hallInfo(ne.hall);
       hero = `<article class="hero" data-reveal>
-        <p class="kicker"><i class="dot live"></i>${ne.isLive ? 'Exam in progress' : 'Next exam'}</p>
+        <p class="kicker"><i class="dot live"></i>${ne.isLive ? 'Exam in progress' : (ne.postponed ? 'Next exam · Postponed from Sat 14 Nov' : 'Next exam')}</p>
         <h2 class="hero-title">${esc(ne.name)}</h2>
         <p class="hero-ar" lang="ar">${esc(ne.arabic_name)}</p>
         <div class="hero-grid">
@@ -358,7 +361,7 @@
     root.innerHTML = `
       <p class="kicker" data-reveal>Group ${g} · Regular timetable</p>
       <h1 class="h1"><span class="ln"><span>Your</span></span><span class="ln"><span><em>week.</em></span></span></h1>
-      ${examViewOn() ? '<p class="lead">Classes are paused during the midterm exams and resume on Sunday, 15 November.</p>' : ''}
+      ${examViewOn() ? '<p class="lead">Classes resume on Sunday, 15 November. Note: the Engineering Drawing (MEC111) midterm is postponed to Saturday, 21 November.</p>' : ''}
       <div class="seg" id="seg" role="tablist"><i class="seg-thumb" id="segThumb"></i>
         ${DAYS.map((d) => `<button type="button" role="tab" data-day="${d}" class="${list.some((s) => s.day === d) ? '' : 'free'}">${d.slice(0, 3)}</button>`).join('')}
       </div>
@@ -424,7 +427,7 @@
           <div class="acc-b"><div><div class="acc-in">
             <p class="desc">${esc(s.description)}</p>
             ${sess.map((x) => `<div class="mini"><span>${esc(x.day)}</span><div>${fmtRange(x.start_time, x.end_time)} · ${esc(x.session_type)}${x.instructor ? ' · ' + esc(x.instructor) : ''}</div><b>${esc(roomText(x.room))}</b></div>`).join('')}
-            ${e ? `<div class="mini"><span>Midterm</span><div>${dateParts(e.start).wd}, ${dateParts(e.start).day} ${dateParts(e.start).mon} · 10:00 AM</div><div class="sub-halls">${(e.allHalls || []).map((h) => `<span class="sh-badge${h.isMine ? ' my' : ' other'}">${h.isMine ? `<span class="sh-pill">${h.isFallback ? 'Nearest hall' : 'Your hall'}</span>` : `<span>${esc(h.label)}</span>`}<b>${esc(h.hall)}</b><span>${esc(h.from_student)} – ${esc(h.to_student)}</span></span>`).join('')}</div></div>` : ''}
+            ${e ? `<div class="mini"><span>Midterm</span><div>${dateParts(e.start).wd}, ${dateParts(e.start).day} ${dateParts(e.start).mon} · 10:00 AM${e.postponed ? ` <span class="postponed-pill">Postponed from 14 Nov</span>` : ''}</div><div class="sub-halls">${(e.allHalls || []).map((h) => `<span class="sh-badge${h.isMine ? ' my' : ' other'}">${h.isMine ? `<span class="sh-pill">${h.isFallback ? 'Nearest hall' : 'Your hall'}</span>` : `<span>${esc(h.label)}</span>`}<b>${esc(h.hall)}</b><span>${esc(h.from_student)} – ${esc(h.to_student)}</span></span>`).join('')}</div></div>` : ''}
           </div></div></div>
         </div>`;
       }).join('')}</div>`;
@@ -437,9 +440,9 @@
   }
 
   const NOTICES = [
-    { d: '7–14 Nov', t: 'Group 9 Midterm exams in progress', p: 'All seven Group 9 midterm exams start at 10:00 AM and run for one hour. Check your assigned hall for each subject before heading to Building 2.', a: ['exams', 'Open my exam halls'] },
+    { d: 'Postponed', t: 'Engineering Drawing (MEC111) moved to Saturday, 21 November', p: 'The Engineering Drawing midterm exam originally scheduled for Saturday, 14 November has been officially postponed to next Saturday, 21 November 2026 at 10:00 AM in the same assigned halls (B2-309 and B2-310).', a: ['exams', 'View updated exam schedule'] },
+    { d: '7–21 Nov', t: 'Group 9 Midterm exams in progress', p: 'All seven Group 9 midterm exams start at 10:00 AM and run for one hour. Check your assigned hall for each subject before heading to Building 2.', a: ['exams', 'Open my exam halls'] },
     { d: 'Fri, 6 Nov', t: 'Official dual-hall seating verified', p: 'Each exam splits Group 9 across two Building 2 halls by Student ID range. Your assigned hall is pinned in the first column on every exam row.' },
-    { d: 'Fri, 6 Nov', t: 'Classes resume on Sunday, 15 November', p: 'After Engineering Drawing (MEC111) on Saturday, 14 November, the portal automatically switches back to your regular weekly timetable.' },
     { d: 'Thu, 5 Nov', t: 'Complete Group 9 student roster active', p: 'Sign in with your 11-digit CUC Student ID to view your verified name, weekly classes, and exact midterm hall assignments.' }
   ];
   function renderUpdates() {
