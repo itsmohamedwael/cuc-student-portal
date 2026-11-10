@@ -192,7 +192,7 @@
     document.documentElement.dataset.theme = t;
     try { localStorage.setItem(KEY_THEME, t); } catch (e) {}
     const m = $('meta[name="theme-color"]');
-    if (m) m.content = t === 'dark' ? '#0C0C0C' : '#F7F7F5';
+    if (m) m.content = t === 'dark' ? '#0B1F38' : '#F7F4EC';
   }
   $$('[data-theme-toggle]').forEach((b) => b.addEventListener('click', () => {
     setTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark');
